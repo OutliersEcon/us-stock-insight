@@ -51,6 +51,7 @@ def generate_page(company: dict) -> str:
     # 業務板塊按百分比降床排序（大到小）
     segments = sorted(company['revenue_segments'], key=lambda x: x['percentage'], reverse=True)
     last_updated = company.get('last_updated', 'N/A')
+    data_period = company.get('data_period', '')
     nasdaq100 = company.get('nasdaq100', False)
     in_sp500 = company.get('in_sp500', True)
     sector_color = SECTOR_COLORS.get(sector, "#8892a4")
@@ -146,6 +147,7 @@ def generate_page(company: dict) -> str:
     .index-badge-ndx .idx-dot {{ background: #fbbf24; }}
     .hero-desc {{ font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; margin-bottom: 12px; }}
     .last-updated {{ font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }}
+    .data-period {{ color: #fbbf24; font-weight: 600; }}
     .last-updated-dot {{ width: 6px; height: 6px; border-radius: 50%; background: var(--green, #22c55e); display: inline-block; }}
 
     .content {{ max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }}
@@ -201,7 +203,7 @@ def generate_page(company: dict) -> str:
       <p class="hero-desc">{description}</p>
       <div class="last-updated">
         <span class="last-updated-dot"></span>
-        資料最後更新：{last_updated}
+        資料最後更新：{last_updated}{f' &nbsp;·&nbsp; <span class="data-period">{data_period}</span>' if data_period else ''}
       </div>
     </div>
   </div>
@@ -225,7 +227,7 @@ def generate_page(company: dict) -> str:
   <!-- Sources -->
   <div class="card sources-card">
     <div class="card-title"><span class="card-title-icon">🔗</span> 資料來源</div>
-    <p class="sources-note">以下為本頁面營收佔比數據的參考來源，讀者可自行查證。最後更新：{last_updated}。</p>
+    <p class="sources-note">以下為本頁面營收佔比數據的實際參考來源，讀者可自行查證。{f'<strong>資料時間性：{data_period}。</strong>' if data_period else f'最後更新：{last_updated}。'}</p>
     <ul class="sources-list">
 {sources_html}    </ul>
     <p class="sources-disclaimer">⚠️ 營收佔比為概略性數據，實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。</p>

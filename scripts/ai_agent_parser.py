@@ -131,17 +131,28 @@ def call_ai(company: dict) -> dict | None:
     )
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="claude-sonnet-4-6",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.2,
-            max_tokens=1000,
-            response_format={"type": "json_object"}
+            max_tokens=1500
         )
+        if not response.choices:
+            print(f"   ❌ {company['ticker']} API 回傳空 choices。")
+            return None
         content = response.choices[0].message.content
-        result = json.loads(content)
+        if not content:
+            print(f"   ❌ {company['ticker']} API 回傳空內容。")
+            return None
+        # 提取 JSON（處理可能的 markdown code block 包裝）
+        import re
+        json_match = re.search(r'\{[\s\S]*\}', content)
+        if not json_match:
+            print(f"   ❌ {company['ticker']} 無法從回應中提取 JSON。")
+            return None
+        result = json.loads(json_match.group())
 
         # 驗證格式
         if 'description' not in result or 'revenue_segments' not in result:

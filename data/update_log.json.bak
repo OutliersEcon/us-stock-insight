@@ -1,0 +1,1239 @@
+{
+  "generated_at": "2026-06-24T11:19:15Z",
+  "stale_threshold_days": 30,
+  "total_companies": 123,
+  "stale_count": 0,
+  "up_to_date_count": 123,
+  "companies": [
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc. (Class A)",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc. (Class C)",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "BRK-B",
+      "name": "Berkshire Hathaway Inc. (Class B)",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "WMT",
+      "name": "Walmart Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "JPM",
+      "name": "JPMorgan Chase & Co.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "INTC",
+      "name": "Intel Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "V",
+      "name": "Visa Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "XOM",
+      "name": "Exxon Mobil Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Energy",
+      "needs_update": false
+    },
+    {
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "ORCL",
+      "name": "Oracle Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "LRCX",
+      "name": "Lam Research Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "CSCO",
+      "name": "Cisco Systems Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "AMAT",
+      "name": "Applied Materials Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "CAT",
+      "name": "Caterpillar Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "MA",
+      "name": "Mastercard Incorporated",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "COST",
+      "name": "Costco Wholesale Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "ABBV",
+      "name": "AbbVie Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "UNH",
+      "name": "UnitedHealth Group Incorporated",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "GE",
+      "name": "General Electric Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "MS",
+      "name": "Morgan Stanley",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "PG",
+      "name": "The Procter & Gamble Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "KO",
+      "name": "The Coca-Cola Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "CVX",
+      "name": "Chevron Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Energy",
+      "needs_update": false
+    },
+    {
+      "ticker": "KLAC",
+      "name": "KLA Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "GS",
+      "name": "The Goldman Sachs Group Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "HD",
+      "name": "The Home Depot Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "NFLX",
+      "name": "Netflix Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "SNDK",
+      "name": "Sandisk Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "MRK",
+      "name": "Merck & Co. Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "TXN",
+      "name": "Texas Instruments Incorporated",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "GEV",
+      "name": "GE Vernova Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "PM",
+      "name": "Philip Morris International Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "WFC",
+      "name": "Wells Fargo & Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "C",
+      "name": "Citigroup Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "IBM",
+      "name": "International Business Machines Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "MRVL",
+      "name": "Marvell Technology Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "RTX",
+      "name": "RTX Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "LIN",
+      "name": "Linde PLC",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Materials",
+      "needs_update": false
+    },
+    {
+      "ticker": "WDC",
+      "name": "Western Digital Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "AXP",
+      "name": "American Express Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "QCOM",
+      "name": "QUALCOMM Incorporated",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "ANET",
+      "name": "Arista Networks Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "ADI",
+      "name": "Analog Devices Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "APH",
+      "name": "Amphenol Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "PEP",
+      "name": "PepsiCo Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "MCD",
+      "name": "McDonald's Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "TMUS",
+      "name": "T-Mobile US Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "VZ",
+      "name": "Verizon Communications Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "AMGN",
+      "name": "Amgen Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "TJX",
+      "name": "The TJX Companies Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "NEE",
+      "name": "NextEra Energy Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Utilities",
+      "needs_update": false
+    },
+    {
+      "ticker": "DIS",
+      "name": "The Walt Disney Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "BA",
+      "name": "The Boeing Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "TMO",
+      "name": "Thermo Fisher Scientific Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "GLW",
+      "name": "Corning Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "ETN",
+      "name": "Eaton Corporation PLC",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "BLK",
+      "name": "BlackRock Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "SCHW",
+      "name": "The Charles Schwab Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "DE",
+      "name": "Deere & Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "APP",
+      "name": "AppLovin Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "GILD",
+      "name": "Gilead Sciences Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "ABT",
+      "name": "Abbott Laboratories",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "UNP",
+      "name": "Union Pacific Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "T",
+      "name": "AT&T Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "WELL",
+      "name": "Welltower Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Real Estate",
+      "needs_update": false
+    },
+    {
+      "ticker": "BX",
+      "name": "Blackstone Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "UBER",
+      "name": "Uber Technologies Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "HON",
+      "name": "Honeywell International Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "PFE",
+      "name": "Pfizer Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "PLD",
+      "name": "Prologis Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Real Estate",
+      "needs_update": false
+    },
+    {
+      "ticker": "COP",
+      "name": "ConocoPhillips",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Energy",
+      "needs_update": false
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "BKNG",
+      "name": "Booking Holdings Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "CVS",
+      "name": "CVS Health Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "CB",
+      "name": "Chubb Limited",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "COF",
+      "name": "Capital One Financial Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "DHR",
+      "name": "Danaher Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "PGR",
+      "name": "The Progressive Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "SPGI",
+      "name": "S&P Global Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "LOW",
+      "name": "Lowe's Companies Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "MO",
+      "name": "Altria Group Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "LMT",
+      "name": "Lockheed Martin Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "BMY",
+      "name": "Bristol-Myers Squibb Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "SYK",
+      "name": "Stryker Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "SBUX",
+      "name": "Starbucks Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "CDNS",
+      "name": "Cadence Design Systems Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "FTNT",
+      "name": "Fortinet Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "NOW",
+      "name": "ServiceNow Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "SNPS",
+      "name": "Synopsys Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "ADP",
+      "name": "Automatic Data Processing Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "ACN",
+      "name": "Accenture PLC",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "CMCSA",
+      "name": "Comcast Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "NXPI",
+      "name": "NXP Semiconductors N.V.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "INTU",
+      "name": "Intuit Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": true,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "UMAC",
+      "name": "Unusual Machines",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "FUTU",
+      "name": "Futu Holdings",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "IBKR",
+      "name": "Interactive Brokers Group Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "ONDS",
+      "name": "Ondas Holdings Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "RCAT",
+      "name": "Red Cat Holdings Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "IONQ",
+      "name": "IonQ Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "SPCX",
+      "name": "Space Exploration Technologies Corp. (SpaceX)",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "QBTS",
+      "name": "D-Wave Quantum Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "RGTI",
+      "name": "Rigetti Computing Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    }
+  ]
+}
