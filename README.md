@@ -120,6 +120,114 @@ python3 scripts/generate_pages.py
 
 ---
 
+## 📋 操作指南 (Operations Guide)
+
+### 自動化執行事項
+
+GitHub Actions Workflow（`.github/workflows/data-update.yml`）每週一 UTC 02:00 自動執行，無需人工介入：
+
+| 步驟 | 執行內容 | 說明 |
+|---|---|---|
+| 1 | `fetch_spy_holdings.py` | 從 State Street 下載最新 SPY 持倉 CSV，更新 `data/raw/` |
+| 2 | `ai_agent_parser.py` | 讀取 `update_log.json`，對超過 **30 天**未更新的企業呼叫 AI 重新生成業務描述、營收結構、`data_period` 與 `sources` |
+| 3 | `generate_update_log.py` | 根據最新 `companies.json` 重新計算每間企業的 `days_since_update`，更新 `update_log.json` |
+| 4 | `generate_pages.py` | 根據 `companies.json` 重新生成所有 `stocks/*.html` 個別頁面 |
+| 5 | `git commit & push` | 將所有更新自動提交並推送回 `main` 分支 |
+| 6 | GitHub Pages 部署 | GitHub 偵測到 `main` 分支更新後，自動重新部署靜態網站 |
+
+> **注意**：`ai_agent_parser.py` 只會更新 `last_updated` 距今超過 30 天的企業，近期已更新的企業會被跳過以節省 API Token。
+
+---
+
+### 新增企業
+
+```bash
+# 新增一間或多間自選企業（AI 自動生成資料）
+python3 scripts/add_companies.py TICKER1 TICKER2
+
+# 新增 S&P 500 成員（加上 --sp500 旗標，會設定 in_sp500: true）
+python3 scripts/add_companies.py --sp500 NEWSTOCK
+
+# 從文字檔批量新增（每行一個 Ticker，# 開頭為注釋行）
+python3 scripts/add_companies.py --file tickers.txt
+
+# 預覽將要新增的企業（不實際執行）
+python3 scripts/add_companies.py --dry-run TICKER1 TICKER2
+
+# 新增後，重新生成追蹤日誌與所有 HTML 頁面
+python3 scripts/generate_update_log.py
+python3 scripts/generate_pages.py
+```
+
+> **提示**：新增後的企業 `last_updated` 會設為今天，因此 30 天內不會被 AI 自動更新器重複處理。
+
+---
+
+### 更新企業資料
+
+**方式一：AI 自動更新（適合批量更新）**
+
+```bash
+# 強制覆蓋並重新生成指定企業的資料（AI 生成）
+python3 scripts/add_companies.py --overwrite TICKER1 TICKER2
+
+# 重新生成追蹤日誌與所有 HTML 頁面
+python3 scripts/generate_update_log.py
+python3 scripts/generate_pages.py
+```
+
+**方式二：人工更新（推薦用於重要企業，確保來源真實）**
+
+1. 訪問公司官方財報（SEC EDGAR、公司 IR 頁面、CFO Commentary PDF）
+2. 直接編輯 `data/processed/companies.json` 中對應企業的欄位：
+   - `description`：業務描述（繁體中文）
+   - `revenue_segments`：業務板塊清單（按百分比降冪排列）
+   - `data_period`：資料時間性（如 `"FY2027 Q1 (截至 2026 年 4 月 26 日)"`）
+   - `sources`：實際訪問過的來源 URL 清單
+   - `last_updated`：更新為今天日期（`YYYY-MM-DD` 格式）
+3. 重新生成頁面並提交：
+
+```bash
+python3 scripts/generate_update_log.py
+python3 scripts/generate_pages.py
+git add data/ stocks/ && git commit -m "update: manually update {TICKER} with FY20XX QX data"
+git push origin main
+```
+
+> **重要**：人工更新的 `sources` URL 應為實際訪問並驗證過的連結，請勿填入未經確認的 URL。詳見「資料來源可信度政策」章節。
+
+---
+
+### 刪除企業
+
+```bash
+# 從 companies.json 中移除指定企業
+python3 -c "
+import json
+with open('data/processed/companies.json') as f:
+    companies = json.load(f)
+companies = [c for c in companies if c['ticker'] not in ['TICKER1', 'TICKER2']]
+with open('data/processed/companies.json', 'w') as f:
+    json.dump(companies, f, ensure_ascii=False, indent=2)
+print(f'剩餘 {len(companies)} 間企業')
+"
+
+# 刪除對應的 HTML 頁面
+rm stocks/TICKER1.html stocks/TICKER2.html
+
+# 重新生成追蹤日誌與主頁
+python3 scripts/generate_update_log.py
+python3 scripts/generate_pages.py
+
+# 提交並推送
+git add data/ stocks/ index.html && git commit -m "remove: delete TICKER1, TICKER2"
+git push origin main
+```
+
+> **注意**：刪除後需重新生成 `index.html`（`generate_pages.py` 會同時更新主頁的企業卡片列表）。
+
+---
+
 ## 📂 目錄結構 (Directory Structure)
 
 ```text
