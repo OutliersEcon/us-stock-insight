@@ -98,6 +98,9 @@ SECTOR_MAP = {
     "TSM": "Technology", "FUTU": "Financials", "IBKR": "Financials",
     "ONDS": "Technology", "RCAT": "Industrials", "IONQ": "Technology",
     "UMAC": "Industrials",
+    "SPCX": "Financials",
+    "QBTS": "Technology",
+    "RGTI": "Technology",
 }
 
 # ── Nasdaq 100 成員集合

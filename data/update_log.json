@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-24T11:00:07Z",
+  "generated_at": "2026-06-24T11:15:44Z",
   "stale_threshold_days": 30,
-  "total_companies": 120,
+  "total_companies": 123,
   "stale_count": 0,
-  "up_to_date_count": 120,
+  "up_to_date_count": 123,
   "companies": [
     {
       "ticker": "NVDA",
@@ -1198,6 +1198,36 @@
     {
       "ticker": "IONQ",
       "name": "IonQ Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "SPCX",
+      "name": "The SPAC and New Issue ETF",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "QBTS",
+      "name": "D-Wave Quantum Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "RGTI",
+      "name": "Rigetti Computing Inc.",
       "last_updated": "2026-06-24",
       "days_since_update": 0,
       "in_sp500": false,

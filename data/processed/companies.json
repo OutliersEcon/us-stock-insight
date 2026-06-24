@@ -3603,5 +3603,89 @@
     ],
     "in_sp500": false,
     "qqq_weight": 0.0
+  },
+  {
+    "ticker": "SPCX",
+    "name": "The SPAC and New Issue ETF",
+    "sector": "Financials",
+    "description": "SPCX是一支專注於特殊目的收購公司（SPAC）的交易所交易基金（ETF），由The SPAC and New Issue ETF管理。該基金追蹤由SPAC組成的投資組合，主要投資於尚未完成併購交易的SPAC信託資產，為投資者提供參與SPAC市場的多元化曝險機會。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "revenue_segments": [
+      {
+        "segment": "SPAC Trust Holdings",
+        "percentage": 85,
+        "description": "投資於尚未完成併購的SPAC信託資金，主要以美國國庫券形式持有，提供相對穩定的本金保障。"
+      },
+      {
+        "segment": "Post-Merger SPAC Equities",
+        "percentage": 10,
+        "description": "持有已完成併購交易的前SPAC公司股權，追求資本增值潛力。"
+      },
+      {
+        "segment": "Cash & Equivalents",
+        "percentage": 5,
+        "description": "基金持有的現金及短期流動資產，用於流動性管理及再平衡操作。"
+      }
+    ],
+    "in_sp500": false,
+    "qqq_weight": 0.0
+  },
+  {
+    "ticker": "QBTS",
+    "name": "D-Wave Quantum Inc.",
+    "sector": "Technology",
+    "description": "D-Wave Quantum（QBTS）是全球首家商業化量子計算公司，專注於量子退火技術，提供雲端量子計算服務與混合求解器解決方案。公司服務涵蓋製造、物流、金融及生命科學等多個行業，透過Leap量子雲端平台為企業客戶提供優化問題求解服務，具備先發優勢與豐富的量子計算實際應用經驗。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "revenue_segments": [
+      {
+        "segment": "Quantum Computing Services (QCaaS)",
+        "percentage": 72,
+        "description": "透過Leap雲端平台提供量子計算即服務，客戶按使用量付費，為主要收入來源。"
+      },
+      {
+        "segment": "Professional Services",
+        "percentage": 18,
+        "description": "為企業客戶提供量子計算應用開發、顧問諮詢及技術整合等專業服務。"
+      },
+      {
+        "segment": "Government & Research Grants",
+        "percentage": 10,
+        "description": "來自政府機構及研究合作的資助與合約收入，支持量子技術研發。"
+      }
+    ],
+    "in_sp500": false,
+    "qqq_weight": 0.0
+  },
+  {
+    "ticker": "RGTI",
+    "name": "Rigetti Computing Inc.",
+    "sector": "Technology",
+    "description": "Rigetti Computing是一家量子計算公司，專注於開發超導量子處理器及量子雲端運算服務。公司透過Quantum Cloud Services（QCS）平台提供量子計算存取，並與政府機構及企業客戶合作推進量子應用研究，在量子硬體與軟體整合方面具備一定技術優勢。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "revenue_segments": [
+      {
+        "segment": "Quantum Computing Services (QCS)",
+        "percentage": 72,
+        "description": "透過雲端平台提供量子處理器存取服務，為研究機構與企業客戶提供量子運算資源，為主要收入來源。"
+      },
+      {
+        "segment": "Government & Research Contracts",
+        "percentage": 20,
+        "description": "承接美國政府機構及國防相關研究合約，包括DARPA等機構的量子技術研發項目資助。"
+      },
+      {
+        "segment": "Professional Services & Licensing",
+        "percentage": 8,
+        "description": "提供量子計算諮詢、技術授權及客製化解決方案服務，協助客戶開發量子應用程式。"
+      }
+    ],
+    "in_sp500": false,
+    "qqq_weight": 0.0
   }
 ]
