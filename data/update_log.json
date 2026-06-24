@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-24T12:14:48Z",
-  "stale_threshold_days": 30,
+  "generated_at": "2026-06-24T12:59:38Z",
+  "stale_threshold_days": 0,
   "total_companies": 123,
-  "stale_count": 0,
-  "up_to_date_count": 123,
+  "stale_count": 123,
+  "up_to_date_count": 0,
   "companies": [
     {
       "ticker": "NVDA",
@@ -13,7 +13,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "AAPL",
@@ -23,7 +23,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "MSFT",
@@ -33,7 +33,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "AMZN",
@@ -43,7 +43,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Consumer Discretionary",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "GOOGL",
@@ -53,7 +53,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "GOOG",
@@ -63,7 +63,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "AVGO",
@@ -73,7 +73,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "TSLA",
@@ -83,7 +83,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Consumer Discretionary",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "META",
@@ -93,7 +93,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "BRK-B",
@@ -103,7 +103,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "LLY",
@@ -113,7 +113,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "WMT",
@@ -123,7 +123,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Consumer Staples",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "JPM",
@@ -133,7 +133,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "AMD",
@@ -143,7 +143,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "INTC",
@@ -153,7 +153,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "V",
@@ -163,7 +163,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "MU",
@@ -173,7 +173,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "XOM",
@@ -183,7 +183,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Energy",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "JNJ",
@@ -193,7 +193,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ORCL",
@@ -203,7 +203,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "LRCX",
@@ -213,7 +213,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CSCO",
@@ -223,7 +223,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "AMAT",
@@ -233,7 +233,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CAT",
@@ -243,7 +243,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "MA",
@@ -253,7 +253,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "COST",
@@ -263,7 +263,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Consumer Staples",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ABBV",
@@ -273,7 +273,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "BAC",
@@ -283,7 +283,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "UNH",
@@ -293,7 +293,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "GE",
@@ -303,7 +303,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "MS",
@@ -313,7 +313,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "PG",
@@ -323,7 +323,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Consumer Staples",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "KO",
@@ -333,7 +333,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Consumer Staples",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CVX",
@@ -343,7 +343,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Energy",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "KLAC",
@@ -353,7 +353,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "GS",
@@ -363,7 +363,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "HD",
@@ -373,7 +373,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Consumer Discretionary",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "NFLX",
@@ -383,7 +383,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "SNDK",
@@ -393,7 +393,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "MRK",
@@ -403,7 +403,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "PLTR",
@@ -413,7 +413,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "TXN",
@@ -423,7 +423,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "GEV",
@@ -433,7 +433,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "PM",
@@ -443,7 +443,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Consumer Staples",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "DELL",
@@ -453,7 +453,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "WFC",
@@ -463,7 +463,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "C",
@@ -473,7 +473,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "IBM",
@@ -483,7 +483,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "MRVL",
@@ -493,7 +493,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "RTX",
@@ -503,7 +503,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "LIN",
@@ -513,7 +513,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Materials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "WDC",
@@ -523,7 +523,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "PANW",
@@ -533,7 +533,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "AXP",
@@ -543,7 +543,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "QCOM",
@@ -553,7 +553,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ANET",
@@ -563,7 +563,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ADI",
@@ -573,7 +573,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "APH",
@@ -583,7 +583,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "PEP",
@@ -593,7 +593,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Consumer Staples",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "MCD",
@@ -603,7 +603,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Consumer Discretionary",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "TMUS",
@@ -613,7 +613,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "VZ",
@@ -623,7 +623,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "AMGN",
@@ -633,7 +633,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "TJX",
@@ -643,7 +643,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Consumer Discretionary",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "NEE",
@@ -653,7 +653,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Utilities",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "DIS",
@@ -663,7 +663,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "BA",
@@ -673,7 +673,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "TMO",
@@ -683,7 +683,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CRWD",
@@ -693,7 +693,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "GLW",
@@ -703,7 +703,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ETN",
@@ -713,7 +713,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "BLK",
@@ -723,7 +723,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "SCHW",
@@ -733,7 +733,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "DE",
@@ -743,7 +743,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "APP",
@@ -753,7 +753,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "GILD",
@@ -763,7 +763,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ABT",
@@ -773,7 +773,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "UNP",
@@ -783,7 +783,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "T",
@@ -793,7 +793,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "WELL",
@@ -803,7 +803,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Real Estate",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "BX",
@@ -813,7 +813,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "UBER",
@@ -823,7 +823,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "HON",
@@ -833,7 +833,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ISRG",
@@ -843,7 +843,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "PFE",
@@ -853,7 +853,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "PLD",
@@ -863,7 +863,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Real Estate",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "COP",
@@ -873,7 +873,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Energy",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "VRT",
@@ -883,7 +883,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "BKNG",
@@ -893,7 +893,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Consumer Discretionary",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CVS",
@@ -903,7 +903,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CB",
@@ -913,7 +913,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "COF",
@@ -923,7 +923,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "DHR",
@@ -933,7 +933,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CRM",
@@ -943,7 +943,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "PGR",
@@ -953,7 +953,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "SPGI",
@@ -963,7 +963,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "LOW",
@@ -973,7 +973,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Consumer Discretionary",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "VRTX",
@@ -983,7 +983,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "MO",
@@ -993,7 +993,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Consumer Staples",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "LMT",
@@ -1003,7 +1003,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "BMY",
@@ -1013,7 +1013,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "SYK",
@@ -1023,7 +1023,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Healthcare",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "SBUX",
@@ -1033,7 +1033,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Consumer Discretionary",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CDNS",
@@ -1043,7 +1043,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "FTNT",
@@ -1053,7 +1053,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "NOW",
@@ -1063,7 +1063,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "SNPS",
@@ -1073,7 +1073,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ADP",
@@ -1083,7 +1083,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ADBE",
@@ -1093,7 +1093,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ACN",
@@ -1103,7 +1103,7 @@
       "in_sp500": true,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "CMCSA",
@@ -1113,7 +1113,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Communication Services",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "NXPI",
@@ -1123,7 +1123,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "INTU",
@@ -1133,7 +1133,7 @@
       "in_sp500": true,
       "nasdaq100": true,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "TSM",
@@ -1143,7 +1143,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "UMAC",
@@ -1153,7 +1153,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "FUTU",
@@ -1163,7 +1163,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "IBKR",
@@ -1173,7 +1173,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Financials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "ONDS",
@@ -1183,7 +1183,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "RCAT",
@@ -1193,7 +1193,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "IONQ",
@@ -1203,7 +1203,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "SPCX",
@@ -1213,7 +1213,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Industrials",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "QBTS",
@@ -1223,7 +1223,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     },
     {
       "ticker": "RGTI",
@@ -1233,7 +1233,7 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Technology",
-      "needs_update": false
+      "needs_update": true
     }
   ]
 }
