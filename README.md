@@ -8,7 +8,7 @@
 
 ## ✨ 核心功能 (Features)
 
-- **🔄 自動化持倉同步**：定期下載並解析 SPY ETF 的最新持倉清單，目前已收錄 **116 間** 核心企業（包含 S&P 500 成分股及精選自選企業）。
+- **🔄 自動化持倉同步**：定期下載並解析 SPY ETF 的最新持倉清單，目前已收錄 **123 間** 核心企業（包含 S&P 500 成分股及精選自選企業）。
 - **🤖 AI 業務解析**：利用 AI Agent 自動檢索並總結每間公司的核心業務模式。
 - **📊 營收結構拆解**：精確列出各個業務部門（Segments）對公司總收入的貢獻比例，並以圓餅圖視覺化呈現。
 - **📅 更新狀態追蹤**：所有企業頁面與主頁均顯示資料的**最後更新日期**，確保投資人參考的是最新資訊。
@@ -34,110 +34,70 @@
 | 腳本 | 用途 |
 |---|---|
 | `fetch_spy_holdings.py` | 自動從 State Street 抓取最新的 SPY 成分股 CSV 檔案 |
-| `add_companies.py` | **通用企業新增工具**：透過 AI 為任意 Ticker 清單生成業務描述與營收結構，支援命令列參數（見下方說明）|
+| `add_companies.py` | **通用企業新增工具**：透過 AI 為任意 Ticker 清單生成業務描述與營收結構，支援命令列參數 |
 | `sync_index_data.py` | **指數資料同步工具**：統一管理 SPY/QQQ 持倉權重、`in_sp500` 與 `nasdaq100` 欄位的更新 |
-| `ai_agent_parser.py` | **AI 定期更新器**：讀取 `update_log.json`，自動更新超過閾值（預設 30 天）的過期企業資料 |
+| `ai_agent_parser.py` | **真實財報抓取器**：供 Manus Scheduled Task 呼叫，從 SEC EDGAR 抓取真實財報文字並交由 AI 分析 |
 | `generate_update_log.py` | 從 `companies.json` 自動生成 `data/update_log.json`，供 AI 更新器判斷哪些企業需要更新 |
 | `generate_pages.py` | 根據 `companies.json` 批量生成所有 HTML 頁面（`index.html` 與 `stocks/*.html`）|
 
-#### 新增企業的標準流程
-
-```bash
-# 1. 新增一間或多間企業（AI 自動生成業務描述與營收結構）
-python3 scripts/add_companies.py TICKER1 TICKER2
-
-# 新增 S&P 500 成員（加上 --sp500 旗標）
-python3 scripts/add_companies.py --sp500 NEWSTOCK
-
-# 強制覆蓋已存在的企業資料
-python3 scripts/add_companies.py --overwrite AAPL
-
-# 從文字檔批量新增（每行一個 Ticker，# 開頭為注釋）
-python3 scripts/add_companies.py --file tickers.txt
-
-# 2. 同步最新的 SPY/QQQ 持倉權重
-python3 scripts/sync_index_data.py
-
-# 3. 重新生成追蹤日誌與所有 HTML 頁面
-python3 scripts/generate_update_log.py
-python3 scripts/generate_pages.py
-```
-
 ### 2. 資料來源可信度政策 (Source Credibility Policy)
 
-本專案採用**兩層資料來源機制**，以平衡可信度與自動化效率：
+本專案堅持「**不允許 AI 捏造來源與數字**」的原則，`ai_agent_parser.py` 採用兩階段流程：
+1. **Phase 1 (真實財報抓取)**：先從 SEC EDGAR 查詢企業 CIK，抓取最新 10-Q 或 10-K 申報文件的純文字內容，並記錄實際訪問的 URL。
+2. **Phase 2 (AI 結構化分析)**：將抓取到的真實財報文字交給 AI，AI 僅作為「文字理解與結構化」工具，提取業務板塊佔比並生成繁體中文描述。
 
-| 更新方式 | 來源品質 | 適用場景 |
-|---|---|---|
-| **人工更新**（推薦用於重要企業）| 最高：實際訪問財報文件，URL 100% 真實 | 大型企業、定期人工審核 |
-| **AI 自動更新**（`ai_agent_parser.py`）| 中等：使用 SEC EDGAR 搜尋頁面（永遠有效）+ AI 推斷的 IR 頁面 | 定期批量更新中小型企業 |
-
-**人工更新示範（NVIDIA）**：
-- 實際訪問 NVIDIA 官方 CFO Commentary PDF（`s201.q4cdn.com`）
-- 實際訪問 NVIDIA 業績發佈新聞稿（`nvidianews.nvidia.com`）
-- 記錄資料時間性：`FY2027 Q1 (截至 2026 年 4 月 26 日)`
-- 所有 URL 均經人工驗證為真實可訪問連結
-
-**AI 自動更新的 URL 政策**：
-- 優先使用 SEC EDGAR 搜尋頁面（格式：`https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={TICKER}&type=10-K`），此類 URL 永遠有效
-- 若 AI 無法確認直接 PDF 連結的真實性，**必須使用 SEC EDGAR 搜尋頁面代替**，不得捏造 URL
-- 建議定期人工抽查 AI 生成的 sources 連結有效性
-
-**`data_period` 欄位**：每間企業均記錄資料所屬的財報期間，顯示於個別頁面的「資料來源」區塊，讓讀者清楚了解數據的時效性。
-
----
-
-### 3. 內部文件設計：`update_log.json`
-為避免 AI 產生幻覺並節省 API Token，專案設計了自動生成的內部追蹤文件 `update_log.json`。
-- **完全自動生成**：此檔案由 Python 腳本根據 `companies.json` 自動計算與生成，包含 `last_updated` 追蹤、`in_sp500` 標記與 `nasdaq100` 標記，**不依賴 AI 判斷或人工輸入**，確保資料 100% 準確。
-- **AI 任務指引**：AI Agent 執行更新時會優先讀取此檔案，跳過近期（例如 30 天內）已更新的企業，集中資源更新超過閾值的過期資料。
+**資料來源標示**：
+- `sources`：記錄實際訪問過的來源 URL 清單。若無法取得直接文件，則使用 SEC EDGAR 搜尋頁面（永遠有效的 URL）。
+- `data_period`：記錄資料所屬的財報期間（如 `FY2027 Q1 (截至 2026 年 4 月 26 日)`）。
+- `data_quality`：若成功抓取財報文字，標示為 `real_data`；若無法取得（如非美國上市企業），則標示為 `estimated`。
 
 ### 3. 前端展示與靜態頁面生成 (Frontend Generation)
+
 - **頁面生成器** (`scripts/generate_pages.py`)：讀取 `companies.json`，透過 Python 腳本動態生成：
   1. `index.html`：總覽主頁，UI 樣式與 DOM 結構定義於此。
   2. `stocks/*.html`：每間公司的獨立詳細頁面，包含 Chart.js 圓餅圖與最後更新日期。
 - **前端邏輯分離** (`app.js`)：
-  - 主頁的所有互動邏輯（搜尋、排序、指數 toggle、行業篩選、動態渲染卡片）皆抽離至獨立的 `app.js` 檔案，保持 `index.html` 結構簡潔。
-  - 內建 `SEARCH_ALIASES` 字典，解決常見縮寫或母公司名稱的搜尋體驗問題。
+  主頁的所有互動邏輯皆包含於單一 `app.js` 檔案中。雖然未拆分為多個實體檔案，但程式碼內部已透過註解分為以下邏輯區塊：
+  - **常數定義**：`SECTOR_ZH`（行業中英對照）、`SEARCH_ALIASES`（公司別名字典）。
+  - **狀態管理**：管理 `companies`、`activeSector`、`activeIndex`、`sortBy`、`searchQuery`、`currentPage` 等全域狀態。
+  - **搜尋與排序邏輯**：`matchSearch()`（支援 Ticker、名稱、別名、行業）、`sortCompanies()`（非 S&P 500 企業固定排最後）。
+  - **渲染邏輯**：`renderCard()`（單一企業卡片）、`renderPagination()`（分頁導覽列）、`renderGrid()`（整合篩選與分頁的網格渲染）。
+  - **事件監聽**：`initEvents()` 綁定所有 UI 互動（搜尋、點擊篩選、切換分頁等）。
 - **多 Ticker 命名規則**：
   - **一般 Ticker**：直接使用大寫字母，例如 `AAPL` → `AAPL.html`。
   - **含特殊字元 (`.`, `/`) 的 Ticker**：將特殊字元替換為 `-`，例如 `BRK.B` 轉換為 `BRK-B.html`。
 
-### 4. 自動化工作流 (GitHub Actions Automation)
-專案已部署 `.github/workflows/data-update.yml`，實現完全無人值守的自動化更新流程：
-1. **觸發條件**：每週一 UTC 02:00 定時執行（Cron Job），或手動觸發 (workflow_dispatch)。
-2. **執行步驟**：
-   - 檢出程式碼並設定 Python 環境。
-   - 執行 `fetch_spy_holdings.py` 更新原始持倉數據。
-   - 執行 `ai_agent_parser.py` 呼叫 AI 更新過期的公司營收結構 JSON。
-   - 執行 `generate_update_log.py` 重新計算更新日誌。
-   - 執行 `generate_pages.py` 重新生成所有 HTML 頁面。
-   - 將更新後的檔案 `git commit` 並 `push` 回 `main` 分支。
-3. **自動部署**：GitHub Pages 偵測到 `main` 分支有更新後，會自動部署最新的靜態網頁。
+### 4. 職責分離的自動化工作流 (Separation of Duties)
 
-> **💡 權限與 Token 設定說明**
-> 為了讓 GitHub Actions 能成功執行，專案維護者已透過 Personal Access Token (PAT) 授予 `workflows` 權限，確保 `.github/workflows` 目錄下的 YAML 檔案能被正確推送並啟用定時排程。請注意，為了保護隱私，任何 Token 或 API 金鑰（如 `MANUS_API_KEY`）皆透過 GitHub 倉庫的 **Settings → Secrets and variables → Actions** 進行管理，絕不會明碼寫入程式碼或 README 中。
+為確保資料更新的穩定性與可靠性，本專案將「網站完整性檢查」與「財報數據更新」拆分為兩個獨立的流程：
+
+**A. GitHub Actions (網站完整性檢查與部署)**
+- **負責**：每週一自動執行（`.github/workflows/data-update.yml`）。
+- **內容**：檢查 `companies.json` 與 HTML 頁面是否同步，重新計算 `update_log.json` 中的 `days_since_update`，並重新生成所有 HTML 頁面。
+- **限制**：**不呼叫任何 AI API**，不抓取外部財報數據。
+
+**B. Manus Scheduled Task (真實財報數據更新)**
+- **負責**：由用戶在 Manus 平台設定的定期任務。
+- **內容**：執行 `scripts/ai_agent_parser.py`，找出 `last_updated` 超過 30 天的企業，從 SEC EDGAR 抓取真實財報並交由 AI 分析，更新 `companies.json`。
+- **優勢**：可利用 Manus 的網路訪問能力與 API 資源，專注於高成本的數據抓取與分析工作。
 
 ---
 
 ## 📋 操作指南 (Operations Guide)
 
-### 自動化執行事項
+### 設定 Manus Scheduled Task（財報更新）
 
-GitHub Actions Workflow（`.github/workflows/data-update.yml`）每週一 UTC 02:00 自動執行，無需人工介入：
-
-| 步驟 | 執行內容 | 說明 |
-|---|---|---|
-| 1 | `fetch_spy_holdings.py` | 從 State Street 下載最新 SPY 持倉 CSV，更新 `data/raw/` |
-| 2 | `ai_agent_parser.py` | 讀取 `update_log.json`，對超過 **30 天**未更新的企業呼叫 AI 重新生成業務描述、營收結構、`data_period` 與 `sources` |
-| 3 | `generate_update_log.py` | 根據最新 `companies.json` 重新計算每間企業的 `days_since_update`，更新 `update_log.json` |
-| 4 | `generate_pages.py` | 根據 `companies.json` 重新生成所有 `stocks/*.html` 個別頁面 |
-| 5 | `git commit & push` | 將所有更新自動提交並推送回 `main` 分支 |
-| 6 | GitHub Pages 部署 | GitHub 偵測到 `main` 分支更新後，自動重新部署靜態網站 |
-
-> **注意**：`ai_agent_parser.py` 只會更新 `last_updated` 距今超過 30 天的企業，近期已更新的企業會被跳過以節省 API Token。
-
----
+若要自動更新過期的企業財報數據，請在 Manus 平台設定 Scheduled Task：
+1. 開啟 Manus，使用 `manus-config schedule` 技能。
+2. 設定一個每週執行的任務（例如每週三）。
+3. 任務指令：
+   ```bash
+   cd /home/ubuntu/us-stock-insight
+   python3 scripts/ai_agent_parser.py --regenerate-pages
+   git add data/ stocks/ index.html
+   git commit -m "update: auto-fetch latest financial data via Manus"
+   git push origin main
+   ```
 
 ### 新增企業
 
@@ -151,29 +111,21 @@ python3 scripts/add_companies.py --sp500 NEWSTOCK
 # 從文字檔批量新增（每行一個 Ticker，# 開頭為注釋行）
 python3 scripts/add_companies.py --file tickers.txt
 
-# 預覽將要新增的企業（不實際執行）
-python3 scripts/add_companies.py --dry-run TICKER1 TICKER2
-
 # 新增後，重新生成追蹤日誌與所有 HTML 頁面
 python3 scripts/generate_update_log.py
 python3 scripts/generate_pages.py
 ```
 
-> **提示**：新增後的企業 `last_updated` 會設為今天，因此 30 天內不會被 AI 自動更新器重複處理。
-
----
-
 ### 更新企業資料
 
-**方式一：AI 自動更新（適合批量更新）**
+**方式一：手動觸發真實財報抓取腳本（適合批量更新）**
 
 ```bash
-# 強制覆蓋並重新生成指定企業的資料（AI 生成）
-python3 scripts/add_companies.py --overwrite TICKER1 TICKER2
+# 更新所有超過 30 天未更新的企業
+python3 scripts/ai_agent_parser.py --regenerate-pages
 
-# 重新生成追蹤日誌與所有 HTML 頁面
-python3 scripts/generate_update_log.py
-python3 scripts/generate_pages.py
+# 強制更新特定企業（忽略 30 天限制）
+python3 scripts/ai_agent_parser.py --force AAPL MSFT --regenerate-pages
 ```
 
 **方式二：人工更新（推薦用於重要企業，確保來源真實）**
@@ -194,38 +146,6 @@ git add data/ stocks/ && git commit -m "update: manually update {TICKER} with FY
 git push origin main
 ```
 
-> **重要**：人工更新的 `sources` URL 應為實際訪問並驗證過的連結，請勿填入未經確認的 URL。詳見「資料來源可信度政策」章節。
-
----
-
-### 刪除企業
-
-```bash
-# 從 companies.json 中移除指定企業
-python3 -c "
-import json
-with open('data/processed/companies.json') as f:
-    companies = json.load(f)
-companies = [c for c in companies if c['ticker'] not in ['TICKER1', 'TICKER2']]
-with open('data/processed/companies.json', 'w') as f:
-    json.dump(companies, f, ensure_ascii=False, indent=2)
-print(f'剩餘 {len(companies)} 間企業')
-"
-
-# 刪除對應的 HTML 頁面
-rm stocks/TICKER1.html stocks/TICKER2.html
-
-# 重新生成追蹤日誌與主頁
-python3 scripts/generate_update_log.py
-python3 scripts/generate_pages.py
-
-# 提交並推送
-git add data/ stocks/ index.html && git commit -m "remove: delete TICKER1, TICKER2"
-git push origin main
-```
-
-> **注意**：刪除後需重新生成 `index.html`（`generate_pages.py` 會同時更新主頁的企業卡片列表）。
-
 ---
 
 ## 📂 目錄結構 (Directory Structure)
@@ -233,7 +153,7 @@ git push origin main
 ```text
 us-stock-insight/
 ├── .github/workflows/
-│   └── data-update.yml        # GitHub Actions 自動化更新腳本
+│   └── data-update.yml        # GitHub Actions 完整性檢查與部署腳本
 ├── data/
 │   ├── raw/                   # 存放原始抓取的 SPY Excel/CSV 資料
 │   ├── processed/             # 存放 AI 處理後的 companies.json
@@ -242,7 +162,7 @@ us-stock-insight/
 │   ├── add_companies.py       # 通用企業新增工具（支援任意 Ticker，可重複使用）
 │   ├── sync_index_data.py     # SPY/QQQ 持倉權重與指數成員資料同步工具
 │   ├── fetch_spy_holdings.py  # 抓取 SPY 持倉的 Python 腳本
-│   ├── ai_agent_parser.py     # 呼叫 LLM 提取營收佔比的智慧更新腳本
+│   ├── ai_agent_parser.py     # 真實財報抓取器（SEC EDGAR + AI 分析，供 Manus 呼叫）
 │   ├── generate_update_log.py # 生成更新追蹤日誌的腳本
 │   └── generate_pages.py      # 根據 JSON 批量生成 HTML 頁面的腳本
 ├── stocks/                    # 動態生成的個別企業 HTML 頁面 (例如 AAPL.html)
@@ -264,17 +184,11 @@ us-stock-insight/
 - [x] 整合 Nasdaq 100 指數成分股標示與行業中文譯名
 - [x] 實作自動化的內部更新追蹤日誌 (`update_log.json`)
 - [x] 授予 GitHub Actions `workflows` 權限，推送並啟用自動化 CI/CD 腳本
-- [x] 整合 MANUS_API_KEY，實作 `ai_agent_parser.py` 智能更新邏輯
-- [x] 大幅擴充收錄企業範圍（從 30 間擴充至 S&P 500 前 150 大，共 113 間）
+- [x] 大幅擴充收錄企業範圍（共 123 間，包含 S&P 500、Nasdaq 100 與自選企業）
 - [x] 前端重構：加入排序功能、指數 Toggle、優化搜尋體驗（支援別名搜尋）
 - [x] 支援收錄非 S&P 500 之精選企業，並完善前端排序與標籤邏輯
-- [x] 優化前端互動體驗：支援點擊已選中標籤取消篩選、確保 Reset 按鈕與計數器狀態正確
-- [x] 修復搜尋過度匹配：別名改為單向比對（alias.includes(q)）、要求 q 至少 2 字元、公司名稱改用 word-boundary 匹配
-- [x] 加入 `escapeHtml()` 將所有來自 JSON 的動態內容進行 HTML 變數轉義，防止 XSS 與版面崩潰風險
-- [x] 修復業務板塊排序：`companies.json` 與個別頁面的 `revenue_segments` 均按百分比降床排序（大到小）
-- [x] 加入 QQQ 持倉權重資料，支援按 QQQ weight 排序，並在卡片上動態顯示 QQQ / SPY 權重
+- [x] 加入 `escapeHtml()` 將所有來自 JSON 的動態內容進行 HTML 變數轉義，防止 XSS
+- [x] 加入 QQQ 持倉權重資料，支援按 QQQ weight 排序
 - [x] 加入 Pagination 功能（每頁 25/50/100/全部，上下方雙導覽列）
-- [x] 重整 `scripts/` 資料夾：移除一次性腳本，建立通用的 `add_companies.py`（支援 CLI 參數）與 `sync_index_data.py`（統一管理指數資料）
-- [x] **資料來源標示**：強制要求 AI 在生成資料時提供實際可查證的來源 URL（如 SEC 10-K），並顯示於個別企業頁面。
-- [x] **資料時間性標示**：每間企業頁面均顯示資料所屬的財報期間（如 `FY2027 Q1 (截至 2026 年 4 月 26 日)`），讓讀者清楚了解數據的時效性。
-- [x] **資料來源可信度政策**：建立「先搜尋真實來源再分析」的人工更新流程（以 NVIDIA 為示範），並限制 AI 自動更新時只能使用 SEC EDGAR 搜尋頁面等永遠有效的 URL，杜絕 AI 幻覺 URL。
+- [x] **工作流職責分離**：GitHub Actions 專注於完整性檢查與部署；財報數據更新交由 Manus Scheduled Task 負責。
+- [x] **資料來源可信度政策**：重新設計 `ai_agent_parser.py` 為兩階段流程（SEC EDGAR 抓取真實財報文字 + AI 分析），杜絕 AI 捏造來源與數字。

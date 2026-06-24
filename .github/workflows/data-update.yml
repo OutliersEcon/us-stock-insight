@@ -1,4 +1,4 @@
-name: Weekly Data Update & Deploy
+name: Weekly Integrity Check & Deploy
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 觸發條件
@@ -9,16 +9,29 @@ on:
   workflow_dispatch:        # 允許在 GitHub Actions 介面手動觸發
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 權限設定
+# 職責說明
 # ─────────────────────────────────────────────────────────────────────────────
-permissions:
-  contents: write           # 允許 commit & push 更新後的數據與 HTML 頁面
+# 此 workflow 負責「完整性檢查與部署」，不負責財報數據更新。
+#
+# 職責分工：
+#   - 本 workflow (GitHub Actions)：
+#       每週一自動執行，確保網站頁面與 companies.json 保持同步，
+#       並更新 update_log.json 以反映最新的 last_updated 狀態。
+#       不呼叫任何 AI API，不抓取外部財報數據。
+#
+#   - Manus Scheduled Task（由用戶在 Manus 設定）：
+#       定期找出 last_updated 超過 30 天的企業，
+#       實際從 SEC EDGAR、公司 IR 頁面等來源抓取最新財報數字，
+#       重新生成業務描述、營收結構與真實來源 URL，
+#       並更新 companies.json，再觸發本 workflow 重新部署。
+#
+# ─────────────────────────────────────────────────────────────────────────────
 
-# ─────────────────────────────────────────────────────────────────────────────
-# 工作流程
-# ─────────────────────────────────────────────────────────────────────────────
+permissions:
+  contents: write           # 允許 commit & push 更新後的 HTML 頁面
+
 jobs:
-  update-and-deploy:
+  integrity-check-and-deploy:
     runs-on: ubuntu-latest
     steps:
 
@@ -26,7 +39,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # 取得完整 git 歷史，確保 push 不會衝突
+          fetch-depth: 0
 
       # ── Step 2: 設定 Python 環境 ────────────────────────────────────────────
       - name: Set up Python 3.11
@@ -39,46 +52,68 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # ── Step 4: 抓取最新 SPY 持倉清單 ──────────────────────────────────────
-      - name: Fetch latest SPY holdings
-        run: python scripts/fetch_spy_holdings.py
+      # ── Step 4: 完整性檢查 ──────────────────────────────────────────────────
+      # 驗證 companies.json 中每間企業都有對應的 HTML 頁面，
+      # 並列出缺少頁面的企業（不自動修復，僅報告）。
+      - name: Integrity check — verify all companies have HTML pages
+        run: |
+          python3 - <<'EOF'
+          import json, os, sys
 
-      # ── Step 5: AI Agent 更新公司營收結構 ──────────────────────────────────
-      # 此步驟會先讀取 data/update_log.json，跳過 30 天內已更新的企業，
-      # 僅呼叫 AI 更新 needs_update: true 的企業，節省 API Token。
-      - name: Run AI Agent to update stale company data
-        env:
-          MANUS_API_KEY: ${{ secrets.MANUS_API_KEY }}
-        run: python scripts/ai_agent_parser.py
+          with open("data/processed/companies.json") as f:
+              companies = json.load(f)
 
-      # ── Step 6: 重新生成 update_log.json ───────────────────────────────────
-      # 此步驟完全從 companies.json 的實際數據生成，不含任何人工輸入，
-      # 確保 last_updated 日期的準確性，消除 AI 幻覺風險。
-      - name: Regenerate update_log.json from source data
+          missing = []
+          for c in companies:
+              ticker = c["ticker"]
+              page = f"stocks/{ticker}.html"
+              if not os.path.exists(page):
+                  missing.append(ticker)
+
+          total = len(companies)
+          print(f"✅ Total companies in companies.json: {total}")
+          print(f"✅ HTML pages found: {total - len(missing)}")
+
+          if missing:
+              print(f"⚠️  Missing HTML pages ({len(missing)}): {', '.join(missing)}")
+              print("   Run: python3 scripts/generate_pages.py  to regenerate.")
+          else:
+              print("✅ All companies have corresponding HTML pages.")
+          EOF
+
+      # ── Step 5: 重新生成 update_log.json ───────────────────────────────────
+      # 根據 companies.json 的實際 last_updated 欄位重新計算每間企業的
+      # days_since_update，確保 update_log.json 反映最新狀態。
+      # 此步驟不修改任何財報數據，純屬計算操作。
+      - name: Regenerate update_log.json
         run: python scripts/generate_update_log.py
 
-      # ── Step 7: 重新生成所有 HTML 頁面 ─────────────────────────────────────
+      # ── Step 6: 重新生成所有 HTML 頁面 ─────────────────────────────────────
+      # 確保所有頁面與 companies.json 保持同步。
+      # 若 companies.json 未變更，生成的 HTML 內容與現有頁面相同，
+      # git diff 不會偵測到變更，不會產生空的 commit。
       - name: Regenerate all HTML pages
         run: python scripts/generate_pages.py
 
-      # ── Step 8: 提交並推送所有更新 ─────────────────────────────────────────
-      - name: Commit and push updated files
+      # ── Step 7: 提交並推送（僅在有實際變更時）─────────────────────────────
+      - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ stocks/ index.html
-          # 只有在有實際變更時才 commit，避免產生空的 commit
-          git diff --staged --quiet || git commit -m "chore(data): auto-update company data & pages [$(date -u +'%Y-%m-%d')]
+          git add data/update_log.json stocks/ index.html
+          git diff --staged --quiet || git commit -m "chore: weekly integrity check & page sync [$(date -u +'%Y-%m-%d')]
 
-          - Regenerated update_log.json from companies.json
-          - Updated stale company revenue segment data via AI Agent
-          - Regenerated all HTML pages with latest data"
+          - Verified all companies have corresponding HTML pages
+          - Regenerated update_log.json (days_since_update recalculated)
+          - Regenerated all HTML pages to sync with companies.json"
           git push
 
-      # ── Step 9: 部署確認 ────────────────────────────────────────────────────
-      # GitHub Pages 會自動偵測 main 分支的更新並重新部署。
+      # ── Step 8: 部署確認 ────────────────────────────────────────────────────
       - name: Deployment summary
         run: |
-          echo "✅ Data update complete."
-          echo "   GitHub Pages will automatically redeploy from the main branch."
+          echo "✅ Integrity check complete."
+          echo "   GitHub Pages will automatically redeploy if any changes were pushed."
           echo "   Site URL: https://outliersecon.github.io/us-stock-insight/"
+          echo ""
+          echo "ℹ️  Note: Financial data updates are handled by Manus Scheduled Task,"
+          echo "   not this workflow. See README for details."
