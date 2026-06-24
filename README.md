@@ -28,10 +28,40 @@
 本專案採用現代化的 Serverless 與靜態網站架構，透過 GitHub 提供的生態系完成所有工作：
 
 ### 1. 數據獲取與處理層 (Data Fetching & Processing)
-- **SPY 持倉獲取器** (`scripts/fetch_spy_holdings.py`)：自動從 State Street 抓取最新的 SPY 成分股 CSV 檔案。
-- **AI 批量建檔器** (`scripts/bulk_add_companies.py`)：利用 AI 批量生成 S&P 500 前 150 大企業的業務資料，目前已擴充至 113 間。
-- **AI Agent 處理器** (`scripts/ai_agent_parser.py`)：讀取持倉清單，呼叫 OpenAI API 解析各公司的最新財報（SEC EDGAR），結構化提取營收佔比，輸出統一格式的 JSON 檔案至 `data/processed/companies.json`。
-- **內部更新追蹤日誌** (`scripts/generate_update_log.py`)：每次更新後，自動從 `companies.json` 生成 `data/update_log.json`。
+
+`scripts/` 資料夾採用**職責單一、可重複使用**的設計原則，每個腳本均有明確用途：
+
+| 腳本 | 用途 |
+|---|---|
+| `fetch_spy_holdings.py` | 自動從 State Street 抓取最新的 SPY 成分股 CSV 檔案 |
+| `add_companies.py` | **通用企業新增工具**：透過 AI 為任意 Ticker 清單生成業務描述與營收結構，支援命令列參數（見下方說明）|
+| `sync_index_data.py` | **指數資料同步工具**：統一管理 SPY/QQQ 持倉權重、`in_sp500` 與 `nasdaq100` 欄位的更新 |
+| `ai_agent_parser.py` | **AI 定期更新器**：讀取 `update_log.json`，自動更新超過閾值（預設 30 天）的過期企業資料 |
+| `generate_update_log.py` | 從 `companies.json` 自動生成 `data/update_log.json`，供 AI 更新器判斷哪些企業需要更新 |
+| `generate_pages.py` | 根據 `companies.json` 批量生成所有 HTML 頁面（`index.html` 與 `stocks/*.html`）|
+
+#### 新增企業的標準流程
+
+```bash
+# 1. 新增一間或多間企業（AI 自動生成業務描述與營收結構）
+python3 scripts/add_companies.py TICKER1 TICKER2
+
+# 新增 S&P 500 成員（加上 --sp500 旗標）
+python3 scripts/add_companies.py --sp500 NEWSTOCK
+
+# 強制覆蓋已存在的企業資料
+python3 scripts/add_companies.py --overwrite AAPL
+
+# 從文字檔批量新增（每行一個 Ticker，# 開頭為注釋）
+python3 scripts/add_companies.py --file tickers.txt
+
+# 2. 同步最新的 SPY/QQQ 持倉權重
+python3 scripts/sync_index_data.py
+
+# 3. 重新生成追蹤日誌與所有 HTML 頁面
+python3 scripts/generate_update_log.py
+python3 scripts/generate_pages.py
+```
 
 ### 2. 內部文件設計：`update_log.json`
 為避免 AI 產生幻覺並節省 API Token，專案設計了自動生成的內部追蹤文件 `update_log.json`。
@@ -77,9 +107,10 @@ us-stock-insight/
 │   ├── processed/             # 存放 AI 處理後的 companies.json
 │   └── update_log.json        # 自動生成的更新追蹤日誌
 ├── scripts/
+│   ├── add_companies.py       # 通用企業新增工具（支援任意 Ticker，可重複使用）
+│   ├── sync_index_data.py     # SPY/QQQ 持倉權重與指數成員資料同步工具
 │   ├── fetch_spy_holdings.py  # 抓取 SPY 持倉的 Python 腳本
 │   ├── ai_agent_parser.py     # 呼叫 LLM 提取營收佔比的智慧更新腳本
-│   ├── bulk_add_companies.py  # 批量生成新增企業資料的 AI 腳本
 │   ├── generate_update_log.py # 生成更新追蹤日誌的腳本
 │   └── generate_pages.py      # 根據 JSON 批量生成 HTML 頁面的腳本
 ├── stocks/                    # 動態生成的個別企業 HTML 頁面 (例如 AAPL.html)
@@ -110,3 +141,5 @@ us-stock-insight/
 - [x] 加入 `escapeHtml()` 將所有來自 JSON 的動態內容進行 HTML 變數轉義，防止 XSS 與版面崩潰風險
 - [x] 修復業務板塊排序：`companies.json` 與個別頁面的 `revenue_segments` 均按百分比降床排序（大到小）
 - [x] 加入 QQQ 持倉權重資料，支援按 QQQ weight 排序，並在卡片上動態顯示 QQQ / SPY 權重
+- [x] 加入 Pagination 功能（每頁 25/50/100/全部，上下方雙導覽列）
+- [x] 重整 `scripts/` 資料夾：移除一次性腳本，建立通用的 `add_companies.py`（支援 CLI 參數）與 `sync_index_data.py`（統一管理指數資料）
