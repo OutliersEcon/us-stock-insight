@@ -61,8 +61,13 @@
     .seg-bar { height: 100%; border-radius: 3px; transition: width .6s ease; }
     .seg-desc { font-size: 12px; color: var(--text-muted); padding-left: 18px; }
 
-    .note-card { grid-column: 1 / -1; }
-    .note { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .sources-card { grid-column: 1 / -1; }
+    .sources-note { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+    .sources-list { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 8px; }
+    .source-item a { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--accent); text-decoration: none; transition: opacity .2s; }
+    .source-item a:hover { opacity: .75; text-decoration: underline; }
+    .source-item a::before { content: '↗'; font-size: 11px; opacity: .6; }
+    .sources-disclaimer { font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 10px; line-height: 1.5; }
 
     footer { border-top: 1px solid var(--border); padding: 20px 24px; text-align: center; color: var(--text-muted); font-size: 12px; }
     footer a { color: var(--accent); text-decoration: none; }
@@ -88,7 +93,7 @@
       </div>
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
-        
+        <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
         
       </div>
       <p class="hero-desc">Palantir 是以資料整合與分析平台為核心的軟體公司，透過 Foundry 與 Gotham 為政府與企業提供即時資料連結、工業化資料治理與複雜決策支援。其競爭優勢包括深度客製化部署、與關鍵政府機構的長期合約、平台網絡效應與高切換成本，使其在處理敏感或複雜資料工作負載上具備領先地位。</p>
@@ -137,16 +142,22 @@
         </div>
   </div>
 
-  <!-- Note -->
-  <div class="card note-card">
-    <div class="note">
-      ⚠️ 本頁面的營收佔比數據基於公司最新年報及公開財報資料（最後更新：2026-06-24），僅供參考。各業務板塊的實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。
-    </div>
+  <!-- Sources -->
+  <div class="card sources-card">
+    <div class="card-title"><span class="card-title-icon">🔗</span> 資料來源</div>
+    <p class="sources-note">以下為本頁面營收佔比數據的參考來源，讀者可自行查證。最後更新：2026-06-24。</p>
+    <ul class="sources-list">
+      <li class="source-item"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PLTR&type=10-K" target="_blank" rel="noopener noreferrer">SEC EDGAR 10-K Filing Page - Palantir Technologies Inc.</a></li>
+      <li class="source-item"><a href="https://investors.palantir.com/" target="_blank" rel="noopener noreferrer">Palantir Technologies Investor Relations</a></li>
+      <li class="source-item"><a href="https://investors.palantir.com/news-details/2025/Palantir-Technologies-Inc.-Reports-Fourth-Quarter-and-Full-Year-2024-Results/" target="_blank" rel="noopener noreferrer">Palantir Technologies Annual Report & Earnings Releases</a></li>
+      <li class="source-item"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001321655&type=10-K&dateb=&owner=include&count=10" target="_blank" rel="noopener noreferrer">Palantir Technologies 10-K FY2024 - SEC EDGAR Direct Filing</a></li>
+    </ul>
+    <p class="sources-disclaimer">⚠️ 營收佔比為概略性數據，實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。</p>
   </div>
 </div>
 
 <footer>
-  <p>資料來源：公司年報、SEC EDGAR &nbsp;|&nbsp; <a href="../index.html">返回 US Stock Insight 首頁</a></p>
+  <p><a href="../index.html">← 返回 US Stock Insight 首頁</a></p>
 </footer>
 
 <script>

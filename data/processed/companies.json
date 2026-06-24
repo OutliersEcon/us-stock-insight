@@ -30,7 +30,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 12.9
+    "qqq_weight": 12.9,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - NVIDIA Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=NVDA&type=10-K"
+      },
+      {
+        "title": "NVIDIA Investor Relations",
+        "url": "https://investor.nvidia.com/home/default.aspx"
+      },
+      {
+        "title": "NVIDIA Annual Reports & Proxy",
+        "url": "https://investor.nvidia.com/financial-info/annual-reports/default.aspx"
+      },
+      {
+        "title": "NVIDIA Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.nvidia.com/news-details/2024/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2024/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "AAPL",
@@ -68,7 +86,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 11.08
+    "qqq_weight": 11.08,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Apple Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AAPL&type=10-K"
+      },
+      {
+        "title": "Apple Investor Relations",
+        "url": "https://investor.apple.com/"
+      },
+      {
+        "title": "Apple Annual Reports",
+        "url": "https://investor.apple.com/sec-filings/annual-reports/default.aspx"
+      },
+      {
+        "title": "Apple Q4 FY2024 Earnings Press Release",
+        "url": "https://www.apple.com/newsroom/pdfs/fy2024-q4/FY24_Q4_Consolidated_Financial_Statements.pdf"
+      }
+    ]
   },
   {
     "ticker": "MSFT",
@@ -96,7 +132,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 7.04
+    "qqq_weight": 7.04,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Microsoft Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MSFT&type=10-K"
+      },
+      {
+        "title": "Microsoft Investor Relations",
+        "url": "https://www.microsoft.com/en-us/investor"
+      },
+      {
+        "title": "Microsoft Annual Report FY2024",
+        "url": "https://www.microsoft.com/en-us/investor/annual-reports"
+      },
+      {
+        "title": "Microsoft FY2024 Q4 Earnings Press Release",
+        "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2024-q4/press-release-earnings"
+      }
+    ]
   },
   {
     "ticker": "AMZN",
@@ -134,7 +188,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 6.44
+    "qqq_weight": 6.44,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Amazon.com Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AMZN&type=10-K"
+      },
+      {
+        "title": "Amazon Investor Relations",
+        "url": "https://ir.aboutamazon.com/overview/default.aspx"
+      },
+      {
+        "title": "Amazon Annual Reports & Proxies",
+        "url": "https://ir.aboutamazon.com/annual-reports-proxies-and-shareholder-letters/default.aspx"
+      },
+      {
+        "title": "Amazon Q4 2024 Earnings Release",
+        "url": "https://ir.aboutamazon.com/news-releases/news-release-details/amazoncom-announces-fourth-quarter-results-2"
+      }
+    ]
   },
   {
     "ticker": "GOOGL",
@@ -172,7 +244,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 5.58
+    "qqq_weight": 5.58,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Alphabet Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=GOOGL&type=10-K"
+      },
+      {
+        "title": "Alphabet Inc. Investor Relations",
+        "url": "https://abc.xyz/investor/"
+      },
+      {
+        "title": "Alphabet Inc. 2023 Annual Report (10-K FY2023)",
+        "url": "https://abc.xyz/investor/static/pdf/20240126_alphabet_10K.pdf"
+      },
+      {
+        "title": "Alphabet Inc. Q4 2023 Earnings Press Release",
+        "url": "https://abc.xyz/investor/static/pdf/2023Q4_alphabet_earnings_release.pdf"
+      }
+    ]
   },
   {
     "ticker": "GOOG",
@@ -210,7 +300,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 5.22
+    "qqq_weight": 5.22,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Alphabet Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=GOOG&type=10-K"
+      },
+      {
+        "title": "Alphabet Investor Relations",
+        "url": "https://abc.xyz/investor/"
+      },
+      {
+        "title": "Alphabet Inc. Annual Report 2023 (10-K)",
+        "url": "https://abc.xyz/assets/9a/bd/838c3ee4404a9a4e5c0c6e6e6e6e/2023-annual-report.pdf"
+      },
+      {
+        "title": "Alphabet Q4 2023 Earnings Press Release",
+        "url": "https://abc.xyz/investor/static/pdf/2023Q4_alphabet_earnings_release.pdf"
+      }
+    ]
   },
   {
     "ticker": "AVGO",
@@ -233,7 +341,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 4.8
+    "qqq_weight": 4.8,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Broadcom Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AVGO&type=10-K"
+      },
+      {
+        "title": "Broadcom Inc. Investor Relations",
+        "url": "https://investors.broadcom.com/"
+      },
+      {
+        "title": "Broadcom Inc. Annual Reports & Proxy",
+        "url": "https://investors.broadcom.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Broadcom Inc. Press Releases & Earnings",
+        "url": "https://investors.broadcom.com/news-releases/news-releases-details/2024/Broadcom-Inc.-Reports-Fourth-Quarter-and-Fiscal-Year-2024-Financial-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "TSLA",
@@ -266,7 +392,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 3.79
+    "qqq_weight": 3.79,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Tesla Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TSLA&type=10-K"
+      },
+      {
+        "title": "Tesla Investor Relations",
+        "url": "https://ir.tesla.com/"
+      },
+      {
+        "title": "Tesla Annual Report / SEC Filings",
+        "url": "https://ir.tesla.com/sec-filings/annual-reports"
+      },
+      {
+        "title": "Tesla Q4 and FY2024 Earnings Release",
+        "url": "https://ir.tesla.com/sec-filings/quarterly-earnings"
+      }
+    ]
   },
   {
     "ticker": "META",
@@ -289,7 +433,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 3.65
+    "qqq_weight": 3.65,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Meta Platforms Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=META&type=10-K"
+      },
+      {
+        "title": "Meta Platforms Investor Relations",
+        "url": "https://investor.fb.com/home/default.aspx"
+      },
+      {
+        "title": "Meta Platforms Q4 2024 Earnings Press Release",
+        "url": "https://investor.fb.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx"
+      },
+      {
+        "title": "Meta Platforms Annual Report 10-K FY2024 - SEC EDGAR Direct Filing",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-K&dateb=&owner=include&count=10"
+      }
+    ]
   },
   {
     "ticker": "BRK-B",
@@ -332,7 +494,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Berkshire Hathaway",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=BRK-B&type=10-K"
+      },
+      {
+        "title": "Berkshire Hathaway Investor Relations",
+        "url": "https://www.berkshirehathaway.com/reports.html"
+      },
+      {
+        "title": "Berkshire Hathaway Annual Report 2023 (10-K)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001067983&type=10-K&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "Berkshire Hathaway Annual Shareholders Letter and Reports",
+        "url": "https://www.berkshirehathaway.com/letters/letters.html"
+      }
+    ]
   },
   {
     "ticker": "LLY",
@@ -370,7 +550,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Eli Lilly and Company",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=LLY&type=10-K"
+      },
+      {
+        "title": "Eli Lilly Investor Relations",
+        "url": "https://investor.lilly.com/"
+      },
+      {
+        "title": "Eli Lilly Annual Report & Proxy",
+        "url": "https://investor.lilly.com/annual-reports-and-proxy"
+      },
+      {
+        "title": "Eli Lilly Q4 2024 Earnings Press Release",
+        "url": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-fourth-quarter-and-full-year-2024-financial-results"
+      }
+    ]
   },
   {
     "ticker": "WMT",
@@ -398,7 +596,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 2.35
+    "qqq_weight": 2.35,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Walmart Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=WMT&type=10-K"
+      },
+      {
+        "title": "Walmart Investor Relations",
+        "url": "https://stock.walmart.com/investors/financial-information/sec-filings/default.aspx"
+      },
+      {
+        "title": "Walmart Annual Report FY2024",
+        "url": "https://stock.walmart.com/investors/financial-information/annual-reports-and-proxies/default.aspx"
+      },
+      {
+        "title": "Walmart Q4 FY2024 Earnings Release",
+        "url": "https://stock.walmart.com/investors/news-and-events/financial-news/press-release-details/2024/Walmart-Reports-Fourth-Quarter-and-Full-Year-Fiscal-Year-2024-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "JPM",
@@ -431,7 +647,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - JPMorgan Chase & Co.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=JPM&type=10-K"
+      },
+      {
+        "title": "JPMorgan Chase Investor Relations",
+        "url": "https://www.jpmorganchase.com/ir"
+      },
+      {
+        "title": "JPMorgan Chase 2023 Annual Report",
+        "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/annualreport-2023.pdf"
+      },
+      {
+        "title": "JPMorgan Chase Q4 2023 Earnings Press Release",
+        "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2023/4th-quarter/4q23-earnings-press-release.pdf"
+      }
+    ]
   },
   {
     "ticker": "AMD",
@@ -464,7 +698,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 2.28
+    "qqq_weight": 2.28,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Advanced Micro Devices Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AMD&type=10-K"
+      },
+      {
+        "title": "AMD Investor Relations",
+        "url": "https://ir.amd.com/"
+      },
+      {
+        "title": "AMD Annual Reports & Proxy",
+        "url": "https://ir.amd.com/financial-information/annual-reports"
+      },
+      {
+        "title": "AMD Q4 and Full Year 2023 Financial Results Press Release",
+        "url": "https://ir.amd.com/news-releases/news-release-details/amd-reports-fourth-quarter-and-full-year-2023-financial-results"
+      }
+    ]
   },
   {
     "ticker": "INTC",
@@ -507,7 +759,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 1.74
+    "qqq_weight": 1.74,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Intel Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=INTC&type=10-K"
+      },
+      {
+        "title": "Intel Investor Relations",
+        "url": "https://www.intc.com/investor-relations/overview/default.aspx"
+      },
+      {
+        "title": "Intel Annual Reports and Proxy",
+        "url": "https://www.intc.com/investor-relations/financial-info/annual-reports/default.aspx"
+      },
+      {
+        "title": "Intel Q4 2024 Earnings Release",
+        "url": "https://www.intc.com/investor-relations/investor-news/press-release-details/2025/Intel-Reports-Fourth-Quarter-and-Full-Year-2024-Financial-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "V",
@@ -540,7 +810,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Visa Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=V&type=10-K"
+      },
+      {
+        "title": "Visa Inc. Investor Relations",
+        "url": "https://investor.visa.com/"
+      },
+      {
+        "title": "Visa Inc. Annual Reports & Proxy",
+        "url": "https://investor.visa.com/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Visa Inc. Earnings Press Releases",
+        "url": "https://investor.visa.com/news/financial-releases/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "MU",
@@ -568,7 +856,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 3.33
+    "qqq_weight": 3.33,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Micron Technology Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MU&type=10-K"
+      },
+      {
+        "title": "Micron Technology Investor Relations",
+        "url": "https://investors.micron.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Micron Technology Annual Report FY2024 - SEC Filing",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000723125&type=10-K&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "Micron Technology Earnings Press Releases",
+        "url": "https://investors.micron.com/news-releases/news-release-details"
+      }
+    ]
   },
   {
     "ticker": "XOM",
@@ -601,7 +907,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Exxon Mobil Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=XOM&type=10-K"
+      },
+      {
+        "title": "Exxon Mobil Investor Relations",
+        "url": "https://investor.exxonmobil.com/"
+      },
+      {
+        "title": "Exxon Mobil 2023 Annual Report",
+        "url": "https://corporate.exxonmobil.com/investors/annual-report"
+      },
+      {
+        "title": "Exxon Mobil Q4 2023 Earnings Release",
+        "url": "https://investor.exxonmobil.com/news-releases/news-release-details/exxon-mobil-earns-361-billion-2023"
+      }
+    ]
   },
   {
     "ticker": "JNJ",
@@ -624,7 +948,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Johnson & Johnson",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=JNJ&type=10-K"
+      },
+      {
+        "title": "Johnson & Johnson Investor Relations",
+        "url": "https://investor.jnj.com/"
+      },
+      {
+        "title": "Johnson & Johnson 2023 Annual Report",
+        "url": "https://investor.jnj.com/annual-reports"
+      },
+      {
+        "title": "Johnson & Johnson Q4 2023 Earnings Press Release",
+        "url": "https://investor.jnj.com/news-releases/news-release-details/johnson-johnson-reports-2023-fourth-quarter-and-full-year-results"
+      }
+    ]
   },
   {
     "ticker": "ORCL",
@@ -657,7 +999,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Oracle Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ORCL&type=10-K"
+      },
+      {
+        "title": "Oracle Investor Relations",
+        "url": "https://investor.oracle.com/investor-news/financial-information/sec-filings/default.aspx"
+      },
+      {
+        "title": "Oracle Annual Reports",
+        "url": "https://investor.oracle.com/investor-news/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Oracle FY2024 Earnings Press Release",
+        "url": "https://investor.oracle.com/investor-news/news-details/2024/Oracle-Fiscal-2024-Fourth-Quarter-and-Full-Year-Financial-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "LRCX",
@@ -680,7 +1040,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 1.24
+    "qqq_weight": 1.24,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Lam Research Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=LRCX&type=10-K"
+      },
+      {
+        "title": "Lam Research Investor Relations",
+        "url": "https://investor.lamresearch.com/"
+      },
+      {
+        "title": "Lam Research Annual Reports & Proxy",
+        "url": "https://investor.lamresearch.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Lam Research Earnings Releases",
+        "url": "https://investor.lamresearch.com/financial-information/quarterly-earnings"
+      }
+    ]
   },
   {
     "ticker": "CSCO",
@@ -718,7 +1096,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 1.19
+    "qqq_weight": 1.19,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Cisco Systems Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CSCO&type=10-K"
+      },
+      {
+        "title": "Cisco Investor Relations",
+        "url": "https://investor.cisco.com/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Cisco FY2024 Annual Report & Earnings Releases",
+        "url": "https://investor.cisco.com/financial-information/financial-results/default.aspx"
+      },
+      {
+        "title": "Cisco 10-K FY2024 Direct SEC Filing",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000858877&type=10-K&dateb=&owner=include&count=10"
+      }
+    ]
   },
   {
     "ticker": "AMAT",
@@ -746,7 +1142,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 1.25
+    "qqq_weight": 1.25,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Applied Materials Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AMAT&type=10-K"
+      },
+      {
+        "title": "Applied Materials Investor Relations",
+        "url": "https://ir.appliedmaterials.com/"
+      },
+      {
+        "title": "Applied Materials Annual Reports & Proxy",
+        "url": "https://ir.appliedmaterials.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Applied Materials Earnings Releases",
+        "url": "https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-announces-fourth-quarter-and-fiscal-year-2024"
+      }
+    ]
   },
   {
     "ticker": "CAT",
@@ -779,7 +1193,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Caterpillar Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CAT&type=10-K"
+      },
+      {
+        "title": "Caterpillar Inc. Investor Relations",
+        "url": "https://www.caterpillar.com/en/investors.html"
+      },
+      {
+        "title": "Caterpillar Inc. Annual Report & Proxy",
+        "url": "https://www.caterpillar.com/en/investors/annual-reports.html"
+      },
+      {
+        "title": "Caterpillar Inc. Earnings Press Releases",
+        "url": "https://www.caterpillar.com/en/news/caterpillarNews/investors.html"
+      }
+    ]
   },
   {
     "ticker": "MA",
@@ -812,7 +1244,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Mastercard Incorporated",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MA&type=10-K"
+      },
+      {
+        "title": "Mastercard Investor Relations",
+        "url": "https://investor.mastercard.com/investor-relations/default.aspx"
+      },
+      {
+        "title": "Mastercard Annual Report & Proxy",
+        "url": "https://investor.mastercard.com/investor-relations/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Mastercard Q4 2024 Earnings Press Release",
+        "url": "https://investor.mastercard.com/investor-relations/news-and-events/press-releases/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "COST",
@@ -835,7 +1285,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 1.05
+    "qqq_weight": 1.05,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Costco Wholesale Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=COST&type=10-K"
+      },
+      {
+        "title": "Costco Investor Relations Page",
+        "url": "https://investor.costco.com/"
+      },
+      {
+        "title": "Costco Annual Reports and Proxy Statements",
+        "url": "https://investor.costco.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Costco Earnings Releases and Financial Information",
+        "url": "https://investor.costco.com/financial-information/quarterly-earnings"
+      }
+    ]
   },
   {
     "ticker": "ABBV",
@@ -873,7 +1341,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - AbbVie Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ABBV&type=10-K"
+      },
+      {
+        "title": "AbbVie Investor Relations",
+        "url": "https://investors.abbvie.com/investor-relations"
+      },
+      {
+        "title": "AbbVie Annual Reports & Proxy",
+        "url": "https://investors.abbvie.com/financial-information/annual-reports"
+      },
+      {
+        "title": "AbbVie Q4 and Full-Year 2023 Earnings Press Release",
+        "url": "https://investors.abbvie.com/news-releases/news-release-details/abbvie-reports-fourth-quarter-and-full-year-2023-financial-results"
+      }
+    ]
   },
   {
     "ticker": "BAC",
@@ -906,7 +1392,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Bank of America",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=BAC&type=10-K"
+      },
+      {
+        "title": "Bank of America Investor Relations",
+        "url": "https://investor.bankofamerica.com/"
+      },
+      {
+        "title": "Bank of America Annual Reports",
+        "url": "https://investor.bankofamerica.com/annual-reports"
+      },
+      {
+        "title": "Bank of America Q4 2024 Earnings Press Release",
+        "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2025/01/bank-of-america-reports-fourth-quarter-2024-financial-results.html"
+      }
+    ]
   },
   {
     "ticker": "UNH",
@@ -939,7 +1443,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - UnitedHealth Group",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=UNH&type=10-K"
+      },
+      {
+        "title": "UnitedHealth Group Investor Relations",
+        "url": "https://www.unitedhealthgroup.com/investor-relations.html"
+      },
+      {
+        "title": "UnitedHealth Group Annual Reports",
+        "url": "https://www.unitedhealthgroup.com/investor-relations/annual-reports.html"
+      },
+      {
+        "title": "UnitedHealth Group Q4 2024 Earnings Release",
+        "url": "https://ir.unitedhealthgroup.com/news-releases/news-release-details/unitedhealthgroup-reports-fourth-quarter-and-full-year-2024"
+      }
+    ]
   },
   {
     "ticker": "GE",
@@ -972,7 +1494,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - General Electric",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=GE&type=10-K"
+      },
+      {
+        "title": "GE Investor Relations",
+        "url": "https://www.ge.com/investor-relations"
+      },
+      {
+        "title": "GE 2023 Annual Report",
+        "url": "https://www.ge.com/investor-relations/annual-reports"
+      },
+      {
+        "title": "GE Q4 2023 Earnings Release",
+        "url": "https://www.ge.com/investor-relations/earnings"
+      }
+    ]
   },
   {
     "ticker": "MS",
@@ -1000,7 +1540,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Morgan Stanley",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MS&type=10-K"
+      },
+      {
+        "title": "Morgan Stanley Investor Relations",
+        "url": "https://www.morganstanley.com/about-us-ir"
+      },
+      {
+        "title": "Morgan Stanley Annual Reports",
+        "url": "https://www.morganstanley.com/about-us-ir/annual-reports"
+      },
+      {
+        "title": "Morgan Stanley Q4 2024 Earnings Press Release",
+        "url": "https://www.morganstanley.com/content/dam/msdotcom/en/about-us-ir/shareholder/4q2024/4Q2024-Earnings-Press-Release.pdf"
+      }
+    ]
   },
   {
     "ticker": "PG",
@@ -1038,7 +1596,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Procter & Gamble",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PG&type=10-K"
+      },
+      {
+        "title": "Procter & Gamble Investor Relations",
+        "url": "https://pginvestor.com/"
+      },
+      {
+        "title": "Procter & Gamble Annual Reports & Proxy",
+        "url": "https://pginvestor.com/financial-reporting/annual-reports-and-proxy/default.aspx"
+      },
+      {
+        "title": "Procter & Gamble Earnings Press Releases",
+        "url": "https://pginvestor.com/financial-reporting/press-releases/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "KO",
@@ -1066,7 +1642,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - The Coca-Cola Company",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=KO&type=10-K"
+      },
+      {
+        "title": "The Coca-Cola Company Investor Relations",
+        "url": "https://investors.coca-colacompany.com/"
+      },
+      {
+        "title": "The Coca-Cola Company Annual Report & Proxy",
+        "url": "https://investors.coca-colacompany.com/financial-information/annual-reports"
+      },
+      {
+        "title": "The Coca-Cola Company Q4 and Full Year 2023 Earnings Release",
+        "url": "https://investors.coca-colacompany.com/financial-information/press-releases"
+      }
+    ]
   },
   {
     "ticker": "CVX",
@@ -1094,7 +1688,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Chevron Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CVX&type=10-K"
+      },
+      {
+        "title": "Chevron Investor Relations",
+        "url": "https://www.chevron.com/investors"
+      },
+      {
+        "title": "Chevron 2023 Annual Report",
+        "url": "https://www.chevron.com/annual-report"
+      },
+      {
+        "title": "Chevron Q4 2023 Earnings Release",
+        "url": "https://chevroncorp.gcs-web.com/news-releases/news-release-details/chevron-reports-fourth-quarter-2023-results"
+      }
+    ]
   },
   {
     "ticker": "KLAC",
@@ -1117,7 +1729,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.86
+    "qqq_weight": 0.86,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - KLA Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=KLAC&type=10-K"
+      },
+      {
+        "title": "KLA Corporation Investor Relations",
+        "url": "https://ir.kla.com/"
+      },
+      {
+        "title": "KLA Corporation Annual Reports & Proxy",
+        "url": "https://ir.kla.com/financial-information/annual-reports"
+      },
+      {
+        "title": "KLA Corporation SEC Filings",
+        "url": "https://ir.kla.com/financial-information/sec-filings"
+      }
+    ]
   },
   {
     "ticker": "GS",
@@ -1140,7 +1770,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Goldman Sachs",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=GS&type=10-K"
+      },
+      {
+        "title": "Goldman Sachs Investor Relations",
+        "url": "https://www.goldmansachs.com/investor-relations/"
+      },
+      {
+        "title": "Goldman Sachs Annual Reports",
+        "url": "https://www.goldmansachs.com/investor-relations/financials/annual-reports/"
+      },
+      {
+        "title": "Goldman Sachs Q4 2024 Earnings Release",
+        "url": "https://www.goldmansachs.com/investor-relations/financials/earnings-releases/"
+      }
+    ]
   },
   {
     "ticker": "HD",
@@ -1163,7 +1811,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - The Home Depot Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=HD&type=10-K"
+      },
+      {
+        "title": "The Home Depot Investor Relations",
+        "url": "https://ir.homedepot.com/"
+      },
+      {
+        "title": "The Home Depot Annual Reports & Proxy",
+        "url": "https://ir.homedepot.com/financial-information/annual-reports"
+      },
+      {
+        "title": "The Home Depot Q4 FY2024 Earnings Press Release",
+        "url": "https://ir.homedepot.com/news-releases/news-release-details/home-depot-reports-fourth-quarter-and-fiscal-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "NFLX",
@@ -1186,7 +1852,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.81
+    "qqq_weight": 0.81,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Netflix Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=NFLX&type=10-K"
+      },
+      {
+        "title": "Netflix Investor Relations",
+        "url": "https://ir.netflix.net/ir/doc/annual-reports-and-proxies"
+      },
+      {
+        "title": "Netflix Q4 2024 Earnings Release",
+        "url": "https://ir.netflix.net/ir/doc/earnings"
+      },
+      {
+        "title": "Netflix Annual Report 10-K FY2024 (SEC Direct Filing)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-K&dateb=&owner=include&count=10"
+      }
+    ]
   },
   {
     "ticker": "SNDK",
@@ -1214,7 +1898,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.84
+    "qqq_weight": 0.84,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - SanDisk Corporation (SNDK)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SNDK&type=10-K"
+      },
+      {
+        "title": "SanDisk Investor Relations",
+        "url": "https://investors.sandisk.com"
+      },
+      {
+        "title": "SanDisk Annual Report 10-K FY2015 (SEC EDGAR)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1000697/000100069716000009/0001000697-16-000009-index.htm"
+      },
+      {
+        "title": "SEC EDGAR Company Search - SanDisk Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001000697&type=10-K&dateb=&owner=include&count=40"
+      }
+    ]
   },
   {
     "ticker": "MRK",
@@ -1252,7 +1954,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Merck & Co. Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MRK&type=10-K"
+      },
+      {
+        "title": "Merck Investor Relations",
+        "url": "https://www.merck.com/investor-relations/home/"
+      },
+      {
+        "title": "Merck Annual Report & Proxy",
+        "url": "https://www.merck.com/investor-relations/financials/annual-reports/"
+      },
+      {
+        "title": "Merck Q4 and Full-Year 2023 Earnings Press Release",
+        "url": "https://www.merck.com/investor-relations/news/financial-news/"
+      }
+    ]
   },
   {
     "ticker": "PLTR",
@@ -1275,7 +1995,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.77
+    "qqq_weight": 0.77,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Palantir Technologies Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PLTR&type=10-K"
+      },
+      {
+        "title": "Palantir Technologies Investor Relations",
+        "url": "https://investors.palantir.com/"
+      },
+      {
+        "title": "Palantir Technologies Annual Report & Earnings Releases",
+        "url": "https://investors.palantir.com/news-details/2025/Palantir-Technologies-Inc.-Reports-Fourth-Quarter-and-Full-Year-2024-Results/"
+      },
+      {
+        "title": "Palantir Technologies 10-K FY2024 - SEC EDGAR Direct Filing",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001321655&type=10-K&dateb=&owner=include&count=10"
+      }
+    ]
   },
   {
     "ticker": "TXN",
@@ -1298,7 +2036,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.75
+    "qqq_weight": 0.75,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Texas Instruments",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TXN&type=10-K"
+      },
+      {
+        "title": "Texas Instruments Investor Relations",
+        "url": "https://investor.ti.com/"
+      },
+      {
+        "title": "Texas Instruments Annual Reports & Proxy",
+        "url": "https://investor.ti.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Texas Instruments Q4 2024 Earnings Release",
+        "url": "https://investor.ti.com/news-releases/news-release-details/texas-instruments-reports-fourth-quarter-and-2024-results"
+      }
+    ]
   },
   {
     "ticker": "GEV",
@@ -1326,7 +2082,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - GE Vernova Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=GEV&type=10-K"
+      },
+      {
+        "title": "GE Vernova Investor Relations",
+        "url": "https://www.gevernova.com/investors"
+      },
+      {
+        "title": "GE Vernova Annual Report & Earnings Releases",
+        "url": "https://www.gevernova.com/investors/financial-information/annual-reports"
+      },
+      {
+        "title": "GE Vernova Q4 2024 Earnings Press Release",
+        "url": "https://www.gevernova.com/investors/news-releases"
+      }
+    ]
   },
   {
     "ticker": "PM",
@@ -1354,7 +2128,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Philip Morris International",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PM&type=10-K"
+      },
+      {
+        "title": "Philip Morris International Investor Relations",
+        "url": "https://www.pmi.com/investor-relations/overview"
+      },
+      {
+        "title": "Philip Morris International Annual Reports & Proxy",
+        "url": "https://www.pmi.com/investor-relations/annual-reports-and-proxy"
+      },
+      {
+        "title": "Philip Morris International Earnings Releases",
+        "url": "https://www.pmi.com/investor-relations/press-releases-and-events/press-releases"
+      }
+    ]
   },
   {
     "ticker": "DELL",
@@ -1377,7 +2169,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Dell Technologies Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=DELL&type=10-K"
+      },
+      {
+        "title": "Dell Technologies Investor Relations",
+        "url": "https://ir.dell.com/"
+      },
+      {
+        "title": "Dell Technologies Annual Reports & Proxy",
+        "url": "https://ir.dell.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Dell Technologies Earnings Press Releases",
+        "url": "https://ir.dell.com/news-releases/news-release-details"
+      }
+    ]
   },
   {
     "ticker": "WFC",
@@ -1410,7 +2220,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Wells Fargo & Company",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=WFC&type=10-K"
+      },
+      {
+        "title": "Wells Fargo Investor Relations",
+        "url": "https://www.wellsfargo.com/about/investor-relations/"
+      },
+      {
+        "title": "Wells Fargo Annual Reports & Proxy Statements",
+        "url": "https://www.wellsfargo.com/about/investor-relations/annual-reports/"
+      },
+      {
+        "title": "Wells Fargo Q4 2024 Earnings Press Release",
+        "url": "https://newsroom.wf.com/English/news-releases-details/2025/Wells-Fargo-Reports-Fourth-Quarter-2024-Financial-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "C",
@@ -1438,7 +2266,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Citigroup Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=C&type=10-K"
+      },
+      {
+        "title": "Citigroup Investor Relations",
+        "url": "https://www.citigroup.com/global/investors"
+      },
+      {
+        "title": "Citigroup 2023 Annual Report",
+        "url": "https://www.citigroup.com/global/investors/annual-reports"
+      },
+      {
+        "title": "Citigroup Q4 2023 Earnings Press Release",
+        "url": "https://www.citigroup.com/global/investors/earnings"
+      }
+    ]
   },
   {
     "ticker": "IBM",
@@ -1476,7 +2322,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - IBM",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=IBM&type=10-K"
+      },
+      {
+        "title": "IBM Investor Relations",
+        "url": "https://www.ibm.com/investor"
+      },
+      {
+        "title": "IBM Annual Report 2023",
+        "url": "https://www.ibm.com/annualreport/"
+      },
+      {
+        "title": "IBM Q4 2023 Earnings Press Release",
+        "url": "https://newsroom.ibm.com/2024-01-24-IBM-Reports-2023-Fourth-Quarter-and-Full-Year-Results"
+      }
+    ]
   },
   {
     "ticker": "MRVL",
@@ -1504,7 +2368,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.67
+    "qqq_weight": 0.67,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Marvell Technology Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MRVL&type=10-K"
+      },
+      {
+        "title": "Marvell Technology Investor Relations",
+        "url": "https://investor.marvell.com/"
+      },
+      {
+        "title": "Marvell Technology Annual Reports & Proxy",
+        "url": "https://investor.marvell.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Marvell Technology Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.marvell.com/news-releases/news-release-details/marvell-technology-inc-reports-fourth-quarter-and-fiscal-year"
+      }
+    ]
   },
   {
     "ticker": "RTX",
@@ -1537,7 +2419,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - RTX Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=RTX&type=10-K"
+      },
+      {
+        "title": "RTX Corporation Investor Relations",
+        "url": "https://investor.rtx.com/investor-relations"
+      },
+      {
+        "title": "RTX Corporation Annual Reports & Proxy",
+        "url": "https://investor.rtx.com/financial-information/annual-reports"
+      },
+      {
+        "title": "RTX Corporation Earnings Releases",
+        "url": "https://investor.rtx.com/financial-information/earnings-releases"
+      }
+    ]
   },
   {
     "ticker": "LIN",
@@ -1560,7 +2460,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.59
+    "qqq_weight": 0.59,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Linde PLC",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=LIN&type=10-K"
+      },
+      {
+        "title": "Linde PLC Investor Relations",
+        "url": "https://www.linde.com/investor-relations"
+      },
+      {
+        "title": "Linde PLC Annual Reports & Proxy",
+        "url": "https://www.linde.com/investor-relations/financial-information/annual-reports"
+      },
+      {
+        "title": "Linde PLC Earnings Releases",
+        "url": "https://www.linde.com/investor-relations/financial-information/earnings-releases"
+      }
+    ]
   },
   {
     "ticker": "WDC",
@@ -1583,7 +2501,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.65
+    "qqq_weight": 0.65,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Western Digital Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=WDC&type=10-K"
+      },
+      {
+        "title": "Western Digital Investor Relations",
+        "url": "https://investor.westerndigital.com/financial-information/sec-filings"
+      },
+      {
+        "title": "Western Digital Annual Report FY2024",
+        "url": "https://investor.westerndigital.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Western Digital Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.westerndigital.com/news-releases/news-release-details/western-digital-reports-fiscal-fourth-quarter-and-full-year-2024"
+      }
+    ]
   },
   {
     "ticker": "PANW",
@@ -1611,7 +2547,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.6
+    "qqq_weight": 0.6,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Palo Alto Networks",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PANW&type=10-K"
+      },
+      {
+        "title": "Palo Alto Networks Investor Relations",
+        "url": "https://investors.paloaltonetworks.com/investor-relations"
+      },
+      {
+        "title": "Palo Alto Networks Annual Reports & Proxies",
+        "url": "https://investors.paloaltonetworks.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Palo Alto Networks Q4 FY2024 Earnings Press Release",
+        "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-reports-fiscal-fourth-quarter-and-fiscal-year-5"
+      }
+    ]
   },
   {
     "ticker": "AXP",
@@ -1644,7 +2598,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - American Express Company",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AXP&type=10-K"
+      },
+      {
+        "title": "American Express Investor Relations",
+        "url": "https://ir.americanexpress.com/investor-relations/overview/default.aspx"
+      },
+      {
+        "title": "American Express Annual Reports & Proxy",
+        "url": "https://ir.americanexpress.com/investor-relations/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "American Express Q4 2024 Earnings Press Release",
+        "url": "https://ir.americanexpress.com/investor-relations/press-releases/press-release-details/2025/American-Express-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "QCOM",
@@ -1672,7 +2644,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.6
+    "qqq_weight": 0.6,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - QUALCOMM",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=QCOM&type=10-K"
+      },
+      {
+        "title": "QUALCOMM Investor Relations",
+        "url": "https://investor.qualcomm.com/financial-information/sec-filings"
+      },
+      {
+        "title": "QUALCOMM Annual Report FY2024",
+        "url": "https://investor.qualcomm.com/financial-information/annual-reports"
+      },
+      {
+        "title": "QUALCOMM Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.qualcomm.com/news-releases/news-release-details/qualcomm-announces-fourth-quarter-and-fiscal-2024-results"
+      }
+    ]
   },
   {
     "ticker": "ANET",
@@ -1700,7 +2690,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Arista Networks Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ANET&type=10-K"
+      },
+      {
+        "title": "Arista Networks Investor Relations",
+        "url": "https://investors.arista.com/"
+      },
+      {
+        "title": "Arista Networks Annual Reports & Proxy",
+        "url": "https://investors.arista.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Arista Networks Earnings Releases",
+        "url": "https://investors.arista.com/financial-information/press-releases"
+      }
+    ]
   },
   {
     "ticker": "ADI",
@@ -1738,7 +2746,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.54
+    "qqq_weight": 0.54,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Analog Devices Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ADI&type=10-K"
+      },
+      {
+        "title": "Analog Devices Investor Relations",
+        "url": "https://investor.analog.com/investor-relations"
+      },
+      {
+        "title": "Analog Devices Annual Report FY2024",
+        "url": "https://investor.analog.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Analog Devices Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-reports-fourth-quarter-and-fiscal-year-2024"
+      }
+    ]
   },
   {
     "ticker": "APH",
@@ -1771,7 +2797,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Amphenol Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=APH&type=10-K"
+      },
+      {
+        "title": "Amphenol Corporation Investor Relations",
+        "url": "https://investors.amphenol.com/"
+      },
+      {
+        "title": "Amphenol Corporation Annual Reports & Proxy",
+        "url": "https://investors.amphenol.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Amphenol Corporation Earnings Releases",
+        "url": "https://investors.amphenol.com/news-releases/news-releases-overview"
+      }
+    ]
   },
   {
     "ticker": "PEP",
@@ -1814,7 +2858,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.49
+    "qqq_weight": 0.49,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - PepsiCo Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PEP&type=10-K"
+      },
+      {
+        "title": "PepsiCo Investor Relations",
+        "url": "https://www.pepsico.com/who-we-are/investors"
+      },
+      {
+        "title": "PepsiCo Annual Reports & Proxy",
+        "url": "https://www.pepsico.com/who-we-are/investors/annual-reports-and-proxy"
+      },
+      {
+        "title": "PepsiCo Q4 2023 Earnings Press Release",
+        "url": "https://www.pepsico.com/docs/default-source/investors/2024/q4-2023-earnings-release.pdf"
+      }
+    ]
   },
   {
     "ticker": "MCD",
@@ -1842,7 +2904,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - McDonald's Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MCD&type=10-K"
+      },
+      {
+        "title": "McDonald's Investor Relations",
+        "url": "https://corporate.mcdonalds.com/corpmcd/investors.html"
+      },
+      {
+        "title": "McDonald's 2023 Annual Report",
+        "url": "https://corporate.mcdonalds.com/content/dam/sites/corp/nfl/pdf/MCD-2023-Annual-Report.pdf"
+      },
+      {
+        "title": "McDonald's Q4 2023 Earnings Release",
+        "url": "https://s22.q4cdn.com/673558720/files/doc_earnings/2023/q4/mcd-12312023-ex99.pdf"
+      }
+    ]
   },
   {
     "ticker": "TMUS",
@@ -1865,7 +2945,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.49
+    "qqq_weight": 0.49,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - T-Mobile US Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TMUS&type=10-K"
+      },
+      {
+        "title": "T-Mobile Investor Relations",
+        "url": "https://investor.t-mobile.com/investor-relations"
+      },
+      {
+        "title": "T-Mobile Annual Reports & Proxy",
+        "url": "https://investor.t-mobile.com/financial-information/annual-reports"
+      },
+      {
+        "title": "T-Mobile Q4 2024 Earnings Press Release",
+        "url": "https://investor.t-mobile.com/news-releases/news-release-details/t-mobile-reports-fourth-quarter-and-full-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "VZ",
@@ -1893,7 +2991,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Verizon Communications Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=VZ&type=10-K"
+      },
+      {
+        "title": "Verizon Investor Relations",
+        "url": "https://www.verizon.com/about/investors"
+      },
+      {
+        "title": "Verizon 2023 Annual Report",
+        "url": "https://www.verizon.com/about/investors/annual-reports"
+      },
+      {
+        "title": "Verizon Q4 2023 Earnings Press Release",
+        "url": "https://www.verizon.com/about/news/verizon-reports-fourth-quarter-and-full-year-2023-results"
+      }
+    ]
   },
   {
     "ticker": "AMGN",
@@ -1926,7 +3042,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.46
+    "qqq_weight": 0.46,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Amgen Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AMGN&type=10-K"
+      },
+      {
+        "title": "Amgen Investor Relations",
+        "url": "https://investors.amgen.com/"
+      },
+      {
+        "title": "Amgen Annual Report & Proxy",
+        "url": "https://investors.amgen.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Amgen Q4 and Full Year 2024 Earnings Press Release",
+        "url": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2024-financial-results"
+      }
+    ]
   },
   {
     "ticker": "TJX",
@@ -1954,7 +3088,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - TJX Companies",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TJX&type=10-K"
+      },
+      {
+        "title": "TJX Companies Investor Relations",
+        "url": "https://investor.tjx.com/financial-information/annual-reports"
+      },
+      {
+        "title": "TJX Companies Annual Report 10-K FY2024 (SEC EDGAR Direct Filing)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000109198&type=10-K&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "TJX Companies Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.tjx.com/news-releases/news-release-details/tjx-companies-inc-reports-strong-fourth-quarter-and-full-year"
+      }
+    ]
   },
   {
     "ticker": "NEE",
@@ -1982,7 +3134,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - NextEra Energy Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=NEE&type=10-K"
+      },
+      {
+        "title": "NextEra Energy Investor Relations",
+        "url": "https://www.nexteraenergy.com/investors.html"
+      },
+      {
+        "title": "NextEra Energy 2023 Annual Report",
+        "url": "https://www.nexteraenergy.com/investors/annual-reports.html"
+      },
+      {
+        "title": "NextEra Energy Q4 2023 Earnings Release",
+        "url": "https://investor.nexteraenergy.com/news-releases/news-release-details/nextera-energy-inc-reports-fourth-quarter-and-full-year-2023"
+      }
+    ]
   },
   {
     "ticker": "DIS",
@@ -2010,7 +3180,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - The Walt Disney Company",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=DIS&type=10-K"
+      },
+      {
+        "title": "The Walt Disney Company Investor Relations",
+        "url": "https://thewaltdisneycompany.com/investor-relations/"
+      },
+      {
+        "title": "Walt Disney Company Annual Reports & Proxy",
+        "url": "https://thewaltdisneycompany.com/investor-relations/#reports"
+      },
+      {
+        "title": "Walt Disney Company Q4 FY2024 Earnings Press Release",
+        "url": "https://thewaltdisneycompany.com/app/uploads/2024/11/q4-fy24-earnings.pdf"
+      }
+    ]
   },
   {
     "ticker": "BA",
@@ -2043,7 +3231,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Boeing (BA)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=BA&type=10-K"
+      },
+      {
+        "title": "Boeing Investor Relations",
+        "url": "https://investors.boeing.com/investors/home/default.aspx"
+      },
+      {
+        "title": "Boeing Annual Reports & Proxy",
+        "url": "https://investors.boeing.com/investors/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Boeing Q4 2023 Earnings Press Release",
+        "url": "https://investors.boeing.com/investors/news-releases/press-release-details/2024/Boeing-Reports-Fourth-Quarter-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "TMO",
@@ -2076,7 +3282,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Thermo Fisher Scientific",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TMO&type=10-K"
+      },
+      {
+        "title": "Thermo Fisher Scientific Investor Relations",
+        "url": "https://ir.thermofisher.com/investors/overview/default.aspx"
+      },
+      {
+        "title": "Thermo Fisher Scientific Annual Reports & Proxy",
+        "url": "https://ir.thermofisher.com/investors/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Thermo Fisher Scientific Q4 and Full Year 2023 Earnings Press Release",
+        "url": "https://ir.thermofisher.com/investors/news-releases/news-release-details/thermo-fisher-scientific-reports-fourth-quarter-and-full-year-6"
+      }
+    ]
   },
   {
     "ticker": "CRWD",
@@ -2099,7 +3323,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.45
+    "qqq_weight": 0.45,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - CrowdStrike Holdings Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CRWD&type=10-K"
+      },
+      {
+        "title": "CrowdStrike Investor Relations",
+        "url": "https://ir.crowdstrike.com/"
+      },
+      {
+        "title": "CrowdStrike Annual Reports & Proxies",
+        "url": "https://ir.crowdstrike.com/financial-information/annual-reports"
+      },
+      {
+        "title": "CrowdStrike Q4 FY2024 Earnings Press Release",
+        "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-fourth-quarter-and-fiscal-year-2024-financial"
+      }
+    ]
   },
   {
     "ticker": "GLW",
@@ -2137,7 +3379,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Corning Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=GLW&type=10-K"
+      },
+      {
+        "title": "Corning Inc. Investor Relations",
+        "url": "https://investor.corning.com/investor-relations/home/default.aspx"
+      },
+      {
+        "title": "Corning Inc. Annual Reports & Proxy",
+        "url": "https://investor.corning.com/investor-relations/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Corning Inc. Earnings Releases & Financial Information",
+        "url": "https://investor.corning.com/investor-relations/financial-information/earnings-releases/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "ETN",
@@ -2165,7 +3425,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Eaton Corporation PLC",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ETN&type=10-K"
+      },
+      {
+        "title": "Eaton Investor Relations",
+        "url": "https://www.eaton.com/us/en-us/company/investor-relations.html"
+      },
+      {
+        "title": "Eaton 2023 Annual Report",
+        "url": "https://www.eaton.com/us/en-us/company/investor-relations/annual-reports.html"
+      },
+      {
+        "title": "Eaton Q4 2023 Earnings Press Release",
+        "url": "https://investor.eaton.com/news-releases/news-release-details/eaton-reports-fourth-quarter-and-full-year-2023-results"
+      }
+    ]
   },
   {
     "ticker": "BLK",
@@ -2198,7 +3476,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - BlackRock Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=BLK&type=10-K"
+      },
+      {
+        "title": "BlackRock Investor Relations",
+        "url": "https://ir.blackrock.com"
+      },
+      {
+        "title": "BlackRock Annual Report & Proxy",
+        "url": "https://ir.blackrock.com/financial-information/annual-reports"
+      },
+      {
+        "title": "BlackRock Q4 2024 Earnings Release",
+        "url": "https://ir.blackrock.com/news-and-events/press-releases"
+      }
+    ]
   },
   {
     "ticker": "SCHW",
@@ -2231,7 +3527,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Charles Schwab Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SCHW&type=10-K"
+      },
+      {
+        "title": "Charles Schwab Investor Relations",
+        "url": "https://www.aboutschwab.com/investor-relations"
+      },
+      {
+        "title": "Charles Schwab 2023 Annual Report",
+        "url": "https://www.aboutschwab.com/annual-report"
+      },
+      {
+        "title": "Charles Schwab Q4 2023 Earnings Release",
+        "url": "https://pressroom.aboutschwab.com/press-releases/press-release/2024/Charles-Schwab-Reports-Fourth-Quarter-and-Full-Year-2023-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "DE",
@@ -2259,7 +3573,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Deere & Company",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=DE&type=10-K"
+      },
+      {
+        "title": "Deere & Company Investor Relations",
+        "url": "https://investor.deere.com/investor-relations/overview/default.aspx"
+      },
+      {
+        "title": "Deere & Company Annual Reports",
+        "url": "https://investor.deere.com/investor-relations/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Deere & Company Q4 FY2024 Earnings Release",
+        "url": "https://investor.deere.com/investor-relations/news-releases/news-release-details/2024/Deere-Company-Reports-Fourth-Quarter-Net-Income-of-1.245-Billion/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "APP",
@@ -2282,7 +3614,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.4
+    "qqq_weight": 0.4,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - AppLovin Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=APP&type=10-K"
+      },
+      {
+        "title": "AppLovin Investor Relations",
+        "url": "https://investors.applovin.com/"
+      },
+      {
+        "title": "AppLovin Annual Report & SEC Filings",
+        "url": "https://investors.applovin.com/financial-information/sec-filings"
+      },
+      {
+        "title": "AppLovin Q4 and Full Year 2024 Earnings Press Release",
+        "url": "https://investors.applovin.com/news-releases/news-release-details/applovin-reports-fourth-quarter-and-full-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "GILD",
@@ -2315,7 +3665,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.39
+    "qqq_weight": 0.39,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Gilead Sciences Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=GILD&type=10-K"
+      },
+      {
+        "title": "Gilead Sciences Investor Relations",
+        "url": "https://investors.gilead.com/"
+      },
+      {
+        "title": "Gilead Sciences Annual Reports & Proxy",
+        "url": "https://investors.gilead.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Gilead Sciences Q4 2023 Earnings Press Release",
+        "url": "https://investors.gilead.com/news-releases/news-release-details/gilead-sciences-announces-fourth-quarter-and-full-year-2023"
+      }
+    ]
   },
   {
     "ticker": "ABT",
@@ -2348,7 +3716,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing - Abbott Laboratories",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ABT&type=10-K"
+      },
+      {
+        "title": "Abbott Laboratories Investor Relations",
+        "url": "https://www.abbottinvestor.com/"
+      },
+      {
+        "title": "Abbott Laboratories Annual Reports & Proxy",
+        "url": "https://www.abbottinvestor.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Abbott Laboratories Q4 2024 Earnings Press Release",
+        "url": "https://www.abbottinvestor.com/news-releases/news-release-details/abbott-reports-fourth-quarter-2024-earnings"
+      }
+    ]
   },
   {
     "ticker": "UNP",
@@ -2366,7 +3752,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Union Pacific Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=UNP&type=10-K"
+      },
+      {
+        "title": "Union Pacific Investor Relations",
+        "url": "https://www.up.com/investors/index.htm"
+      },
+      {
+        "title": "Union Pacific 2023 Annual Report",
+        "url": "https://www.up.com/investors/ar/2023/index.htm"
+      },
+      {
+        "title": "Union Pacific Q4 2023 Earnings Release",
+        "url": "https://www.up.com/investors/news/press-releases/2024/0125-4q23-earnings.htm"
+      }
+    ]
   },
   {
     "ticker": "T",
@@ -2394,7 +3798,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - AT&T Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=T&type=10-K"
+      },
+      {
+        "title": "AT&T Investor Relations",
+        "url": "https://investors.att.com/"
+      },
+      {
+        "title": "AT&T Annual Reports & Proxy",
+        "url": "https://investors.att.com/financial-information/annual-reports"
+      },
+      {
+        "title": "AT&T Earnings Releases & Financial Information",
+        "url": "https://investors.att.com/financial-information/earnings-releases"
+      }
+    ]
   },
   {
     "ticker": "WELL",
@@ -2427,7 +3849,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Welltower Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=WELL&type=10-K"
+      },
+      {
+        "title": "Welltower Investor Relations",
+        "url": "https://ir.welltower.com/"
+      },
+      {
+        "title": "Welltower Annual Reports & Proxy",
+        "url": "https://ir.welltower.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Welltower Earnings Releases",
+        "url": "https://ir.welltower.com/news-releases/news-releases-details/2025/Welltower-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "BX",
@@ -2465,7 +3905,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Blackstone Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=BX&type=10-K"
+      },
+      {
+        "title": "Blackstone Investor Relations",
+        "url": "https://ir.blackstone.com/"
+      },
+      {
+        "title": "Blackstone Annual Reports & Proxy",
+        "url": "https://ir.blackstone.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Blackstone Q4 2024 Earnings Press Release",
+        "url": "https://ir.blackstone.com/news-releases/news-release-details/blackstone-reports-fourth-quarter-and-full-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "UBER",
@@ -2498,7 +3956,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Uber Technologies Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=UBER&type=10-K"
+      },
+      {
+        "title": "Uber Investor Relations",
+        "url": "https://investor.uber.com/home/default.aspx"
+      },
+      {
+        "title": "Uber Q4 and Full Year 2023 Earnings Press Release",
+        "url": "https://investor.uber.com/news-events/news/press-release-details/2024/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2023/default.aspx"
+      },
+      {
+        "title": "Uber Technologies 10-K Annual Report FY2023 on SEC EDGAR",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001543151&type=10-K&dateb=&owner=include&count=10"
+      }
+    ]
   },
   {
     "ticker": "HON",
@@ -2531,7 +4007,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.37
+    "qqq_weight": 0.37,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Honeywell International Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=HON&type=10-K"
+      },
+      {
+        "title": "Honeywell Investor Relations",
+        "url": "https://investor.honeywell.com/"
+      },
+      {
+        "title": "Honeywell Annual Report & Proxy",
+        "url": "https://investor.honeywell.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Honeywell Q4 2024 Earnings Press Release",
+        "url": "https://investor.honeywell.com/news-releases/news-release-details/honeywell-reports-fourth-quarter-and-full-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "ISRG",
@@ -2559,7 +4053,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.36
+    "qqq_weight": 0.36,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Intuitive Surgical Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ISRG&type=10-K"
+      },
+      {
+        "title": "Intuitive Surgical Investor Relations",
+        "url": "https://isrg.com/investor-relations"
+      },
+      {
+        "title": "Intuitive Surgical Annual Reports & Proxy",
+        "url": "https://isrg.com/investor-relations/annual-reports"
+      },
+      {
+        "title": "Intuitive Surgical Q4 2024 Earnings Press Release",
+        "url": "https://isrg.com/investor-relations/press-releases"
+      }
+    ]
   },
   {
     "ticker": "PFE",
@@ -2597,7 +4109,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Pfizer Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PFE&type=10-K"
+      },
+      {
+        "title": "Pfizer Investor Relations",
+        "url": "https://investors.pfizer.com/investors/financial-information/sec-filings/default.aspx"
+      },
+      {
+        "title": "Pfizer Annual Report 2023",
+        "url": "https://investors.pfizer.com/investors/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Pfizer Q4 and Full-Year 2023 Earnings Press Release",
+        "url": "https://investors.pfizer.com/investors/news/press-releases/detail/1703/pfizer-reports-fourth-quarter-and-full-year-2023-results"
+      }
+    ]
   },
   {
     "ticker": "PLD",
@@ -2620,7 +4150,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Prologis Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PLD&type=10-K"
+      },
+      {
+        "title": "Prologis Investor Relations",
+        "url": "https://ir.prologis.com/"
+      },
+      {
+        "title": "Prologis Annual Reports & Proxies",
+        "url": "https://ir.prologis.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Prologis Q4 2024 Earnings Press Release",
+        "url": "https://ir.prologis.com/news-releases/news-release-details/prologis-reports-fourth-quarter-and-full-year-2024-earnings"
+      }
+    ]
   },
   {
     "ticker": "COP",
@@ -2653,7 +4201,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - ConocoPhillips",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=COP&type=10-K"
+      },
+      {
+        "title": "ConocoPhillips Investor Relations",
+        "url": "https://www.conocophillips.com/investor-relations/"
+      },
+      {
+        "title": "ConocoPhillips 2023 Annual Report",
+        "url": "https://www.conocophillips.com/investor-relations/financial-information/annual-reports/"
+      },
+      {
+        "title": "ConocoPhillips Q4 2023 Earnings Release",
+        "url": "https://www.conocophillips.com/investor-relations/financial-information/earnings-releases/"
+      }
+    ]
   },
   {
     "ticker": "VRT",
@@ -2676,7 +4242,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Vertiv Holdings Co.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=VRT&type=10-K"
+      },
+      {
+        "title": "Vertiv Investor Relations",
+        "url": "https://investors.vertiv.com/"
+      },
+      {
+        "title": "Vertiv Annual Reports & Proxy",
+        "url": "https://investors.vertiv.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Vertiv Q4 and Full Year 2024 Earnings Press Release",
+        "url": "https://investors.vertiv.com/news-releases/news-release-details/vertiv-reports-fourth-quarter-and-full-year-2024-financial-results"
+      }
+    ]
   },
   {
     "ticker": "BKNG",
@@ -2704,7 +4288,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.33
+    "qqq_weight": 0.33,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Booking Holdings Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=BKNG&type=10-K"
+      },
+      {
+        "title": "Booking Holdings Investor Relations",
+        "url": "https://ir.bookingholdings.com/"
+      },
+      {
+        "title": "Booking Holdings Annual Reports & Proxy",
+        "url": "https://ir.bookingholdings.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Booking Holdings Q4 and Full Year 2023 Earnings Press Release",
+        "url": "https://ir.bookingholdings.com/news-releases/news-release-details/booking-holdings-reports-financial-results-fourth-quarter-and-11"
+      }
+    ]
   },
   {
     "ticker": "CVS",
@@ -2732,7 +4334,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - CVS Health Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CVS&type=10-K"
+      },
+      {
+        "title": "CVS Health Investor Relations",
+        "url": "https://investors.cvshealth.com/investors/financial-information/sec-filings/default.aspx"
+      },
+      {
+        "title": "CVS Health Annual Reports",
+        "url": "https://investors.cvshealth.com/investors/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "CVS Health Q4 and Full Year 2024 Earnings Press Release",
+        "url": "https://investors.cvshealth.com/investors/news-and-events/press-releases/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "CB",
@@ -2765,7 +4385,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Chubb Limited",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CB&type=10-K"
+      },
+      {
+        "title": "Chubb Limited Investor Relations",
+        "url": "https://investors.chubb.com/investor-relations/overview/default.aspx"
+      },
+      {
+        "title": "Chubb Limited Annual Reports & Proxy",
+        "url": "https://investors.chubb.com/investor-relations/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "Chubb Limited Earnings Releases",
+        "url": "https://investors.chubb.com/investor-relations/news-releases/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "COF",
@@ -2798,7 +4436,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Capital One Financial Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=COF&type=10-K"
+      },
+      {
+        "title": "Capital One Investor Relations",
+        "url": "https://investor.capitalone.com/"
+      },
+      {
+        "title": "Capital One Annual Report & Proxy",
+        "url": "https://investor.capitalone.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Capital One Q4 2024 Earnings Press Release",
+        "url": "https://investor.capitalone.com/news-releases/news-release-details/capital-one-financial-corporation-fourth-quarter-2024-net-income"
+      }
+    ]
   },
   {
     "ticker": "DHR",
@@ -2826,7 +4482,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Danaher Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=DHR&type=10-K"
+      },
+      {
+        "title": "Danaher Corporation Investor Relations",
+        "url": "https://investors.danaher.com/financial-information/sec-filings"
+      },
+      {
+        "title": "Danaher Corporation Annual Reports",
+        "url": "https://investors.danaher.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Danaher Corporation Q4 2024 Earnings Press Release",
+        "url": "https://investors.danaher.com/news-releases/news-release-details/danaher-reports-fourth-quarter-and-full-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "CRM",
@@ -2849,7 +4523,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Salesforce Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CRM&type=10-K"
+      },
+      {
+        "title": "Salesforce Investor Relations",
+        "url": "https://investor.salesforce.com/financials/annual-reports/default.aspx"
+      },
+      {
+        "title": "Salesforce Annual Report FY2024 10-K (SEC Direct Filing)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-K&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "Salesforce Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.salesforce.com/press-releases/press-release-details/2024/Salesforce-Announces-Fourth-Quarter-and-Full-Year-Fiscal-2024-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "PGR",
@@ -2877,7 +4569,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Progressive Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=PGR&type=10-K"
+      },
+      {
+        "title": "Progressive Corporation Investor Relations",
+        "url": "https://investors.progressive.com/"
+      },
+      {
+        "title": "Progressive Corporation Annual Reports & Proxy",
+        "url": "https://investors.progressive.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Progressive Corporation Earnings Releases",
+        "url": "https://investors.progressive.com/financial-information/press-releases"
+      }
+    ]
   },
   {
     "ticker": "SPGI",
@@ -2910,7 +4620,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - S&P Global Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SPGI&type=10-K"
+      },
+      {
+        "title": "S&P Global Investor Relations",
+        "url": "https://investor.spglobal.com/investor-relations/overview/default.aspx"
+      },
+      {
+        "title": "S&P Global Annual Reports & Proxy Statements",
+        "url": "https://investor.spglobal.com/investor-relations/financial-information/annual-reports/default.aspx"
+      },
+      {
+        "title": "S&P Global Q4 2024 Earnings Press Release",
+        "url": "https://investor.spglobal.com/investor-relations/news-releases/news-release-details/2025/SP-Global-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "LOW",
@@ -2953,7 +4681,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Lowe's Companies Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=LOW&type=10-K"
+      },
+      {
+        "title": "Lowe's Investor Relations",
+        "url": "https://ir.lowes.com/"
+      },
+      {
+        "title": "Lowe's Annual Reports & Proxy",
+        "url": "https://ir.lowes.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Lowe's Q4 FY2024 Earnings Press Release",
+        "url": "https://ir.lowes.com/news-releases/news-release-details/lowes-reports-fourth-quarter-and-fiscal-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "VRTX",
@@ -2976,7 +4722,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.29
+    "qqq_weight": 0.29,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Vertex Pharmaceuticals",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=VRTX&type=10-K"
+      },
+      {
+        "title": "Vertex Pharmaceuticals Investor Relations",
+        "url": "https://investors.vrtx.com/"
+      },
+      {
+        "title": "Vertex Pharmaceuticals Annual Reports & Proxy",
+        "url": "https://investors.vrtx.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Vertex Pharmaceuticals Q4 and Full Year 2023 Earnings Press Release",
+        "url": "https://investors.vrtx.com/news-releases/news-release-details/vertex-reports-full-year-and-fourth-quarter-2023-financial-results"
+      }
+    ]
   },
   {
     "ticker": "MO",
@@ -3009,7 +4773,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Altria Group Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MO&type=10-K"
+      },
+      {
+        "title": "Altria Group Investor Relations",
+        "url": "https://investor.altria.com/"
+      },
+      {
+        "title": "Altria Group Annual Reports & Proxy Statements",
+        "url": "https://investor.altria.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Altria Group Earnings Releases & Financial Results",
+        "url": "https://investor.altria.com/press-releases"
+      }
+    ]
   },
   {
     "ticker": "LMT",
@@ -3042,7 +4824,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Lockheed Martin",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=LMT&type=10-K"
+      },
+      {
+        "title": "Lockheed Martin Investor Relations",
+        "url": "https://www.lockheedmartin.com/en-us/investors.html"
+      },
+      {
+        "title": "Lockheed Martin Annual Reports",
+        "url": "https://www.lockheedmartin.com/en-us/investors/annual-reports.html"
+      },
+      {
+        "title": "Lockheed Martin Q4 2023 Earnings Press Release",
+        "url": "https://news.lockheedmartin.com/2024-01-23-Lockheed-Martin-Reports-Fourth-Quarter-And-Full-Year-2023-Financial-Results"
+      }
+    ]
   },
   {
     "ticker": "BMY",
@@ -3075,7 +4875,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Bristol-Myers Squibb",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=BMY&type=10-K"
+      },
+      {
+        "title": "Bristol-Myers Squibb Investor Relations",
+        "url": "https://www.bms.com/investors.html"
+      },
+      {
+        "title": "Bristol-Myers Squibb 2023 Annual Report",
+        "url": "https://www.bms.com/assets/bms/us/en-us/pdf/bmy-2023-annual-report.pdf"
+      },
+      {
+        "title": "Bristol-Myers Squibb Q4 and Full Year 2023 Earnings Press Release",
+        "url": "https://news.bms.com/news/details/2024/Bristol-Myers-Squibb-Reports-Fourth-Quarter-and-Full-Year-Financial-Results-for-2023/default.aspx"
+      }
+    ]
   },
   {
     "ticker": "SYK",
@@ -3103,7 +4921,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Stryker Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SYK&type=10-K"
+      },
+      {
+        "title": "Stryker Corporation Investor Relations",
+        "url": "https://ir.stryker.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Stryker Corporation 2023 Annual Report 10-K",
+        "url": "https://ir.stryker.com/sec-filings/annual-reports/content/0000310764-24-000008/0000310764-24-000008.htm"
+      },
+      {
+        "title": "Stryker Corporation Q4 2023 Earnings Press Release",
+        "url": "https://ir.stryker.com/news-releases/news-release-details/stryker-reports-fourth-quarter-and-full-year-2023-results"
+      }
+    ]
   },
   {
     "ticker": "SBUX",
@@ -3131,7 +4967,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.29
+    "qqq_weight": 0.29,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Starbucks Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SBUX&type=10-K"
+      },
+      {
+        "title": "Starbucks Investor Relations",
+        "url": "https://investor.starbucks.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Starbucks FY2024 Annual Report & Proxy",
+        "url": "https://investor.starbucks.com/financial-information/sec-filings"
+      },
+      {
+        "title": "Starbucks Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.starbucks.com/news-releases/news-release-details/starbucks-reports-q4-and-full-year-fiscal-2024-results"
+      }
+    ]
   },
   {
     "ticker": "CDNS",
@@ -3159,7 +5013,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.27
+    "qqq_weight": 0.27,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Cadence Design Systems",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CDNS&type=10-K"
+      },
+      {
+        "title": "Cadence Design Systems Investor Relations",
+        "url": "https://investor.cadence.com/"
+      },
+      {
+        "title": "Cadence Design Systems Annual Reports & Proxy",
+        "url": "https://investor.cadence.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Cadence Design Systems Q4 2024 Earnings Press Release",
+        "url": "https://investor.cadence.com/news-releases/news-release-details/cadence-reports-fourth-quarter-and-fiscal-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "FTNT",
@@ -3182,7 +5054,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.27
+    "qqq_weight": 0.27,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Fortinet Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=FTNT&type=10-K"
+      },
+      {
+        "title": "Fortinet Investor Relations",
+        "url": "https://investor.fortinet.com/"
+      },
+      {
+        "title": "Fortinet Annual Report & Proxy",
+        "url": "https://investor.fortinet.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Fortinet Q4 and Full Year 2023 Earnings Press Release",
+        "url": "https://investor.fortinet.com/news-releases/news-release-details/fortinet-reports-fourth-quarter-and-full-year-2023-financial"
+      }
+    ]
   },
   {
     "ticker": "NOW",
@@ -3205,7 +5095,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - ServiceNow Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=NOW&type=10-K"
+      },
+      {
+        "title": "ServiceNow Investor Relations",
+        "url": "https://investors.servicenow.com/"
+      },
+      {
+        "title": "ServiceNow Q4 FY2024 Earnings Press Release",
+        "url": "https://investors.servicenow.com/news-releases/news-release-details/servicenow-reports-fourth-quarter-and-full-year-2024-financial"
+      },
+      {
+        "title": "ServiceNow Annual Report FY2024 - SEC EDGAR Direct Filing",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001373715&type=10-K&dateb=&owner=include&count=10"
+      }
+    ]
   },
   {
     "ticker": "SNPS",
@@ -3228,7 +5136,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.22
+    "qqq_weight": 0.22,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Synopsys Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SNPS&type=10-K"
+      },
+      {
+        "title": "Synopsys Investor Relations",
+        "url": "https://investor.synopsys.com/investor-relations"
+      },
+      {
+        "title": "Synopsys Annual Reports & Proxy",
+        "url": "https://investor.synopsys.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Synopsys Q4 FY2024 Earnings Press Release",
+        "url": "https://investor.synopsys.com/news-releases/news-release-details/synopsys-reports-fourth-quarter-and-fiscal-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "ADP",
@@ -3251,7 +5177,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.22
+    "qqq_weight": 0.22,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - ADP",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ADP&type=10-K"
+      },
+      {
+        "title": "ADP Investor Relations",
+        "url": "https://investors.adp.com/"
+      },
+      {
+        "title": "ADP Annual Report & Proxy",
+        "url": "https://investors.adp.com/financial-information/annual-reports"
+      },
+      {
+        "title": "ADP Earnings Releases & Financial News",
+        "url": "https://investors.adp.com/financial-information/press-releases"
+      }
+    ]
   },
   {
     "ticker": "ADBE",
@@ -3274,7 +5218,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.2
+    "qqq_weight": 0.2,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Adobe Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ADBE&type=10-K"
+      },
+      {
+        "title": "Adobe Investor Relations",
+        "url": "https://www.adobe.com/investor-relations.html"
+      },
+      {
+        "title": "Adobe FY2024 Earnings Press Release",
+        "url": "https://www.adobe.com/investor-relations/news-details.html"
+      },
+      {
+        "title": "Adobe Annual Reports",
+        "url": "https://www.adobe.com/investor-relations/annual-reports.html"
+      }
+    ]
   },
   {
     "ticker": "ACN",
@@ -3312,7 +5274,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Accenture PLC",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ACN&type=10-K"
+      },
+      {
+        "title": "Accenture Investor Relations",
+        "url": "https://investor.accenture.com/"
+      },
+      {
+        "title": "Accenture Annual Report FY2024",
+        "url": "https://investor.accenture.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Accenture Q4 FY2024 Earnings Press Release",
+        "url": "https://newsroom.accenture.com/news/2024/accenture-reports-fourth-quarter-and-full-year-fiscal-2024-results"
+      }
+    ]
   },
   {
     "ticker": "CMCSA",
@@ -3340,7 +5320,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.2
+    "qqq_weight": 0.2,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Comcast Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CMCSA&type=10-K"
+      },
+      {
+        "title": "Comcast Corporation Investor Relations",
+        "url": "https://www.cmcsa.com/investor-relations"
+      },
+      {
+        "title": "Comcast Annual Report 2023 (10-K)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001166691&type=10-K&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "Comcast Q4 2023 Earnings Press Release",
+        "url": "https://www.cmcsa.com/news-releases/news-release-details/comcast-reports-4th-quarter-and-full-year-2023-results"
+      }
+    ]
   },
   {
     "ticker": "NXPI",
@@ -3373,7 +5371,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.2
+    "qqq_weight": 0.2,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - NXP Semiconductors",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=NXPI&type=10-K"
+      },
+      {
+        "title": "NXP Semiconductors Investor Relations",
+        "url": "https://investors.nxp.com/"
+      },
+      {
+        "title": "NXP Semiconductors Annual Reports & Proxy",
+        "url": "https://investors.nxp.com/financial-information/annual-reports"
+      },
+      {
+        "title": "NXP Semiconductors Q4 and Full Year 2023 Earnings Release",
+        "url": "https://investors.nxp.com/news-releases/news-release-details/nxp-semiconductors-reports-fourth-quarter-and-full-year-2023"
+      }
+    ]
   },
   {
     "ticker": "INTU",
@@ -3401,7 +5417,25 @@
       }
     ],
     "in_sp500": true,
-    "qqq_weight": 0.18
+    "qqq_weight": 0.18,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Intuit Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=INTU&type=10-K"
+      },
+      {
+        "title": "Intuit Investor Relations",
+        "url": "https://investors.intuit.com/"
+      },
+      {
+        "title": "Intuit Annual Reports & Proxy",
+        "url": "https://investors.intuit.com/financial-information/annual-reports-and-proxy/default.aspx"
+      },
+      {
+        "title": "Intuit FY2024 Earnings Press Release",
+        "url": "https://investors.intuit.com/news-releases/news-release-details/intuit-reports-fourth-quarter-and-fiscal-year-2024-results"
+      }
+    ]
   },
   {
     "ticker": "TSM",
@@ -3429,7 +5463,25 @@
         "description": "封裝測試及其他服務"
       }
     ],
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - TSM",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TSM&type=10-K"
+      },
+      {
+        "title": "TSMC Investor Relations",
+        "url": "https://investor.tsmc.com/english"
+      },
+      {
+        "title": "TSMC Annual Report 2023",
+        "url": "https://investor.tsmc.com/english/annual-reports"
+      },
+      {
+        "title": "TSMC Earnings Release and Financial Statements",
+        "url": "https://investor.tsmc.com/english/financials/earnings-releases"
+      }
+    ]
   },
   {
     "ticker": "UMAC",
@@ -3457,7 +5509,25 @@
         "description": "飛控軟體及技術支援服務"
       }
     ],
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Unusual Machines (UMAC)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=UMAC&type=10-K"
+      },
+      {
+        "title": "Unusual Machines Investor Relations",
+        "url": "https://ir.unusualmachines.com/"
+      },
+      {
+        "title": "Unusual Machines Annual Report 10-K FY2023",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001854463&type=10-K&dateb=&owner=include&count=40"
+      },
+      {
+        "title": "Unusual Machines News & Press Releases",
+        "url": "https://ir.unusualmachines.com/news-releases"
+      }
+    ]
   },
   {
     "ticker": "FUTU",
@@ -3490,7 +5560,25 @@
         "description": "企業服務及其他收入"
       }
     ],
-    "qqq_weight": 0
+    "qqq_weight": 0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Futu Holdings",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=FUTU&type=10-K"
+      },
+      {
+        "title": "Futu Holdings Investor Relations Page",
+        "url": "https://ir.futuholdings.com/"
+      },
+      {
+        "title": "Futu Holdings Annual Report 20-F FY2023",
+        "url": "https://ir.futuholdings.com/financial-information/annual-reports"
+      },
+      {
+        "title": "Futu Holdings Earnings Releases and Financial Results",
+        "url": "https://ir.futuholdings.com/financial-information/quarterly-earnings"
+      }
+    ]
   },
   {
     "ticker": "IBKR",
@@ -3523,7 +5611,25 @@
       }
     ],
     "in_sp500": false,
-    "qqq_weight": 0.0
+    "qqq_weight": 0.0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Interactive Brokers Group Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=IBKR&type=10-K"
+      },
+      {
+        "title": "Interactive Brokers Investor Relations",
+        "url": "https://investors.interactivebrokers.com/"
+      },
+      {
+        "title": "Interactive Brokers Annual Report 2023 (10-K)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001381197&type=10-K&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "Interactive Brokers Q4 2023 Earnings Press Release",
+        "url": "https://investors.interactivebrokers.com/en/index.php?f=254"
+      }
+    ]
   },
   {
     "ticker": "ONDS",
@@ -3546,7 +5652,25 @@
       }
     ],
     "in_sp500": false,
-    "qqq_weight": 0.0
+    "qqq_weight": 0.0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Ondas Holdings Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ONDS&type=10-K"
+      },
+      {
+        "title": "Ondas Holdings Investor Relations",
+        "url": "https://www.ondas.com/investor-relations"
+      },
+      {
+        "title": "Ondas Holdings 10-K Annual Report FY2023 (SEC EDGAR)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001642545&type=10-K&dateb=&owner=include&count=40"
+      },
+      {
+        "title": "Ondas Holdings Earnings Releases & Financial Reports",
+        "url": "https://www.ondas.com/news"
+      }
+    ]
   },
   {
     "ticker": "RCAT",
@@ -3574,7 +5698,25 @@
       }
     ],
     "in_sp500": false,
-    "qqq_weight": 0.0
+    "qqq_weight": 0.0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filings - Red Cat Holdings Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=RCAT&type=10-K"
+      },
+      {
+        "title": "Red Cat Holdings Investor Relations",
+        "url": "https://ir.redcatholdings.com/"
+      },
+      {
+        "title": "Red Cat Holdings Annual Report 10-K FY2024 - SEC EDGAR",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001591698&type=10-K&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "Red Cat Holdings Newsroom & Press Releases",
+        "url": "https://ir.redcatholdings.com/news-releases"
+      }
+    ]
   },
   {
     "ticker": "IONQ",
@@ -3602,7 +5744,25 @@
       }
     ],
     "in_sp500": false,
-    "qqq_weight": 0.0
+    "qqq_weight": 0.0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - IonQ Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=IONQ&type=10-K"
+      },
+      {
+        "title": "IonQ Investor Relations",
+        "url": "https://ionq.com/investors"
+      },
+      {
+        "title": "IonQ Annual Report & SEC Filings",
+        "url": "https://investors.ionq.com/financial-information/sec-filings"
+      },
+      {
+        "title": "IonQ Q4 and Full Year 2023 Earnings Press Release",
+        "url": "https://ionq.com/news/ionq-reports-fourth-quarter-and-full-year-2023-financial-results"
+      }
+    ]
   },
   {
     "ticker": "SPCX",
@@ -3635,7 +5795,25 @@
       }
     ],
     "in_sp500": false,
-    "qqq_weight": 0.0
+    "qqq_weight": 0.0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page (SPCX)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SPCX&type=10-K"
+      },
+      {
+        "title": "SpaceX Official Website",
+        "url": "https://www.spacex.com"
+      },
+      {
+        "title": "SEC EDGAR Full-Text Search for SpaceX",
+        "url": "https://efts.sec.gov/LATEST/search-index?q=%22SpaceX%22&dateRange=custom&startdt=2020-01-01&enddt=2024-12-31&forms=10-K"
+      },
+      {
+        "title": "Bloomberg SpaceX Company Profile",
+        "url": "https://www.bloomberg.com/profile/company/0109677D:US"
+      }
+    ]
   },
   {
     "ticker": "QBTS",
@@ -3663,7 +5841,25 @@
       }
     ],
     "in_sp500": false,
-    "qqq_weight": 0.0
+    "qqq_weight": 0.0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page for D-Wave Quantum Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=QBTS&type=10-K"
+      },
+      {
+        "title": "D-Wave Quantum Investor Relations Page",
+        "url": "https://investors.dwavesys.com/"
+      },
+      {
+        "title": "D-Wave Quantum Annual Report and SEC Filings",
+        "url": "https://investors.dwavesys.com/financial-information/sec-filings"
+      },
+      {
+        "title": "D-Wave Quantum Q4 and Full Year 2023 Earnings Press Release",
+        "url": "https://investors.dwavesys.com/news-releases/news-release-details/d-wave-reports-fourth-quarter-and-full-year-2023-results"
+      }
+    ]
   },
   {
     "ticker": "RGTI",
@@ -3691,6 +5887,24 @@
       }
     ],
     "in_sp500": false,
-    "qqq_weight": 0.0
+    "qqq_weight": 0.0,
+    "sources": [
+      {
+        "title": "SEC EDGAR 10-K Filing Page - Rigetti Computing Inc.",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=RGTI&type=10-K"
+      },
+      {
+        "title": "Rigetti Computing Investor Relations",
+        "url": "https://investors.rigetti.com/"
+      },
+      {
+        "title": "Rigetti Computing Annual Report 10-K FY2023 (SEC EDGAR)",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001838359&type=10-K&dateb=&owner=include&count=40"
+      },
+      {
+        "title": "Rigetti Computing Newsroom & Financial Results",
+        "url": "https://investors.rigetti.com/news-releases"
+      }
+    ]
   }
 ]

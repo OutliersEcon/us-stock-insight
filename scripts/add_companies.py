@@ -123,6 +123,10 @@ Return ONLY a valid JSON object with these exact fields:
   "revenue_segments": [
     {{"segment": "<英文業務板塊名稱>", "percentage": <整數佔比>, "description": "<繁體中文說明，20-40字>"}},
     ...
+  ],
+  "sources": [
+    {{"title": "<來源名稱，如 Annual Report 10-K FY2024>", "url": "<實際可訪問的 URL>"}},
+    ...
   ]
 }}
 
@@ -134,6 +138,12 @@ Rules:
 - sort revenue_segments by percentage descending (largest first)
 - provide 2-6 segments based on actual business structure
 - use the most recent fiscal year data available
+- sources MUST include 2-4 real, verifiable URLs such as:
+  * SEC EDGAR filing (e.g. https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}&type=10-K)
+  * Company investor relations page (e.g. https://investor.apple.com/)
+  * Official annual report or earnings release page
+  * Reputable financial data source (e.g. Macrotrends, company press release)
+- All URLs must be real and publicly accessible — do NOT invent URLs
 - return ONLY the JSON object, no markdown, no code blocks, no explanation
 """
 
@@ -182,7 +192,12 @@ def generate_company_data(client, ticker: str, name: str, sector: str, model: st
 
             # 驗證必要欄位
             if 'description' not in data or 'revenue_segments' not in data:
-                print(f"   ⚠️  第 {attempt} 次嘗試：回傳格式不完整")
+                print(f"   ⚠️  第{attempt}次嘗試：回傳格式不完整")
+                continue
+
+            # 驗證 sources 欄位
+            if 'sources' not in data or not isinstance(data['sources'], list) or len(data['sources']) == 0:
+                print(f"   ⚠️  第{attempt}次嘗試：缺少 sources 欄位，重試...")
                 continue
 
             # 確保百分比合計為 100
@@ -324,6 +339,7 @@ def main():
             "last_updated": TODAY,
             "nasdaq100": ticker in NASDAQ100,
             "revenue_segments": data['revenue_segments'],
+            "sources": data.get('sources', []),
             "in_sp500": args.sp500,
             "qqq_weight": 0.0,
         }

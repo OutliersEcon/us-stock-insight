@@ -46,7 +46,8 @@ TODAY = date.today().isoformat()
 SYSTEM_PROMPT = """你是一位專業的財務分析師，專門分析美國上市公司的業務結構與營收組成。
 請根據公司最新的年報（10-K）及公開財報資料，提供準確的業務描述與各業務板塊的營收佔比。
 
-回覆必須是嚴格的 JSON 格式，不得包含任何 markdown 標記或額外說明文字。"""
+回覆必須是嚴格的 JSON 格式，不得包含任何 markdown 標記或額外說明文字。
+每次更新必須附上實際可查證的資料來源 URL，不得號稱不存在的連結。"""
 
 USER_PROMPT_TEMPLATE = """請分析以下公司的業務結構，並以 JSON 格式回覆：
 
@@ -57,6 +58,11 @@ USER_PROMPT_TEMPLATE = """請分析以下公司的業務結構，並以 JSON 格
 請提供：
 1. description：一段 60-100 字的繁體中文業務描述，說明公司的核心業務模式與競爭優勢
 2. revenue_segments：各業務板塊的名稱（英文）、營收佔比（整數百分比，合計必須為 100）、繁體中文說明
+3. sources：2-4 個實際可查證的資料來源 URL，包括：
+   - SEC EDGAR 10-K 年報申報頁面（如 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}&type=10-K）
+   - 公司投資者關係頁面（如 https://investor.apple.com/）
+   - 公司官方年報或財報發佈頁面
+   - 其他可信賴的公開財務資料來源
 
 回覆格式：
 {{
@@ -64,8 +70,14 @@ USER_PROMPT_TEMPLATE = """請分析以下公司的業務結構，並以 JSON 格
   "revenue_segments": [
     {{"segment": "Segment Name", "percentage": 50, "description": "中文說明"}},
     ...
+  ],
+  "sources": [
+    {{"title": "來源名稱，如 Annual Report 10-K FY2024", "url": "實際 URL"}},
+    ...
   ]
-}}"""
+}}
+
+重要：sources 中的所有 URL 必須是真實存在且可公開訪問的，不得號稱不存在的連結。"""
 
 
 def get_stale_tickers() -> list[str]:
@@ -109,6 +121,15 @@ def call_ai(company: dict) -> dict | None:
         if 'description' not in result or 'revenue_segments' not in result:
             print(f"   ⚠️  {company['ticker']} 回傳格式不完整，跳過。")
             return None
+
+        # 驗證 sources 欄位
+        if 'sources' not in result or not isinstance(result['sources'], list) or len(result['sources']) == 0:
+            print(f"   ⚠️  {company['ticker']} 缺少 sources 欄位，將以預設 SEC EDGAR 連結代替。")
+            ticker_val = company['ticker']
+            result['sources'] = [
+                {"title": f"SEC EDGAR Filings ({ticker_val})",
+                 "url": f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker_val}&type=10-K"}
+            ]
 
         # 確保百分比合計為 100
         total = sum(s.get('percentage', 0) for s in result['revenue_segments'])
@@ -160,9 +181,10 @@ def main():
         if result:
             company['description'] = result['description']
             company['revenue_segments'] = result['revenue_segments']
+            company['sources'] = result.get('sources', company.get('sources', []))
             company['last_updated'] = TODAY
             updated_count += 1
-            print(f"   ✓ 更新成功（{len(result['revenue_segments'])} 個業務板塊）")
+            print(f"   ✓ 更新成功（{len(result['revenue_segments'])} 個業務板塊，{len(company['sources'])} 個來源）")
         else:
             print(f"   ⚠️  更新失敗，保留原有資料。")
 

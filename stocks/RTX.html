@@ -61,8 +61,13 @@
     .seg-bar { height: 100%; border-radius: 3px; transition: width .6s ease; }
     .seg-desc { font-size: 12px; color: var(--text-muted); padding-left: 18px; }
 
-    .note-card { grid-column: 1 / -1; }
-    .note { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .sources-card { grid-column: 1 / -1; }
+    .sources-note { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+    .sources-list { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 8px; }
+    .source-item a { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--accent); text-decoration: none; transition: opacity .2s; }
+    .source-item a:hover { opacity: .75; text-decoration: underline; }
+    .source-item a::before { content: '↗'; font-size: 11px; opacity: .6; }
+    .sources-disclaimer { font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 10px; line-height: 1.5; }
 
     footer { border-top: 1px solid var(--border); padding: 20px 24px; text-align: center; color: var(--text-muted); font-size: 12px; }
     footer a { color: var(--accent); text-decoration: none; }
@@ -159,16 +164,22 @@
         </div>
   </div>
 
-  <!-- Note -->
-  <div class="card note-card">
-    <div class="note">
-      ⚠️ 本頁面的營收佔比數據基於公司最新年報及公開財報資料（最後更新：2026-06-24），僅供參考。各業務板塊的實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。
-    </div>
+  <!-- Sources -->
+  <div class="card sources-card">
+    <div class="card-title"><span class="card-title-icon">🔗</span> 資料來源</div>
+    <p class="sources-note">以下為本頁面營收佔比數據的參考來源，讀者可自行查證。最後更新：2026-06-24。</p>
+    <ul class="sources-list">
+      <li class="source-item"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=RTX&type=10-K" target="_blank" rel="noopener noreferrer">SEC EDGAR 10-K Filing Page - RTX Corporation</a></li>
+      <li class="source-item"><a href="https://investor.rtx.com/investor-relations" target="_blank" rel="noopener noreferrer">RTX Corporation Investor Relations</a></li>
+      <li class="source-item"><a href="https://investor.rtx.com/financial-information/annual-reports" target="_blank" rel="noopener noreferrer">RTX Corporation Annual Reports & Proxy</a></li>
+      <li class="source-item"><a href="https://investor.rtx.com/financial-information/earnings-releases" target="_blank" rel="noopener noreferrer">RTX Corporation Earnings Releases</a></li>
+    </ul>
+    <p class="sources-disclaimer">⚠️ 營收佔比為概略性數據，實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。</p>
   </div>
 </div>
 
 <footer>
-  <p>資料來源：公司年報、SEC EDGAR &nbsp;|&nbsp; <a href="../index.html">返回 US Stock Insight 首頁</a></p>
+  <p><a href="../index.html">← 返回 US Stock Insight 首頁</a></p>
 </footer>
 
 <script>
