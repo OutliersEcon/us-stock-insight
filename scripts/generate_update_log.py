@@ -38,7 +38,7 @@ import os
 from datetime import date, datetime, timezone
 
 # ── 設定：超過幾天視為需要更新
-STALE_DAYS = 30
+STALE_DAYS = 0
 
 COMPANIES_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'processed', 'companies.json')
 OUTPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'update_log.json')
