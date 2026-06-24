@@ -3606,27 +3606,32 @@
   },
   {
     "ticker": "SPCX",
-    "name": "The SPAC and New Issue ETF",
-    "sector": "Financials",
-    "description": "SPCX是一支專注於特殊目的收購公司（SPAC）的交易所交易基金（ETF），由The SPAC and New Issue ETF管理。該基金追蹤由SPAC組成的投資組合，主要投資於尚未完成併購交易的SPAC信託資產，為投資者提供參與SPAC市場的多元化曝險機會。",
+    "name": "Space Exploration Technologies Corp. (SpaceX)",
+    "sector": "Industrials",
+    "description": "SpaceX（SPCX）是 Elon Musk 創辦的航太與人工智慧企業，於 2026 年 6 月 12 日在 Nasdaq 上市，IPO 定價 $135，籌資 750 億美元，創史上最大 IPO 紀錄。公司業務涵蓋 Starlink 衛星互聯網（唯一盈利部門）、Falcon 火箭商業發射服務、Dragon 太空船，以及 2026 年收購 xAI 後整合的 Grok AI 模型與 AI 資料中心業務。Musk 持有逾 80% 投票權，公司計劃將 IPO 資金用於擴展 AI 算力基礎設施、發射設施及衛星星座。",
     "weight": 0.0,
     "last_updated": "2026-06-24",
     "nasdaq100": false,
     "revenue_segments": [
       {
-        "segment": "SPAC Trust Holdings",
-        "percentage": 85,
-        "description": "投資於尚未完成併購的SPAC信託資金，主要以美國國庫券形式持有，提供相對穩定的本金保障。"
+        "segment": "Starlink Satellite Internet",
+        "percentage": 55,
+        "description": "SpaceX 唯一盈利業務，提供全球低軌道衛星寬頻服務，用戶數持續增長，2025 年為主要營收來源。"
       },
       {
-        "segment": "Post-Merger SPAC Equities",
+        "segment": "Launch Services (Falcon 9 / Falcon Heavy)",
+        "percentage": 28,
+        "description": "商業及政府衛星發射服務，Falcon 9 可重複使用火箭大幅降低成本，為全球最活躍的軌道發射服務商。"
+      },
+      {
+        "segment": "xAI / Grok AI & Data Centers",
         "percentage": 10,
-        "description": "持有已完成併購交易的前SPAC公司股權，追求資本增值潛力。"
+        "description": "2026 年收購 xAI 後整合的 Grok AI 大型語言模型及 AI 資料中心業務，為未來主要增長引擎。"
       },
       {
-        "segment": "Cash & Equivalents",
-        "percentage": 5,
-        "description": "基金持有的現金及短期流動資產，用於流動性管理及再平衡操作。"
+        "segment": "Government Contracts (NASA / DoD)",
+        "percentage": 7,
+        "description": "包括 NASA Crew Dragon 載人任務、Artemis 月球計劃及美國國防部相關合約。"
       }
     ],
     "in_sp500": false,

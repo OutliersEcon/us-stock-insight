@@ -98,7 +98,7 @@ SECTOR_MAP = {
     "TSM": "Technology", "FUTU": "Financials", "IBKR": "Financials",
     "ONDS": "Technology", "RCAT": "Industrials", "IONQ": "Technology",
     "UMAC": "Industrials",
-    "SPCX": "Financials",
+    "SPCX": "Industrials",  # SpaceX
     "QBTS": "Technology",
     "RGTI": "Technology",
 }
