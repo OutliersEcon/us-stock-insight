@@ -40,7 +40,7 @@
   - **含特殊字元 (`.`, `/`) 的 Ticker**：將特殊字元替換為 `-`，例如 `BRK.B` 轉換為 `BRK-B.html`。
 
 ### 4. 自動化工作流 (GitHub Actions Automation)
-專案規劃了 `.github/workflows/data-update.yml`（需授予 `workflows` 權限後推送），實現完全無人值守的自動化更新流程：
+專案已部署 `.github/workflows/data-update.yml`，實現完全無人值守的自動化更新流程：
 1. **觸發條件**：每週一 UTC 02:00 定時執行（Cron Job），或手動觸發 (workflow_dispatch)。
 2. **執行步驟**：
    - 檢出程式碼並設定 Python 環境。
@@ -50,6 +50,9 @@
    - 執行 `generate_pages.py` 重新生成所有 HTML 頁面。
    - 將更新後的檔案 `git commit` 並 `push` 回 `main` 分支。
 3. **自動部署**：GitHub Pages 偵測到 `main` 分支有更新後，會自動部署最新的靜態網頁。
+
+> **💡 權限與 Token 設定說明**
+> 為了讓 GitHub Actions 能成功執行，專案維護者已透過 Personal Access Token (PAT) 授予 `workflows` 權限，確保 `.github/workflows` 目錄下的 YAML 檔案能被正確推送並啟用定時排程。請注意，為了保護隱私，任何 Token 或 API 金鑰（如 `OPENAI_API_KEY`）皆透過 GitHub 倉庫的 **Settings → Secrets and variables → Actions** 進行管理，絕不會明碼寫入程式碼或 README 中。
 
 ---
 
@@ -87,4 +90,4 @@ us-stock-insight/
 - [x] 整合 Nasdaq 100 指數成分股標示與行業中文譯名
 - [x] 實作自動化的內部更新追蹤日誌 (`update_log.json`)
 - [ ] 完善 `ai_agent_parser.py` 整合 OpenAI API 與 SEC 數據的實際呼叫邏輯
-- [ ] 授予 GitHub Actions `workflows` 權限，推送並啟用自動化 CI/CD 腳本
+- [x] 授予 GitHub Actions `workflows` 權限，推送並啟用自動化 CI/CD 腳本
