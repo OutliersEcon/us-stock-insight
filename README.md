@@ -89,20 +89,6 @@
 
 ## 📋 操作指南 (Operations Guide)
 
-### 設定 Manus Scheduled Task（財報更新）
-
-若要自動更新過期的企業財報數據，請在 Manus 平台設定 Scheduled Task：
-1. 開啟 Manus，使用 `manus-config schedule` 技能。
-2. 設定一個每週執行的任務（例如每週三）。
-3. 任務指令：
-   ```bash
-   cd /home/ubuntu/us-stock-insight
-   python3 scripts/ai_agent_parser.py --regenerate-pages
-   git add data/ stocks/ index.html
-   git commit -m "update: auto-fetch latest financial data via Manus"
-   git push origin main
-   ```
-
 ### 新增企業
 
 ```bash
