@@ -106,47 +106,41 @@
     "ticker": "MSFT",
     "name": "Microsoft Corporation",
     "sector": "Technology",
-    "description": "全球最大軟體公司之一，旗下擁有 Azure 雲端平台、Office 365、LinkedIn 及 Xbox，積極佈局 AI 領域（Copilot）。",
+    "description": "微軟公司（Microsoft Corporation）是全球領先的科技企業，主要提供雲端運算、企業軟體、生產力工具及個人電腦作業系統等產品與服務。其核心業務涵蓋 Azure 雲端平台、Microsoft 365 辦公套件、LinkedIn 專業社群網路及 Xbox 遊戲娛樂等多元領域。微軟在企業級市場與消費者市場均佔有重要地位，並積極布局人工智慧技術（包括與 OpenAI 的深度合作）以強化其競爭優勢。",
     "weight": 4.1,
     "last_updated": "2026-06-24",
     "nasdaq100": true,
     "revenue_segments": [
       {
-        "segment": "Intelligent Cloud (Azure)",
-        "percentage": 43,
-        "description": "Azure 雲端服務、伺服器產品"
+        "segment": "Intelligent Cloud",
+        "percentage": 36,
+        "description": "包含 Microsoft Azure 雲端服務、伺服器產品及企業雲端解決方案，為公司成長最快的核心業務板塊"
       },
       {
-        "segment": "Productivity & Business (Office)",
+        "segment": "Productivity and Business Processes",
         "percentage": 34,
-        "description": "Microsoft 365、LinkedIn、Dynamics"
+        "description": "涵蓋 Microsoft 365（Office）訂閱服務、LinkedIn 及 Dynamics 365 商業應用程式等生產力與企業流程工具"
       },
       {
         "segment": "More Personal Computing",
-        "percentage": 23,
-        "description": "Windows、Xbox、Surface、搜尋廣告"
+        "percentage": 30,
+        "description": "包含 Windows 作業系統授權、Xbox 遊戲主機與遊戲服務、Surface 裝置及搜尋廣告（Bing）等消費者導向業務"
       }
     ],
     "in_sp500": true,
     "qqq_weight": 7.04,
     "sources": [
       {
-        "title": "SEC EDGAR 10-K Filings - Microsoft Corporation",
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MSFT&type=10-K"
+        "title": "SEC EDGAR 10-Q Filings — Microsoft Corporation",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=10-Q&dateb=&owner=include&count=5"
       },
       {
-        "title": "Microsoft Investor Relations",
-        "url": "https://www.microsoft.com/en-us/investor"
-      },
-      {
-        "title": "Microsoft Annual Report FY2024",
-        "url": "https://www.microsoft.com/en-us/investor/annual-reports"
-      },
-      {
-        "title": "Microsoft FY2024 Q4 Earnings Press Release",
-        "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2024-q4/press-release-earnings"
+        "title": "Microsoft Corporation 10-Q (2026-03-31) — SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/"
       }
-    ]
+    ],
+    "data_period": "FY2026 Q3（截至 2026 年 3 月 31 日）",
+    "data_quality": "real_data"
   },
   {
     "ticker": "AMZN",
@@ -5483,47 +5477,36 @@
     "ticker": "UMAC",
     "name": "Unusual Machines",
     "sector": "Industrials",
-    "description": "美國本土無人機（Drone）製造商，專注於生產符合美國國防部 Blue UAS 認證的商用與軍用無人機，致力於減少美國對中國無人機供應鏈的依賴。",
+    "description": "Unusual Machines（UMAC）是一家專注於無人機（UAV）產品的工業科技公司，主要透過零售與企業兩大渠道銷售無人機及相關配件。公司旗下品牌包括 Rotor Riot，並於2025年收購 Rotor Lab 以擴展企業級無人機解決方案市場。",
     "weight": 0.0,
     "last_updated": "2026-06-24",
     "nasdaq100": false,
     "in_sp500": false,
     "revenue_segments": [
       {
-        "segment": "Drone Hardware",
-        "percentage": 72,
-        "description": "FPV 無人機機體及零組件銷售"
+        "segment": "Retail Revenue",
+        "percentage": 60,
+        "description": "透過零售渠道銷售無人機及配件，面向消費者與愛好者市場"
       },
       {
-        "segment": "Components & Parts",
-        "percentage": 20,
-        "description": "馬達、電調等無人機零件零售"
-      },
-      {
-        "segment": "Software & Services",
-        "percentage": 8,
-        "description": "飛控軟體及技術支援服務"
+        "segment": "Enterprise Revenue",
+        "percentage": 40,
+        "description": "面向企業與專業用戶提供無人機解決方案與相關服務"
       }
     ],
     "qqq_weight": 0,
     "sources": [
       {
-        "title": "SEC EDGAR 10-K Filing Page - Unusual Machines (UMAC)",
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=UMAC&type=10-K"
+        "title": "SEC EDGAR 10-Q Filings — Unusual Machines",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1956955&type=10-Q&dateb=&owner=include&count=5"
       },
       {
-        "title": "Unusual Machines Investor Relations",
-        "url": "https://ir.unusualmachines.com/"
-      },
-      {
-        "title": "Unusual Machines Annual Report 10-K FY2023",
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001854463&type=10-K&dateb=&owner=include&count=40"
-      },
-      {
-        "title": "Unusual Machines News & Press Releases",
-        "url": "https://ir.unusualmachines.com/news-releases"
+        "title": "Unusual Machines 10-Q (2026-03-31) — SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316826003923/"
       }
-    ]
+    ],
+    "data_period": "FY2026 Q1（截至 2026 年 3 月 31 日）",
+    "data_quality": "real_data"
   },
   {
     "ticker": "FUTU",

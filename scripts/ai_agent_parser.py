@@ -4,17 +4,19 @@ ai_agent_parser.py — 真實財報數據更新腳本
 
 職責
 ----
-供 Manus Scheduled Task 定期呼叫。
 找出 last_updated 超過指定天數的企業，
 實際從 SEC EDGAR 抓取最新財報文字，
 再交由 AI 分析結構化，並更新 data/processed/companies.json。
 
+可由 Manus Scheduled Task 定期呼叫，也可由用家主動執行。
+
 工作流程（兩階段）
 ------------------
 Phase 1 — 抓取真實財報：
-    1. 查詢 SEC EDGAR 取得最新 10-Q / 10-K 申報連結（CIK lookup）
-    2. 下載申報文件的純文字內容
-    3. 記錄所有實際訪問的 URL 作為 sources
+    1. 從 SEC EDGAR company_tickers.json 查詢 CIK（官方 JSON API，不需要 HTML 解析）
+    2. 透過 data.sec.gov/submissions/CIK{cik}.json 取得最新 10-Q / 10-K 申報連結
+    3. 下載申報文件的純文字內容
+    4. 記錄所有實際訪問的 URL 作為 sources
 
 Phase 2 — AI 分析與結構化：
     將真實抓取的財報文字交給 AI 分析，
@@ -78,8 +80,11 @@ COMPANIES_FILE = REPO_ROOT / "data" / "processed" / "companies.json"
 UPDATE_LOG_FILE = REPO_ROOT / "data" / "update_log.json"
 
 DEFAULT_STALE_DAYS = 30
+
+# SEC EDGAR 要求 User-Agent 必須包含 email 地址，否則回傳 403
+# 注意：github.io 域名的 email 會被 SEC 封鎖，需要使用普通 .com 域名
 SEC_HEADERS = {
-    "User-Agent": "us-stock-insight/1.0 (github.com/OutliersEcon/us-stock-insight)"
+    "User-Agent": "us-stock-insight admin@outliersecon.com"
 }
 
 # 非美國上市企業（不在 SEC EDGAR），跳過 SEC 查詢
@@ -91,17 +96,48 @@ NON_SEC_TICKERS = {"TSM", "FUTU"}
 # ─────────────────────────────────────────────────────────────────────────────
 
 def get_cik_from_ticker(ticker: str) -> str | None:
-    """從 SEC EDGAR 查詢 Ticker 對應的 CIK 號碼。"""
-    url = (
-        f"https://www.sec.gov/cgi-bin/browse-edgar"
-        f"?company=&CIK={ticker}&type=10-K&dateb=&owner=include"
-        f"&count=1&search_text=&action=getcompany&output=atom"
-    )
+    """
+    從 SEC EDGAR 查詢 Ticker 對應的 CIK 號碼。
+
+    使用 efts.sec.gov Full-Text Search API，可在沙盒環境正常訪問。
+    www.sec.gov 的 company_tickers.json 在部分環境（如 Manus 沙盒）會回傳 403，
+    但 efts.sec.gov 不受此限制。
+
+    查詢邏輯：
+    1. 搜尋 ticker 字串在 10-Q 申報中的出現
+    2. 從 entity_filter aggregation 中找出 ticker 完全匹配的企業
+    3. 若無完全匹配，回傳 None
+    """
+    ticker_upper = ticker.upper()
+    url = f"https://efts.sec.gov/LATEST/search-index?q=%22{ticker_upper}%22&forms=10-Q"
     try:
         resp = requests.get(url, headers=SEC_HEADERS, timeout=15)
-        match = re.search(r"CIK=(\d+)", resp.text)
-        if match:
-            return match.group(1).zfill(10)
+        resp.raise_for_status()
+        data = resp.json()
+        buckets = data.get("aggregations", {}).get("entity_filter", {}).get("buckets", [])
+
+        # 優先找 ticker 完全匹配的企業（格式："COMPANY NAME  (TICKER)  (CIK XXXXXXXXXX)"）
+        for bucket in buckets:
+            display_name = bucket.get("key", "")
+            # 檢查 ticker 是否出現在括號中（精確匹配）
+            if f"({ticker_upper})" in display_name or f"({ticker_upper}," in display_name:
+                cik_match = re.search(r"CIK (\d+)", display_name)
+                if cik_match:
+                    return cik_match.group(1).zfill(10)
+
+        # 若 10-Q 無結果，嘗試 10-K
+        url_10k = f"https://efts.sec.gov/LATEST/search-index?q=%22{ticker_upper}%22&forms=10-K"
+        resp2 = requests.get(url_10k, headers=SEC_HEADERS, timeout=15)
+        resp2.raise_for_status()
+        data2 = resp2.json()
+        buckets2 = data2.get("aggregations", {}).get("entity_filter", {}).get("buckets", [])
+        for bucket in buckets2:
+            display_name = bucket.get("key", "")
+            if f"({ticker_upper})" in display_name or f"({ticker_upper}," in display_name:
+                cik_match = re.search(r"CIK (\d+)", display_name)
+                if cik_match:
+                    return cik_match.group(1).zfill(10)
+
     except Exception as e:
         print(f"    [WARN] CIK lookup failed for {ticker}: {e}")
     return None
@@ -115,6 +151,7 @@ def get_latest_filing(cik: str, form_type: str = "10-Q") -> dict | None:
     url = f"https://data.sec.gov/submissions/CIK{cik}.json"
     try:
         resp = requests.get(url, headers=SEC_HEADERS, timeout=15)
+        resp.raise_for_status()
         data = resp.json()
         filings = data.get("filings", {}).get("recent", {})
         forms = filings.get("form", [])
@@ -131,7 +168,7 @@ def get_latest_filing(cik: str, form_type: str = "10-Q") -> dict | None:
                 filing_url = f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession}/"
                 search_url = (
                     f"https://www.sec.gov/cgi-bin/browse-edgar"
-                    f"?action=getcompany&CIK={cik}&type={form_type}"
+                    f"?action=getcompany&CIK={cik_int}&type={form_type}"
                     f"&dateb=&owner=include&count=5"
                 )
                 return {
@@ -155,6 +192,7 @@ def fetch_filing_text(filing_url: str, max_chars: int = 8000) -> str:
     try:
         index_url = filing_url + "index.json"
         resp = requests.get(index_url, headers=SEC_HEADERS, timeout=15)
+        resp.raise_for_status()
         index_data = resp.json()
         files = index_data.get("directory", {}).get("item", [])
 
@@ -319,9 +357,10 @@ def update_company(company: dict, client: OpenAI) -> dict | None:
     if ticker not in NON_SEC_TICKERS:
         print(f"    → Querying SEC EDGAR for CIK...")
         cik = get_cik_from_ticker(ticker)
-        time.sleep(0.5)
+        time.sleep(0.3)
 
         if cik:
+            print(f"    → CIK found: {int(cik)}")
             for form_type in ["10-Q", "10-K"]:
                 filing_info = get_latest_filing(cik, form_type)
                 time.sleep(0.5)
@@ -392,7 +431,7 @@ def main():
     parser = argparse.ArgumentParser(
         description=(
             "Update stale company financial data from real SEC EDGAR sources + AI analysis.\n"
-            "Designed for use as a Manus Scheduled Task."
+            "Can be run manually or as a Manus Scheduled Task."
         )
     )
     parser.add_argument(
