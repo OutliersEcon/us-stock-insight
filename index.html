@@ -164,6 +164,41 @@
     .no-results { grid-column: 1/-1; text-align: center; padding: 60px 0; color: var(--text-muted); }
     .no-results .icon { font-size: 48px; margin-bottom: 16px; }
 
+    /* ── Pagination ── */
+    .pagination-wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .pagination-wrap-top  { padding-bottom: 12px; }
+    .pagination-wrap-bottom { padding-top: 16px; padding-bottom: 40px; }
+    .pagination { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .page-btn {
+      min-width: 36px; height: 36px; padding: 0 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text-muted); font-size: 14px;
+      cursor: pointer; transition: all .2s; display: inline-flex;
+      align-items: center; justify-content: center;
+    }
+    .page-btn:hover:not([disabled]) { border-color: var(--accent); color: var(--text); background: var(--surface2); }
+    .page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+    .page-btn[disabled] { opacity: .35; cursor: not-allowed; }
+    .page-prev, .page-next { font-size: 18px; font-weight: 700; }
+    .page-ellipsis { color: var(--text-muted); padding: 0 4px; font-size: 14px; line-height: 36px; }
+    .page-info { font-size: 12px; color: var(--text-muted); margin-left: 8px; white-space: nowrap; }
+
+    /* ── Page size selector ── */
+    .page-size-wrap { display: flex; align-items: center; gap: 8px; }
+    .page-size-wrap label { font-size: 13px; color: var(--text-muted); white-space: nowrap; }
+    .page-size-wrap select {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 28px 8px 12px; color: var(--text); font-size: 13px; outline: none; cursor: pointer;
+      transition: border-color .2s; appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238892a4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center;
+    }
+    .page-size-wrap select:focus { border-color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .pagination-wrap { padding-left: 16px; padding-right: 16px; }
+    }
+
     /* ── Footer ── */
     footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--text-muted); font-size: 13px; }
     footer a { color: var(--accent); text-decoration: none; }
@@ -185,7 +220,7 @@
       .hero { padding: 40px 16px 24px; }
       .hero-stats { gap: 24px; }
       .controls, .controls-row2, .controls-row3, .result-bar { padding-left: 16px; padding-right: 16px; }
-      .grid { padding: 0 16px 40px; }
+      .grid { padding: 0 16px 16px; }
     }
   </style>
 </head>
@@ -230,6 +265,15 @@
         <option value="name">名稱（A→Z）</option>
       </select>
     </div>
+    <div class="page-size-wrap">
+      <label for="page-size-select">每頁：</label>
+      <select id="page-size-select">
+        <option value="25" selected>25 間</option>
+        <option value="50">50 間</option>
+        <option value="100">100 間</option>
+        <option value="0">全部</option>
+      </select>
+    </div>
     <button id="reset-btn">✕ 清除篩選</button>
   </div>
 
@@ -261,7 +305,13 @@
     <span id="result-count"></span>
   </div>
 
+  <!-- 上方分頁導覽列 -->
+  <div class="pagination-wrap pagination-wrap-top" id="pagination-top"></div>
+
   <div class="grid" id="grid"></div>
+
+  <!-- 下方分頁導覽列 -->
+  <div class="pagination-wrap pagination-wrap-bottom" id="pagination-bottom"></div>
 </main>
 
 <footer>

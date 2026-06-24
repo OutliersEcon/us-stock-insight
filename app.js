@@ -5,10 +5,11 @@
  *  - 從 companies.json 動態載入企業資料
  *  - 行業篩選（英文 + 中文雙語）
  *  - 指數篩選 toggle（全部 / S&P 500 / Nasdaq 100）
- *  - 排序（SPY 權重 / Ticker 代號 / 公司名稱）
- *    - 非 S&P 500 企業（in_sp500=false）按權重排序時固定排在最後
+ *  - 排序（SPY 權重 / QQQ 權重 / Ticker 代號 / 公司名稱）
+ *    - 非 S&P 500 企業（in_sp500=false）按任何方式排序時固定排在最後
  *  - 智慧搜尋（支援 Ticker、公司名稱、中文別名、行業）
  *  - Reset Filter 按鈕（一鍵清除所有篩選條件）
+ *  - Pagination：每頁 25 / 50 / 100 / 全部，上下方均有頁碼導覽列
  *  - 動態渲染公司卡片
  */
 
@@ -150,11 +151,13 @@ const SEARCH_ALIASES = {
 };
 
 // ── 狀態
-let companies   = [];
+let companies    = [];
 let activeSector = 'all';
-let activeIndex  = 'all';    // 'all' | 'sp500' | 'nasdaq100'
-let sortBy       = 'weight'; // 'weight' | 'ticker' | 'name'
+let activeIndex  = 'all';     // 'all' | 'sp500' | 'nasdaq100'
+let sortBy       = 'weight';  // 'weight' | 'qqq_weight' | 'ticker' | 'name'
 let searchQuery  = '';
+let currentPage  = 1;
+let pageSize     = 25;        // 25 | 50 | 100 | 0（0 = 全部）
 
 // ── 工具函數
 function tickerToFile(ticker) {
@@ -170,14 +173,14 @@ function isDefaultState() {
   return activeSector === 'all' &&
          activeIndex  === 'all' &&
          sortBy       === 'weight' &&
-         searchQuery  === '';
+         searchQuery  === '' &&
+         pageSize     === 25;
 }
 
 /** 更新 reset 按鈕的顯示狀態 */
 function updateResetBtn() {
   const btn = document.getElementById('reset-btn');
   if (!btn) return;
-  // 使用 visibility + opacity 而非 display，避免 CSS specificity 問題
   if (isDefaultState()) {
     btn.style.visibility = 'hidden';
     btn.style.opacity = '0';
@@ -208,20 +211,17 @@ function matchSearch(c, query) {
   if (c.ticker.toLowerCase().replace(/-/g, '.').includes(q)) return true;
 
   // 2. 公司名稱：要求字詞首字匹配（word-boundary）
-  //    例："apple" 匹配 "Apple Inc." 但不匹配 "Snapple"
   const nameLower = c.name.toLowerCase();
-  if (nameLower === q) return true; // 完全相等
-  // 字詞首字匹配：字詞開頭或空白/連字符後緊接跟著查詢字串
+  if (nameLower === q) return true;
   const wordBoundaryRe = new RegExp('(?:^|[\\s\\-\/])' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
   if (wordBoundaryRe.test(nameLower)) return true;
 
-  // 3. 行業：英文完整包含（避免 substring 誤匹）或中文完全相等
+  // 3. 行業：英文完整包含或中文完全相等
   if (c.sector.toLowerCase().includes(q)) return true;
   const zhSector = (SECTOR_ZH[c.sector] || '').toLowerCase();
   if (zhSector === q || zhSector.startsWith(q)) return true;
 
   // 4. 別名：單向比對（alias.includes(q)），要求 q 至少 2 字元
-  //    避免短別名（amd、nbc、fb、mac）對長字串的過度匹配
   if (q.length >= 2) {
     const aliases = SEARCH_ALIASES[c.ticker] || [];
     if (aliases.some(a => a.toLowerCase().includes(q))) return true;
@@ -251,14 +251,11 @@ function sortCompanies(arr) {
     if (sortBy === 'ticker') return a.ticker.localeCompare(b.ticker);
     if (sortBy === 'name')   return a.name.localeCompare(b.name);
     if (sortBy === 'qqq_weight') {
-      // QQQ weight 排序：先將 Nasdaq 100 成員排在前面，再按 qqq_weight 降冪
       const aQQQ = a.qqq_weight || 0;
       const bQQQ = b.qqq_weight || 0;
       const aInNDX = aQQQ > 0;
       const bInNDX = bQQQ > 0;
-      // Nasdaq 100 成員排在非成員之前
       if (aInNDX !== bInNDX) return aInNDX ? -1 : 1;
-      // 同組內按 qqq_weight 降冪（非成員組內按 SPY weight 降冪）
       if (aInNDX) return bQQQ - aQQQ;
       return b.weight - a.weight;
     }
@@ -283,7 +280,6 @@ function escapeHtml(str) {
 // ── 渲染單張卡片
 function renderCard(c) {
   const file = tickerToFile(c.ticker);
-  // 業務板塊已在 companies.json 中按百分比降床排序，取前 4 項
   const topSegs = c.revenue_segments.slice(0, 4);
   const sectorZh = SECTOR_ZH[c.sector] || c.sector;
 
@@ -301,7 +297,6 @@ function renderCard(c) {
   const ndxBadge = c.nasdaq100
     ? `<span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>`
     : '';
-  // 非 S&P 500 企業顯示「自選」 badge
   const watchBadge = c.in_sp500 === false
     ? `<span class="index-badge index-badge-watch"><span class="idx-dot"></span>自選</span>`
     : '';
@@ -340,7 +335,98 @@ function renderCard(c) {
     </a>`;
 }
 
-// ── 渲染整個 Grid
+/**
+ * 渲染 Pagination 導覽列（上方或下方均使用此函數）
+ * @param {number} totalItems  - 篩選後的總企業數
+ * @param {string} position    - 'top' 或 'bottom'，對應 DOM id
+ */
+function renderPagination(totalItems, position) {
+  const container = document.getElementById(`pagination-${position}`);
+  if (!container) return;
+
+  // pageSize = 0 表示「全部」，不需要分頁
+  if (pageSize === 0 || totalItems === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const totalPages = Math.ceil(totalItems / pageSize);
+
+  // 只有一頁時仍顯示導覽列（讓用戶知道目前狀態）
+  let html = `<div class="pagination">`;
+
+  // ← 上一頁
+  html += `<button class="page-btn page-prev" ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}">‹</button>`;
+
+  // 頁碼按鈕（最多顯示 7 個，超過時用省略號）
+  const pages = getPageRange(currentPage, totalPages);
+  pages.forEach(p => {
+    if (p === '...') {
+      html += `<span class="page-ellipsis">…</span>`;
+    } else {
+      html += `<button class="page-btn ${p === currentPage ? 'active' : ''}" data-page="${p}">${p}</button>`;
+    }
+  });
+
+  // → 下一頁
+  html += `<button class="page-btn page-next" ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}">›</button>`;
+
+  // 頁面資訊
+  const start = (currentPage - 1) * pageSize + 1;
+  const end   = Math.min(currentPage * pageSize, totalItems);
+  html += `<span class="page-info">${start}–${end} / ${totalItems}</span>`;
+
+  html += `</div>`;
+  container.innerHTML = html;
+
+  // 綁定點擊事件
+  container.querySelectorAll('.page-btn:not([disabled])').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const p = parseInt(btn.dataset.page);
+      if (!isNaN(p) && p !== currentPage) {
+        currentPage = p;
+        renderGrid();
+        // 點擊下方分頁時，捲動到 grid 頂部
+        if (position === 'bottom') {
+          document.getElementById('grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+}
+
+/**
+ * 計算要顯示的頁碼範圍（最多 7 個按鈕，超過時加省略號）
+ */
+function getPageRange(current, total) {
+  if (total <= 7) {
+    return Array.from({ length: total }, (_, i) => i + 1);
+  }
+  const pages = [];
+  if (current <= 4) {
+    // 靠近開頭：1 2 3 4 5 … last
+    for (let i = 1; i <= 5; i++) pages.push(i);
+    pages.push('...');
+    pages.push(total);
+  } else if (current >= total - 3) {
+    // 靠近結尾：1 … (last-4) (last-3) (last-2) (last-1) last
+    pages.push(1);
+    pages.push('...');
+    for (let i = total - 4; i <= total; i++) pages.push(i);
+  } else {
+    // 中間：1 … (cur-1) cur (cur+1) … last
+    pages.push(1);
+    pages.push('...');
+    pages.push(current - 1);
+    pages.push(current);
+    pages.push(current + 1);
+    pages.push('...');
+    pages.push(total);
+  }
+  return pages;
+}
+
+// ── 渲染整個 Grid（含 pagination）
 function renderGrid() {
   const grid = document.getElementById('grid');
   let filtered = companies;
@@ -365,15 +451,40 @@ function renderGrid() {
   // 排序
   filtered = sortCompanies(filtered);
 
-  // 更新結果計數
+  const totalFiltered = filtered.length;
+
+  // 確保 currentPage 不超出範圍
+  if (pageSize > 0) {
+    const totalPages = Math.ceil(totalFiltered / pageSize);
+    if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+  }
+
+  // 更新結果計數（含分頁資訊）
   const resultCount = document.getElementById('result-count');
   if (resultCount) {
-    resultCount.textContent = `顯示 ${filtered.length} / ${companies.length} 間企業`;
+    if (pageSize === 0 || totalFiltered === 0) {
+      resultCount.textContent = `顯示 ${totalFiltered} / ${companies.length} 間企業`;
+    } else {
+      const totalPages = Math.ceil(totalFiltered / pageSize);
+      resultCount.textContent = `顯示 ${totalFiltered} / ${companies.length} 間企業　·　第 ${currentPage} / ${totalPages} 頁`;
+    }
   }
 
   // 更新 reset 按鈕顯示
   updateResetBtn();
 
+  // 分頁切片
+  let pageItems = filtered;
+  if (pageSize > 0) {
+    const start = (currentPage - 1) * pageSize;
+    pageItems = filtered.slice(start, start + pageSize);
+  }
+
+  // 渲染上方分頁
+  renderPagination(totalFiltered, 'top');
+
+  // 渲染卡片
   if (filtered.length === 0) {
     grid.innerHTML = `
       <div class="no-results">
@@ -382,20 +493,28 @@ function renderGrid() {
         <p style="font-size:12px;margin-top:8px;opacity:.6">試試搜尋公司別名，例如「Google」可找到 GOOGL，「台積電」可找到 TSM</p>
       </div>`;
   } else {
-    grid.innerHTML = filtered.map(renderCard).join('');
+    grid.innerHTML = pageItems.map(renderCard).join('');
   }
+
+  // 渲染下方分頁
+  renderPagination(totalFiltered, 'bottom');
 }
 
-// ── 重置所有篩選條件
+// ── 重置所有篩選條件（含分頁）
 function resetFilters() {
   activeSector = 'all';
   activeIndex  = 'all';
   sortBy       = 'weight';
   searchQuery  = '';
+  currentPage  = 1;
+  pageSize     = 25;
 
   // 重置 UI 狀態
   document.getElementById('search').value = '';
   document.getElementById('sort-select').value = 'weight';
+
+  const pageSizeSelect = document.getElementById('page-size-select');
+  if (pageSizeSelect) pageSizeSelect.value = '25';
 
   document.querySelectorAll('#sector-filters .filter-btn').forEach(b => b.classList.remove('active'));
   const allSectorBtn = document.querySelector('#sector-filters .filter-btn[data-sector="all"]');
@@ -408,8 +527,7 @@ function resetFilters() {
   renderGrid();
 }
 
-// ── 建立行業篩選按鈕—僅建立 DOM，不綁定個別 click handler
-// 事件處理全部由 initEvents 中的事件委派（event delegation）負責
+// ── 建立行業篩選按鈕
 function buildSectorFilters(data) {
   const sectors = [...new Set(data.map(c => c.sector))].sort();
   const filterGroup = document.getElementById('sector-filters');
@@ -426,9 +544,10 @@ function buildSectorFilters(data) {
 
 // ── 初始化事件監聽
 function initEvents() {
-  // 搜尋框
+  // 搜尋框（搜尋時重置到第一頁）
   document.getElementById('search').addEventListener('input', e => {
     searchQuery = e.target.value;
+    currentPage = 1;
     renderGrid();
   });
 
@@ -438,7 +557,6 @@ function initEvents() {
     if (!btn) return;
     const sector = btn.dataset.sector;
     if (!sector) return;
-    // 若點擊的是已選中的非「全部」按鈕，則取消篩選（回到全部）
     if (activeSector === sector && sector !== 'all') {
       activeSector = 'all';
       document.querySelectorAll('#sector-filters .filter-btn').forEach(b => b.classList.remove('active'));
@@ -449,6 +567,7 @@ function initEvents() {
       document.querySelectorAll('#sector-filters .filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     }
+    currentPage = 1;
     renderGrid();
   });
 
@@ -457,7 +576,6 @@ function initEvents() {
     const btn = e.target.closest('.toggle-btn');
     if (!btn) return;
     const idx = btn.dataset.index;
-    // 若點擊的是已選中的非「全部」按鈕，則取消篩選（回到全部）
     if (activeIndex === idx && idx !== 'all') {
       activeIndex = 'all';
       document.querySelectorAll('#index-toggles .toggle-btn').forEach(b => b.classList.remove('active'));
@@ -468,12 +586,21 @@ function initEvents() {
       document.querySelectorAll('#index-toggles .toggle-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     }
+    currentPage = 1;
     renderGrid();
   });
 
-  // 排序
+  // 排序（排序改變時重置到第一頁）
   document.getElementById('sort-select').addEventListener('change', e => {
     sortBy = e.target.value;
+    currentPage = 1;
+    renderGrid();
+  });
+
+  // 每頁顯示數量
+  document.getElementById('page-size-select').addEventListener('change', e => {
+    pageSize = parseInt(e.target.value);
+    currentPage = 1;
     renderGrid();
   });
 
@@ -505,7 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // 建立行業篩選按鈕
       buildSectorFilters(data);
 
-      // 初始渲染（reset 按鈕預設隱藏）
+      // 初始渲染
       updateResetBtn();
       renderGrid();
     })
