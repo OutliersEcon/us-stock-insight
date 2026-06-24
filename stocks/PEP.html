@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEP · PepsiCo Inc. | US Stock Insight</title>
+  <meta name="description" content="百事公司為全球食品與飲料領導者，透过多元品牌組合、全球供應鏈與直控分銷網絡，結合資料驅動行銷與新品研發，在零食與碳酸／非碳酸飲料市場保持規模經濟與強大競爭優勢。" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117; --surface: #1a1d27; --surface2: #22263a;
+      --border: #2e3250; --accent: #4f8ef7; --accent2: #7c3aed;
+      --text: #e2e8f0; --text-muted: #8892a4; --radius: 12px;
+      --sector-color: #a78bfa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .back-link { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-muted); font-size: 14px; transition: color .2s; }
+    .back-link:hover { color: var(--accent); }
+    .header-ticker { font-size: 16px; font-weight: 700; color: var(--text); }
+
+    .hero { max-width: 1100px; margin: 0 auto; padding: 40px 24px 0; }
+    .hero-top { display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+    .ticker-big { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 12px; padding: 12px 20px; font-size: 28px; font-weight: 800; color: #fff; letter-spacing: 1px; flex-shrink: 0; }
+    .hero-info { flex: 1; }
+    .hero-name { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .hero-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
+    .badge { border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; }
+    .badge-sector { background: var(--surface2); color: var(--sector-color); border: 1px solid var(--sector-color)40; }
+    .badge-weight { background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
+    .index-strip { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .index-badge { display: inline-flex; align-items: center; gap: 5px; border-radius: 5px; padding: 3px 10px; font-size: 11px; font-weight: 700; letter-spacing: .3px; white-space: nowrap; }
+    .idx-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .index-badge-sp { background: rgba(34,197,94,.08); color: #22c55e; border: 1px solid rgba(34,197,94,.3); }
+    .index-badge-sp .idx-dot { background: #22c55e; }
+    .index-badge-ndx { background: rgba(251,191,36,.08); color: #fbbf24; border: 1px solid rgba(251,191,36,.3); }
+    .index-badge-ndx .idx-dot { background: #fbbf24; }
+    .hero-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; margin-bottom: 12px; }
+    .last-updated { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .last-updated-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green, #22c55e); display: inline-block; }
+
+    .content { max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .content { grid-template-columns: 1fr; } }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .card-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+    .card-title-icon { font-size: 18px; }
+
+    .chart-wrap { position: relative; height: 280px; display: flex; align-items: center; justify-content: center; }
+
+    .seg-item { margin-bottom: 16px; }
+    .seg-item:last-child { margin-bottom: 0; }
+    .seg-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .seg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .seg-name { flex: 1; font-size: 14px; font-weight: 600; }
+    .seg-pct { font-size: 15px; font-weight: 700; color: var(--accent); }
+    .seg-bar-wrap { height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+    .seg-bar { height: 100%; border-radius: 3px; transition: width .6s ease; }
+    .seg-desc { font-size: 12px; color: var(--text-muted); padding-left: 18px; }
+
+    .note-card { grid-column: 1 / -1; }
+    .note { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    footer { border-top: 1px solid var(--border); padding: 20px 24px; text-align: center; color: var(--text-muted); font-size: 12px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="back-link" href="../index.html">← 返回總覽</a>
+    <div class="header-ticker">PEP</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-top">
+    <div class="ticker-big">PEP</div>
+    <div class="hero-info">
+      <div class="hero-name">PepsiCo Inc.</div>
+      <div class="hero-meta">
+        <span class="badge badge-sector">Consumer Staples</span>
+        <span class="badge badge-weight">SPY 0.29%</span>
+      </div>
+      <div class="index-strip">
+        <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
+        
+      </div>
+      <p class="hero-desc">百事公司為全球食品與飲料領導者，透过多元品牌組合、全球供應鏈與直控分銷網絡，結合資料驅動行銷與新品研發，在零食與碳酸／非碳酸飲料市場保持規模經濟與強大競爭優勢。</p>
+      <div class="last-updated">
+        <span class="last-updated-dot"></span>
+        資料最後更新：2026-06-24
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <!-- Pie Chart -->
+  <div class="card">
+    <div class="card-title"><span class="card-title-icon">🥧</span> 營收結構圓餅圖</div>
+    <div class="chart-wrap">
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Segments Detail -->
+  <div class="card">
+    <div class="card-title"><span class="card-title-icon">📋</span> 業務板塊詳細拆解</div>
+    
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#4f8ef7"></div>
+            <span class="seg-name">Frito-Lay North America</span>
+            <span class="seg-pct">32%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:32%;background:#4f8ef7"></div>
+          </div>
+          <p class="seg-desc">美國及加拿大的鹹食零食業務（例如Lay's、Doritos），以高毛利零食製造與廣泛零售通路為主。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">North America Beverages</span>
+            <span class="seg-pct">24%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:24%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">北美飲料業務（例如Pepsi、Mountain Dew、Gatorade、Tropicana），涵蓋飲料配方、瓶裝與冷鏈銷售通路。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Quaker Foods North America</span>
+            <span class="seg-pct">4%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:4%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">北美谷物與即食營養品（例如Quaker燕麥、早餐穀物與營養棒），以穩定、利基食品類別貢獻營收。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#f59e0b"></div>
+            <span class="seg-name">Europe</span>
+            <span class="seg-pct">16%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:16%;background:#f59e0b"></div>
+          </div>
+          <p class="seg-desc">歐洲地區的零食與飲料業務，結合當地品牌與國際品牌，透過多國營運適應區域消費偏好。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#ef4444"></div>
+            <span class="seg-name">Latin America</span>
+            <span class="seg-pct">9%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:9%;background:#ef4444"></div>
+          </div>
+          <p class="seg-desc">拉丁美洲市場，涵蓋零食與飲料，強調地區性配方與通路滲透以驅動成長。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#06b6d4"></div>
+            <span class="seg-name">Asia, Middle East & North Africa</span>
+            <span class="seg-pct">15%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:15%;background:#06b6d4"></div>
+          </div>
+          <p class="seg-desc">亞太、中東與北非市場，為新興市場成長來源，聚焦本地化產品、擴張通路與品牌建設。</p>
+        </div>
+  </div>
+
+  <!-- Note -->
+  <div class="card note-card">
+    <div class="note">
+      ⚠️ 本頁面的營收佔比數據基於公司最新年報及公開財報資料（最後更新：2026-06-24），僅供參考。各業務板塊的實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>資料來源：公司年報、SEC EDGAR &nbsp;|&nbsp; <a href="../index.html">返回 US Stock Insight 首頁</a></p>
+</footer>
+
+<script>
+  const ctx = document.getElementById('pieChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ["Frito-Lay North America", "North America Beverages", "Quaker Foods North America", "Europe", "Latin America", "Asia, Middle East & North Africa"],
+      datasets: [{
+        data: [32, 24, 4, 16, 9, 15],
+        backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444", "#06b6d4"],
+        borderColor: '#0f1117',
+        borderWidth: 2,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: '#8892a4',
+            font: { size: 11 },
+            padding: 12,
+            boxWidth: 12
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.label}: ${ctx.parsed}%`
+          }
+        }
+      },
+      cutout: '55%'
+    }
+  });
+</script>
+</body>
+</html>

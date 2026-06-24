@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLTR · Palantir Technologies Inc. | US Stock Insight</title>
+  <meta name="description" content="Palantir 是以資料整合與分析平台為核心的軟體公司，透過 Foundry 與 Gotham 為政府與企業提供即時資料連結、工業化資料治理與複雜決策支援。其競爭優勢包括深度客製化部署、與關鍵政府機構的長期合約、平台網絡效應與高切換成本，" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117; --surface: #1a1d27; --surface2: #22263a;
+      --border: #2e3250; --accent: #4f8ef7; --accent2: #7c3aed;
+      --text: #e2e8f0; --text-muted: #8892a4; --radius: 12px;
+      --sector-color: #60a5fa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .back-link { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-muted); font-size: 14px; transition: color .2s; }
+    .back-link:hover { color: var(--accent); }
+    .header-ticker { font-size: 16px; font-weight: 700; color: var(--text); }
+
+    .hero { max-width: 1100px; margin: 0 auto; padding: 40px 24px 0; }
+    .hero-top { display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+    .ticker-big { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 12px; padding: 12px 20px; font-size: 28px; font-weight: 800; color: #fff; letter-spacing: 1px; flex-shrink: 0; }
+    .hero-info { flex: 1; }
+    .hero-name { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .hero-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
+    .badge { border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; }
+    .badge-sector { background: var(--surface2); color: var(--sector-color); border: 1px solid var(--sector-color)40; }
+    .badge-weight { background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
+    .index-strip { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .index-badge { display: inline-flex; align-items: center; gap: 5px; border-radius: 5px; padding: 3px 10px; font-size: 11px; font-weight: 700; letter-spacing: .3px; white-space: nowrap; }
+    .idx-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .index-badge-sp { background: rgba(34,197,94,.08); color: #22c55e; border: 1px solid rgba(34,197,94,.3); }
+    .index-badge-sp .idx-dot { background: #22c55e; }
+    .index-badge-ndx { background: rgba(251,191,36,.08); color: #fbbf24; border: 1px solid rgba(251,191,36,.3); }
+    .index-badge-ndx .idx-dot { background: #fbbf24; }
+    .hero-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; margin-bottom: 12px; }
+    .last-updated { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .last-updated-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green, #22c55e); display: inline-block; }
+
+    .content { max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .content { grid-template-columns: 1fr; } }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .card-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+    .card-title-icon { font-size: 18px; }
+
+    .chart-wrap { position: relative; height: 280px; display: flex; align-items: center; justify-content: center; }
+
+    .seg-item { margin-bottom: 16px; }
+    .seg-item:last-child { margin-bottom: 0; }
+    .seg-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .seg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .seg-name { flex: 1; font-size: 14px; font-weight: 600; }
+    .seg-pct { font-size: 15px; font-weight: 700; color: var(--accent); }
+    .seg-bar-wrap { height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+    .seg-bar { height: 100%; border-radius: 3px; transition: width .6s ease; }
+    .seg-desc { font-size: 12px; color: var(--text-muted); padding-left: 18px; }
+
+    .note-card { grid-column: 1 / -1; }
+    .note { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    footer { border-top: 1px solid var(--border); padding: 20px 24px; text-align: center; color: var(--text-muted); font-size: 12px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="back-link" href="../index.html">← 返回總覽</a>
+    <div class="header-ticker">PLTR</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-top">
+    <div class="ticker-big">PLTR</div>
+    <div class="hero-info">
+      <div class="hero-name">Palantir Technologies Inc.</div>
+      <div class="hero-meta">
+        <span class="badge badge-sector">Technology</span>
+        <span class="badge badge-weight">SPY 0.43%</span>
+      </div>
+      <div class="index-strip">
+        <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
+        
+      </div>
+      <p class="hero-desc">Palantir 是以資料整合與分析平台為核心的軟體公司，透過 Foundry 與 Gotham 為政府與企業提供即時資料連結、工業化資料治理與複雜決策支援。其競爭優勢包括深度客製化部署、與關鍵政府機構的長期合約、平台網絡效應與高切換成本，使其在處理敏感或複雜資料工作負載上具備領先地位。</p>
+      <div class="last-updated">
+        <span class="last-updated-dot"></span>
+        資料最後更新：2026-06-24
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <!-- Pie Chart -->
+  <div class="card">
+    <div class="card-title"><span class="card-title-icon">🥧</span> 營收結構圓餅圖</div>
+    <div class="chart-wrap">
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Segments Detail -->
+  <div class="card">
+    <div class="card-title"><span class="card-title-icon">📋</span> 業務板塊詳細拆解</div>
+    
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#4f8ef7"></div>
+            <span class="seg-name">Government</span>
+            <span class="seg-pct">52%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:52%;background:#4f8ef7"></div>
+          </div>
+          <p class="seg-desc">向政府與國防機構銷售的訂閱式軟體與相關專業服務，包含 Gotham 平台及專案部署，通常為長期合約且涉及敏感資料處理與持續支援。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">Commercial</span>
+            <span class="seg-pct">48%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:48%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">向企業與民間機構銷售 Foundry 等資料平台與專業服務，協助供應鏈、製造、金融與醫療等產業進行資料融合、分析與業務流程自動化。</p>
+        </div>
+  </div>
+
+  <!-- Note -->
+  <div class="card note-card">
+    <div class="note">
+      ⚠️ 本頁面的營收佔比數據基於公司最新年報及公開財報資料（最後更新：2026-06-24），僅供參考。各業務板塊的實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>資料來源：公司年報、SEC EDGAR &nbsp;|&nbsp; <a href="../index.html">返回 US Stock Insight 首頁</a></p>
+</footer>
+
+<script>
+  const ctx = document.getElementById('pieChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ["Government", "Commercial"],
+      datasets: [{
+        data: [52, 48],
+        backgroundColor: ["#4f8ef7", "#7c3aed"],
+        borderColor: '#0f1117',
+        borderWidth: 2,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: '#8892a4',
+            font: { size: 11 },
+            padding: 12,
+            boxWidth: 12
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.label}: ${ctx.parsed}%`
+          }
+        }
+      },
+      cutout: '55%'
+    }
+  });
+</script>
+</body>
+</html>
