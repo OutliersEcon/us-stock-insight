@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Stock Insight｜美股業務透視</title>
+  <meta name="description" content="深度解析標普 500 (SPY ETF) 成分股的核心業務與營收結構，提供直觀的圓餅圖視覺化與公司概覽。" />
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #4f8ef7;
+      --accent2: #7c3aed;
+      --text: #e2e8f0;
+      --text-muted: #8892a4;
+      --green: #22c55e;
+      --red: #ef4444;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0f1117 0%, #1a1d27 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .header-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .logo-text { font-size: 18px; font-weight: 700; color: var(--text); }
+    .logo-sub { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+    .header-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: var(--text-muted); }
+
+    /* ── Hero ── */
+    .hero { max-width: 1280px; margin: 0 auto; padding: 60px 24px 40px; text-align: center; }
+    .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; background: linear-gradient(135deg, #fff 30%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; margin-bottom: 16px; }
+    .hero p { font-size: 16px; color: var(--text-muted); max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+    .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── Controls ── */
+    .controls { max-width: 1280px; margin: 0 auto; padding: 0 24px 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .search-wrap { flex: 1; min-width: 240px; position: relative; }
+    .search-wrap input {
+      width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 10px 16px 10px 40px; color: var(--text); font-size: 14px; outline: none; transition: border-color .2s;
+    }
+    .search-wrap input:focus { border-color: var(--accent); }
+    .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 16px; pointer-events: none; }
+    .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 8px 16px; font-size: 13px; color: var(--text-muted); cursor: pointer; transition: all .2s; white-space: nowrap;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* ── Grid ── */
+    .grid { max-width: 1280px; margin: 0 auto; padding: 0 24px 60px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; text-decoration: none; color: inherit; display: block;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+    }
+    .card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--accent)08, transparent); opacity: 0; transition: opacity .2s; }
+    .card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 8px 32px rgba(79,142,247,.15); }
+    .card:hover::before { opacity: 1; }
+    .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+    .ticker-badge { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #fff; letter-spacing: .5px; }
+    .weight-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; font-size: 12px; color: var(--text-muted); }
+    .company-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+    .sector-tag { display: inline-block; background: var(--surface2); border-radius: 4px; padding: 2px 8px; font-size: 11px; color: var(--text-muted); margin-bottom: 10px; }
+    .description { font-size: 13px; color: var(--text-muted); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px; }
+    .segments { display: flex; flex-direction: column; gap: 5px; }
+    .seg-row { display: flex; align-items: center; gap: 8px; }
+    .seg-bar-wrap { flex: 1; height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+    .seg-bar { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    .seg-label { font-size: 11px; color: var(--text-muted); width: 130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .seg-pct { font-size: 11px; color: var(--text); font-weight: 600; width: 32px; text-align: right; }
+    .card-footer { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .view-link { font-size: 12px; color: var(--accent); display: flex; align-items: center; gap: 4px; }
+    .seg-count { font-size: 11px; color: var(--text-muted); }
+
+    /* ── No results ── */
+    .no-results { grid-column: 1/-1; text-align: center; padding: 60px 0; color: var(--text-muted); }
+    .no-results .icon { font-size: 48px; margin-bottom: 16px; }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--text-muted); font-size: 13px; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Sector colours ── */
+    .sector-Technology { color: #60a5fa; }
+    .sector-Financials { color: #34d399; }
+    .sector-Healthcare { color: #f472b6; }
+    .sector-Consumer-Discretionary { color: #fb923c; }
+    .sector-Consumer-Staples { color: #a78bfa; }
+    .sector-Communication-Services { color: #facc15; }
+    .sector-Energy { color: #f87171; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 24px; }
+      .hero-stats { gap: 24px; }
+      .controls { padding: 0 16px 16px; }
+      .grid { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">📊</div>
+      <div>
+        <div class="logo-text">US Stock Insight</div>
+        <div class="logo-sub">美股業務透視</div>
+      </div>
+    </a>
+    <div class="header-badge">SPY ETF · S&amp;P 500</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>深度解析美股核心企業</h1>
+    <p>追蹤標普 500 (SPY ETF) 成分股，透過 AI 技術拆解每間公司的業務板塊與營收結構，讓您一眼看懂美國最重要的企業。</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num" id="total-count">—</div><div class="stat-label">已收錄企業</div></div>
+      <div class="stat"><div class="stat-num">7</div><div class="stat-label">行業分類</div></div>
+      <div class="stat"><div class="stat-num">SPY</div><div class="stat-label">追蹤指數</div></div>
+    </div>
+  </section>
+
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search" placeholder="搜尋公司名稱或 Ticker…" />
+    </div>
+    <div class="filter-group" id="sector-filters">
+      <button class="filter-btn active" data-sector="all">全部</button>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  <p>資料來源：公司年報、SEC EDGAR、SSGA SPY 持倉 &nbsp;|&nbsp; 由 <a href="https://github.com/OutliersEcon/us-stock-insight" target="_blank">OutliersEcon</a> 維護</p>
+  <p style="margin-top:6px">本站資訊僅供參考，不構成投資建議。</p>
+</footer>
+
+<script>
+  // ── Ticker → filename mapping (handles special chars like BRK.B → BRK-B)
+  function tickerToFile(ticker) {
+    return ticker.replace(/\./g, '-').toUpperCase();
+  }
+
+  // ── Sector colour class
+  function sectorClass(sector) {
+    return 'sector-' + sector.replace(/\s+/g, '-');
+  }
+
+  // ── Render a single card
+  function renderCard(c) {
+    const file = tickerToFile(c.ticker);
+    const topSegs = c.revenue_segments.slice(0, 4);
+    const segsHtml = topSegs.map(s => `
+      <div class="seg-row">
+        <span class="seg-label">${s.segment}</span>
+        <div class="seg-bar-wrap"><div class="seg-bar" style="width:${s.percentage}%"></div></div>
+        <span class="seg-pct">${s.percentage}%</span>
+      </div>`).join('');
+
+    return `
+      <a class="card" href="stocks/${file}.html">
+        <div class="card-header">
+          <div class="ticker-badge">${c.ticker}</div>
+          <div class="weight-badge">權重 ${c.weight.toFixed(2)}%</div>
+        </div>
+        <div class="company-name">${c.name}</div>
+        <span class="sector-tag ${sectorClass(c.sector)}">${c.sector}</span>
+        <div class="description">${c.description}</div>
+        <div class="segments">${segsHtml}</div>
+        <div class="card-footer">
+          <span class="view-link">查看詳情 →</span>
+          <span class="seg-count">${c.revenue_segments.length} 個業務板塊</span>
+        </div>
+      </a>`;
+  }
+
+  // ── Main
+  let companies = [];
+  let activeSector = 'all';
+  let searchQuery = '';
+
+  fetch('data/processed/companies.json')
+    .then(r => r.json())
+    .then(data => {
+      companies = data;
+      document.getElementById('total-count').textContent = data.length;
+
+      // Build sector filter buttons
+      const sectors = [...new Set(data.map(c => c.sector))].sort();
+      const filterGroup = document.getElementById('sector-filters');
+      sectors.forEach(s => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.sector = s;
+        btn.textContent = s;
+        btn.addEventListener('click', () => {
+          activeSector = s;
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderGrid();
+        });
+        filterGroup.appendChild(btn);
+      });
+
+      renderGrid();
+    });
+
+  document.getElementById('search').addEventListener('input', e => {
+    searchQuery = e.target.value.toLowerCase();
+    renderGrid();
+  });
+
+  document.querySelector('[data-sector="all"]').addEventListener('click', function() {
+    activeSector = 'all';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    renderGrid();
+  });
+
+  function renderGrid() {
+    const grid = document.getElementById('grid');
+    let filtered = companies;
+    if (activeSector !== 'all') filtered = filtered.filter(c => c.sector === activeSector);
+    if (searchQuery) filtered = filtered.filter(c =>
+      c.ticker.toLowerCase().includes(searchQuery) ||
+      c.name.toLowerCase().includes(searchQuery)
+    );
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div class="no-results"><div class="icon">🔍</div><p>找不到符合條件的企業</p></div>`;
+    } else {
+      grid.innerHTML = filtered.map(renderCard).join('');
+    }
+  }
+</script>
+</body>
+</html>
