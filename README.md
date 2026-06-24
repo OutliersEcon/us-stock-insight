@@ -63,7 +63,31 @@ python3 scripts/generate_update_log.py
 python3 scripts/generate_pages.py
 ```
 
-### 2. 內部文件設計：`update_log.json`
+### 2. 資料來源可信度政策 (Source Credibility Policy)
+
+本專案採用**兩層資料來源機制**，以平衡可信度與自動化效率：
+
+| 更新方式 | 來源品質 | 適用場景 |
+|---|---|---|
+| **人工更新**（推薦用於重要企業）| 最高：實際訪問財報文件，URL 100% 真實 | 大型企業、定期人工審核 |
+| **AI 自動更新**（`ai_agent_parser.py`）| 中等：使用 SEC EDGAR 搜尋頁面（永遠有效）+ AI 推斷的 IR 頁面 | 定期批量更新中小型企業 |
+
+**人工更新示範（NVIDIA）**：
+- 實際訪問 NVIDIA 官方 CFO Commentary PDF（`s201.q4cdn.com`）
+- 實際訪問 NVIDIA 業績發佈新聞稿（`nvidianews.nvidia.com`）
+- 記錄資料時間性：`FY2027 Q1 (截至 2026 年 4 月 26 日)`
+- 所有 URL 均經人工驗證為真實可訪問連結
+
+**AI 自動更新的 URL 政策**：
+- 優先使用 SEC EDGAR 搜尋頁面（格式：`https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={TICKER}&type=10-K`），此類 URL 永遠有效
+- 若 AI 無法確認直接 PDF 連結的真實性，**必須使用 SEC EDGAR 搜尋頁面代替**，不得捏造 URL
+- 建議定期人工抽查 AI 生成的 sources 連結有效性
+
+**`data_period` 欄位**：每間企業均記錄資料所屬的財報期間，顯示於個別頁面的「資料來源」區塊，讓讀者清楚了解數據的時效性。
+
+---
+
+### 3. 內部文件設計：`update_log.json`
 為避免 AI 產生幻覺並節省 API Token，專案設計了自動生成的內部追蹤文件 `update_log.json`。
 - **完全自動生成**：此檔案由 Python 腳本根據 `companies.json` 自動計算與生成，包含 `last_updated` 追蹤、`in_sp500` 標記與 `nasdaq100` 標記，**不依賴 AI 判斷或人工輸入**，確保資料 100% 準確。
 - **AI 任務指引**：AI Agent 執行更新時會優先讀取此檔案，跳過近期（例如 30 天內）已更新的企業，集中資源更新超過閾值的過期資料。
@@ -144,3 +168,5 @@ us-stock-insight/
 - [x] 加入 Pagination 功能（每頁 25/50/100/全部，上下方雙導覽列）
 - [x] 重整 `scripts/` 資料夾：移除一次性腳本，建立通用的 `add_companies.py`（支援 CLI 參數）與 `sync_index_data.py`（統一管理指數資料）
 - [x] **資料來源標示**：強制要求 AI 在生成資料時提供實際可查證的來源 URL（如 SEC 10-K），並顯示於個別企業頁面。
+- [x] **資料時間性標示**：每間企業頁面均顯示資料所屬的財報期間（如 `FY2027 Q1 (截至 2026 年 4 月 26 日)`），讓讀者清楚了解數據的時效性。
+- [x] **資料來源可信度政策**：建立「先搜尋真實來源再分析」的人工更新流程（以 NVIDIA 為示範），並限制 AI 自動更新時只能使用 SEC EDGAR 搜尋頁面等永遠有效的 URL，杜絕 AI 幻覺 URL。

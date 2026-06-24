@@ -3,52 +3,48 @@
     "ticker": "NVDA",
     "name": "NVIDIA Corporation",
     "sector": "Technology",
-    "description": "全球領先的 GPU 與 AI 加速運算晶片製造商，產品廣泛應用於資料中心、遊戲、自動駕駛及專業視覺化領域。",
+    "description": "全球領先的 AI 加速運算平台製造商，GPU 主導 AI 訓練與推理市場，產品涵蓋資料中心超大規模雲端、AI 工廠、邊緣運算及自動駕駛領域。",
     "weight": 7.35,
     "last_updated": "2026-06-24",
     "nasdaq100": true,
     "revenue_segments": [
       {
-        "segment": "Data Center",
-        "percentage": 87,
-        "description": "AI 訓練與推理用 GPU、網路設備"
+        "segment": "Data Center — Hyperscale",
+        "percentage": 46,
+        "description": "向 AWS、Azure、Google Cloud、Meta 等超大規模雲端供應商銷售的 GPU 及網路設備"
       },
       {
-        "segment": "Gaming",
-        "percentage": 9,
-        "description": "GeForce 顯示卡"
+        "segment": "Data Center — AI Clouds, Industrial & Enterprise",
+        "percentage": 46,
+        "description": "向 AI 原生雲端、主權 AI 基礎設施、企業及工業客戶銷售的 Blackwell 系統"
       },
       {
-        "segment": "Professional Visualization",
-        "percentage": 2,
-        "description": "Quadro/RTX 工作站顯卡"
-      },
-      {
-        "segment": "Automotive & OEM",
-        "percentage": 2,
-        "description": "自動駕駛平台 DRIVE"
+        "segment": "Edge Computing",
+        "percentage": 8,
+        "description": "面向 AI PC、工作站、遊戲主機、機器人及車用的 Blackwell 邊緣運算產品"
       }
     ],
     "in_sp500": true,
     "qqq_weight": 12.9,
     "sources": [
       {
-        "title": "SEC EDGAR 10-K Filings - NVIDIA Corporation",
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=NVDA&type=10-K"
+        "title": "NVIDIA FY2027 Q1 CFO Commentary（官方財報附件）",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q127/Q1FY27-CFO-Commentary.pdf"
       },
       {
-        "title": "NVIDIA Investor Relations",
-        "url": "https://investor.nvidia.com/home/default.aspx"
+        "title": "NVIDIA FY2027 Q1 業績發佈新聞稿",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027"
       },
       {
-        "title": "NVIDIA Annual Reports & Proxy",
-        "url": "https://investor.nvidia.com/financial-info/annual-reports/default.aspx"
+        "title": "NVIDIA FY2027 Q1 10-Q SEC 申報文件",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/927dc2d6-a76c-4006-9f34-8769b2c665fb.pdf"
       },
       {
-        "title": "NVIDIA Q4 FY2024 Earnings Press Release",
-        "url": "https://investor.nvidia.com/news-details/2024/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2024/default.aspx"
+        "title": "NVIDIA 投資者關係頁面",
+        "url": "https://investor.nvidia.com/financial-info/financial-reports/default.aspx"
       }
-    ]
+    ],
+    "data_period": "FY2027 Q1 (截至 2026 年 4 月 26 日)"
   },
   {
     "ticker": "AAPL",

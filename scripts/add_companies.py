@@ -120,12 +120,13 @@ Sector: {sector}
 Return ONLY a valid JSON object with these exact fields:
 {{
   "description": "<繁體中文，2-3句，描述公司核心業務模式與競爭優勢，60-100字>",
+  "data_period": "<資料時間性，如 'FY2026 Annual' 或 'FY2027 Q1 (截至 2026 年 4 月 26 日)'>",
   "revenue_segments": [
     {{"segment": "<英文業務板塊名稱>", "percentage": <整數佔比>, "description": "<繁體中文說明，20-40字>"}},
     ...
   ],
   "sources": [
-    {{"title": "<來源名稱，如 Annual Report 10-K FY2024>", "url": "<實際可訪問的 URL>"}},
+    {{"title": "<來源名稱，如 SEC EDGAR 10-K Filings - {name}>", "url": "<實際可訪問的 URL>"}},
     ...
   ]
 }}
@@ -137,13 +138,14 @@ Rules:
 - percentages must be integers and sum to exactly 100
 - sort revenue_segments by percentage descending (largest first)
 - provide 2-6 segments based on actual business structure
-- use the most recent fiscal year data available
-- sources MUST include 2-4 real, verifiable URLs such as:
-  * SEC EDGAR filing (e.g. https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}&type=10-K)
-  * Company investor relations page (e.g. https://investor.apple.com/)
-  * Official annual report or earnings release page
-  * Reputable financial data source (e.g. Macrotrends, company press release)
-- All URLs must be real and publicly accessible — do NOT invent URLs
+- use the most recent fiscal year or quarterly data available
+- data_period MUST be filled in, indicating the fiscal period of the revenue data
+- sources MUST include 2-4 real, verifiable URLs. IMPORTANT:
+  * Use SEC EDGAR search pages (always valid): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}&type=10-K&dateb=&owner=include&count=10
+  * Use company investor relations page if known (e.g. https://investor.apple.com/)
+  * Only include direct PDF links if you are CERTAIN they exist (e.g. q4cdn.com links)
+  * Do NOT invent or hallucinate PDF URLs — use the SEC EDGAR search page instead
+- All URLs must be real and publicly accessible
 - return ONLY the JSON object, no markdown, no code blocks, no explanation
 """
 
@@ -335,6 +337,7 @@ def main():
             "name": name,
             "sector": sector,
             "description": data['description'],
+            "data_period": data.get('data_period', ''),
             "weight": 0.0,
             "last_updated": TODAY,
             "nasdaq100": ticker in NASDAQ100,

@@ -6,9 +6,18 @@ ai_agent_parser.py
 執行邏輯
 --------
 1. 讀取 data/update_log.json，找出 needs_update: true 的企業清單。
-2. 對每間過期企業，呼叫 AI（透過 MANUS_API_KEY）生成最新的業務描述與營收佔比。
+2. 對每間過期企業，呼叫 AI 生成最新的業務描述、營收佔比、資料時間性與來源。
 3. 將更新結果寫回 companies.json，並更新 last_updated 為今天的日期。
 4. 若 update_log.json 不存在，則對所有企業執行更新。
+
+資料來源政策（重要）
+-------------------
+本腳本的 sources 欄位要求 AI 提供其分析所依據的實際財報文件 URL。
+AI 必須提供：
+  - 公司最新季度或年度財報的直接 URL（SEC EDGAR 10-K/10-Q 文件、公司 IR 頁面）
+  - data_period 欄位說明資料的時間性（如 "FY2027 Q1 (截至 2026 年 4 月 26 日)"）
+注意：AI 生成的 URL 可能存在幻覺風險。建議定期人工抽查 sources 連結的有效性。
+對於重要企業，應優先使用人工更新流程（直接訪問財報並手動填寫 sources）。
 
 API 金鑰設定
 -----------
@@ -44,10 +53,20 @@ TODAY = date.today().isoformat()
 
 
 SYSTEM_PROMPT = """你是一位專業的財務分析師，專門分析美國上市公司的業務結構與營收組成。
-請根據公司最新的年報（10-K）及公開財報資料，提供準確的業務描述與各業務板塊的營收佔比。
 
-回覆必須是嚴格的 JSON 格式，不得包含任何 markdown 標記或額外說明文字。
-每次更新必須附上實際可查證的資料來源 URL，不得號稱不存在的連結。"""
+你的分析必須基於公司最新的官方財報文件，包括：
+- SEC EDGAR 申報的 10-K（年報）或 10-Q（季報）
+- 公司官方發佈的 Earnings Press Release 或 CFO Commentary
+- 公司投資者關係頁面的財務摘要
+
+重要的資料來源政策：
+1. sources 欄位必須列出你分析時實際參考的財報文件 URL
+2. 優先使用 SEC EDGAR 的直接文件 URL（如 https://www.sec.gov/Archives/edgar/data/...）
+3. 或使用公司 IR 頁面的財報下載連結
+4. data_period 必須明確說明資料的時間性（如 "FY2027 Q1 (截至 2026 年 4 月 26 日)"）
+5. 若無法確認某 URL 的真實性，請使用 SEC EDGAR 的搜尋頁面而非捏造直接連結
+
+回覆必須是嚴格的 JSON 格式，不得包含任何 markdown 標記或額外說明文字。"""
 
 USER_PROMPT_TEMPLATE = """請分析以下公司的業務結構，並以 JSON 格式回覆：
 
@@ -58,26 +77,33 @@ USER_PROMPT_TEMPLATE = """請分析以下公司的業務結構，並以 JSON 格
 請提供：
 1. description：一段 60-100 字的繁體中文業務描述，說明公司的核心業務模式與競爭優勢
 2. revenue_segments：各業務板塊的名稱（英文）、營收佔比（整數百分比，合計必須為 100）、繁體中文說明
-3. sources：2-4 個實際可查證的資料來源 URL，包括：
-   - SEC EDGAR 10-K 年報申報頁面（如 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}&type=10-K）
-   - 公司投資者關係頁面（如 https://investor.apple.com/）
-   - 公司官方年報或財報發佈頁面
-   - 其他可信賴的公開財務資料來源
+   - 板塊必須按百分比由大到小排列
+3. data_period：資料的時間性說明，格式如 "FY2027 Q1 (截至 2026 年 4 月 26 日)" 或 "FY2026 Annual"
+4. sources：2-4 個資料來源，包括：
+   - 優先：SEC EDGAR 的 10-K 或 10-Q 申報搜尋頁面（格式：https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}&type=10-K&dateb=&owner=include&count=10）
+   - 公司投資者關係頁面（如 https://investor.nvidia.com/）
+   - 若有具體財報文件 URL（如 q4cdn.com 的 PDF），請提供
+   - 注意：只提供你有信心真實存在的 URL，不確定的請使用 SEC EDGAR 搜尋頁面代替
 
 回覆格式：
 {{
   "description": "...",
+  "data_period": "FY2027 Q1 (截至 2026 年 X 月 X 日)",
   "revenue_segments": [
     {{"segment": "Segment Name", "percentage": 50, "description": "中文說明"}},
     ...
   ],
   "sources": [
-    {{"title": "來源名稱，如 Annual Report 10-K FY2024", "url": "實際 URL"}},
+    {{"title": "SEC EDGAR 10-K Filings - {name}", "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}&type=10-K&dateb=&owner=include&count=10"}},
+    {{"title": "公司投資者關係頁面", "url": "https://investor.example.com/"}},
     ...
   ]
 }}
 
-重要：sources 中的所有 URL 必須是真實存在且可公開訪問的，不得號稱不存在的連結。"""
+重要提醒：
+- sources 中的 URL 應是你分析時實際參考的來源，不要捏造不存在的 PDF 直接連結
+- 若不確定具體 PDF URL，請使用 SEC EDGAR 搜尋頁面（上述格式）
+- data_period 必須填寫，說明你的數據來自哪個財報期間"""
 
 
 def get_stale_tickers() -> list[str]:
@@ -111,7 +137,7 @@ def call_ai(company: dict) -> dict | None:
                 {"role": "user", "content": prompt}
             ],
             temperature=0.2,
-            max_tokens=800,
+            max_tokens=1000,
             response_format={"type": "json_object"}
         )
         content = response.choices[0].message.content
@@ -122,21 +148,38 @@ def call_ai(company: dict) -> dict | None:
             print(f"   ⚠️  {company['ticker']} 回傳格式不完整，跳過。")
             return None
 
-        # 驗證 sources 欄位
+        # 確保 data_period 欄位存在
+        if 'data_period' not in result or not result['data_period']:
+            result['data_period'] = ''
+            print(f"   ⚠️  {company['ticker']} 缺少 data_period 欄位。")
+
+        # 驗證 sources 欄位：若缺少則使用 SEC EDGAR 搜尋頁面（真實存在的 URL）
         if 'sources' not in result or not isinstance(result['sources'], list) or len(result['sources']) == 0:
-            print(f"   ⚠️  {company['ticker']} 缺少 sources 欄位，將以預設 SEC EDGAR 連結代替。")
+            print(f"   ⚠️  {company['ticker']} 缺少 sources 欄位，使用 SEC EDGAR 搜尋頁面。")
             ticker_val = company['ticker']
             result['sources'] = [
-                {"title": f"SEC EDGAR Filings ({ticker_val})",
-                 "url": f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker_val}&type=10-K"}
+                {
+                    "title": f"SEC EDGAR Filings - {company['name']}",
+                    "url": f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker_val}&type=10-K&dateb=&owner=include&count=10"
+                },
+                {
+                    "title": f"SEC EDGAR 10-Q Filings - {company['name']}",
+                    "url": f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker_val}&type=10-Q&dateb=&owner=include&count=10"
+                }
             ]
 
         # 確保百分比合計為 100
         total = sum(s.get('percentage', 0) for s in result['revenue_segments'])
         if total != 100:
-            # 調整最後一個板塊以確保合計為 100
             diff = 100 - total
             result['revenue_segments'][-1]['percentage'] += diff
+
+        # 確保板塊按百分比降冪排序
+        result['revenue_segments'] = sorted(
+            result['revenue_segments'],
+            key=lambda x: x.get('percentage', 0),
+            reverse=True
+        )
 
         return result
 
@@ -151,6 +194,9 @@ def call_ai(company: dict) -> dict | None:
 def main():
     print(f"🤖 AI Agent Parser 啟動 — {TODAY}")
     print(f"   API Base: {API_BASE}")
+    print()
+    print("⚠️  注意：AI 生成的 sources URL 可能存在幻覺風險。")
+    print("   對於重要企業，建議人工驗證 sources 連結的有效性。")
     print()
 
     # 讀取 companies.json
@@ -182,9 +228,11 @@ def main():
             company['description'] = result['description']
             company['revenue_segments'] = result['revenue_segments']
             company['sources'] = result.get('sources', company.get('sources', []))
+            company['data_period'] = result.get('data_period', '')
             company['last_updated'] = TODAY
             updated_count += 1
-            print(f"   ✓ 更新成功（{len(result['revenue_segments'])} 個業務板塊，{len(company['sources'])} 個來源）")
+            period_info = f"，資料期間：{company['data_period']}" if company['data_period'] else ''
+            print(f"   ✓ 更新成功（{len(result['revenue_segments'])} 個業務板塊，{len(company['sources'])} 個來源{period_info}）")
         else:
             print(f"   ⚠️  更新失敗，保留原有資料。")
 
@@ -198,9 +246,10 @@ def main():
 
     print()
     print(f"✅ AI Agent 更新完成")
-    print(f"   已更新：{updated_count} 間")
-    print(f"   已跳過（近期已更新）：{skipped_count} 間")
-    print(f"   結果已寫回 companies.json")
+    print(f"   已更新：{updated_count} 間企業")
+    print(f"   已跳過：{skipped_count} 間企業（資料仍在有效期內）")
+    print()
+    print("📌 提醒：請人工抽查 sources 連結的有效性，特別是新更新的企業。")
 
 
 if __name__ == '__main__':
