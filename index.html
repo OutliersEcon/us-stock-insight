@@ -16,6 +16,7 @@
       --text: #e2e8f0;
       --text-muted: #8892a4;
       --green: #22c55e;
+      --amber: #fbbf24;
       --radius: 12px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -46,21 +47,59 @@
     .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
     /* ── Controls ── */
-    .controls { max-width: 1280px; margin: 0 auto; padding: 0 24px 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .controls { max-width: 1280px; margin: 0 auto; padding: 0 24px 8px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
     .search-wrap { flex: 1; min-width: 240px; position: relative; }
     .search-wrap input {
       width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
       padding: 10px 16px 10px 40px; color: var(--text); font-size: 14px; outline: none; transition: border-color .2s;
     }
     .search-wrap input:focus { border-color: var(--accent); }
+    .search-wrap input::placeholder { color: var(--text-muted); }
     .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 16px; pointer-events: none; }
-    .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    /* ── Sort select ── */
+    .sort-wrap { display: flex; align-items: center; gap: 8px; }
+    .sort-wrap label { font-size: 13px; color: var(--text-muted); white-space: nowrap; }
+    .sort-wrap select {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 12px; color: var(--text); font-size: 13px; outline: none; cursor: pointer;
+      transition: border-color .2s; appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238892a4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center; padding-right: 28px;
+    }
+    .sort-wrap select:focus { border-color: var(--accent); }
+
+    /* ── Index toggles ── */
+    .controls-row2 { max-width: 1280px; margin: 0 auto; padding: 0 24px 8px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .controls-label { font-size: 12px; color: var(--text-muted); margin-right: 4px; white-space: nowrap; }
+
+    .toggle-group { display: flex; gap: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 4px; }
+    .toggle-btn {
+      background: transparent; border: none; border-radius: 7px;
+      padding: 6px 14px; font-size: 13px; color: var(--text-muted); cursor: pointer;
+      transition: all .2s; white-space: nowrap; display: flex; align-items: center; gap: 5px;
+    }
+    .toggle-btn:hover { color: var(--text); background: var(--surface2); }
+    .toggle-btn.active { background: var(--accent); color: #fff; }
+    .toggle-btn.active-ndx { background: var(--amber); color: #0f1117; }
+    .toggle-btn .t-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .toggle-btn-sp  .t-dot { background: var(--green); }
+    .toggle-btn-ndx .t-dot { background: var(--amber); }
+
+    /* ── Sector filter buttons ── */
+    .controls-row3 { max-width: 1280px; margin: 0 auto; padding: 0 24px 16px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .filter-btn {
       background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      padding: 8px 14px; font-size: 13px; color: var(--text-muted); cursor: pointer; transition: all .2s; white-space: nowrap;
+      padding: 7px 14px; font-size: 13px; color: var(--text-muted); cursor: pointer;
+      transition: all .2s; white-space: nowrap;
     }
-    .filter-btn:hover, .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
     .filter-btn .zh { font-size: 11px; opacity: .8; margin-left: 3px; }
+
+    /* ── Result count ── */
+    .result-bar { max-width: 1280px; margin: 0 auto; padding: 0 24px 12px; }
+    #result-count { font-size: 13px; color: var(--text-muted); }
 
     /* ── Grid ── */
     .grid { max-width: 1280px; margin: 0 auto; padding: 0 24px 60px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
@@ -79,7 +118,8 @@
     .company-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
     .badge-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
     .sector-tag { display: inline-block; background: var(--surface2); border-radius: 4px; padding: 2px 8px; font-size: 11px; }
-    /* ── Index badges (S&P 500 / Nasdaq 100) — shown as a compact index membership strip ── */
+
+    /* ── Index badges ── */
     .index-strip { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
     .index-badge {
       display: inline-flex; align-items: center; gap: 5px;
@@ -87,16 +127,11 @@
       letter-spacing: .3px; white-space: nowrap;
     }
     .index-badge .idx-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-    .index-badge-sp {
-      background: rgba(34,197,94,.08); color: #22c55e;
-      border: 1px solid rgba(34,197,94,.3);
-    }
-    .index-badge-sp .idx-dot { background: #22c55e; }
-    .index-badge-ndx {
-      background: rgba(251,191,36,.08); color: #fbbf24;
-      border: 1px solid rgba(251,191,36,.3);
-    }
+    .index-badge-sp  { background: rgba(34,197,94,.08); color: #22c55e; border: 1px solid rgba(34,197,94,.3); }
+    .index-badge-sp  .idx-dot { background: #22c55e; }
+    .index-badge-ndx { background: rgba(251,191,36,.08); color: #fbbf24; border: 1px solid rgba(251,191,36,.3); }
     .index-badge-ndx .idx-dot { background: #fbbf24; }
+
     .description { font-size: 13px; color: var(--text-muted); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px; }
     .segments { display: flex; flex-direction: column; gap: 5px; }
     .seg-row { display: flex; align-items: center; gap: 8px; }
@@ -117,18 +152,22 @@
     footer a { color: var(--accent); text-decoration: none; }
 
     /* ── Sector colour classes ── */
-    .sector-Technology           { color: #60a5fa; }
-    .sector-Financials           { color: #34d399; }
-    .sector-Healthcare           { color: #f472b6; }
+    .sector-Technology              { color: #60a5fa; }
+    .sector-Financials              { color: #34d399; }
+    .sector-Healthcare              { color: #f472b6; }
     .sector-Consumer-Discretionary { color: #fb923c; }
-    .sector-Consumer-Staples     { color: #a78bfa; }
-    .sector-Communication-Services { color: #facc15; }
-    .sector-Energy               { color: #f87171; }
+    .sector-Consumer-Staples        { color: #a78bfa; }
+    .sector-Communication-Services  { color: #facc15; }
+    .sector-Energy                  { color: #f87171; }
+    .sector-Industrials             { color: #94a3b8; }
+    .sector-Materials               { color: #6ee7b7; }
+    .sector-Real-Estate             { color: #c084fc; }
+    .sector-Utilities               { color: #67e8f9; }
 
     @media (max-width: 600px) {
       .hero { padding: 40px 16px 24px; }
       .hero-stats { gap: 24px; }
-      .controls { padding: 0 16px 16px; }
+      .controls, .controls-row2, .controls-row3, .result-bar { padding-left: 16px; padding-right: 16px; }
       .grid { padding: 0 16px 40px; }
     }
   </style>
@@ -159,15 +198,48 @@
     </div>
   </section>
 
+  <!-- Row 1：搜尋 + 排序 -->
   <div class="controls">
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
-      <input type="text" id="search" placeholder="搜尋公司名稱或 Ticker…" />
+      <input type="text" id="search" placeholder="搜尋 Ticker、公司名稱或別名（如 Google → GOOGL）…" autocomplete="off" />
     </div>
-    <div class="filter-group" id="sector-filters">
+    <div class="sort-wrap">
+      <label for="sort-select">排序：</label>
+      <select id="sort-select">
+        <option value="weight">SPY 權重（高→低）</option>
+        <option value="ticker">代號（A→Z）</option>
+        <option value="name">名稱（A→Z）</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Row 2：指數 Toggle -->
+  <div class="controls-row2">
+    <span class="controls-label">指數篩選：</span>
+    <div class="toggle-group" id="index-toggles">
+      <button class="toggle-btn active" data-index="all">全部</button>
+      <button class="toggle-btn toggle-btn-sp" data-index="sp500">
+        <span class="t-dot"></span>S&amp;P 500
+      </button>
+      <button class="toggle-btn toggle-btn-ndx" data-index="nasdaq100">
+        <span class="t-dot"></span>Nasdaq 100
+      </button>
+    </div>
+  </div>
+
+  <!-- Row 3：行業篩選 -->
+  <div class="controls-row3">
+    <span class="controls-label">行業：</span>
+    <div id="sector-filters" style="display:flex;gap:8px;flex-wrap:wrap;">
       <button class="filter-btn active" data-sector="all">全部</button>
-      <button class="filter-btn" data-sector="__nasdaq100__">Nasdaq 100</button>
+      <!-- 動態生成行業按鈕 -->
     </div>
+  </div>
+
+  <!-- 結果計數 -->
+  <div class="result-bar">
+    <span id="result-count"></span>
   </div>
 
   <div class="grid" id="grid"></div>
@@ -178,150 +250,6 @@
   <p style="margin-top:6px">本站資訊僅供參考，不構成投資建議。</p>
 </footer>
 
-<script>
-  // ── 行業英文 → 中文對照表
-  const SECTOR_ZH = {
-    'Technology':              '科技',
-    'Financials':              '金融',
-    'Healthcare':              '醫療保健',
-    'Consumer Discretionary':  '非必需消費',
-    'Consumer Staples':        '必需消費',
-    'Communication Services':  '通訊服務',
-    'Energy':                  '能源',
-    'Industrials':             '工業',
-    'Materials':               '原材料',
-    'Real Estate':             '房地產',
-    'Utilities':               '公用事業',
-  };
-
-  // ── Ticker → filename mapping
-  function tickerToFile(ticker) {
-    return ticker.replace(/[./]/g, '-').toUpperCase();
-  }
-
-  // ── Sector colour class
-  function sectorClass(sector) {
-    return 'sector-' + sector.replace(/\s+/g, '-');
-  }
-
-  // ── Render a single card
-  function renderCard(c) {
-    const file = tickerToFile(c.ticker);
-    const topSegs = c.revenue_segments.slice(0, 4);
-    const sectorZh = SECTOR_ZH[c.sector] || c.sector;
-    const segsHtml = topSegs.map(s => `
-      <div class="seg-row">
-        <span class="seg-label">${s.segment}</span>
-        <div class="seg-bar-wrap"><div class="seg-bar" style="width:${s.percentage}%"></div></div>
-        <span class="seg-pct">${s.percentage}%</span>
-      </div>`).join('');
-
-    // Index membership badges (S&P 500 always shown; Nasdaq 100 only if applicable)
-    const ndxBadge = c.nasdaq100
-      ? `<span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>`
-      : '';
-    const indexStrip = `
-      <div class="index-strip">
-        <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
-        ${ndxBadge}
-      </div>`;
-
-    const lastUpdated = c.last_updated || 'N/A';
-
-    return `
-      <a class="card" href="stocks/${file}.html">
-        <div class="card-header">
-          <div class="ticker-badge">${c.ticker}</div>
-          <div class="weight-badge">SPY ${c.weight.toFixed(2)}%</div>
-        </div>
-        <div class="company-name">${c.name}</div>
-        <div class="badge-row">
-          <span class="sector-tag ${sectorClass(c.sector)}">${c.sector} <span style="opacity:.7">${sectorZh}</span></span>
-        </div>
-        ${indexStrip}
-        <div class="description">${c.description}</div>
-        <div class="segments">${segsHtml}</div>
-        <div class="card-footer">
-          <span class="view-link">查看詳情 →</span>
-          <span class="updated-info">更新：${lastUpdated}</span>
-        </div>
-      </a>`;
-  }
-
-  // ── Main
-  let companies = [];
-  let activeSector = 'all';
-  let searchQuery = '';
-
-  fetch('data/processed/companies.json')
-    .then(r => r.json())
-    .then(data => {
-      companies = data;
-      const nasdaqCount = data.filter(c => c.nasdaq100).length;
-      document.getElementById('total-count').textContent = data.length;
-      document.getElementById('nasdaq-count').textContent = nasdaqCount;
-
-      // Build sector filter buttons dynamically
-      const sectors = [...new Set(data.map(c => c.sector))].sort();
-      const filterGroup = document.getElementById('sector-filters');
-      sectors.forEach(s => {
-        const zh = SECTOR_ZH[s] || '';
-        const btn = document.createElement('button');
-        btn.className = 'filter-btn';
-        btn.dataset.sector = s;
-        btn.innerHTML = `${s} <span class="zh">${zh}</span>`;
-        btn.addEventListener('click', () => {
-          activeSector = s;
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          renderGrid();
-        });
-        filterGroup.appendChild(btn);
-      });
-
-      renderGrid();
-    });
-
-  // ── Filter button events (static buttons)
-  document.getElementById('sector-filters').addEventListener('click', e => {
-    const btn = e.target.closest('.filter-btn');
-    if (!btn) return;
-    const sector = btn.dataset.sector;
-    if (!sector) return;
-    activeSector = sector;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderGrid();
-  });
-
-  document.getElementById('search').addEventListener('input', e => {
-    searchQuery = e.target.value.toLowerCase();
-    renderGrid();
-  });
-
-  function renderGrid() {
-    const grid = document.getElementById('grid');
-    let filtered = companies;
-
-    if (activeSector === '__nasdaq100__') {
-      filtered = filtered.filter(c => c.nasdaq100);
-    } else if (activeSector !== 'all') {
-      filtered = filtered.filter(c => c.sector === activeSector);
-    }
-
-    if (searchQuery) {
-      filtered = filtered.filter(c =>
-        c.ticker.toLowerCase().includes(searchQuery) ||
-        c.name.toLowerCase().includes(searchQuery)
-      );
-    }
-
-    if (filtered.length === 0) {
-      grid.innerHTML = `<div class="no-results"><div class="icon">🔍</div><p>找不到符合條件的企業</p></div>`;
-    } else {
-      grid.innerHTML = filtered.map(renderCard).join('');
-    }
-  }
-</script>
+<script src="app.js"></script>
 </body>
 </html>

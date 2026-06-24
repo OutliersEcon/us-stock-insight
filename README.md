@@ -8,11 +8,15 @@
 
 ## ✨ 核心功能 (Features)
 
-- **🔄 自動化持倉同步**：定期下載並解析 SPY ETF 的最新持倉清單，確保名單涵蓋美國最重要的核心企業。
+- **🔄 自動化持倉同步**：定期下載並解析 SPY ETF 的最新持倉清單，目前已收錄 **113 間** S&P 500 核心企業。
 - **🤖 AI 業務解析**：利用 AI Agent 自動檢索並總結每間公司的核心業務模式。
 - **📊 營收結構拆解**：精確列出各個業務部門（Segments）對公司總收入的貢獻比例，並以圓餅圖視覺化呈現。
 - **📅 更新狀態追蹤**：所有企業頁面與主頁均顯示資料的**最後更新日期**，確保投資人參考的是最新資訊。
-- **🏷️ 指數與行業標籤**：自動比對 QQQ ETF 持倉，為符合條件的企業標示 **Nasdaq 100** Badge，並提供中英雙語的行業分類篩選。
+- **🏷️ 智慧篩選與排序**：
+  - **指數篩選**：可一鍵切換「全部」、「只看 S&P 500」、「只看 Nasdaq 100」。
+  - **行業篩選**：提供中英雙語的行業分類按鈕（如：Technology 科技、Financials 金融）。
+  - **排序功能**：支援按 SPY 權重、代號 (A-Z) 或名稱 (A-Z) 排序。
+  - **智慧搜尋**：支援按 Ticker、公司名稱、行業，甚至是**常見別名**搜尋（例如搜尋「Google」可找到 GOOGL，搜尋「巴菲特」可找到 BRK-B）。
 - **🌐 零成本託管**：完全基於 GitHub Pages 部署，採用純 HTML/CSS/JS 靜態網站架構，實現極速載入與零伺服器成本。
 
 ---
@@ -23,6 +27,7 @@
 
 ### 1. 數據獲取與處理層 (Data Fetching & Processing)
 - **SPY 持倉獲取器** (`scripts/fetch_spy_holdings.py`)：自動從 State Street 抓取最新的 SPY 成分股 CSV 檔案。
+- **AI 批量建檔器** (`scripts/bulk_add_companies.py`)：利用 AI 批量生成 S&P 500 前 150 大企業的業務資料，目前已擴充至 113 間。
 - **AI Agent 處理器** (`scripts/ai_agent_parser.py`)：讀取持倉清單，呼叫 OpenAI API 解析各公司的最新財報（SEC EDGAR），結構化提取營收佔比，輸出統一格式的 JSON 檔案至 `data/processed/companies.json`。
 - **內部更新追蹤日誌** (`scripts/generate_update_log.py`)：每次更新後，自動從 `companies.json` 生成 `data/update_log.json`。
 
@@ -33,8 +38,11 @@
 
 ### 3. 前端展示與靜態頁面生成 (Frontend Generation)
 - **頁面生成器** (`scripts/generate_pages.py`)：讀取 `companies.json`，透過 Python 腳本動態生成：
-  1. `index.html`：包含搜尋、中英雙語行業過濾、Nasdaq 100 篩選與所有公司卡片的總覽主頁。
+  1. `index.html`：總覽主頁，UI 樣式與 DOM 結構定義於此。
   2. `stocks/*.html`：每間公司的獨立詳細頁面，包含 Chart.js 圓餅圖與最後更新日期。
+- **前端邏輯分離** (`app.js`)：
+  - 主頁的所有互動邏輯（搜尋、排序、指數 toggle、行業篩選、動態渲染卡片）皆抽離至獨立的 `app.js` 檔案，保持 `index.html` 結構簡潔。
+  - 內建 `SEARCH_ALIASES` 字典，解決常見縮寫或母公司名稱的搜尋體驗問題。
 - **多 Ticker 命名規則**：
   - **一般 Ticker**：直接使用大寫字母，例如 `AAPL` → `AAPL.html`。
   - **含特殊字元 (`.`, `/`) 的 Ticker**：將特殊字元替換為 `-`，例如 `BRK.B` 轉換為 `BRK-B.html`。
@@ -52,7 +60,7 @@
 3. **自動部署**：GitHub Pages 偵測到 `main` 分支有更新後，會自動部署最新的靜態網頁。
 
 > **💡 權限與 Token 設定說明**
-> 為了讓 GitHub Actions 能成功執行，專案維護者已透過 Personal Access Token (PAT) 授予 `workflows` 權限，確保 `.github/workflows` 目錄下的 YAML 檔案能被正確推送並啟用定時排程。請注意，為了保護隱私，任何 Token 或 API 金鑰（如 `OPENAI_API_KEY`）皆透過 GitHub 倉庫的 **Settings → Secrets and variables → Actions** 進行管理，絕不會明碼寫入程式碼或 README 中。
+> 為了讓 GitHub Actions 能成功執行，專案維護者已透過 Personal Access Token (PAT) 授予 `workflows` 權限，確保 `.github/workflows` 目錄下的 YAML 檔案能被正確推送並啟用定時排程。請注意，為了保護隱私，任何 Token 或 API 金鑰（如 `MANUS_API_KEY`）皆透過 GitHub 倉庫的 **Settings → Secrets and variables → Actions** 進行管理，絕不會明碼寫入程式碼或 README 中。
 
 ---
 
@@ -68,11 +76,13 @@ us-stock-insight/
 │   └── update_log.json        # 自動生成的更新追蹤日誌
 ├── scripts/
 │   ├── fetch_spy_holdings.py  # 抓取 SPY 持倉的 Python 腳本
-│   ├── ai_agent_parser.py     # 呼叫 LLM 提取營收佔比的腳本骨架
+│   ├── ai_agent_parser.py     # 呼叫 LLM 提取營收佔比的智慧更新腳本
+│   ├── bulk_add_companies.py  # 批量生成新增企業資料的 AI 腳本
 │   ├── generate_update_log.py # 生成更新追蹤日誌的腳本
 │   └── generate_pages.py      # 根據 JSON 批量生成 HTML 頁面的腳本
 ├── stocks/                    # 動態生成的個別企業 HTML 頁面 (例如 AAPL.html)
-├── index.html                 # 網站主頁 (包含搜尋與過濾功能)
+├── index.html                 # 網站主頁 UI 結構
+├── app.js                     # 網站主頁前端互動邏輯 (搜尋/排序/篩選)
 ├── requirements.txt           # Python 依賴清單
 └── README.md                  # 專案說明文件 (本文)
 ```
@@ -83,11 +93,12 @@ us-stock-insight/
 
 - [x] 建立基礎 GitHub 儲存庫與 README
 - [x] 實作 SPY 持倉自動下載腳本 (`fetch_spy_holdings.py`)
-- [x] 設計 AI Agent 腳本骨架與 JSON 資料結構 (`ai_agent_parser.py`)
-- [x] 建立前端 UI (包含搜尋、過濾、圓餅圖視覺化) (`index.html`)
+- [x] 建立前端 UI (包含搜尋、過濾、圓餅圖視覺化) (`index.html` & `app.js`)
 - [x] 實作批量生成企業獨立頁面的自動化腳本 (`generate_pages.py`)
 - [x] 制定多 Ticker 企業的檔案命名規則 (例如 `BRK.B` -> `BRK-B.html`)
 - [x] 整合 Nasdaq 100 指數成分股標示與行業中文譯名
 - [x] 實作自動化的內部更新追蹤日誌 (`update_log.json`)
-- [ ] 完善 `ai_agent_parser.py` 整合 OpenAI API 與 SEC 數據的實際呼叫邏輯
 - [x] 授予 GitHub Actions `workflows` 權限，推送並啟用自動化 CI/CD 腳本
+- [x] 整合 MANUS_API_KEY，實作 `ai_agent_parser.py` 智能更新邏輯
+- [x] 大幅擴充收錄企業範圍（從 30 間擴充至 S&P 500 前 150 大，共 113 間）
+- [x] 前端重構：加入排序功能、指數 Toggle、優化搜尋體驗（支援別名搜尋）
