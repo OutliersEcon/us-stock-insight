@@ -1,0 +1,84 @@
+name: Weekly Data Update & Deploy
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 觸發條件
+# ─────────────────────────────────────────────────────────────────────────────
+on:
+  schedule:
+    - cron: '0 2 * * 1'   # 每週一 UTC 02:00 自動執行
+  workflow_dispatch:        # 允許在 GitHub Actions 介面手動觸發
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 權限設定
+# ─────────────────────────────────────────────────────────────────────────────
+permissions:
+  contents: write           # 允許 commit & push 更新後的數據與 HTML 頁面
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 工作流程
+# ─────────────────────────────────────────────────────────────────────────────
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      # ── Step 1: 檢出程式碼 ──────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 取得完整 git 歷史，確保 push 不會衝突
+
+      # ── Step 2: 設定 Python 環境 ────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ── Step 3: 安裝 Python 依賴 ────────────────────────────────────────────
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # ── Step 4: 抓取最新 SPY 持倉清單 ──────────────────────────────────────
+      - name: Fetch latest SPY holdings
+        run: python scripts/fetch_spy_holdings.py
+
+      # ── Step 5: AI Agent 更新公司營收結構 ──────────────────────────────────
+      # 此步驟會先讀取 data/update_log.json，跳過 30 天內已更新的企業，
+      # 僅呼叫 AI 更新 needs_update: true 的企業，節省 API Token。
+      - name: Run AI Agent to update stale company data
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scripts/ai_agent_parser.py
+
+      # ── Step 6: 重新生成 update_log.json ───────────────────────────────────
+      # 此步驟完全從 companies.json 的實際數據生成，不含任何人工輸入，
+      # 確保 last_updated 日期的準確性，消除 AI 幻覺風險。
+      - name: Regenerate update_log.json from source data
+        run: python scripts/generate_update_log.py
+
+      # ── Step 7: 重新生成所有 HTML 頁面 ─────────────────────────────────────
+      - name: Regenerate all HTML pages
+        run: python scripts/generate_pages.py
+
+      # ── Step 8: 提交並推送所有更新 ─────────────────────────────────────────
+      - name: Commit and push updated files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ stocks/ index.html
+          # 只有在有實際變更時才 commit，避免產生空的 commit
+          git diff --staged --quiet || git commit -m "chore(data): auto-update company data & pages [$(date -u +'%Y-%m-%d')]
+
+          - Regenerated update_log.json from companies.json
+          - Updated stale company revenue segment data via AI Agent
+          - Regenerated all HTML pages with latest data"
+          git push
+
+      # ── Step 9: 部署確認 ────────────────────────────────────────────────────
+      # GitHub Pages 會自動偵測 main 分支的更新並重新部署。
+      - name: Deployment summary
+        run: |
+          echo "✅ Data update complete."
+          echo "   GitHub Pages will automatically redeploy from the main branch."
+          echo "   Site URL: https://outliersecon.github.io/us-stock-insight/"
