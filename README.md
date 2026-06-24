@@ -36,7 +36,7 @@
 | `fetch_spy_holdings.py` | 自動從 State Street 抓取最新的 SPY 成分股 CSV 檔案 |
 | `add_companies.py` | **通用企業新增工具**：透過 AI 為任意 Ticker 清單生成業務描述與營收結構，支援命令列參數 |
 | `sync_index_data.py` | **指數資料同步工具**：統一管理 SPY/QQQ 持倉權重、`in_sp500` 與 `nasdaq100` 欄位的更新 |
-| `ai_agent_parser.py` | **真實財報抓取器**：由用家直接呼叫，從 SEC EDGAR 抓取真實財報文字並交由 AI 分析 |
+| `ai_agent_parser.py` | **真實財報抓取器**：由用戶直接呼叫，從 SEC EDGAR 抓取真實財報文字並交由 AI 分析 |
 | `generate_update_log.py` | 從 `companies.json` 自動生成 `data/update_log.json`，供 AI 更新器判斷哪些企業需要更新 |
 | `generate_pages.py` | 根據 `companies.json` 批量生成所有 HTML 頁面（`index.html` 與 `stocks/*.html`）|
 
@@ -80,9 +80,9 @@
 - **內容**：檢查 `companies.json` 與 HTML 頁面是否同步，重新計算 `update_log.json` 中的 `days_since_update`，並重新生成所有 HTML 頁面。
 - **限制**：**不呼叫任何 AI API**，不抓取外部財報數據。
 
-**B. Manus Scheduled Task (真實財報數據更新)**
-- **負責**：由用戶在 Manus 平台設定的定期任務。
-- **內容**：執行 `scripts/ai_agent_parser.py`，找出 `last_updated` 超過 30 天的企業，從 SEC EDGAR 抓取真實財報並交由 AI 分析，更新 `companies.json`。
+**B. 真實財報數據更新**
+- **負責**：由用戶執行。
+- **內容**：執行 `scripts/ai_agent_parser.py`，找出 `last_updated` 超過 30 天的企業，從 SEC EDGAR 抓取真實財報並交由 AI 分析，更新 `companies.json`。完成後自動執行GitHub Actions（`.github/workflows/data-update.yml`）。
 - **優勢**：可利用 Manus 的網路訪問能力與 API 資源，專注於高成本的數據抓取與分析工作。
 
 ---
