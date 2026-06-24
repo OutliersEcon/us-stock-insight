@@ -58,10 +58,14 @@ def generate_page(company: dict) -> str:
     pie_data = json.dumps([s['percentage'] for s in segments])
     pie_colors = json.dumps(PIE_PALETTE[:len(segments)])
 
-    # Nasdaq 100 badge HTML
-    nasdaq_badge_html = ''
+    # Index membership strip HTML (S&P 500 always; Nasdaq 100 only if applicable)
+    ndx_badge_html = ''
     if nasdaq100:
-        nasdaq_badge_html = '<span class="badge badge-nasdaq">Nasdaq 100</span>'
+        ndx_badge_html = '<span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>'
+    index_strip_html = f'''<div class="index-strip">
+        <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
+        {ndx_badge_html}
+      </div>'''
 
     # Segment rows HTML
     seg_rows = ""
@@ -113,7 +117,13 @@ def generate_page(company: dict) -> str:
     .badge {{ border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; }}
     .badge-sector {{ background: var(--surface2); color: var(--sector-color); border: 1px solid var(--sector-color)40; }}
     .badge-weight {{ background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }}
-    .badge-nasdaq {{ background: #1a2d4f; color: #60a5fa; border: 1px solid #2563eb60; }}
+    .index-strip {{ display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }}
+    .index-badge {{ display: inline-flex; align-items: center; gap: 5px; border-radius: 5px; padding: 3px 10px; font-size: 11px; font-weight: 700; letter-spacing: .3px; white-space: nowrap; }}
+    .idx-dot {{ width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }}
+    .index-badge-sp {{ background: rgba(34,197,94,.08); color: #22c55e; border: 1px solid rgba(34,197,94,.3); }}
+    .index-badge-sp .idx-dot {{ background: #22c55e; }}
+    .index-badge-ndx {{ background: rgba(251,191,36,.08); color: #fbbf24; border: 1px solid rgba(251,191,36,.3); }}
+    .index-badge-ndx .idx-dot {{ background: #fbbf24; }}
     .hero-desc {{ font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; margin-bottom: 12px; }}
     .last-updated {{ font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }}
     .last-updated-dot {{ width: 6px; height: 6px; border-radius: 50%; background: var(--green, #22c55e); display: inline-block; }}
@@ -160,9 +170,9 @@ def generate_page(company: dict) -> str:
       <div class="hero-name">{name}</div>
       <div class="hero-meta">
         <span class="badge badge-sector">{sector}</span>
-        <span class="badge badge-weight">SPY 權重 {weight:.2f}%</span>
-        {nasdaq_badge_html}
+        <span class="badge badge-weight">SPY {weight:.2f}%</span>
       </div>
+      {index_strip_html}
       <p class="hero-desc">{description}</p>
       <div class="last-updated">
         <span class="last-updated-dot"></span>

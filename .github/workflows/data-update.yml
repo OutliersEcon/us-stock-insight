@@ -48,7 +48,7 @@ jobs:
       # 僅呼叫 AI 更新 needs_update: true 的企業，節省 API Token。
       - name: Run AI Agent to update stale company data
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MANUS_API_KEY: ${{ secrets.MANUS_API_KEY }}
         run: python scripts/ai_agent_parser.py
 
       # ── Step 6: 重新生成 update_log.json ───────────────────────────────────
