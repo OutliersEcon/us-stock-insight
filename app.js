@@ -368,7 +368,8 @@ function resetFilters() {
   renderGrid();
 }
 
-// ── 建立行業篩選按鈕
+// ── 建立行業篩選按鈕—僅建立 DOM，不綁定個別 click handler
+// 事件處理全部由 initEvents 中的事件委派（event delegation）負責
 function buildSectorFilters(data) {
   const sectors = [...new Set(data.map(c => c.sector))].sort();
   const filterGroup = document.getElementById('sector-filters');
@@ -379,12 +380,6 @@ function buildSectorFilters(data) {
     btn.className = 'filter-btn';
     btn.dataset.sector = s;
     btn.innerHTML = `${s} <span class="zh">${zh}</span>`;
-    btn.addEventListener('click', () => {
-      activeSector = s;
-      document.querySelectorAll('#sector-filters .filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderGrid();
-    });
     filterGroup.appendChild(btn);
   });
 }
