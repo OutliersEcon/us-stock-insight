@@ -232,30 +232,36 @@ function matchSearch(c, query) {
 
 /**
  * 排序函數
- * 規則：按權重排序時，非 S&P 500 企業（in_sp500=false）固定排在最後，
- *       並在非 S&P 500 群組內按 ticker 字母順序排列。
- *       按 ticker / name 排序時，非 S&P 500 企業同樣排在最後。
+ * 規則：非 S&P 500 企業（in_sp500=false）所有排序方式均固定排在最後。
+ *       QQQ weight 排序時，非 Nasdaq 100 成員排在 Nasdaq 100 成員之後。
  */
 function sortCompanies(arr) {
   return [...arr].sort((a, b) => {
     const aInSP = a.in_sp500 !== false;
     const bInSP = b.in_sp500 !== false;
 
-    // 非 S&P 500 企業永遠排在 S&P 500 企業之後
+    // 非 S&P 500 企業永遠排在最後（所有排序方式均適用）
     if (aInSP !== bInSP) return aInSP ? -1 : 1;
 
     // 同組內的排序邏輯
     if (sortBy === 'weight') {
-      if (aInSP) {
-        // S&P 500 組：按權重降冪
-        return b.weight - a.weight;
-      } else {
-        // 非 S&P 500 組：按 ticker 字母順序
-        return a.ticker.localeCompare(b.ticker);
-      }
+      if (aInSP) return b.weight - a.weight;
+      return a.ticker.localeCompare(b.ticker);
     }
     if (sortBy === 'ticker') return a.ticker.localeCompare(b.ticker);
     if (sortBy === 'name')   return a.name.localeCompare(b.name);
+    if (sortBy === 'qqq_weight') {
+      // QQQ weight 排序：先將 Nasdaq 100 成員排在前面，再按 qqq_weight 降冪
+      const aQQQ = a.qqq_weight || 0;
+      const bQQQ = b.qqq_weight || 0;
+      const aInNDX = aQQQ > 0;
+      const bInNDX = bQQQ > 0;
+      // Nasdaq 100 成員排在非成員之前
+      if (aInNDX !== bInNDX) return aInNDX ? -1 : 1;
+      // 同組內按 qqq_weight 降冪（非成員組內按 SPY weight 降冪）
+      if (aInNDX) return bQQQ - aQQQ;
+      return b.weight - a.weight;
+    }
     return 0;
   });
 }
@@ -302,10 +308,15 @@ function renderCard(c) {
 
   const indexStrip = `<div class="index-strip">${spBadge}${ndxBadge}${watchBadge}</div>`;
 
-  // 權重顯示：非 S&P 500 企業不顯示 SPY 權重
-  const weightHtml = c.in_sp500 !== false
-    ? `<div class="weight-badge">SPY ${c.weight.toFixed(2)}%</div>`
-    : `<div class="weight-badge weight-badge-watch">自選追蹤</div>`;
+  // 權重顯示：依目前排序方式動態顯示 SPY 或 QQQ 權重
+  let weightHtml;
+  if (c.in_sp500 === false) {
+    weightHtml = `<div class="weight-badge weight-badge-watch">自選追蹤</div>`;
+  } else if (sortBy === 'qqq_weight' && c.qqq_weight > 0) {
+    weightHtml = `<div class="weight-badge weight-badge-qqq">QQQ ${c.qqq_weight.toFixed(2)}%</div>`;
+  } else {
+    weightHtml = `<div class="weight-badge">SPY ${c.weight.toFixed(2)}%</div>`;
+  }
 
   const lastUpdated = escapeHtml(c.last_updated || 'N/A');
 

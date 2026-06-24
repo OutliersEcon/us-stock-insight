@@ -129,6 +129,7 @@
     .ticker-badge { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #fff; letter-spacing: .5px; flex-shrink: 0; }
     .weight-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; font-size: 12px; color: var(--text-muted); }
     .weight-badge-watch { background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.3); color: var(--sky); }
+    .weight-badge-qqq   { background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.35); color: #fbbf24; }
     .company-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
     .badge-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
     .sector-tag { display: inline-block; background: var(--surface2); border-radius: 4px; padding: 2px 8px; font-size: 11px; }
@@ -224,6 +225,7 @@
       <label for="sort-select">排序：</label>
       <select id="sort-select">
         <option value="weight">SPY 權重（高→低）</option>
+        <option value="qqq_weight">QQQ 權重（高→低）</option>
         <option value="ticker">代號（A→Z）</option>
         <option value="name">名稱（A→Z）</option>
       </select>
