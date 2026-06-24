@@ -143,3 +143,4 @@ us-stock-insight/
 - [x] 加入 QQQ 持倉權重資料，支援按 QQQ weight 排序，並在卡片上動態顯示 QQQ / SPY 權重
 - [x] 加入 Pagination 功能（每頁 25/50/100/全部，上下方雙導覽列）
 - [x] 重整 `scripts/` 資料夾：移除一次性腳本，建立通用的 `add_companies.py`（支援 CLI 參數）與 `sync_index_data.py`（統一管理指數資料）
+- [x] **資料來源標示**：強制要求 AI 在生成資料時提供實際可查證的來源 URL（如 SEC 10-K），並顯示於個別企業頁面。
