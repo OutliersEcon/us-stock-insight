@@ -1,1 +1,3 @@
-requests\npandas\nopenai
+requests
+pandas
+openai
