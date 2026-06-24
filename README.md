@@ -42,6 +42,8 @@
 
 ### 2. 資料來源可信度政策 (Source Credibility Policy)
 
+> ⛔ **嚴格禁止**：AI 在任何情況下均不得根據自身訓練知識估算業務板塊佔比、營收數字或任何財務數據。所有數字必須來自可查證的真實來源（SEC EDGAR 申報文件、公司官方 IR 頁面等）。若無法取得真實來源，應將 `data_quality` 標記為 `estimated` 並立即排查原因，而非接受估算數據作為最終結果。
+
 本專案堅持「**不允許 AI 捏造來源與數字**」的原則，`ai_agent_parser.py` 採用兩階段流程：
 1. **Phase 1 (真實財報抓取)**：先從 SEC EDGAR 查詢企業 CIK，抓取最新 10-Q 或 10-K 申報文件的純文字內容，並記錄實際訪問的 URL。
 2. **Phase 2 (AI 結構化分析)**：將抓取到的真實財報文字交給 AI，AI 僅作為「文字理解與結構化」工具，提取業務板塊佔比並生成繁體中文描述。
@@ -50,6 +52,8 @@
 - `sources`：記錄實際訪問過的來源 URL 清單。若無法取得直接文件，則使用 SEC EDGAR 搜尋頁面（永遠有效的 URL）。
 - `data_period`：記錄資料所屬的財報期間（如 `FY2027 Q1 (截至 2026 年 4 月 26 日)`）。
 - `data_quality`：若成功抓取財報文字，標示為 `real_data`；若無法取得（如非美國上市企業），則標示為 `estimated`。
+
+**延伸閱讀**：資料獲取的詳細技術指南、SEC EDGAR API 端點說明、已知限制與排查方法，請參閱 **[📚 DATA_SOURCING.md](./DATA_SOURCING.md)**。
 
 ### 3. 前端展示與靜態頁面生成 (Frontend Generation)
 
@@ -169,6 +173,7 @@ us-stock-insight/
 ├── index.html                 # 網站主頁 UI 結構
 ├── app.js                     # 網站主頁前端互動邏輯 (搜尋/排序/篩選)
 ├── requirements.txt           # Python 依賴清單
+├── DATA_SOURCING.md           # 資料獲取知識庫：SEC EDGAR API 指南、可行與不可行方法、排查指南
 └── README.md                  # 專案說明文件 (本文)
 ```
 
