@@ -23,6 +23,7 @@ update_log.json 格式
       "name": "Apple Inc.",
       "last_updated": "2025-06-24",               // YYYY-MM-DD
       "days_since_update": 0,                     // 距今天數（整數）
+      "in_sp500": true,                          // 是否為 S&P 500 成分股
       "nasdaq100": true,
       "sector": "Technology",
       "needs_update": false                       // 超過 STALE_DAYS 則為 true
@@ -73,6 +74,7 @@ def main():
             "name": c.get('name', ''),
             "last_updated": last_updated_str,
             "days_since_update": days_since,
+            "in_sp500": c.get('in_sp500', True),
             "nasdaq100": c.get('nasdaq100', False),
             "sector": c.get('sector', ''),
             "needs_update": needs_update

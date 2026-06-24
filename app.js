@@ -177,7 +177,16 @@ function isDefaultState() {
 function updateResetBtn() {
   const btn = document.getElementById('reset-btn');
   if (!btn) return;
-  btn.style.display = isDefaultState() ? 'none' : 'inline-flex';
+  // 使用 visibility + opacity 而非 display，避免 CSS specificity 問題
+  if (isDefaultState()) {
+    btn.style.visibility = 'hidden';
+    btn.style.opacity = '0';
+    btn.style.pointerEvents = 'none';
+  } else {
+    btn.style.visibility = 'visible';
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+  }
 }
 
 /**
@@ -388,25 +397,42 @@ function initEvents() {
     renderGrid();
   });
 
-  // 行業篩選（靜態按鈕：全部）
+  // 行業篩選（支援 toggle：再次點擊已選中的行業可取消篩選）
   document.getElementById('sector-filters').addEventListener('click', e => {
     const btn = e.target.closest('.filter-btn');
     if (!btn) return;
     const sector = btn.dataset.sector;
     if (!sector) return;
-    activeSector = sector;
-    document.querySelectorAll('#sector-filters .filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    // 若點擊的是已選中的非「全部」按鈕，則取消篩選（回到全部）
+    if (activeSector === sector && sector !== 'all') {
+      activeSector = 'all';
+      document.querySelectorAll('#sector-filters .filter-btn').forEach(b => b.classList.remove('active'));
+      const allBtn = document.querySelector('#sector-filters .filter-btn[data-sector="all"]');
+      if (allBtn) allBtn.classList.add('active');
+    } else {
+      activeSector = sector;
+      document.querySelectorAll('#sector-filters .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
     renderGrid();
   });
 
-  // 指數 Toggle
+  // 指數 Toggle（支援 toggle：再次點擊已選中的指數可取消篩選）
   document.getElementById('index-toggles').addEventListener('click', e => {
     const btn = e.target.closest('.toggle-btn');
     if (!btn) return;
-    activeIndex = btn.dataset.index;
-    document.querySelectorAll('#index-toggles .toggle-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    const idx = btn.dataset.index;
+    // 若點擊的是已選中的非「全部」按鈕，則取消篩選（回到全部）
+    if (activeIndex === idx && idx !== 'all') {
+      activeIndex = 'all';
+      document.querySelectorAll('#index-toggles .toggle-btn').forEach(b => b.classList.remove('active'));
+      const allBtn = document.querySelector('#index-toggles .toggle-btn[data-index="all"]');
+      if (allBtn) allBtn.classList.add('active');
+    } else {
+      activeIndex = idx;
+      document.querySelectorAll('#index-toggles .toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
     renderGrid();
   });
 
@@ -427,7 +453,9 @@ function initEvents() {
 document.addEventListener('DOMContentLoaded', () => {
   initEvents();
 
-  fetch('data/processed/companies.json')
+  // 加入 cache-busting 參數，確保每次載入最新資料
+  const cacheBuster = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+  fetch(`data/processed/companies.json?v=${cacheBuster}`)
     .then(r => r.json())
     .then(data => {
       companies = data;

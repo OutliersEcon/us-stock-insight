@@ -72,11 +72,14 @@
 
     /* ── Reset Filter 按鈕 ── */
     #reset-btn {
-      display: none; /* 預設隱藏，有篩選條件時才顯示 */
+      display: inline-flex; /* 始終占位，由 JS 控制 visibility 顯隐 */
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
       align-items: center; gap: 6px;
       background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.35);
       border-radius: 8px; padding: 8px 14px; font-size: 13px; color: var(--amber);
-      cursor: pointer; transition: all .2s; white-space: nowrap;
+      cursor: pointer; transition: visibility 0s, opacity .2s, background .2s, border-color .2s; white-space: nowrap;
     }
     #reset-btn:hover { background: rgba(251,191,36,.22); border-color: var(--amber); }
 
