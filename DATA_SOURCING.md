@@ -250,7 +250,7 @@ curl -s -o /dev/null -w "%{http_code}" \
 | `TSM` | 台積電 | 台灣證交所 / NYSE ADR | https://investor.tsmc.com/ |
 | `FUTU` | 富途控股 | NASDAQ（但主要業務在中國） | https://ir.futuholdings.com/ |
 
-**處理方式**：`ai_agent_parser.py` 會跳過 SEC EDGAR 查詢，直接進入 AI 分析（`data_quality: estimated`）。建議人工更新這些企業的資料。
+**處理方式**：`ai_agent_parser.py` 會跳過 SEC EDGAR 查詢，不要更新這些公司。
 
 ### 5.2 含特殊字元的 Ticker
 
