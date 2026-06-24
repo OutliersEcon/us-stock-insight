@@ -260,17 +260,32 @@ function sortCompanies(arr) {
   });
 }
 
+/**
+ * HTML 變數轉義：將字串中的特殊字元轉為 HTML 實體
+ * 防止 XSS 與版面崩潰，所有來自 JSON 的動態內容必須經此函數處理
+ */
+function escapeHtml(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // ── 渲染單張卡片
 function renderCard(c) {
   const file = tickerToFile(c.ticker);
+  // 業務板塊已在 companies.json 中按百分比降床排序，取前 4 項
   const topSegs = c.revenue_segments.slice(0, 4);
   const sectorZh = SECTOR_ZH[c.sector] || c.sector;
 
   const segsHtml = topSegs.map(s => `
     <div class="seg-row">
-      <span class="seg-label">${s.segment}</span>
-      <div class="seg-bar-wrap"><div class="seg-bar" style="width:${s.percentage}%"></div></div>
-      <span class="seg-pct">${s.percentage}%</span>
+      <span class="seg-label">${escapeHtml(s.segment)}</span>
+      <div class="seg-bar-wrap"><div class="seg-bar" style="width:${Number(s.percentage)}%"></div></div>
+      <span class="seg-pct">${Number(s.percentage)}%</span>
     </div>`).join('');
 
   // 指數 badges
@@ -280,7 +295,7 @@ function renderCard(c) {
   const ndxBadge = c.nasdaq100
     ? `<span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>`
     : '';
-  // 非 S&P 500 企業顯示「自選」badge
+  // 非 S&P 500 企業顯示「自選」 badge
   const watchBadge = c.in_sp500 === false
     ? `<span class="index-badge index-badge-watch"><span class="idx-dot"></span>自選</span>`
     : '';
@@ -292,20 +307,20 @@ function renderCard(c) {
     ? `<div class="weight-badge">SPY ${c.weight.toFixed(2)}%</div>`
     : `<div class="weight-badge weight-badge-watch">自選追蹤</div>`;
 
-  const lastUpdated = c.last_updated || 'N/A';
+  const lastUpdated = escapeHtml(c.last_updated || 'N/A');
 
   return `
     <a class="card" href="stocks/${file}.html">
       <div class="card-header">
-        <div class="ticker-badge">${c.ticker}</div>
+        <div class="ticker-badge">${escapeHtml(c.ticker)}</div>
         ${weightHtml}
       </div>
-      <div class="company-name">${c.name}</div>
+      <div class="company-name">${escapeHtml(c.name)}</div>
       <div class="badge-row">
-        <span class="sector-tag ${sectorClass(c.sector)}">${c.sector} <span style="opacity:.7">${sectorZh}</span></span>
+        <span class="sector-tag ${sectorClass(c.sector)}">${escapeHtml(c.sector)} <span style="opacity:.7">${escapeHtml(sectorZh)}</span></span>
       </div>
       ${indexStrip}
-      <div class="description">${c.description}</div>
+      <div class="description">${escapeHtml(c.description)}</div>
       <div class="segments">${segsHtml}</div>
       <div class="card-footer">
         <span class="view-link">查看詳情 →</span>
