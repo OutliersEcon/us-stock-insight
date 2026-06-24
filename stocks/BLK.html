@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">BlackRock 是全球最大的資產管理公司，透過投資管理、iShares ETF 與 Aladdin 技術平台，為機構與零售客戶提供被動與主動投資、風險管理及諮詢服務。規模優勢、資料分析與跨市場分銷是其主要競爭力。</p>
       <div class="last-updated">
@@ -126,13 +127,13 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">Distribution fees</span>
-            <span class="seg-pct">5%</span>
+            <span class="seg-name">Other revenue</span>
+            <span class="seg-pct">13%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:5%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:13%;background:#7c3aed"></div>
           </div>
-          <p class="seg-desc">基金與產品的銷售與分銷費用，包含特定份額類別及通路合作所產生的持續分銷收入，較依賴零售與顧問通路的銷售活動。</p>
+          <p class="seg-desc">其他收入包含 Aladdin 技術與風險管理服務費、證券借貸收入、顧問與交易相關服務等，反映公司在金融科技與資本市場服務的多元化營收來源。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -148,13 +149,13 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#f59e0b"></div>
-            <span class="seg-name">Other revenue</span>
-            <span class="seg-pct">13%</span>
+            <span class="seg-name">Distribution fees</span>
+            <span class="seg-pct">5%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:13%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:5%;background:#f59e0b"></div>
           </div>
-          <p class="seg-desc">其他收入包含 Aladdin 技術與風險管理服務費、證券借貸收入、顧問與交易相關服務等，反映公司在金融科技與資本市場服務的多元化營收來源。</p>
+          <p class="seg-desc">基金與產品的銷售與分銷費用，包含特定份額類別及通路合作所產生的持續分銷收入，較依賴零售與顧問通路的銷售活動。</p>
         </div>
   </div>
 
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Investment advisory, administration and transaction fees", "Distribution fees", "Performance fees", "Other revenue"],
+      labels: ["Investment advisory, administration and transaction fees", "Other revenue", "Performance fees", "Distribution fees"],
       datasets: [{
-        data: [76, 5, 6, 13],
+        data: [76, 13, 6, 5],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

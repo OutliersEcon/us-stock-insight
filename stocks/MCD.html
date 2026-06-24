@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">麥當勞以特許經營為主，結合少量自營餐廳與全球供應鏈，以收取租金、權利金與技術服務費為核心營收來源；靠品牌規模、標準化作業與地點優勢取得高周轉與穩定現金流。</p>
       <div class="last-updated">
@@ -115,24 +116,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#4f8ef7"></div>
-            <span class="seg-name">Company-operated restaurants</span>
-            <span class="seg-pct">15%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:15%;background:#4f8ef7"></div>
-          </div>
-          <p class="seg-desc">來自公司自營餐廳的餐點銷售收入，涵蓋餐廳日常營業所得與促銷活動帶來之銷售額，毛利較直接反映營運成本與門店表現。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#7c3aed"></div>
             <span class="seg-name">Franchised restaurants (rent, royalties & fees)</span>
             <span class="seg-pct">78%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:78%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:78%;background:#4f8ef7"></div>
           </div>
           <p class="seg-desc">來自特許經營體系的租金、權利金、營運服務費與初始加盟費等項目，與加盟店系統銷售表現連動，為公司主要且穩定的經常性現金流來源。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">Company-operated restaurants</span>
+            <span class="seg-pct">15%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:15%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">來自公司自營餐廳的餐點銷售收入，涵蓋餐廳日常營業所得與促銷活動帶來之銷售額，毛利較直接反映營運成本與門店表現。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -164,9 +165,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Company-operated restaurants", "Franchised restaurants (rent, royalties & fees)", "Other revenues"],
+      labels: ["Franchised restaurants (rent, royalties & fees)", "Company-operated restaurants", "Other revenues"],
       datasets: [{
-        data: [15, 78, 7],
+        data: [78, 15, 7],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e"],
         borderColor: '#0f1117',
         borderWidth: 2,

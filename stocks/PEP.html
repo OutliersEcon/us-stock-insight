@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">百事公司為全球食品與飲料領導者，透过多元品牌組合、全球供應鏈與直控分銷網絡，結合資料驅動行銷與新品研發，在零食與碳酸／非碳酸飲料市場保持規模經濟與強大競爭優勢。</p>
       <div class="last-updated">
@@ -137,24 +138,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#22c55e"></div>
-            <span class="seg-name">Quaker Foods North America</span>
-            <span class="seg-pct">4%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:4%;background:#22c55e"></div>
-          </div>
-          <p class="seg-desc">北美谷物與即食營養品（例如Quaker燕麥、早餐穀物與營養棒），以穩定、利基食品類別貢獻營收。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Europe</span>
             <span class="seg-pct">16%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:16%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:16%;background:#22c55e"></div>
           </div>
           <p class="seg-desc">歐洲地區的零食與飲料業務，結合當地品牌與國際品牌，透過多國營運適應區域消費偏好。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#f59e0b"></div>
+            <span class="seg-name">Asia, Middle East & North Africa</span>
+            <span class="seg-pct">15%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:15%;background:#f59e0b"></div>
+          </div>
+          <p class="seg-desc">亞太、中東與北非市場，為新興市場成長來源，聚焦本地化產品、擴張通路與品牌建設。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -170,13 +171,13 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#06b6d4"></div>
-            <span class="seg-name">Asia, Middle East & North Africa</span>
-            <span class="seg-pct">15%</span>
+            <span class="seg-name">Quaker Foods North America</span>
+            <span class="seg-pct">4%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:15%;background:#06b6d4"></div>
+            <div class="seg-bar" style="width:4%;background:#06b6d4"></div>
           </div>
-          <p class="seg-desc">亞太、中東與北非市場，為新興市場成長來源，聚焦本地化產品、擴張通路與品牌建設。</p>
+          <p class="seg-desc">北美谷物與即食營養品（例如Quaker燕麥、早餐穀物與營養棒），以穩定、利基食品類別貢獻營收。</p>
         </div>
   </div>
 
@@ -197,9 +198,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Frito-Lay North America", "North America Beverages", "Quaker Foods North America", "Europe", "Latin America", "Asia, Middle East & North Africa"],
+      labels: ["Frito-Lay North America", "North America Beverages", "Europe", "Asia, Middle East & North Africa", "Latin America", "Quaker Foods North America"],
       datasets: [{
-        data: [32, 24, 4, 16, 9, 15],
+        data: [32, 24, 16, 15, 9, 4],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444", "#06b6d4"],
         borderColor: '#0f1117',
         borderWidth: 2,

@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">Lowe's 為美國主要家居建材零售商，提供建材、家電、園藝與裝修商品，結合全國門市佈局、承包商（Pro）服務與數位銷售整合，以規模採購、供應鏈效率與專業服務建立競爭優勢。</p>
       <div class="last-updated">
@@ -137,24 +138,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#22c55e"></div>
-            <span class="seg-name">Appliances & Kitchens</span>
-            <span class="seg-pct">12%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:12%;background:#22c55e"></div>
-          </div>
-          <p class="seg-desc">販售大型家電、廚房設備與整體廚浴解決方案，單價較高且依賴安裝與售後服務，利潤與客單價較佳。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Decor, Flooring & Paint</span>
             <span class="seg-pct">18%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:18%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:18%;background:#22c55e"></div>
           </div>
           <p class="seg-desc">包括地板、塗料、家飾與室內裝潢材料，面向居家翻新或風格升級需求，為零售端重要的差異化產品線。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#f59e0b"></div>
+            <span class="seg-name">Appliances & Kitchens</span>
+            <span class="seg-pct">12%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:12%;background:#f59e0b"></div>
+          </div>
+          <p class="seg-desc">販售大型家電、廚房設備與整體廚浴解決方案，單價較高且依賴安裝與售後服務，利潤與客單價較佳。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -197,9 +198,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Building Materials & Lumber", "Maintenance, Repair & Operations (MRO) & Hardware", "Appliances & Kitchens", "Decor, Flooring & Paint", "Lawn, Garden & Outdoor Living", "Seasonal & Other Merchandise"],
+      labels: ["Building Materials & Lumber", "Maintenance, Repair & Operations (MRO) & Hardware", "Decor, Flooring & Paint", "Appliances & Kitchens", "Lawn, Garden & Outdoor Living", "Seasonal & Other Merchandise"],
       datasets: [{
-        data: [28, 24, 12, 18, 10, 8],
+        data: [28, 24, 18, 12, 10, 8],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444", "#06b6d4"],
         borderColor: '#0f1117',
         borderWidth: 2,

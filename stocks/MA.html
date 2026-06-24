@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">全球第二大支付網路，與 Visa 並列雙寡頭，同樣採用輕資產模式，近年積極拓展增值服務（諮詢、網路安全）。</p>
       <div class="last-updated">
@@ -126,24 +127,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">Cross-Border Volume Fees</span>
-            <span class="seg-pct">28%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:28%;background:#7c3aed"></div>
-          </div>
-          <p class="seg-desc">跨境交易費</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">Transaction Processing</span>
             <span class="seg-pct">30%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:30%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:30%;background:#7c3aed"></div>
           </div>
           <p class="seg-desc">交易授權與清算費</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Cross-Border Volume Fees</span>
+            <span class="seg-pct">28%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:28%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">跨境交易費</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Domestic Assessments", "Cross-Border Volume Fees", "Transaction Processing", "Other Revenues"],
+      labels: ["Domestic Assessments", "Transaction Processing", "Cross-Border Volume Fees", "Other Revenues"],
       datasets: [{
-        data: [30, 28, 30, 12],
+        data: [30, 30, 28, 12],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

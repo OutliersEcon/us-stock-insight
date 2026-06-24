@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">全球頂尖製藥公司，以癌症免疫療法 Keytruda（pembrolizumab）為核心，同時擁有疫苗與動物保健業務。</p>
       <div class="last-updated">
@@ -126,46 +127,46 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">Other Pharmaceuticals</span>
+            <span class="seg-pct">17%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:17%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">其他藥物</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">Vaccines (Gardasil, etc.)</span>
             <span class="seg-pct">15%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:15%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:15%;background:#22c55e"></div>
           </div>
           <p class="seg-desc">HPV 及其他疫苗</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
+            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Hospital Acute Care</span>
             <span class="seg-pct">12%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:12%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:12%;background:#f59e0b"></div>
           </div>
           <p class="seg-desc">抗感染、心血管藥物</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
+            <div class="seg-dot" style="background:#ef4444"></div>
             <span class="seg-name">Animal Health</span>
             <span class="seg-pct">10%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:10%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:10%;background:#ef4444"></div>
           </div>
           <p class="seg-desc">獸醫藥品</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#ef4444"></div>
-            <span class="seg-name">Other Pharmaceuticals</span>
-            <span class="seg-pct">17%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:17%;background:#ef4444"></div>
-          </div>
-          <p class="seg-desc">其他藥物</p>
         </div>
   </div>
 
@@ -186,9 +187,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Keytruda (pembrolizumab)", "Vaccines (Gardasil, etc.)", "Hospital Acute Care", "Animal Health", "Other Pharmaceuticals"],
+      labels: ["Keytruda (pembrolizumab)", "Other Pharmaceuticals", "Vaccines (Gardasil, etc.)", "Hospital Acute Care", "Animal Health"],
       datasets: [{
-        data: [46, 15, 12, 10, 17],
+        data: [46, 17, 15, 12, 10],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444"],
         borderColor: '#0f1117',
         borderWidth: 2,

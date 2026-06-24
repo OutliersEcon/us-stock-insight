@@ -48,9 +48,11 @@ def generate_page(company: dict) -> str:
     sector = company['sector']
     description = company['description']
     weight = company['weight']
-    segments = company['revenue_segments']
+    # 業務板塊按百分比降床排序（大到小）
+    segments = sorted(company['revenue_segments'], key=lambda x: x['percentage'], reverse=True)
     last_updated = company.get('last_updated', 'N/A')
     nasdaq100 = company.get('nasdaq100', False)
+    in_sp500 = company.get('in_sp500', True)
     sector_color = SECTOR_COLORS.get(sector, "#8892a4")
 
     # Pie chart data
@@ -58,13 +60,20 @@ def generate_page(company: dict) -> str:
     pie_data = json.dumps([s['percentage'] for s in segments])
     pie_colors = json.dumps(PIE_PALETTE[:len(segments)])
 
-    # Index membership strip HTML (S&P 500 always; Nasdaq 100 only if applicable)
+    # Index membership strip HTML
+    sp_badge_html = ''
     ndx_badge_html = ''
+    watch_badge_html = ''
+    if in_sp500:
+        sp_badge_html = '<span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>'
     if nasdaq100:
         ndx_badge_html = '<span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>'
+    if not in_sp500:
+        watch_badge_html = '<span class="index-badge index-badge-watch"><span class="idx-dot"></span>自選</span>'
     index_strip_html = f'''<div class="index-strip">
-        <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
+        {sp_badge_html}
         {ndx_badge_html}
+        {watch_badge_html}
       </div>'''
 
     # Segment rows HTML

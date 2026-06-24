@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">Warren Buffett 旗下多元化控股公司，持有 GEICO 保險、BNSF 鐵路、Berkshire Hathaway Energy 及大量股票投資組合（Apple、美國銀行等）。</p>
       <div class="last-updated">
@@ -126,35 +127,35 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">Manufacturing</span>
+            <span class="seg-pct">20%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:20%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">工業、建築、消費品製造</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">BNSF Railway</span>
             <span class="seg-pct">15%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:15%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:15%;background:#22c55e"></div>
           </div>
           <p class="seg-desc">貨運鐵路</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
+            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Berkshire Hathaway Energy</span>
             <span class="seg-pct">12%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:12%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:12%;background:#f59e0b"></div>
           </div>
           <p class="seg-desc">電力與天然氣公用事業</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
-            <span class="seg-name">Manufacturing</span>
-            <span class="seg-pct">20%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:20%;background:#f59e0b"></div>
-          </div>
-          <p class="seg-desc">工業、建築、消費品製造</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -197,9 +198,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Insurance (GEICO, Gen Re)", "BNSF Railway", "Berkshire Hathaway Energy", "Manufacturing", "Service & Retailing", "Investment Income"],
+      labels: ["Insurance (GEICO, Gen Re)", "Manufacturing", "BNSF Railway", "Berkshire Hathaway Energy", "Service & Retailing", "Investment Income"],
       datasets: [{
-        data: [35, 15, 12, 20, 10, 8],
+        data: [35, 20, 15, 12, 10, 8],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444", "#06b6d4"],
         borderColor: '#0f1117',
         borderWidth: 2,

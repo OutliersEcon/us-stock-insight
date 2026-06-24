@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">全球市值最高的消費電子公司，以 iPhone、Mac、iPad 及 Services 生態系聞名，持續向服務業務轉型。</p>
       <div class="last-updated">
@@ -137,35 +138,35 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Wearables & Home</span>
+            <span class="seg-pct">11%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:11%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">Apple Watch、AirPods、HomePod</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Mac</span>
             <span class="seg-pct">8%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:8%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:8%;background:#f59e0b"></div>
           </div>
           <p class="seg-desc">個人電腦</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
+            <div class="seg-dot" style="background:#ef4444"></div>
             <span class="seg-name">iPad</span>
             <span class="seg-pct">7%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:7%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:7%;background:#ef4444"></div>
           </div>
           <p class="seg-desc">平板電腦</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#ef4444"></div>
-            <span class="seg-name">Wearables & Home</span>
-            <span class="seg-pct">11%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:11%;background:#ef4444"></div>
-          </div>
-          <p class="seg-desc">Apple Watch、AirPods、HomePod</p>
         </div>
   </div>
 
@@ -186,9 +187,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["iPhone", "Services", "Mac", "iPad", "Wearables & Home"],
+      labels: ["iPhone", "Services", "Wearables & Home", "Mac", "iPad"],
       datasets: [{
-        data: [52, 22, 8, 7, 11],
+        data: [52, 22, 11, 8, 7],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444"],
         borderColor: '#0f1117',
         borderWidth: 2,

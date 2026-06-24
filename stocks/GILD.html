@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">Gilead Sciences 是以研發抗病毒與腫瘤藥物為核心的生物製藥公司，主力於 HIV 抗逆轉錄病毒療法與抗癌抗體與細胞療法，結合強大的研發能量與快速商業化能力，在慢性病毒治療與腫瘤新藥市場具競爭優勢。</p>
       <div class="last-updated">
@@ -137,24 +138,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#22c55e"></div>
-            <span class="seg-name">Viral Hepatitis (HCV) and Other Antivirals</span>
-            <span class="seg-pct">4%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:4%;background:#22c55e"></div>
-          </div>
-          <p class="seg-desc">傳統 HCV 產品組合（如 Harvoni、Sovaldi 等）以及其他抗病毒藥，近年市占與營收相對萎縮。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Other (Remdesivir, Royalties, Services)</span>
             <span class="seg-pct">14%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:14%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:14%;background:#22c55e"></div>
           </div>
           <p class="seg-desc">包含 Veklury（remdesivir）銷售、授權金、合約製造與其他營收項目，具較高波動性與一次性收入成分。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#f59e0b"></div>
+            <span class="seg-name">Viral Hepatitis (HCV) and Other Antivirals</span>
+            <span class="seg-pct">4%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:4%;background:#f59e0b"></div>
+          </div>
+          <p class="seg-desc">傳統 HCV 產品組合（如 Harvoni、Sovaldi 等）以及其他抗病毒藥，近年市占與營收相對萎縮。</p>
         </div>
   </div>
 
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["HIV Therapies", "Oncology and Cell Therapy", "Viral Hepatitis (HCV) and Other Antivirals", "Other (Remdesivir, Royalties, Services)"],
+      labels: ["HIV Therapies", "Oncology and Cell Therapy", "Other (Remdesivir, Royalties, Services)", "Viral Hepatitis (HCV) and Other Antivirals"],
       datasets: [{
-        data: [62, 20, 4, 14],
+        data: [62, 20, 14, 4],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

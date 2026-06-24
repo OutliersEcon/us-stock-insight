@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">標普全球提供信用評級、金融市場數據、指數與商品資訊等專業服務，結合高品質數據、分析平台與指標建立行業標準，並以全球覆蓋與品牌信任為競爭優勢。</p>
       <div class="last-updated">
@@ -115,24 +116,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#4f8ef7"></div>
-            <span class="seg-name">Ratings</span>
-            <span class="seg-pct">31%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:31%;background:#4f8ef7"></div>
-          </div>
-          <p class="seg-desc">提供企業與主權信用評級、研究與風險分析，向金融機構、發行人與投資人收取評級與諮詢費用。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#7c3aed"></div>
             <span class="seg-name">Market Intelligence</span>
             <span class="seg-pct">36%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:36%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:36%;background:#4f8ef7"></div>
           </div>
           <p class="seg-desc">提供金融市場資料、終端平台、評估模型與分析服務，覆蓋資產管理、投資銀行與企業決策用戶，以訂閱與資料服務為主要營收來源。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">Ratings</span>
+            <span class="seg-pct">31%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:31%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">提供企業與主權信用評級、研究與風險分析，向金融機構、發行人與投資人收取評級與諮詢費用。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Ratings", "Market Intelligence", "S&P Dow Jones Indices", "Commodity Insights"],
+      labels: ["Market Intelligence", "Ratings", "S&P Dow Jones Indices", "Commodity Insights"],
       datasets: [{
-        data: [31, 36, 19, 14],
+        data: [36, 31, 19, 14],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

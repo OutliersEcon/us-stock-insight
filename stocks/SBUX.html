@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">星巴克主要透過自營門市與授權夥伴經營全球咖啡連鎖，並銷售包裝即飲與授權商品。公司以品牌溢價、門市體驗、供應鏈規模與數位會員體系為競爭優勢，透過產品創新與店型擴張提升客流與客單價，兼顧零售通路與授權模式的營收組合。</p>
       <div class="last-updated">
@@ -126,24 +127,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">Licensed Stores</span>
-            <span class="seg-pct">6%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:6%;background:#7c3aed"></div>
-          </div>
-          <p class="seg-desc">透過授權合約由第三方營運的門市與渠道，收取授權費、商品銷售分潤與服務收入，擴大品牌觸及與低資本成長。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">Consumer Packaged Goods & Foodservice</span>
             <span class="seg-pct">16%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:16%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:16%;background:#7c3aed"></div>
           </div>
           <p class="seg-desc">包含罐裝、即飲、零售通路與餐飲供應鏈之包裝商品及授權食品服務，提供渠道多元化與品牌產品延伸收益。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Licensed Stores</span>
+            <span class="seg-pct">6%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:6%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">透過授權合約由第三方營運的門市與渠道，收取授權費、商品銷售分潤與服務收入，擴大品牌觸及與低資本成長。</p>
         </div>
   </div>
 
@@ -164,9 +165,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Company-operated Stores", "Licensed Stores", "Consumer Packaged Goods & Foodservice"],
+      labels: ["Company-operated Stores", "Consumer Packaged Goods & Foodservice", "Licensed Stores"],
       datasets: [{
-        data: [78, 6, 16],
+        data: [78, 16, 6],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e"],
         borderColor: '#0f1117',
         borderWidth: 2,

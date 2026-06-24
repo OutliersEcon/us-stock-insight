@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">全球頂尖製藥公司，以 GLP-1 類藥物（Mounjaro/Zepbound 糖尿病與減重）及阿茲海默症治療藥物 Kisunla 引領市場。</p>
       <div class="last-updated">
@@ -126,46 +127,46 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">Other Products</span>
+            <span class="seg-pct">27%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:27%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">其他藥物組合</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">Verzenio (abemaciclib)</span>
             <span class="seg-pct">12%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:12%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:12%;background:#22c55e"></div>
           </div>
           <p class="seg-desc">乳癌治療</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
+            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Jardiance</span>
             <span class="seg-pct">10%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:10%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:10%;background:#f59e0b"></div>
           </div>
           <p class="seg-desc">糖尿病與心臟衰竭</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
+            <div class="seg-dot" style="background:#ef4444"></div>
             <span class="seg-name">Taltz</span>
             <span class="seg-pct">6%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:6%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:6%;background:#ef4444"></div>
           </div>
           <p class="seg-desc">自體免疫疾病</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#ef4444"></div>
-            <span class="seg-name">Other Products</span>
-            <span class="seg-pct">27%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:27%;background:#ef4444"></div>
-          </div>
-          <p class="seg-desc">其他藥物組合</p>
         </div>
   </div>
 
@@ -186,9 +187,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Mounjaro / Zepbound (tirzepatide)", "Verzenio (abemaciclib)", "Jardiance", "Taltz", "Other Products"],
+      labels: ["Mounjaro / Zepbound (tirzepatide)", "Other Products", "Verzenio (abemaciclib)", "Jardiance", "Taltz"],
       datasets: [{
-        data: [45, 12, 10, 6, 27],
+        data: [45, 27, 12, 10, 6],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444"],
         borderColor: '#0f1117',
         borderWidth: 2,

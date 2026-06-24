@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">Google 母公司 Alphabet 的 C 類股（無投票權），業務結構與 GOOGL 相同，包含 Google 搜尋、YouTube、Google Cloud 及 Waymo。</p>
       <div class="last-updated">
@@ -126,46 +127,46 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">YouTube Ads</span>
-            <span class="seg-pct">10%</span>
+            <span class="seg-name">Other Bets & Subscriptions</span>
+            <span class="seg-pct">13%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:10%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:13%;background:#7c3aed"></div>
           </div>
-          <p class="seg-desc">影片廣告</p>
+          <p class="seg-desc">Waymo、Google One、硬體等</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#22c55e"></div>
-            <span class="seg-name">Google Network</span>
-            <span class="seg-pct">8%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:8%;background:#22c55e"></div>
-          </div>
-          <p class="seg-desc">第三方廣告網路</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Google Cloud</span>
             <span class="seg-pct">12%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:12%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:12%;background:#22c55e"></div>
           </div>
           <p class="seg-desc">GCP 雲端服務</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#ef4444"></div>
-            <span class="seg-name">Other Bets & Subscriptions</span>
-            <span class="seg-pct">13%</span>
+            <div class="seg-dot" style="background:#f59e0b"></div>
+            <span class="seg-name">YouTube Ads</span>
+            <span class="seg-pct">10%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:13%;background:#ef4444"></div>
+            <div class="seg-bar" style="width:10%;background:#f59e0b"></div>
           </div>
-          <p class="seg-desc">Waymo、Google One、硬體等</p>
+          <p class="seg-desc">影片廣告</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#ef4444"></div>
+            <span class="seg-name">Google Network</span>
+            <span class="seg-pct">8%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:8%;background:#ef4444"></div>
+          </div>
+          <p class="seg-desc">第三方廣告網路</p>
         </div>
   </div>
 
@@ -186,9 +187,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Google Search & Other", "YouTube Ads", "Google Network", "Google Cloud", "Other Bets & Subscriptions"],
+      labels: ["Google Search & Other", "Other Bets & Subscriptions", "Google Cloud", "YouTube Ads", "Google Network"],
       datasets: [{
-        data: [57, 10, 8, 12, 13],
+        data: [57, 13, 12, 10, 8],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444"],
         borderColor: '#0f1117',
         borderWidth: 2,

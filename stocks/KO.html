@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">全球最大飲料公司，旗下擁有超過 500 個品牌，以特許經營模式向全球 200+ 個國家銷售濃縮液與成品飲料。</p>
       <div class="last-updated">
@@ -115,24 +116,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#4f8ef7"></div>
-            <span class="seg-name">North America</span>
-            <span class="seg-pct">35%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:35%;background:#4f8ef7"></div>
-          </div>
-          <p class="seg-desc">美國及加拿大市場</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#7c3aed"></div>
             <span class="seg-name">International (EMEA, APAC, LatAm)</span>
             <span class="seg-pct">55%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:55%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:55%;background:#4f8ef7"></div>
           </div>
           <p class="seg-desc">歐洲、中東、非洲、亞太、拉美</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">North America</span>
+            <span class="seg-pct">35%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:35%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">美國及加拿大市場</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -164,9 +165,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["North America", "International (EMEA, APAC, LatAm)", "Bottling Investments"],
+      labels: ["International (EMEA, APAC, LatAm)", "North America", "Bottling Investments"],
       datasets: [{
-        data: [35, 55, 10],
+        data: [55, 35, 10],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e"],
         borderColor: '#0f1117',
         borderWidth: 2,

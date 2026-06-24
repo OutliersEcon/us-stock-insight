@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">RTX Corporation 以航空動力、飛機系統與國防電子系統為核心，整合研發、製造與維修服務，服務商用航空與軍用市場。公司透过規模化供應鏈、系統整合能力與長期軍售合約，維持技術領先與穩定現金流，並以全球售後支援與升級服務強化競爭優勢。</p>
       <div class="last-updated">
@@ -126,24 +127,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">Pratt & Whitney</span>
-            <span class="seg-pct">26%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:26%;background:#7c3aed"></div>
-          </div>
-          <p class="seg-desc">設計與製造民用與軍用航空發動機及相關維修、零件供應與改裝服務，以高性能發動機技術與維保合約為主要收入來源。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">Raytheon Missiles & Defense</span>
             <span class="seg-pct">27%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:27%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:27%;background:#7c3aed"></div>
           </div>
           <p class="seg-desc">提供導彈、火力系統、防空與打擊解決方案，包含武器系統研發、生產與整合，主要來自政府與軍方合約。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Pratt & Whitney</span>
+            <span class="seg-pct">26%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:26%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">設計與製造民用與軍用航空發動機及相關維修、零件供應與改裝服務，以高性能發動機技術與維保合約為主要收入來源。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Collins Aerospace", "Pratt & Whitney", "Raytheon Missiles & Defense", "Raytheon Intelligence & Space"],
+      labels: ["Collins Aerospace", "Raytheon Missiles & Defense", "Pratt & Whitney", "Raytheon Intelligence & Space"],
       datasets: [{
-        data: [33, 26, 27, 14],
+        data: [33, 27, 26, 14],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">全球最大電商與雲端服務公司，AWS 為全球最大公有雲平台，同時積極拓展廣告、物流與 AI 業務。</p>
       <div class="last-updated">
@@ -126,24 +127,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">AWS</span>
-            <span class="seg-pct">17%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:17%;background:#7c3aed"></div>
-          </div>
-          <p class="seg-desc">雲端運算服務（最高利潤來源）</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">International Retail</span>
             <span class="seg-pct">22%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:22%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:22%;background:#7c3aed"></div>
           </div>
           <p class="seg-desc">海外電商</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">AWS</span>
+            <span class="seg-pct">17%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:17%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">雲端運算服務（最高利潤來源）</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -186,9 +187,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["North America Retail", "AWS", "International Retail", "Advertising Services", "Other"],
+      labels: ["North America Retail", "International Retail", "AWS", "Advertising Services", "Other"],
       datasets: [{
-        data: [44, 17, 22, 9, 8],
+        data: [44, 22, 17, 9, 8],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444"],
         borderColor: '#0f1117',
         borderWidth: 2,

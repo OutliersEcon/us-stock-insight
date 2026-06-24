@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">美國最大銀行，業務涵蓋消費金融、企業投資銀行、資產管理及商業銀行，以穩健的資本實力著稱。</p>
       <div class="last-updated">
@@ -137,24 +138,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#22c55e"></div>
-            <span class="seg-name">Commercial Banking</span>
-            <span class="seg-pct">10%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:10%;background:#22c55e"></div>
-          </div>
-          <p class="seg-desc">中型企業貸款</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Asset & Wealth Management</span>
             <span class="seg-pct">13%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:13%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:13%;background:#22c55e"></div>
           </div>
           <p class="seg-desc">資產管理與私人銀行</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#f59e0b"></div>
+            <span class="seg-name">Commercial Banking</span>
+            <span class="seg-pct">10%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:10%;background:#f59e0b"></div>
+          </div>
+          <p class="seg-desc">中型企業貸款</p>
         </div>
   </div>
 
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Consumer & Community Banking", "Corporate & Investment Bank", "Commercial Banking", "Asset & Wealth Management"],
+      labels: ["Consumer & Community Banking", "Corporate & Investment Bank", "Asset & Wealth Management", "Commercial Banking"],
       datasets: [{
-        data: [42, 35, 10, 13],
+        data: [42, 35, 13, 10],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

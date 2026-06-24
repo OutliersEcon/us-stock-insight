@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">全球最大支付網路，以輕資產商業模式從每筆交易中收取手續費，不承擔信用風險，擁有極高的利潤率。</p>
       <div class="last-updated">
@@ -115,24 +116,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#4f8ef7"></div>
-            <span class="seg-name">Service Revenues</span>
-            <span class="seg-pct">33%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:33%;background:#4f8ef7"></div>
-          </div>
-          <p class="seg-desc">依付款量收取的服務費</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#7c3aed"></div>
             <span class="seg-name">Data Processing Revenues</span>
             <span class="seg-pct">38%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:38%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:38%;background:#4f8ef7"></div>
           </div>
           <p class="seg-desc">交易授權、清算與結算費</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">Service Revenues</span>
+            <span class="seg-pct">33%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:33%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">依付款量收取的服務費</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Service Revenues", "Data Processing Revenues", "International Transaction Revenues", "Other Revenues"],
+      labels: ["Data Processing Revenues", "Service Revenues", "International Transaction Revenues", "Other Revenues"],
       datasets: [{
-        data: [33, 38, 27, 2],
+        data: [38, 33, 27, 2],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">直覺外科專注研發與銷售 da Vinci 外科機器人、耗材與維修服務，透過技術領先、臨床證據與廣泛安裝基地建立競爭優勢。</p>
       <div class="last-updated">
@@ -115,35 +116,35 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#4f8ef7"></div>
-            <span class="seg-name">Systems</span>
-            <span class="seg-pct">20%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:20%;background:#4f8ef7"></div>
-          </div>
-          <p class="seg-desc">銷售 da Vinci 外科機器人整機及相關初次配件，屬資本設備收入，驅動醫院導入與擴展臨床平台。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#7c3aed"></div>
             <span class="seg-name">Instruments & Accessories</span>
             <span class="seg-pct">55%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:55%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:55%;background:#4f8ef7"></div>
           </div>
           <p class="seg-desc">提供手術耗材、一次性與可重複使用器械及配件，為高頻次、持續性的消耗性收入來源。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
+            <div class="seg-dot" style="background:#7c3aed"></div>
             <span class="seg-name">Services</span>
             <span class="seg-pct">25%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:25%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:25%;background:#7c3aed"></div>
           </div>
           <p class="seg-desc">包含系統安裝、培訓、維修保養、軟體升級與支援合約，提升客戶黏著度並穩定經常性收入。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Systems</span>
+            <span class="seg-pct">20%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:20%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">銷售 da Vinci 外科機器人整機及相關初次配件，屬資本設備收入，驅動醫院導入與擴展臨床平台。</p>
         </div>
   </div>
 
@@ -164,9 +165,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Systems", "Instruments & Accessories", "Services"],
+      labels: ["Instruments & Accessories", "Services", "Systems"],
       datasets: [{
-        data: [20, 55, 25],
+        data: [55, 25, 20],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e"],
         borderColor: '#0f1117',
         borderWidth: 2,

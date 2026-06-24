@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">洛克希德馬丁為美國主要防衛與航空航太系統承包商，提供戰鬥機、導彈、衛星與整合作戰與後勤服務。公司以長期政府合約、垂直整合供應鏈與先進研發能力，建立高門檻技術與持續維保優勢。</p>
       <div class="last-updated">
@@ -126,13 +127,13 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">Missiles and Fire Control</span>
-            <span class="seg-pct">14%</span>
+            <span class="seg-name">Space</span>
+            <span class="seg-pct">29%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:14%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:29%;background:#7c3aed"></div>
           </div>
-          <p class="seg-desc">研發與生產導彈、精準打擊武器、火控與防空系統，提供戰術火力與地對空/海對空等防衛解決方案。</p>
+          <p class="seg-desc">設計與生產衛星、運輸與發射系統、導彈預警與太空偵測系統，服務軍用與商用太空任務與持續運營。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -148,13 +149,13 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#f59e0b"></div>
-            <span class="seg-name">Space</span>
-            <span class="seg-pct">29%</span>
+            <span class="seg-name">Missiles and Fire Control</span>
+            <span class="seg-pct">14%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:29%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:14%;background:#f59e0b"></div>
           </div>
-          <p class="seg-desc">設計與生產衛星、運輸與發射系統、導彈預警與太空偵測系統，服務軍用與商用太空任務與持續運營。</p>
+          <p class="seg-desc">研發與生產導彈、精準打擊武器、火控與防空系統，提供戰術火力與地對空/海對空等防衛解決方案。</p>
         </div>
   </div>
 
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Aeronautics", "Missiles and Fire Control", "Rotary and Mission Systems", "Space"],
+      labels: ["Aeronautics", "Space", "Rotary and Mission Systems", "Missiles and Fire Control"],
       datasets: [{
-        data: [34, 14, 23, 29],
+        data: [34, 29, 23, 14],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

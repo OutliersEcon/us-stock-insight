@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">全球最大科學儀器與生命科學服務公司，提供實驗室設備、試劑、基因定序及合約製造服務，是製藥與生技公司的核心供應商。</p>
       <div class="last-updated">
@@ -126,24 +127,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">Analytical Instruments</span>
-            <span class="seg-pct">20%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:20%;background:#7c3aed"></div>
-          </div>
-          <p class="seg-desc">質譜儀、色譜儀等分析設備</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">Laboratory Products & Biopharma Services</span>
             <span class="seg-pct">30%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:30%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:30%;background:#7c3aed"></div>
           </div>
           <p class="seg-desc">實驗室耗材與合約製造</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Analytical Instruments</span>
+            <span class="seg-pct">20%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:20%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">質譜儀、色譜儀等分析設備</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -175,9 +176,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Life Sciences Solutions", "Analytical Instruments", "Laboratory Products & Biopharma Services", "Specialty Diagnostics"],
+      labels: ["Life Sciences Solutions", "Laboratory Products & Biopharma Services", "Analytical Instruments", "Specialty Diagnostics"],
       datasets: [{
-        data: [35, 20, 30, 15],
+        data: [35, 30, 20, 15],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b"],
         borderColor: '#0f1117',
         borderWidth: 2,

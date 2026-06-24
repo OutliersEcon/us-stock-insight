@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">思科為全球領先的網路與資安解決方案供應商，提供交換器、路由器、資料中心、雲端與資安軟硬體及服務。憑藉龐大的企業與電信客戶基礎、廣泛通路與軟體訂閱模式，建立高轉換成本與持續經常性營收，具競爭優勢。</p>
       <div class="last-updated">
@@ -126,13 +127,13 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">Applications</span>
-            <span class="seg-pct">8%</span>
+            <span class="seg-name">Services</span>
+            <span class="seg-pct">30%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:8%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:30%;background:#7c3aed"></div>
           </div>
-          <p class="seg-desc">企業應用與協作軟體（例如協同、分析與管理平台），以授權與訂閱模式銷售。</p>
+          <p class="seg-desc">技術支援、專業服務與訂閱式維運服務，提供經常性收入並提升客戶黏著度。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -148,24 +149,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#f59e0b"></div>
-            <span class="seg-name">Other Products</span>
-            <span class="seg-pct">4%</span>
+            <span class="seg-name">Applications</span>
+            <span class="seg-pct">8%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:4%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:8%;background:#f59e0b"></div>
           </div>
-          <p class="seg-desc">其他硬體產品線，例如光纖/電信設備、物聯網與週邊設備，佔比較小。</p>
+          <p class="seg-desc">企業應用與協作軟體（例如協同、分析與管理平台），以授權與訂閱模式銷售。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#ef4444"></div>
-            <span class="seg-name">Services</span>
-            <span class="seg-pct">30%</span>
+            <span class="seg-name">Other Products</span>
+            <span class="seg-pct">4%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:30%;background:#ef4444"></div>
+            <div class="seg-bar" style="width:4%;background:#ef4444"></div>
           </div>
-          <p class="seg-desc">技術支援、專業服務與訂閱式維運服務，提供經常性收入並提升客戶黏著度。</p>
+          <p class="seg-desc">其他硬體產品線，例如光纖/電信設備、物聯網與週邊設備，佔比較小。</p>
         </div>
   </div>
 
@@ -186,9 +187,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Infrastructure Platforms", "Applications", "Security", "Other Products", "Services"],
+      labels: ["Infrastructure Platforms", "Services", "Security", "Applications", "Other Products"],
       datasets: [{
-        data: [48, 8, 10, 4, 30],
+        data: [48, 30, 10, 8, 4],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444"],
         borderColor: '#0f1117',
         borderWidth: 2,

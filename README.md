@@ -107,3 +107,4 @@ us-stock-insight/
 - [x] 優化前端互動體驗：支援點擊已選中標籤取消篩選、確保 Reset 按鈕與計數器狀態正確
 - [x] 修復搜尋過度匹配：別名改為單向比對（alias.includes(q)）、要求 q 至少 2 字元、公司名稱改用 word-boundary 匹配
 - [x] 加入 `escapeHtml()` 將所有來自 JSON 的動態內容進行 HTML 變數轉義，防止 XSS 與版面崩潰風險
+- [x] 修復業務板塊排序：`companies.json` 與個別頁面的 `revenue_segments` 均按百分比降床排序（大到小）

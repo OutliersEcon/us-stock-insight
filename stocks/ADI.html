@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">Analog Devices 是設計與供應高效能類比與混合訊號整合方案的領導者，主攻工業與車用市場，憑藉精密數位轉換、功率管理與系統整合能力，建立長期客戶關係與技術門檻。</p>
       <div class="last-updated">
@@ -148,24 +149,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#f59e0b"></div>
-            <span class="seg-name">Consumer</span>
-            <span class="seg-pct">8%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:8%;background:#f59e0b"></div>
-          </div>
-          <p class="seg-desc">消費電子：涵蓋音頻處理、感測器與電源管理等消費性電子應用，但在總營收中占比較低。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#ef4444"></div>
             <span class="seg-name">Enterprise & Healthcare</span>
             <span class="seg-pct">13%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:13%;background:#ef4444"></div>
+            <div class="seg-bar" style="width:13%;background:#f59e0b"></div>
           </div>
           <p class="seg-desc">企業與醫療：包括資料中心、醫療影像與專業醫療設備所需的高精度轉換器、放大器與訊號處理解決方案。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#ef4444"></div>
+            <span class="seg-name">Consumer</span>
+            <span class="seg-pct">8%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:8%;background:#ef4444"></div>
+          </div>
+          <p class="seg-desc">消費電子：涵蓋音頻處理、感測器與電源管理等消費性電子應用，但在總營收中占比較低。</p>
         </div>
   </div>
 
@@ -186,9 +187,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Industrial", "Automotive", "Communications", "Consumer", "Enterprise & Healthcare"],
+      labels: ["Industrial", "Automotive", "Communications", "Enterprise & Healthcare", "Consumer"],
       datasets: [{
-        data: [41, 24, 14, 8, 13],
+        data: [41, 24, 14, 13, 8],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444"],
         borderColor: '#0f1117',
         borderWidth: 2,

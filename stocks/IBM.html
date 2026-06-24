@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         
+        
       </div>
       <p class="hero-desc">IBM 以企業軟體與混合雲為核心，結合顧問與技術服務及企業級硬體與融資，藉由深厚客戶關係、研發與整合能力，提供端對端的企業數位轉型與混合雲解決方案，強調安全與可擴展性。</p>
       <div class="last-updated">
@@ -126,24 +127,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#7c3aed"></div>
-            <span class="seg-name">Global Business Services</span>
-            <span class="seg-pct">22%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:22%;background:#7c3aed"></div>
-          </div>
-          <p class="seg-desc">顧問與系統整合服務，提供數位轉型、應用管理與諮詢，靠大型企業長期合約與專業服務收費。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#22c55e"></div>
             <span class="seg-name">Global Technology Services</span>
             <span class="seg-pct">30%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:30%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:30%;background:#7c3aed"></div>
           </div>
           <p class="seg-desc">以基礎設施服務與技術支援為主，包含雲遷移、維運與技術支援，為企業IT營運與服務外包重要來源。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Global Business Services</span>
+            <span class="seg-pct">22%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:22%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">顧問與系統整合服務，提供數位轉型、應用管理與諮詢，靠大型企業長期合約與專業服務收費。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
@@ -186,9 +187,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Cloud & Cognitive Software", "Global Business Services", "Global Technology Services", "Systems", "Global Financing"],
+      labels: ["Cloud & Cognitive Software", "Global Technology Services", "Global Business Services", "Systems", "Global Financing"],
       datasets: [{
-        data: [38, 22, 30, 7, 3],
+        data: [38, 30, 22, 7, 3],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444"],
         borderColor: '#0f1117',
         borderWidth: 2,

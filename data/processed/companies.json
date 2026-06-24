@@ -51,6 +51,11 @@
         "description": "App Store、Apple Music、iCloud、Apple TV+"
       },
       {
+        "segment": "Wearables & Home",
+        "percentage": 11,
+        "description": "Apple Watch、AirPods、HomePod"
+      },
+      {
         "segment": "Mac",
         "percentage": 8,
         "description": "個人電腦"
@@ -59,11 +64,6 @@
         "segment": "iPad",
         "percentage": 7,
         "description": "平板電腦"
-      },
-      {
-        "segment": "Wearables & Home",
-        "percentage": 11,
-        "description": "Apple Watch、AirPods、HomePod"
       }
     ],
     "in_sp500": true
@@ -110,14 +110,14 @@
         "description": "美國電商、Prime 訂閱"
       },
       {
-        "segment": "AWS",
-        "percentage": 17,
-        "description": "雲端運算服務（最高利潤來源）"
-      },
-      {
         "segment": "International Retail",
         "percentage": 22,
         "description": "海外電商"
+      },
+      {
+        "segment": "AWS",
+        "percentage": 17,
+        "description": "雲端運算服務（最高利潤來源）"
       },
       {
         "segment": "Advertising Services",
@@ -147,6 +147,16 @@
         "description": "搜尋廣告"
       },
       {
+        "segment": "Other Bets & Subscriptions",
+        "percentage": 13,
+        "description": "Waymo、Google One、硬體等"
+      },
+      {
+        "segment": "Google Cloud",
+        "percentage": 12,
+        "description": "GCP 雲端服務"
+      },
+      {
         "segment": "YouTube Ads",
         "percentage": 10,
         "description": "影片廣告"
@@ -155,16 +165,6 @@
         "segment": "Google Network",
         "percentage": 8,
         "description": "第三方廣告網路"
-      },
-      {
-        "segment": "Google Cloud",
-        "percentage": 12,
-        "description": "GCP 雲端服務"
-      },
-      {
-        "segment": "Other Bets & Subscriptions",
-        "percentage": 13,
-        "description": "Waymo、Google One、硬體等"
       }
     ],
     "in_sp500": true
@@ -184,6 +184,16 @@
         "description": "搜尋廣告"
       },
       {
+        "segment": "Other Bets & Subscriptions",
+        "percentage": 13,
+        "description": "Waymo、Google One、硬體等"
+      },
+      {
+        "segment": "Google Cloud",
+        "percentage": 12,
+        "description": "GCP 雲端服務"
+      },
+      {
         "segment": "YouTube Ads",
         "percentage": 10,
         "description": "影片廣告"
@@ -192,16 +202,6 @@
         "segment": "Google Network",
         "percentage": 8,
         "description": "第三方廣告網路"
-      },
-      {
-        "segment": "Google Cloud",
-        "percentage": 12,
-        "description": "GCP 雲端服務"
-      },
-      {
-        "segment": "Other Bets & Subscriptions",
-        "percentage": 13,
-        "description": "Waymo、Google One、硬體等"
       }
     ],
     "in_sp500": true
@@ -297,6 +297,11 @@
         "description": "財產保險與再保險"
       },
       {
+        "segment": "Manufacturing",
+        "percentage": 20,
+        "description": "工業、建築、消費品製造"
+      },
+      {
         "segment": "BNSF Railway",
         "percentage": 15,
         "description": "貨運鐵路"
@@ -305,11 +310,6 @@
         "segment": "Berkshire Hathaway Energy",
         "percentage": 12,
         "description": "電力與天然氣公用事業"
-      },
-      {
-        "segment": "Manufacturing",
-        "percentage": 20,
-        "description": "工業、建築、消費品製造"
       },
       {
         "segment": "Service & Retailing",
@@ -339,6 +339,11 @@
         "description": "GLP-1/GIP 糖尿病與減重藥物"
       },
       {
+        "segment": "Other Products",
+        "percentage": 27,
+        "description": "其他藥物組合"
+      },
+      {
         "segment": "Verzenio (abemaciclib)",
         "percentage": 12,
         "description": "乳癌治療"
@@ -352,11 +357,6 @@
         "segment": "Taltz",
         "percentage": 6,
         "description": "自體免疫疾病"
-      },
-      {
-        "segment": "Other Products",
-        "percentage": 27,
-        "description": "其他藥物組合"
       }
     ],
     "in_sp500": true
@@ -408,14 +408,14 @@
         "description": "投資銀行、交易、市場"
       },
       {
-        "segment": "Commercial Banking",
-        "percentage": 10,
-        "description": "中型企業貸款"
-      },
-      {
         "segment": "Asset & Wealth Management",
         "percentage": 13,
         "description": "資產管理與私人銀行"
+      },
+      {
+        "segment": "Commercial Banking",
+        "percentage": 10,
+        "description": "中型企業貸款"
       }
     ],
     "in_sp500": true
@@ -472,6 +472,11 @@
         "description": "提供伺服器 CPU、加速器與資料中心解決方案，是企業級與雲端服務收入的主要來源。"
       },
       {
+        "segment": "Foundry & Other",
+        "percentage": 11,
+        "description": "包含晶圓代工、先進製程服務、授權與其他企業支援業務，支持長期製程與產能戰略。"
+      },
+      {
         "segment": "Network & Edge",
         "percentage": 8,
         "description": "涵蓋網路、通訊與邊緣運算晶片與系統，服務電信、工業與物聯網應用。"
@@ -485,11 +490,6 @@
         "segment": "Mobileye",
         "percentage": 3,
         "description": "自動駕駛與先進駕駛輔助系統（ADAS）相關軟硬體與訂閱服務，為成長性業務。"
-      },
-      {
-        "segment": "Foundry & Other",
-        "percentage": 11,
-        "description": "包含晶圓代工、先進製程服務、授權與其他企業支援業務，支持長期製程與產能戰略。"
       }
     ],
     "in_sp500": true
@@ -504,14 +504,14 @@
     "nasdaq100": false,
     "revenue_segments": [
       {
-        "segment": "Service Revenues",
-        "percentage": 33,
-        "description": "依付款量收取的服務費"
-      },
-      {
         "segment": "Data Processing Revenues",
         "percentage": 38,
         "description": "交易授權、清算與結算費"
+      },
+      {
+        "segment": "Service Revenues",
+        "percentage": 33,
+        "description": "依付款量收取的服務費"
       },
       {
         "segment": "International Transaction Revenues",
@@ -676,9 +676,9 @@
         "description": "包含交換器、路由器、資料中心網路與相關硬體/晶片，是公司最大且核心的產品營收來源。"
       },
       {
-        "segment": "Applications",
-        "percentage": 8,
-        "description": "企業應用與協作軟體（例如協同、分析與管理平台），以授權與訂閱模式銷售。"
+        "segment": "Services",
+        "percentage": 30,
+        "description": "技術支援、專業服務與訂閱式維運服務，提供經常性收入並提升客戶黏著度。"
       },
       {
         "segment": "Security",
@@ -686,14 +686,14 @@
         "description": "網路與雲端資安產品與平台（防火牆、入侵防護、雲端安全服務等）以及相關訂閱服務。"
       },
       {
+        "segment": "Applications",
+        "percentage": 8,
+        "description": "企業應用與協作軟體（例如協同、分析與管理平台），以授權與訂閱模式銷售。"
+      },
+      {
         "segment": "Other Products",
         "percentage": 4,
         "description": "其他硬體產品線，例如光纖/電信設備、物聯網與週邊設備，佔比較小。"
-      },
-      {
-        "segment": "Services",
-        "percentage": 30,
-        "description": "技術支援、專業服務與訂閱式維運服務，提供經常性收入並提升客戶黏著度。"
       }
     ],
     "in_sp500": true
@@ -772,14 +772,14 @@
         "description": "國內交易服務費"
       },
       {
-        "segment": "Cross-Border Volume Fees",
-        "percentage": 28,
-        "description": "跨境交易費"
-      },
-      {
         "segment": "Transaction Processing",
         "percentage": 30,
         "description": "交易授權與清算費"
+      },
+      {
+        "segment": "Cross-Border Volume Fees",
+        "percentage": 28,
+        "description": "跨境交易費"
       },
       {
         "segment": "Other Revenues",
@@ -1018,14 +1018,14 @@
     "nasdaq100": false,
     "revenue_segments": [
       {
-        "segment": "North America",
-        "percentage": 35,
-        "description": "美國及加拿大市場"
-      },
-      {
         "segment": "International (EMEA, APAC, LatAm)",
         "percentage": 55,
         "description": "歐洲、中東、非洲、亞太、拉美"
+      },
+      {
+        "segment": "North America",
+        "percentage": 35,
+        "description": "美國及加拿大市場"
       },
       {
         "segment": "Bottling Investments",
@@ -1192,6 +1192,11 @@
         "description": "PD-1 癌症免疫療法"
       },
       {
+        "segment": "Other Pharmaceuticals",
+        "percentage": 17,
+        "description": "其他藥物"
+      },
+      {
         "segment": "Vaccines (Gardasil, etc.)",
         "percentage": 15,
         "description": "HPV 及其他疫苗"
@@ -1205,11 +1210,6 @@
         "segment": "Animal Health",
         "percentage": 10,
         "description": "獸醫藥品"
-      },
-      {
-        "segment": "Other Pharmaceuticals",
-        "percentage": 17,
-        "description": "其他藥物"
       }
     ],
     "in_sp500": true
@@ -1408,14 +1408,14 @@
         "description": "企業軟體與混合雲平台，包括中介軟體、資料與AI、雲平台與安全等，以訂閱與授權模式為主，為公司最大收入來源。"
       },
       {
-        "segment": "Global Business Services",
-        "percentage": 22,
-        "description": "顧問與系統整合服務，提供數位轉型、應用管理與諮詢，靠大型企業長期合約與專業服務收費。"
-      },
-      {
         "segment": "Global Technology Services",
         "percentage": 30,
         "description": "以基礎設施服務與技術支援為主，包含雲遷移、維運與技術支援，為企業IT營運與服務外包重要來源。"
+      },
+      {
+        "segment": "Global Business Services",
+        "percentage": 22,
+        "description": "顧問與系統整合服務，提供數位轉型、應用管理與諮詢，靠大型企業長期合約與專業服務收費。"
       },
       {
         "segment": "Systems",
@@ -1472,14 +1472,14 @@
         "description": "提供航電、機體系統、內裝與維修、改裝與支援服務，主攻商用與軍用飛機系統整合及售後市場。"
       },
       {
-        "segment": "Pratt & Whitney",
-        "percentage": 26,
-        "description": "設計與製造民用與軍用航空發動機及相關維修、零件供應與改裝服務，以高性能發動機技術與維保合約為主要收入來源。"
-      },
-      {
         "segment": "Raytheon Missiles & Defense",
         "percentage": 27,
         "description": "提供導彈、火力系統、防空與打擊解決方案，包含武器系統研發、生產與整合，主要來自政府與軍方合約。"
+      },
+      {
+        "segment": "Pratt & Whitney",
+        "percentage": 26,
+        "description": "設計與製造民用與軍用航空發動機及相關維修、零件供應與改裝服務，以高性能發動機技術與維保合約為主要收入來源。"
       },
       {
         "segment": "Raytheon Intelligence & Space",
@@ -1671,14 +1671,14 @@
         "description": "通訊：針對網路基礎建設與無線通訊系統提供高頻放大、資料轉換與射頻前端元件。"
       },
       {
-        "segment": "Consumer",
-        "percentage": 8,
-        "description": "消費電子：涵蓋音頻處理、感測器與電源管理等消費性電子應用，但在總營收中占比較低。"
-      },
-      {
         "segment": "Enterprise & Healthcare",
         "percentage": 13,
         "description": "企業與醫療：包括資料中心、醫療影像與專業醫療設備所需的高精度轉換器、放大器與訊號處理解決方案。"
+      },
+      {
+        "segment": "Consumer",
+        "percentage": 8,
+        "description": "消費電子：涵蓋音頻處理、感測器與電源管理等消費性電子應用，但在總營收中占比較低。"
       }
     ],
     "in_sp500": true
@@ -1735,14 +1735,14 @@
         "description": "北美飲料業務（例如Pepsi、Mountain Dew、Gatorade、Tropicana），涵蓋飲料配方、瓶裝與冷鏈銷售通路。"
       },
       {
-        "segment": "Quaker Foods North America",
-        "percentage": 4,
-        "description": "北美谷物與即食營養品（例如Quaker燕麥、早餐穀物與營養棒），以穩定、利基食品類別貢獻營收。"
-      },
-      {
         "segment": "Europe",
         "percentage": 16,
         "description": "歐洲地區的零食與飲料業務，結合當地品牌與國際品牌，透過多國營運適應區域消費偏好。"
+      },
+      {
+        "segment": "Asia, Middle East & North Africa",
+        "percentage": 15,
+        "description": "亞太、中東與北非市場，為新興市場成長來源，聚焦本地化產品、擴張通路與品牌建設。"
       },
       {
         "segment": "Latin America",
@@ -1750,9 +1750,9 @@
         "description": "拉丁美洲市場，涵蓋零食與飲料，強調地區性配方與通路滲透以驅動成長。"
       },
       {
-        "segment": "Asia, Middle East & North Africa",
-        "percentage": 15,
-        "description": "亞太、中東與北非市場，為新興市場成長來源，聚焦本地化產品、擴張通路與品牌建設。"
+        "segment": "Quaker Foods North America",
+        "percentage": 4,
+        "description": "北美谷物與即食營養品（例如Quaker燕麥、早餐穀物與營養棒），以穩定、利基食品類別貢獻營收。"
       }
     ],
     "in_sp500": true
@@ -1767,14 +1767,14 @@
     "nasdaq100": false,
     "revenue_segments": [
       {
-        "segment": "Company-operated restaurants",
-        "percentage": 15,
-        "description": "來自公司自營餐廳的餐點銷售收入，涵蓋餐廳日常營業所得與促銷活動帶來之銷售額，毛利較直接反映營運成本與門店表現。"
-      },
-      {
         "segment": "Franchised restaurants (rent, royalties & fees)",
         "percentage": 78,
         "description": "來自特許經營體系的租金、權利金、營運服務費與初始加盟費等項目，與加盟店系統銷售表現連動，為公司主要且穩定的經常性現金流來源。"
+      },
+      {
+        "segment": "Company-operated restaurants",
+        "percentage": 15,
+        "description": "來自公司自營餐廳的餐點銷售收入，涵蓋餐廳日常營業所得與促銷活動帶來之銷售額，毛利較直接反映營運成本與門店表現。"
       },
       {
         "segment": "Other revenues",
@@ -1993,14 +1993,14 @@
         "description": "試劑、基因定序、細胞培養"
       },
       {
-        "segment": "Analytical Instruments",
-        "percentage": 20,
-        "description": "質譜儀、色譜儀等分析設備"
-      },
-      {
         "segment": "Laboratory Products & Biopharma Services",
         "percentage": 30,
         "description": "實驗室耗材與合約製造"
+      },
+      {
+        "segment": "Analytical Instruments",
+        "percentage": 20,
+        "description": "質譜儀、色譜儀等分析設備"
       },
       {
         "segment": "Specialty Diagnostics",
@@ -2111,9 +2111,9 @@
         "description": "核心管理費與行政及交易費，基於資產管理規模（AUM）收取，涵蓋主動與被動策略、iShares ETF 及機構帳戶的持續管理收入，是公司最大且穩定的收入來源。"
       },
       {
-        "segment": "Distribution fees",
-        "percentage": 5,
-        "description": "基金與產品的銷售與分銷費用，包含特定份額類別及通路合作所產生的持續分銷收入，較依賴零售與顧問通路的銷售活動。"
+        "segment": "Other revenue",
+        "percentage": 13,
+        "description": "其他收入包含 Aladdin 技術與風險管理服務費、證券借貸收入、顧問與交易相關服務等，反映公司在金融科技與資本市場服務的多元化營收來源。"
       },
       {
         "segment": "Performance fees",
@@ -2121,9 +2121,9 @@
         "description": "績效費用來源於替客戶超額報酬所收取的激勵費，主要來自替代投資、主動策略與私人市場等具表現掛鉤的產品，具有波動性。"
       },
       {
-        "segment": "Other revenue",
-        "percentage": 13,
-        "description": "其他收入包含 Aladdin 技術與風險管理服務費、證券借貸收入、顧問與交易相關服務等，反映公司在金融科技與資本市場服務的多元化營收來源。"
+        "segment": "Distribution fees",
+        "percentage": 5,
+        "description": "基金與產品的銷售與分銷費用，包含特定份額類別及通路合作所產生的持續分銷收入，較依賴零售與顧問通路的銷售活動。"
       }
     ],
     "in_sp500": true
@@ -2229,14 +2229,14 @@
         "description": "包含 Trodelvy（sacituzumab govitecan）、Yescarta 等抗體藥物與 CAR‑T 細胞療法，為近年成長與擴張重點。"
       },
       {
-        "segment": "Viral Hepatitis (HCV) and Other Antivirals",
-        "percentage": 4,
-        "description": "傳統 HCV 產品組合（如 Harvoni、Sovaldi 等）以及其他抗病毒藥，近年市占與營收相對萎縮。"
-      },
-      {
         "segment": "Other (Remdesivir, Royalties, Services)",
         "percentage": 14,
         "description": "包含 Veklury（remdesivir）銷售、授權金、合約製造與其他營收項目，具較高波動性與一次性收入成分。"
+      },
+      {
+        "segment": "Viral Hepatitis (HCV) and Other Antivirals",
+        "percentage": 4,
+        "description": "傳統 HCV 產品組合（如 Harvoni、Sovaldi 等）以及其他抗病毒藥，近年市占與營收相對萎縮。"
       }
     ],
     "in_sp500": true
@@ -2460,11 +2460,6 @@
     "nasdaq100": true,
     "revenue_segments": [
       {
-        "segment": "Systems",
-        "percentage": 20,
-        "description": "銷售 da Vinci 外科機器人整機及相關初次配件，屬資本設備收入，驅動醫院導入與擴展臨床平台。"
-      },
-      {
         "segment": "Instruments & Accessories",
         "percentage": 55,
         "description": "提供手術耗材、一次性與可重複使用器械及配件，為高頻次、持續性的消耗性收入來源。"
@@ -2473,6 +2468,11 @@
         "segment": "Services",
         "percentage": 25,
         "description": "包含系統安裝、培訓、維修保養、軟體升級與支援合約，提升客戶黏著度並穩定經常性收入。"
+      },
+      {
+        "segment": "Systems",
+        "percentage": 20,
+        "description": "銷售 da Vinci 外科機器人整機及相關初次配件，屬資本設備收入，驅動醫院導入與擴展臨床平台。"
       }
     ],
     "in_sp500": true
@@ -2794,14 +2794,14 @@
     "nasdaq100": false,
     "revenue_segments": [
       {
-        "segment": "Ratings",
-        "percentage": 31,
-        "description": "提供企業與主權信用評級、研究與風險分析，向金融機構、發行人與投資人收取評級與諮詢費用。"
-      },
-      {
         "segment": "Market Intelligence",
         "percentage": 36,
         "description": "提供金融市場資料、終端平台、評估模型與分析服務，覆蓋資產管理、投資銀行與企業決策用戶，以訂閱與資料服務為主要營收來源。"
+      },
+      {
+        "segment": "Ratings",
+        "percentage": 31,
+        "description": "提供企業與主權信用評級、研究與風險分析，向金融機構、發行人與投資人收取評級與諮詢費用。"
       },
       {
         "segment": "S&P Dow Jones Indices",
@@ -2836,14 +2836,14 @@
         "description": "包含工具、五金、緊固件與維修用品，為日常維修與小型改造的高頻消費項目，貢獻穩定客流與毛利。"
       },
       {
-        "segment": "Appliances & Kitchens",
-        "percentage": 12,
-        "description": "販售大型家電、廚房設備與整體廚浴解決方案，單價較高且依賴安裝與售後服務，利潤與客單價較佳。"
-      },
-      {
         "segment": "Decor, Flooring & Paint",
         "percentage": 18,
         "description": "包括地板、塗料、家飾與室內裝潢材料，面向居家翻新或風格升級需求，為零售端重要的差異化產品線。"
+      },
+      {
+        "segment": "Appliances & Kitchens",
+        "percentage": 12,
+        "description": "販售大型家電、廚房設備與整體廚浴解決方案，單價較高且依賴安裝與售後服務，利潤與客單價較佳。"
       },
       {
         "segment": "Lawn, Garden & Outdoor Living",
@@ -2927,9 +2927,9 @@
         "description": "研發與製造戰鬥機、軍用飛機及相關整合系統與維保服務，核心產品包括F-35等主力機種與全球軍購案。"
       },
       {
-        "segment": "Missiles and Fire Control",
-        "percentage": 14,
-        "description": "研發與生產導彈、精準打擊武器、火控與防空系統，提供戰術火力與地對空/海對空等防衛解決方案。"
+        "segment": "Space",
+        "percentage": 29,
+        "description": "設計與生產衛星、運輸與發射系統、導彈預警與太空偵測系統，服務軍用與商用太空任務與持續運營。"
       },
       {
         "segment": "Rotary and Mission Systems",
@@ -2937,9 +2937,9 @@
         "description": "提供旋翼機、海軍與陸戰系統、雷達、指揮與控制、電子戰與任務系統，以及訓練與後勤支援服務。"
       },
       {
-        "segment": "Space",
-        "percentage": 29,
-        "description": "設計與生產衛星、運輸與發射系統、導彈預警與太空偵測系統，服務軍用與商用太空任務與持續運營。"
+        "segment": "Missiles and Fire Control",
+        "percentage": 14,
+        "description": "研發與生產導彈、精準打擊武器、火控與防空系統，提供戰術火力與地對空/海對空等防衛解決方案。"
       }
     ],
     "in_sp500": true
@@ -3018,14 +3018,14 @@
         "description": "公司自營門市的咖啡與食品銷售，包含店內消費、外帶與外送，為主要營收來源並反映門市客流與平均客單價。"
       },
       {
-        "segment": "Licensed Stores",
-        "percentage": 6,
-        "description": "透過授權合約由第三方營運的門市與渠道，收取授權費、商品銷售分潤與服務收入，擴大品牌觸及與低資本成長。"
-      },
-      {
         "segment": "Consumer Packaged Goods & Foodservice",
         "percentage": 16,
         "description": "包含罐裝、即飲、零售通路與餐飲供應鏈之包裝商品及授權食品服務，提供渠道多元化與品牌產品延伸收益。"
+      },
+      {
+        "segment": "Licensed Stores",
+        "percentage": 6,
+        "description": "透過授權合約由第三方營運的門市與渠道，收取授權費、商品銷售分潤與服務收入，擴大品牌觸及與低資本成長。"
       }
     ],
     "in_sp500": true
@@ -3067,14 +3067,14 @@
     "nasdaq100": true,
     "revenue_segments": [
       {
-        "segment": "Products",
-        "percentage": 38,
-        "description": "包含實體安全設備（防火牆、UTM、SD‑WAN、交換器等）與虛擬/雲端映像，主要來自硬體銷售與一次性授權。"
-      },
-      {
         "segment": "Services",
         "percentage": 62,
         "description": "包含訂閱式安全功能、威脅情報、軟體更新、技術支援與專業服務，為公司主要的經常性收入來源。"
+      },
+      {
+        "segment": "Products",
+        "percentage": 38,
+        "description": "包含實體安全設備（防火牆、UTM、SD‑WAN、交換器等）與虛擬/雲端映像，主要來自硬體銷售與一次性授權。"
       }
     ],
     "in_sp500": true

@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">Fortinet 公司提供整合式網路與資安解決方案，結合自有硬體、軟體與雲端訂閱服務。以銷售高效能安全設備並搭配高比例經常性訂閱與支援為營運核心，透過專用 ASIC 加速、統一作業系統與廣泛產品線建立效能與規模優勢。</p>
       <div class="last-updated">
@@ -115,24 +116,24 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#4f8ef7"></div>
-            <span class="seg-name">Products</span>
-            <span class="seg-pct">38%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:38%;background:#4f8ef7"></div>
-          </div>
-          <p class="seg-desc">包含實體安全設備（防火牆、UTM、SD‑WAN、交換器等）與虛擬/雲端映像，主要來自硬體銷售與一次性授權。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#7c3aed"></div>
             <span class="seg-name">Services</span>
             <span class="seg-pct">62%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:62%;background:#7c3aed"></div>
+            <div class="seg-bar" style="width:62%;background:#4f8ef7"></div>
           </div>
           <p class="seg-desc">包含訂閱式安全功能、威脅情報、軟體更新、技術支援與專業服務，為公司主要的經常性收入來源。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#7c3aed"></div>
+            <span class="seg-name">Products</span>
+            <span class="seg-pct">38%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:38%;background:#7c3aed"></div>
+          </div>
+          <p class="seg-desc">包含實體安全設備（防火牆、UTM、SD‑WAN、交換器等）與虛擬/雲端映像，主要來自硬體銷售與一次性授權。</p>
         </div>
   </div>
 
@@ -153,9 +154,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Products", "Services"],
+      labels: ["Services", "Products"],
       datasets: [{
-        data: [38, 62],
+        data: [62, 38],
         backgroundColor: ["#4f8ef7", "#7c3aed"],
         borderColor: '#0f1117',
         borderWidth: 2,

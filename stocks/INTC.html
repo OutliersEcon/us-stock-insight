@@ -89,6 +89,7 @@
       <div class="index-strip">
         <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
         <span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>
+        
       </div>
       <p class="hero-desc">Intel 是全球半導體設計與製造巨頭，核心在於提供高效能 CPU、資料中心與邊緣運算解決方案，並發展晶圓代工與專用晶片。憑藉自有先進製程、縱向整合供應鏈與大規模生態系統，維持在企業級與高效能運算市場的競爭優勢。</p>
       <div class="last-updated">
@@ -137,46 +138,46 @@
         <div class="seg-item">
           <div class="seg-header">
             <div class="seg-dot" style="background:#22c55e"></div>
+            <span class="seg-name">Foundry & Other</span>
+            <span class="seg-pct">11%</span>
+          </div>
+          <div class="seg-bar-wrap">
+            <div class="seg-bar" style="width:11%;background:#22c55e"></div>
+          </div>
+          <p class="seg-desc">包含晶圓代工、先進製程服務、授權與其他企業支援業務，支持長期製程與產能戰略。</p>
+        </div>
+        <div class="seg-item">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:#f59e0b"></div>
             <span class="seg-name">Network & Edge</span>
             <span class="seg-pct">8%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:8%;background:#22c55e"></div>
+            <div class="seg-bar" style="width:8%;background:#f59e0b"></div>
           </div>
           <p class="seg-desc">涵蓋網路、通訊與邊緣運算晶片與系統，服務電信、工業與物聯網應用。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#f59e0b"></div>
+            <div class="seg-dot" style="background:#ef4444"></div>
             <span class="seg-name">Programmable Solutions Group</span>
             <span class="seg-pct">6%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:6%;background:#f59e0b"></div>
+            <div class="seg-bar" style="width:6%;background:#ef4444"></div>
           </div>
           <p class="seg-desc">提供 FPGA 與可程式邏輯解決方案，應用於資料中心加速、網路及工業領域。</p>
         </div>
         <div class="seg-item">
           <div class="seg-header">
-            <div class="seg-dot" style="background:#ef4444"></div>
+            <div class="seg-dot" style="background:#06b6d4"></div>
             <span class="seg-name">Mobileye</span>
             <span class="seg-pct">3%</span>
           </div>
           <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:3%;background:#ef4444"></div>
+            <div class="seg-bar" style="width:3%;background:#06b6d4"></div>
           </div>
           <p class="seg-desc">自動駕駛與先進駕駛輔助系統（ADAS）相關軟硬體與訂閱服務，為成長性業務。</p>
-        </div>
-        <div class="seg-item">
-          <div class="seg-header">
-            <div class="seg-dot" style="background:#06b6d4"></div>
-            <span class="seg-name">Foundry & Other</span>
-            <span class="seg-pct">11%</span>
-          </div>
-          <div class="seg-bar-wrap">
-            <div class="seg-bar" style="width:11%;background:#06b6d4"></div>
-          </div>
-          <p class="seg-desc">包含晶圓代工、先進製程服務、授權與其他企業支援業務，支持長期製程與產能戰略。</p>
         </div>
   </div>
 
@@ -197,9 +198,9 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Client Computing Group", "Data Center & AI", "Network & Edge", "Programmable Solutions Group", "Mobileye", "Foundry & Other"],
+      labels: ["Client Computing Group", "Data Center & AI", "Foundry & Other", "Network & Edge", "Programmable Solutions Group", "Mobileye"],
       datasets: [{
-        data: [37, 35, 8, 6, 3, 11],
+        data: [37, 35, 11, 8, 6, 3],
         backgroundColor: ["#4f8ef7", "#7c3aed", "#22c55e", "#f59e0b", "#ef4444", "#06b6d4"],
         borderColor: '#0f1117',
         borderWidth: 2,
