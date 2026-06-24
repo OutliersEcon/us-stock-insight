@@ -191,27 +191,41 @@ function updateResetBtn() {
 
 /**
  * 智慧搜尋：比對 ticker、公司名稱、別名、行業（英中）
+ *
+ * 匹配規則：
+ *  - Ticker：完整包含比對（大小寫不敏感）
+ *  - 公司名稱：需要字詞首字匹配（word-boundary），避免 "mac" 匹配 "Comcast"
+ *  - 行業：完整行業名稱包含比對（英文）或完全相等（中文）
+ *  - 別名：單向比對（alias.includes(q)），要求 q 至少 2 字元，避免短別名過度匹配
  */
 function matchSearch(c, query) {
   if (!query) return true;
   const q = query.toLowerCase().trim();
   if (!q) return true;
 
-  // 直接比對 ticker（支援 BRK.B → BRK-B）
+  // 1. Ticker 完整包含比對（支援 BRK.B → BRK-B）
   if (c.ticker.toLowerCase().includes(q)) return true;
   if (c.ticker.toLowerCase().replace(/-/g, '.').includes(q)) return true;
 
-  // 公司名稱
-  if (c.name.toLowerCase().includes(q)) return true;
+  // 2. 公司名稱：要求字詞首字匹配（word-boundary）
+  //    例："apple" 匹配 "Apple Inc." 但不匹配 "Snapple"
+  const nameLower = c.name.toLowerCase();
+  if (nameLower === q) return true; // 完全相等
+  // 字詞首字匹配：字詞開頭或空白/連字符後緊接跟著查詢字串
+  const wordBoundaryRe = new RegExp('(?:^|[\\s\\-\/])' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  if (wordBoundaryRe.test(nameLower)) return true;
 
-  // 行業（英文 + 中文）
+  // 3. 行業：英文完整包含（避免 substring 誤匹）或中文完全相等
   if (c.sector.toLowerCase().includes(q)) return true;
   const zhSector = (SECTOR_ZH[c.sector] || '').toLowerCase();
-  if (zhSector.includes(q)) return true;
+  if (zhSector === q || zhSector.startsWith(q)) return true;
 
-  // 別名
-  const aliases = SEARCH_ALIASES[c.ticker] || [];
-  if (aliases.some(a => a.toLowerCase().includes(q) || q.includes(a.toLowerCase()))) return true;
+  // 4. 別名：單向比對（alias.includes(q)），要求 q 至少 2 字元
+  //    避免短別名（amd、nbc、fb、mac）對長字串的過度匹配
+  if (q.length >= 2) {
+    const aliases = SEARCH_ALIASES[c.ticker] || [];
+    if (aliases.some(a => a.toLowerCase().includes(q))) return true;
+  }
 
   return false;
 }
