@@ -10,13 +10,6 @@ generate_pages.py
   - 理由：「.」在 URL 路徑中可能造成混淆，「-」是 URL 友善的分隔符號
 - 含「/」的 Ticker：同樣替換為「-」
 - 所有字母統一大寫
-
-範例：
-  AAPL    → stocks/AAPL.html
-  BRK.B   → stocks/BRK-B.html
-  BRK.A   → stocks/BRK-A.html
-  GOOGL   → stocks/GOOGL.html
-  GOOG    → stocks/GOOG.html
 """
 
 import json
@@ -42,25 +35,33 @@ PIE_PALETTE = [
     "#f97316", "#8b5cf6", "#14b8a6", "#e11d48"
 ]
 
+
 def ticker_to_filename(ticker: str) -> str:
     """將 Ticker 轉換為安全的檔案名稱（不含副檔名）。"""
     return re.sub(r'[./]', '-', ticker).upper()
 
+
 def generate_page(company: dict) -> str:
     """生成單一企業的 HTML 頁面內容。"""
     ticker = company['ticker']
-    filename = ticker_to_filename(ticker)
     name = company['name']
     sector = company['sector']
     description = company['description']
     weight = company['weight']
     segments = company['revenue_segments']
+    last_updated = company.get('last_updated', 'N/A')
+    nasdaq100 = company.get('nasdaq100', False)
     sector_color = SECTOR_COLORS.get(sector, "#8892a4")
 
     # Pie chart data
     pie_labels = json.dumps([s['segment'] for s in segments])
     pie_data = json.dumps([s['percentage'] for s in segments])
     pie_colors = json.dumps(PIE_PALETTE[:len(segments)])
+
+    # Nasdaq 100 badge HTML
+    nasdaq_badge_html = ''
+    if nasdaq100:
+        nasdaq_badge_html = '<span class="badge badge-nasdaq">Nasdaq 100</span>'
 
     # Segment rows HTML
     seg_rows = ""
@@ -107,12 +108,15 @@ def generate_page(company: dict) -> str:
     .hero-top {{ display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }}
     .ticker-big {{ background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 12px; padding: 12px 20px; font-size: 28px; font-weight: 800; color: #fff; letter-spacing: 1px; flex-shrink: 0; }}
     .hero-info {{ flex: 1; }}
-    .hero-name {{ font-size: 22px; font-weight: 700; margin-bottom: 6px; }}
-    .hero-meta {{ display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }}
+    .hero-name {{ font-size: 22px; font-weight: 700; margin-bottom: 8px; }}
+    .hero-meta {{ display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }}
     .badge {{ border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; }}
     .badge-sector {{ background: var(--surface2); color: var(--sector-color); border: 1px solid var(--sector-color)40; }}
     .badge-weight {{ background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }}
-    .hero-desc {{ font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; }}
+    .badge-nasdaq {{ background: #1a2d4f; color: #60a5fa; border: 1px solid #2563eb60; }}
+    .hero-desc {{ font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; margin-bottom: 12px; }}
+    .last-updated {{ font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }}
+    .last-updated-dot {{ width: 6px; height: 6px; border-radius: 50%; background: var(--green, #22c55e); display: inline-block; }}
 
     .content {{ max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }}
     @media (max-width: 768px) {{ .content {{ grid-template-columns: 1fr; }} }}
@@ -157,8 +161,13 @@ def generate_page(company: dict) -> str:
       <div class="hero-meta">
         <span class="badge badge-sector">{sector}</span>
         <span class="badge badge-weight">SPY 權重 {weight:.2f}%</span>
+        {nasdaq_badge_html}
       </div>
       <p class="hero-desc">{description}</p>
+      <div class="last-updated">
+        <span class="last-updated-dot"></span>
+        資料最後更新：{last_updated}
+      </div>
     </div>
   </div>
 </div>
@@ -181,7 +190,7 @@ def generate_page(company: dict) -> str:
   <!-- Note -->
   <div class="card note-card">
     <div class="note">
-      ⚠️ 本頁面的營收佔比數據基於公司最新年報及公開財報資料，僅供參考。各業務板塊的實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。
+      ⚠️ 本頁面的營收佔比數據基於公司最新年報及公開財報資料（最後更新：{last_updated}），僅供參考。各業務板塊的實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。
     </div>
   </div>
 </div>
@@ -246,12 +255,9 @@ def main():
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(html)
         generated.append(f"  {company['ticker']:10} → stocks/{filename}.html")
-        print(f"✓ Generated: stocks/{filename}.html")
+        print(f"✓ Generated: stocks/{filename}.html  [updated: {company.get('last_updated','N/A')}]  {'[Nasdaq 100]' if company.get('nasdaq100') else ''}")
 
     print(f"\n✅ 共生成 {len(generated)} 個企業頁面")
-    print("\n命名規則說明：")
-    print("  一般 Ticker：直接使用大寫（AAPL → AAPL.html）")
-    print("  含「.」的 Ticker：「.」替換為「-」（BRK.B → BRK-B.html）")
 
 
 if __name__ == '__main__':

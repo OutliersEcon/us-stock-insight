@@ -1,0 +1,279 @@
+{
+  "generated_at": "2026-06-24T07:41:15Z",
+  "stale_threshold_days": 30,
+  "total_companies": 30,
+  "stale_count": 0,
+  "up_to_date_count": 30,
+  "companies": [
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc. (Class A)",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc. (Class C)",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "BRK-B",
+      "name": "Berkshire Hathaway Inc. (Class B)",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "WMT",
+      "name": "Walmart Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "JPM",
+      "name": "JPMorgan Chase & Co.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "V",
+      "name": "Visa Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "XOM",
+      "name": "Exxon Mobil Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Energy",
+      "needs_update": false
+    },
+    {
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "MA",
+      "name": "Mastercard Incorporated",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "COST",
+      "name": "Costco Wholesale Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "NFLX",
+      "name": "Netflix Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": true,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "GS",
+      "name": "The Goldman Sachs Group Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "MRK",
+      "name": "Merck & Co. Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "DIS",
+      "name": "The Walt Disney Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Communication Services",
+      "needs_update": false
+    },
+    {
+      "ticker": "ORCL",
+      "name": "Oracle Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "PG",
+      "name": "The Procter & Gamble Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "KO",
+      "name": "The Coca-Cola Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Consumer Staples",
+      "needs_update": false
+    },
+    {
+      "ticker": "CVX",
+      "name": "Chevron Corporation",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Energy",
+      "needs_update": false
+    },
+    {
+      "ticker": "UNH",
+      "name": "UnitedHealth Group Incorporated",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Healthcare",
+      "needs_update": false
+    },
+    {
+      "ticker": "HD",
+      "name": "The Home Depot Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Consumer Discretionary",
+      "needs_update": false
+    }
+  ]
+}

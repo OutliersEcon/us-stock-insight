@@ -16,7 +16,6 @@
       --text: #e2e8f0;
       --text-muted: #8892a4;
       --green: #22c55e;
-      --red: #ef4444;
       --radius: 12px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,9 +57,10 @@
     .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
     .filter-btn {
       background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      padding: 8px 16px; font-size: 13px; color: var(--text-muted); cursor: pointer; transition: all .2s; white-space: nowrap;
+      padding: 8px 14px; font-size: 13px; color: var(--text-muted); cursor: pointer; transition: all .2s; white-space: nowrap;
     }
     .filter-btn:hover, .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .filter-btn .zh { font-size: 11px; opacity: .8; margin-left: 3px; }
 
     /* ── Grid ── */
     .grid { max-width: 1280px; margin: 0 auto; padding: 0 24px 60px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
@@ -70,14 +70,16 @@
       transition: transform .2s, border-color .2s, box-shadow .2s;
       position: relative; overflow: hidden;
     }
-    .card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--accent)08, transparent); opacity: 0; transition: opacity .2s; }
+    .card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(79,142,247,.05), transparent); opacity: 0; transition: opacity .2s; }
     .card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 8px 32px rgba(79,142,247,.15); }
     .card:hover::before { opacity: 1; }
-    .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
-    .ticker-badge { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #fff; letter-spacing: .5px; }
+    .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 8px; }
+    .ticker-badge { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #fff; letter-spacing: .5px; flex-shrink: 0; }
     .weight-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; font-size: 12px; color: var(--text-muted); }
     .company-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
-    .sector-tag { display: inline-block; background: var(--surface2); border-radius: 4px; padding: 2px 8px; font-size: 11px; color: var(--text-muted); margin-bottom: 10px; }
+    .badge-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
+    .sector-tag { display: inline-block; background: var(--surface2); border-radius: 4px; padding: 2px 8px; font-size: 11px; }
+    .nasdaq-tag { display: inline-block; background: #1a2d4f; color: #60a5fa; border: 1px solid rgba(37,99,235,.4); border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; }
     .description { font-size: 13px; color: var(--text-muted); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px; }
     .segments { display: flex; flex-direction: column; gap: 5px; }
     .seg-row { display: flex; align-items: center; gap: 8px; }
@@ -87,7 +89,7 @@
     .seg-pct { font-size: 11px; color: var(--text); font-weight: 600; width: 32px; text-align: right; }
     .card-footer { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
     .view-link { font-size: 12px; color: var(--accent); display: flex; align-items: center; gap: 4px; }
-    .seg-count { font-size: 11px; color: var(--text-muted); }
+    .updated-info { font-size: 11px; color: var(--text-muted); }
 
     /* ── No results ── */
     .no-results { grid-column: 1/-1; text-align: center; padding: 60px 0; color: var(--text-muted); }
@@ -97,14 +99,14 @@
     footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--text-muted); font-size: 13px; }
     footer a { color: var(--accent); text-decoration: none; }
 
-    /* ── Sector colours ── */
-    .sector-Technology { color: #60a5fa; }
-    .sector-Financials { color: #34d399; }
-    .sector-Healthcare { color: #f472b6; }
+    /* ── Sector colour classes ── */
+    .sector-Technology           { color: #60a5fa; }
+    .sector-Financials           { color: #34d399; }
+    .sector-Healthcare           { color: #f472b6; }
     .sector-Consumer-Discretionary { color: #fb923c; }
-    .sector-Consumer-Staples { color: #a78bfa; }
+    .sector-Consumer-Staples     { color: #a78bfa; }
     .sector-Communication-Services { color: #facc15; }
-    .sector-Energy { color: #f87171; }
+    .sector-Energy               { color: #f87171; }
 
     @media (max-width: 600px) {
       .hero { padding: 40px 16px 24px; }
@@ -135,7 +137,7 @@
     <p>追蹤標普 500 (SPY ETF) 成分股，透過 AI 技術拆解每間公司的業務板塊與營收結構，讓您一眼看懂美國最重要的企業。</p>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num" id="total-count">—</div><div class="stat-label">已收錄企業</div></div>
-      <div class="stat"><div class="stat-num">7</div><div class="stat-label">行業分類</div></div>
+      <div class="stat"><div class="stat-num" id="nasdaq-count">—</div><div class="stat-label">Nasdaq 100 成員</div></div>
       <div class="stat"><div class="stat-num">SPY</div><div class="stat-label">追蹤指數</div></div>
     </div>
   </section>
@@ -147,6 +149,7 @@
     </div>
     <div class="filter-group" id="sector-filters">
       <button class="filter-btn active" data-sector="all">全部</button>
+      <button class="filter-btn" data-sector="__nasdaq100__">Nasdaq 100</button>
     </div>
   </div>
 
@@ -154,14 +157,29 @@
 </main>
 
 <footer>
-  <p>資料來源：公司年報、SEC EDGAR、SSGA SPY 持倉 &nbsp;|&nbsp; 由 <a href="https://github.com/OutliersEcon/us-stock-insight" target="_blank">OutliersEcon</a> 維護</p>
+  <p>資料來源：公司年報、SEC EDGAR、SSGA SPY 持倉、QQQ Nasdaq 100 持倉 &nbsp;|&nbsp; 由 <a href="https://github.com/OutliersEcon/us-stock-insight" target="_blank">OutliersEcon</a> 維護</p>
   <p style="margin-top:6px">本站資訊僅供參考，不構成投資建議。</p>
 </footer>
 
 <script>
-  // ── Ticker → filename mapping (handles special chars like BRK.B → BRK-B)
+  // ── 行業英文 → 中文對照表
+  const SECTOR_ZH = {
+    'Technology':              '科技',
+    'Financials':              '金融',
+    'Healthcare':              '醫療保健',
+    'Consumer Discretionary':  '非必需消費',
+    'Consumer Staples':        '必需消費',
+    'Communication Services':  '通訊服務',
+    'Energy':                  '能源',
+    'Industrials':             '工業',
+    'Materials':               '原材料',
+    'Real Estate':             '房地產',
+    'Utilities':               '公用事業',
+  };
+
+  // ── Ticker → filename mapping
   function tickerToFile(ticker) {
-    return ticker.replace(/\./g, '-').toUpperCase();
+    return ticker.replace(/[./]/g, '-').toUpperCase();
   }
 
   // ── Sector colour class
@@ -173,6 +191,7 @@
   function renderCard(c) {
     const file = tickerToFile(c.ticker);
     const topSegs = c.revenue_segments.slice(0, 4);
+    const sectorZh = SECTOR_ZH[c.sector] || c.sector;
     const segsHtml = topSegs.map(s => `
       <div class="seg-row">
         <span class="seg-label">${s.segment}</span>
@@ -180,19 +199,28 @@
         <span class="seg-pct">${s.percentage}%</span>
       </div>`).join('');
 
+    const nasdaqBadge = c.nasdaq100
+      ? `<span class="nasdaq-tag">Nasdaq 100</span>`
+      : '';
+
+    const lastUpdated = c.last_updated || 'N/A';
+
     return `
       <a class="card" href="stocks/${file}.html">
         <div class="card-header">
           <div class="ticker-badge">${c.ticker}</div>
-          <div class="weight-badge">權重 ${c.weight.toFixed(2)}%</div>
+          <div class="weight-badge">SPY ${c.weight.toFixed(2)}%</div>
         </div>
         <div class="company-name">${c.name}</div>
-        <span class="sector-tag ${sectorClass(c.sector)}">${c.sector}</span>
+        <div class="badge-row">
+          <span class="sector-tag ${sectorClass(c.sector)}">${c.sector} <span style="opacity:.7">${sectorZh}</span></span>
+          ${nasdaqBadge}
+        </div>
         <div class="description">${c.description}</div>
         <div class="segments">${segsHtml}</div>
         <div class="card-footer">
           <span class="view-link">查看詳情 →</span>
-          <span class="seg-count">${c.revenue_segments.length} 個業務板塊</span>
+          <span class="updated-info">更新：${lastUpdated}</span>
         </div>
       </a>`;
   }
@@ -206,16 +234,19 @@
     .then(r => r.json())
     .then(data => {
       companies = data;
+      const nasdaqCount = data.filter(c => c.nasdaq100).length;
       document.getElementById('total-count').textContent = data.length;
+      document.getElementById('nasdaq-count').textContent = nasdaqCount;
 
-      // Build sector filter buttons
+      // Build sector filter buttons dynamically
       const sectors = [...new Set(data.map(c => c.sector))].sort();
       const filterGroup = document.getElementById('sector-filters');
       sectors.forEach(s => {
+        const zh = SECTOR_ZH[s] || '';
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
         btn.dataset.sector = s;
-        btn.textContent = s;
+        btn.innerHTML = `${s} <span class="zh">${zh}</span>`;
         btn.addEventListener('click', () => {
           activeSector = s;
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -228,26 +259,40 @@
       renderGrid();
     });
 
-  document.getElementById('search').addEventListener('input', e => {
-    searchQuery = e.target.value.toLowerCase();
+  // ── Filter button events (static buttons)
+  document.getElementById('sector-filters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    const sector = btn.dataset.sector;
+    if (!sector) return;
+    activeSector = sector;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
     renderGrid();
   });
 
-  document.querySelector('[data-sector="all"]').addEventListener('click', function() {
-    activeSector = 'all';
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
+  document.getElementById('search').addEventListener('input', e => {
+    searchQuery = e.target.value.toLowerCase();
     renderGrid();
   });
 
   function renderGrid() {
     const grid = document.getElementById('grid');
     let filtered = companies;
-    if (activeSector !== 'all') filtered = filtered.filter(c => c.sector === activeSector);
-    if (searchQuery) filtered = filtered.filter(c =>
-      c.ticker.toLowerCase().includes(searchQuery) ||
-      c.name.toLowerCase().includes(searchQuery)
-    );
+
+    if (activeSector === '__nasdaq100__') {
+      filtered = filtered.filter(c => c.nasdaq100);
+    } else if (activeSector !== 'all') {
+      filtered = filtered.filter(c => c.sector === activeSector);
+    }
+
+    if (searchQuery) {
+      filtered = filtered.filter(c =>
+        c.ticker.toLowerCase().includes(searchQuery) ||
+        c.name.toLowerCase().includes(searchQuery)
+      );
+    }
+
     if (filtered.length === 0) {
       grid.innerHTML = `<div class="no-results"><div class="icon">🔍</div><p>找不到符合條件的企業</p></div>`;
     } else {

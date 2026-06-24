@@ -26,12 +26,15 @@
     .hero-top { display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
     .ticker-big { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 12px; padding: 12px 20px; font-size: 28px; font-weight: 800; color: #fff; letter-spacing: 1px; flex-shrink: 0; }
     .hero-info { flex: 1; }
-    .hero-name { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
-    .hero-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .hero-name { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .hero-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
     .badge { border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; }
     .badge-sector { background: var(--surface2); color: var(--sector-color); border: 1px solid var(--sector-color)40; }
     .badge-weight { background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
-    .hero-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; }
+    .badge-nasdaq { background: #1a2d4f; color: #60a5fa; border: 1px solid #2563eb60; }
+    .hero-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; margin-bottom: 12px; }
+    .last-updated { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .last-updated-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green, #22c55e); display: inline-block; }
 
     .content { max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     @media (max-width: 768px) { .content { grid-template-columns: 1fr; } }
@@ -76,8 +79,13 @@
       <div class="hero-meta">
         <span class="badge badge-sector">Healthcare</span>
         <span class="badge badge-weight">SPY 權重 0.43%</span>
+        
       </div>
       <p class="hero-desc">全球頂尖製藥公司，以癌症免疫療法 Keytruda（pembrolizumab）為核心，同時擁有疫苗與動物保健業務。</p>
+      <div class="last-updated">
+        <span class="last-updated-dot"></span>
+        資料最後更新：2026-06-24
+      </div>
     </div>
   </div>
 </div>
@@ -155,7 +163,7 @@
   <!-- Note -->
   <div class="card note-card">
     <div class="note">
-      ⚠️ 本頁面的營收佔比數據基於公司最新年報及公開財報資料，僅供參考。各業務板塊的實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。
+      ⚠️ 本頁面的營收佔比數據基於公司最新年報及公開財報資料（最後更新：2026-06-24），僅供參考。各業務板塊的實際佔比可能因會計年度、匯率及業務調整而有所差異。本站資訊不構成任何投資建議。
     </div>
   </div>
 </div>

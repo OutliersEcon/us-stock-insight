@@ -2,7 +2,7 @@
   {
     "ticker": "NVDA", "name": "NVIDIA Corporation", "sector": "Technology",
     "description": "全球領先的 GPU 與 AI 加速運算晶片製造商，產品廣泛應用於資料中心、遊戲、自動駕駛及專業視覺化領域。",
-    "weight": 7.35,
+    "weight": 7.35, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Data Center", "percentage": 87, "description": "AI 訓練與推理用 GPU、網路設備"},
       {"segment": "Gaming", "percentage": 9, "description": "GeForce 顯示卡"},
@@ -13,7 +13,7 @@
   {
     "ticker": "AAPL", "name": "Apple Inc.", "sector": "Technology",
     "description": "全球市值最高的消費電子公司，以 iPhone、Mac、iPad 及 Services 生態系聞名，持續向服務業務轉型。",
-    "weight": 6.45,
+    "weight": 6.45, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "iPhone", "percentage": 52, "description": "智慧型手機銷售"},
       {"segment": "Services", "percentage": 22, "description": "App Store、Apple Music、iCloud、Apple TV+"},
@@ -25,7 +25,7 @@
   {
     "ticker": "MSFT", "name": "Microsoft Corporation", "sector": "Technology",
     "description": "全球最大軟體公司之一，旗下擁有 Azure 雲端平台、Office 365、LinkedIn 及 Xbox，積極佈局 AI 領域（Copilot）。",
-    "weight": 4.10,
+    "weight": 4.10, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Intelligent Cloud (Azure)", "percentage": 43, "description": "Azure 雲端服務、伺服器產品"},
       {"segment": "Productivity & Business (Office)", "percentage": 34, "description": "Microsoft 365、LinkedIn、Dynamics"},
@@ -35,7 +35,7 @@
   {
     "ticker": "AMZN", "name": "Amazon.com Inc.", "sector": "Consumer Discretionary",
     "description": "全球最大電商與雲端服務公司，AWS 為全球最大公有雲平台，同時積極拓展廣告、物流與 AI 業務。",
-    "weight": 3.71,
+    "weight": 3.71, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "North America Retail", "percentage": 44, "description": "美國電商、Prime 訂閱"},
       {"segment": "AWS", "percentage": 17, "description": "雲端運算服務（最高利潤來源）"},
@@ -47,7 +47,7 @@
   {
     "ticker": "GOOGL", "name": "Alphabet Inc. (Class A)", "sector": "Communication Services",
     "description": "Google 母公司，全球最大搜尋引擎與數位廣告平台，同時擁有 YouTube、Google Cloud 及 Waymo 自動駕駛業務。",
-    "weight": 3.22,
+    "weight": 3.22, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Google Search & Other", "percentage": 57, "description": "搜尋廣告"},
       {"segment": "YouTube Ads", "percentage": 10, "description": "影片廣告"},
@@ -59,7 +59,7 @@
   {
     "ticker": "GOOG", "name": "Alphabet Inc. (Class C)", "sector": "Communication Services",
     "description": "Google 母公司 Alphabet 的 C 類股（無投票權），業務結構與 GOOGL 相同，包含 Google 搜尋、YouTube、Google Cloud 及 Waymo。",
-    "weight": 3.01,
+    "weight": 3.01, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Google Search & Other", "percentage": 57, "description": "搜尋廣告"},
       {"segment": "YouTube Ads", "percentage": 10, "description": "影片廣告"},
@@ -71,7 +71,7 @@
   {
     "ticker": "AVGO", "name": "Broadcom Inc.", "sector": "Technology",
     "description": "全球頂尖半導體與基礎設施軟體公司，產品涵蓋網路晶片、儲存控制器及企業軟體（收購 VMware 後大幅擴展）。",
-    "weight": 2.67,
+    "weight": 2.67, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Semiconductor Solutions", "percentage": 60, "description": "網路、儲存、無線晶片"},
       {"segment": "Infrastructure Software (VMware)", "percentage": 40, "description": "虛擬化、雲端管理軟體"}
@@ -80,7 +80,7 @@
   {
     "ticker": "TSLA", "name": "Tesla Inc.", "sector": "Consumer Discretionary",
     "description": "全球最大純電動車製造商，同時發展儲能（Powerwall/Megapack）、太陽能及 FSD 自動駕駛軟體業務。",
-    "weight": 2.22,
+    "weight": 2.22, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Automotive Sales", "percentage": 77, "description": "Model 3/Y/S/X/Cybertruck 銷售"},
       {"segment": "Energy Generation & Storage", "percentage": 10, "description": "Powerwall、Megapack、Solar"},
@@ -91,7 +91,7 @@
   {
     "ticker": "META", "name": "Meta Platforms Inc.", "sector": "Communication Services",
     "description": "旗下擁有 Facebook、Instagram 及 WhatsApp，全球最大社群媒體廣告平台，同時積極投資 AR/VR（Reality Labs）。",
-    "weight": 2.12,
+    "weight": 2.12, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Family of Apps (Advertising)", "percentage": 97, "description": "Facebook、Instagram、WhatsApp 廣告"},
       {"segment": "Reality Labs (VR/AR)", "percentage": 3, "description": "Quest 頭戴式裝置、Horizon 元宇宙"}
@@ -100,7 +100,7 @@
   {
     "ticker": "BRK-B", "name": "Berkshire Hathaway Inc. (Class B)", "sector": "Financials",
     "description": "Warren Buffett 旗下多元化控股公司，持有 GEICO 保險、BNSF 鐵路、Berkshire Hathaway Energy 及大量股票投資組合（Apple、美國銀行等）。",
-    "weight": 1.57,
+    "weight": 1.57, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Insurance (GEICO, Gen Re)", "percentage": 35, "description": "財產保險與再保險"},
       {"segment": "BNSF Railway", "percentage": 15, "description": "貨運鐵路"},
@@ -113,7 +113,7 @@
   {
     "ticker": "LLY", "name": "Eli Lilly and Company", "sector": "Healthcare",
     "description": "全球頂尖製藥公司，以 GLP-1 類藥物（Mounjaro/Zepbound 糖尿病與減重）及阿茲海默症治療藥物 Kisunla 引領市場。",
-    "weight": 1.47,
+    "weight": 1.47, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Mounjaro / Zepbound (tirzepatide)", "percentage": 45, "description": "GLP-1/GIP 糖尿病與減重藥物"},
       {"segment": "Verzenio (abemaciclib)", "percentage": 12, "description": "乳癌治療"},
@@ -125,7 +125,7 @@
   {
     "ticker": "WMT", "name": "Walmart Inc.", "sector": "Consumer Staples",
     "description": "全球最大零售商，旗下包含 Walmart 超市、Sam's Club 倉儲式量販店及快速增長的電商與廣告業務。",
-    "weight": 1.40,
+    "weight": 1.40, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Walmart U.S.", "percentage": 67, "description": "美國實體與電商零售"},
       {"segment": "Walmart International", "percentage": 22, "description": "海外市場（含 Flipkart）"},
@@ -135,7 +135,7 @@
   {
     "ticker": "JPM", "name": "JPMorgan Chase & Co.", "sector": "Financials",
     "description": "美國最大銀行，業務涵蓋消費金融、企業投資銀行、資產管理及商業銀行，以穩健的資本實力著稱。",
-    "weight": 1.32,
+    "weight": 1.32, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Consumer & Community Banking", "percentage": 42, "description": "個人存款、信用卡、房貸"},
       {"segment": "Corporate & Investment Bank", "percentage": 35, "description": "投資銀行、交易、市場"},
@@ -146,7 +146,7 @@
   {
     "ticker": "AMD", "name": "Advanced Micro Devices Inc.", "sector": "Technology",
     "description": "全球第二大 x86 CPU 製造商，近年 MI300X AI 加速器在資料中心市場快速成長，與 NVIDIA 直接競爭。",
-    "weight": 1.26,
+    "weight": 1.26, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Data Center", "percentage": 52, "description": "EPYC 伺服器 CPU、MI300 AI GPU"},
       {"segment": "Client", "percentage": 28, "description": "Ryzen 桌機與筆電 CPU"},
@@ -157,7 +157,7 @@
   {
     "ticker": "V", "name": "Visa Inc.", "sector": "Financials",
     "description": "全球最大支付網路，以輕資產商業模式從每筆交易中收取手續費，不承擔信用風險，擁有極高的利潤率。",
-    "weight": 0.93,
+    "weight": 0.93, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Service Revenues", "percentage": 33, "description": "依付款量收取的服務費"},
       {"segment": "Data Processing Revenues", "percentage": 38, "description": "交易授權、清算與結算費"},
@@ -168,7 +168,7 @@
   {
     "ticker": "XOM", "name": "Exxon Mobil Corporation", "sector": "Energy",
     "description": "美國最大石油公司，業務涵蓋上游勘探生產、下游煉油化工及化學品，同時積極佈局碳捕捉與氫能。",
-    "weight": 0.86,
+    "weight": 0.86, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Upstream (E&P)", "percentage": 55, "description": "原油與天然氣勘探生產"},
       {"segment": "Energy Products (Downstream)", "percentage": 28, "description": "煉油與燃料銷售"},
@@ -179,7 +179,7 @@
   {
     "ticker": "JNJ", "name": "Johnson & Johnson", "sector": "Healthcare",
     "description": "全球頂尖醫療保健公司，已剝離消費品業務（Kenvue），目前專注於製藥（Innovative Medicine）與醫療器材（MedTech）。",
-    "weight": 0.84,
+    "weight": 0.84, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Innovative Medicine (Pharma)", "percentage": 65, "description": "腫瘤、免疫、神經科學藥物"},
       {"segment": "MedTech", "percentage": 35, "description": "手術機器人、骨科、心血管器材"}
@@ -188,7 +188,7 @@
   {
     "ticker": "MA", "name": "Mastercard Incorporated", "sector": "Financials",
     "description": "全球第二大支付網路，與 Visa 並列雙寡頭，同樣採用輕資產模式，近年積極拓展增值服務（諮詢、網路安全）。",
-    "weight": 0.64,
+    "weight": 0.64, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Domestic Assessments", "percentage": 30, "description": "國內交易服務費"},
       {"segment": "Cross-Border Volume Fees", "percentage": 28, "description": "跨境交易費"},
@@ -199,7 +199,7 @@
   {
     "ticker": "COST", "name": "Costco Wholesale Corporation", "sector": "Consumer Staples",
     "description": "全球最大倉儲式量販連鎖，以低毛利商品吸引會員，核心利潤來自高續約率的年費會員制度。",
-    "weight": 0.63,
+    "weight": 0.63, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Net Sales", "percentage": 97, "description": "商品銷售（食品、電子、服飾等）"},
       {"segment": "Membership Fees", "percentage": 3, "description": "年費會員費（高利潤核心）"}
@@ -208,7 +208,7 @@
   {
     "ticker": "NFLX", "name": "Netflix Inc.", "sector": "Communication Services",
     "description": "全球最大串流媒體平台，擁有超過 3 億付費訂閱用戶，近年推出廣告支援方案並積極拓展遊戲業務。",
-    "weight": 0.46,
+    "weight": 0.46, "last_updated": "2026-06-24", "nasdaq100": true,
     "revenue_segments": [
       {"segment": "Streaming Subscriptions", "percentage": 95, "description": "全球付費訂閱收入"},
       {"segment": "Advertising (Ad-Supported Tier)", "percentage": 5, "description": "廣告支援訂閱方案"}
@@ -217,7 +217,7 @@
   {
     "ticker": "GS", "name": "The Goldman Sachs Group Inc.", "sector": "Financials",
     "description": "全球頂尖投資銀行，以併購顧問、股票承銷及固定收益交易著稱，近年聚焦資產管理與財富管理業務。",
-    "weight": 0.48,
+    "weight": 0.48, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Global Banking & Markets", "percentage": 65, "description": "投資銀行、股票與固定收益交易"},
       {"segment": "Asset & Wealth Management", "percentage": 35, "description": "資產管理、私人財富管理"}
@@ -226,7 +226,7 @@
   {
     "ticker": "MRK", "name": "Merck & Co. Inc.", "sector": "Healthcare",
     "description": "全球頂尖製藥公司，以癌症免疫療法 Keytruda（pembrolizumab）為核心，同時擁有疫苗與動物保健業務。",
-    "weight": 0.43,
+    "weight": 0.43, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Keytruda (pembrolizumab)", "percentage": 46, "description": "PD-1 癌症免疫療法"},
       {"segment": "Vaccines (Gardasil, etc.)", "percentage": 15, "description": "HPV 及其他疫苗"},
@@ -238,7 +238,7 @@
   {
     "ticker": "BAC", "name": "Bank of America Corporation", "sector": "Financials",
     "description": "美國第二大銀行，業務涵蓋個人金融、企業投資銀行、全球市場及財富管理（Merrill Lynch）。",
-    "weight": 0.60,
+    "weight": 0.60, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Consumer Banking", "percentage": 38, "description": "個人存款、信用卡、房貸"},
       {"segment": "Global Banking", "percentage": 25, "description": "企業貸款、投資銀行"},
@@ -249,7 +249,7 @@
   {
     "ticker": "DIS", "name": "The Walt Disney Company", "sector": "Communication Services",
     "description": "全球最大娛樂媒體集團，旗下擁有 Disney+、ESPN、主題樂園、電影製片廠（Marvel、Lucasfilm、Pixar）及電視網路。",
-    "weight": 0.26,
+    "weight": 0.26, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Entertainment (Streaming & Studios)", "percentage": 40, "description": "Disney+、Hulu、電影製作"},
       {"segment": "Sports (ESPN)", "percentage": 30, "description": "ESPN 有線電視與 ESPN+ 串流"},
@@ -259,7 +259,7 @@
   {
     "ticker": "ORCL", "name": "Oracle Corporation", "sector": "Technology",
     "description": "全球最大企業資料庫軟體公司，近年雲端業務（OCI）高速增長，並積極切入 AI 基礎設施市場。",
-    "weight": 0.73,
+    "weight": 0.73, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Cloud Services & License Support", "percentage": 77, "description": "OCI 雲端、SaaS、資料庫訂閱"},
       {"segment": "Cloud License & On-Premise License", "percentage": 10, "description": "傳統軟體授權"},
@@ -270,7 +270,7 @@
   {
     "ticker": "PG", "name": "The Procter & Gamble Company", "sector": "Consumer Staples",
     "description": "全球最大消費品公司之一，旗下擁有 Tide、Pampers、Gillette、Head & Shoulders 等逾 65 個知名品牌。",
-    "weight": 0.52,
+    "weight": 0.52, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Fabric & Home Care", "percentage": 35, "description": "Tide、Ariel、Febreze"},
       {"segment": "Baby, Feminine & Family Care", "percentage": 25, "description": "Pampers、Always"},
@@ -282,7 +282,7 @@
   {
     "ticker": "KO", "name": "The Coca-Cola Company", "sector": "Consumer Staples",
     "description": "全球最大飲料公司，旗下擁有超過 500 個品牌，以特許經營模式向全球 200+ 個國家銷售濃縮液與成品飲料。",
-    "weight": 0.52,
+    "weight": 0.52, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "North America", "percentage": 35, "description": "美國及加拿大市場"},
       {"segment": "International (EMEA, APAC, LatAm)", "percentage": 55, "description": "歐洲、中東、非洲、亞太、拉美"},
@@ -292,7 +292,7 @@
   {
     "ticker": "CVX", "name": "Chevron Corporation", "sector": "Energy",
     "description": "美國第二大石油公司，業務涵蓋上游勘探生產、下游煉油及化工，近年積極投資低碳能源與碳捕捉技術。",
-    "weight": 0.52,
+    "weight": 0.52, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "Upstream (E&P)", "percentage": 60, "description": "原油與天然氣勘探生產"},
       {"segment": "Downstream (Refining & Marketing)", "percentage": 35, "description": "煉油、燃料銷售"},
@@ -302,7 +302,7 @@
   {
     "ticker": "UNH", "name": "UnitedHealth Group Incorporated", "sector": "Healthcare",
     "description": "美國最大醫療保險集團，旗下 UnitedHealthcare 提供保險服務，Optum 提供醫療數據、藥品福利管理及醫療服務。",
-    "weight": 0.55,
+    "weight": 0.55, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "UnitedHealthcare (Insurance)", "percentage": 55, "description": "商業保險、Medicare、Medicaid"},
       {"segment": "Optum Health", "percentage": 20, "description": "醫療服務、診所"},
@@ -313,7 +313,7 @@
   {
     "ticker": "HD", "name": "The Home Depot Inc.", "sector": "Consumer Discretionary",
     "description": "全球最大家居建材零售商，服務對象涵蓋 DIY 消費者與專業承包商，近年加速電商與供應鏈投資。",
-    "weight": 0.48,
+    "weight": 0.48, "last_updated": "2026-06-24", "nasdaq100": false,
     "revenue_segments": [
       {"segment": "U.S. Retail", "percentage": 90, "description": "美國實體門市與電商"},
       {"segment": "International (Canada & Mexico)", "percentage": 10, "description": "海外門市"}
