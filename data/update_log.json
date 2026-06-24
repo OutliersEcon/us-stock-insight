@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-24T09:52:57Z",
+  "generated_at": "2026-06-24T11:00:07Z",
   "stale_threshold_days": 30,
-  "total_companies": 116,
+  "total_companies": 120,
   "stale_count": 0,
-  "up_to_date_count": 116,
+  "up_to_date_count": 120,
   "companies": [
     {
       "ticker": "NVDA",
@@ -391,7 +391,7 @@
       "last_updated": "2026-06-24",
       "days_since_update": 0,
       "in_sp500": true,
-      "nasdaq100": false,
+      "nasdaq100": true,
       "sector": "Technology",
       "needs_update": false
     },
@@ -411,7 +411,7 @@
       "last_updated": "2026-06-24",
       "days_since_update": 0,
       "in_sp500": true,
-      "nasdaq100": false,
+      "nasdaq100": true,
       "sector": "Technology",
       "needs_update": false
     },
@@ -511,7 +511,7 @@
       "last_updated": "2026-06-24",
       "days_since_update": 0,
       "in_sp500": true,
-      "nasdaq100": false,
+      "nasdaq100": true,
       "sector": "Materials",
       "needs_update": false
     },
@@ -521,7 +521,7 @@
       "last_updated": "2026-06-24",
       "days_since_update": 0,
       "in_sp500": true,
-      "nasdaq100": false,
+      "nasdaq100": true,
       "sector": "Technology",
       "needs_update": false
     },
@@ -591,7 +591,7 @@
       "last_updated": "2026-06-24",
       "days_since_update": 0,
       "in_sp500": true,
-      "nasdaq100": false,
+      "nasdaq100": true,
       "sector": "Consumer Staples",
       "needs_update": false
     },
@@ -831,7 +831,7 @@
       "last_updated": "2026-06-24",
       "days_since_update": 0,
       "in_sp500": true,
-      "nasdaq100": false,
+      "nasdaq100": true,
       "sector": "Industrials",
       "needs_update": false
     },
@@ -1081,7 +1081,7 @@
       "last_updated": "2026-06-24",
       "days_since_update": 0,
       "in_sp500": true,
-      "nasdaq100": false,
+      "nasdaq100": true,
       "sector": "Technology",
       "needs_update": false
     },
@@ -1163,6 +1163,46 @@
       "in_sp500": false,
       "nasdaq100": false,
       "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "IBKR",
+      "name": "Interactive Brokers Group Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Financials",
+      "needs_update": false
+    },
+    {
+      "ticker": "ONDS",
+      "name": "Ondas Holdings Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "RCAT",
+      "name": "Red Cat Holdings Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "IONQ",
+      "name": "IonQ Inc.",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "in_sp500": false,
+      "nasdaq100": false,
+      "sector": "Technology",
       "needs_update": false
     }
   ]

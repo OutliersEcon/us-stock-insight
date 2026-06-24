@@ -3491,5 +3491,117 @@
       }
     ],
     "qqq_weight": 0
+  },
+  {
+    "ticker": "IBKR",
+    "name": "Interactive Brokers Group Inc.",
+    "sector": "Financials",
+    "description": "Interactive Brokers Group是一家全球性電子券商，透過高度自動化的交易平台為機構投資者、對沖基金、自營交易商及個人投資者提供多資產類別的交易執行與清算服務。公司以低成本、高效率的技術驅動模式著稱，業務覆蓋股票、期權、期貨、外匯、債券及基金等多種金融產品。其收入主要來自佣金手續費及利息淨收入兩大來源，並持續擴展全球客戶基礎。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "revenue_segments": [
+      {
+        "segment": "Net Interest Income",
+        "percentage": 52,
+        "description": "來自客戶保證金貸款、客戶現金餘額及公司自有資金投資所產生的利息淨收入，受益於高利率環境而大幅增長，為公司最大收入來源。"
+      },
+      {
+        "segment": "Commissions",
+        "percentage": 30,
+        "description": "客戶在股票、期權、期貨、外匯及債券等各類資產上執行交易所收取的佣金手續費，反映公司核心券商業務的交易量規模。"
+      },
+      {
+        "segment": "Other Fees and Services",
+        "percentage": 10,
+        "description": "包括賬戶管理費、市場數據訂閱費、外匯兌換收益及其他附加服務費用，為公司提供穩定的非交易性收入來源。"
+      },
+      {
+        "segment": "Principal Transactions",
+        "percentage": 8,
+        "description": "公司以自有資金進行做市及自營交易所產生的收益，包括外匯及其他金融工具的買賣價差收入。"
+      }
+    ],
+    "in_sp500": false,
+    "qqq_weight": 0.0
+  },
+  {
+    "ticker": "ONDS",
+    "name": "Ondas Holdings Inc.",
+    "sector": "Technology",
+    "description": "Ondas Holdings Inc. 是一家專注於無人機系統與工業無線網絡技術的科技公司，旗下擁有 Ondas Networks 和 American Robotics 兩大業務部門。公司致力於為鐵路、能源、農業及公共安全等關鍵基礎設施行業提供自動化無人機解決方案及私有無線寬頻通信網絡。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "revenue_segments": [
+      {
+        "segment": "Ondas Autonomous Systems (Drone & Robotics)",
+        "percentage": 62,
+        "description": "透過 American Robotics 及 Airobotics 提供全自動無人機即服務（DaaS）平台，服務對象涵蓋鐵路、能源、國防及工業檢測等領域，為公司主要營收來源。"
+      },
+      {
+        "segment": "Ondas Networks (Industrial Wireless)",
+        "percentage": 38,
+        "description": "提供基於 FullMAX 技術的私有無線寬頻網絡解決方案，主要服務美國鐵路及公用事業客戶，提供硬體設備銷售及網絡服務。"
+      }
+    ],
+    "in_sp500": false,
+    "qqq_weight": 0.0
+  },
+  {
+    "ticker": "RCAT",
+    "name": "Red Cat Holdings Inc.",
+    "sector": "Industrials",
+    "description": "Red Cat Holdings Inc. 是一家專注於無人機技術的國防與工業解決方案公司，主要為美國軍方及政府機構提供小型無人機系統（sUAS）及相關服務。公司旗下擁有Teal Drones等品牌，生產符合藍色UAS認證標準的軍用級無人機，同時提供無人機數據分析與訓練服務。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "revenue_segments": [
+      {
+        "segment": "Defense / Government Drones (Teal Drones)",
+        "percentage": 75,
+        "description": "透過子公司Teal Drones向美國軍方及政府機構銷售符合藍色UAS認證的軍用小型無人機系統，為公司主要收入來源。"
+      },
+      {
+        "segment": "Drone Analytics & Data Services (Skypersonic / Fat Shark)",
+        "percentage": 15,
+        "description": "提供無人機飛行數據分析、遠端操控技術及FPV（第一人稱視角）相關硬體與軟體服務，服務工業及商業客戶。"
+      },
+      {
+        "segment": "Training & Support Services",
+        "percentage": 10,
+        "description": "為政府及軍事客戶提供無人機操作培訓、維護支援及售後技術服務，強化客戶黏著度並產生經常性收入。"
+      }
+    ],
+    "in_sp500": false,
+    "qqq_weight": 0.0
+  },
+  {
+    "ticker": "IONQ",
+    "name": "IonQ Inc.",
+    "sector": "Technology",
+    "description": "IonQ是一家專注於量子運算技術的公司，透過自主研發的離子阱量子電腦提供雲端量子運算服務。公司透過主要雲端平台（如AWS、Microsoft Azure、Google Cloud）向企業及研究機構提供量子運算存取服務，並提供專業諮詢與解決方案。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "revenue_segments": [
+      {
+        "segment": "Cloud Access & Quantum Computing Services",
+        "percentage": 72,
+        "description": "透過主要雲端服務平台提供量子運算存取服務，客戶按使用量付費，為公司最主要的收入來源"
+      },
+      {
+        "segment": "Government & Research Contracts",
+        "percentage": 18,
+        "description": "與美國政府機構（如美國空軍研究實驗室）及研究機構簽訂的合約，提供量子運算研究與開發服務"
+      },
+      {
+        "segment": "Professional Services & Consulting",
+        "percentage": 10,
+        "description": "為企業客戶提供量子運算應用開發、技術諮詢及客製化解決方案服務"
+      }
+    ],
+    "in_sp500": false,
+    "qqq_weight": 0.0
   }
 ]
