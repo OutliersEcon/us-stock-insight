@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>US Stock Insight｜美股業務透視</title>
-  <meta name="description" content="深度解析標普 500 (SPY ETF) 成分股的核心業務與營收結構，提供直觀的圓餅圖視覺化與公司概覽。" />
+  <meta name="description" content="深度解析美股核心企業的業務板塊與營收結構，涵蓋標普 500 (SPY ETF) 成分股及精選自選企業，提供直觀的圓餅圖視覺化與公司概覽。" />
   <style>
     :root {
       --bg: #0f1117;
@@ -17,6 +17,7 @@
       --text-muted: #8892a4;
       --green: #22c55e;
       --amber: #fbbf24;
+      --sky: #38bdf8;
       --radius: 12px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,13 +41,13 @@
     /* ── Hero ── */
     .hero { max-width: 1280px; margin: 0 auto; padding: 60px 24px 40px; text-align: center; }
     .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; background: linear-gradient(135deg, #fff 30%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; margin-bottom: 16px; }
-    .hero p { font-size: 16px; color: var(--text-muted); max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+    .hero p { font-size: 16px; color: var(--text-muted); max-width: 640px; margin: 0 auto 32px; line-height: 1.7; }
     .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
     .stat { text-align: center; }
     .stat-num { font-size: 28px; font-weight: 700; color: var(--accent); }
     .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
-    /* ── Controls ── */
+    /* ── Controls Row 1：搜尋 + 排序 + Reset ── */
     .controls { max-width: 1280px; margin: 0 auto; padding: 0 24px 8px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
     .search-wrap { flex: 1; min-width: 240px; position: relative; }
     .search-wrap input {
@@ -62,12 +63,22 @@
     .sort-wrap label { font-size: 13px; color: var(--text-muted); white-space: nowrap; }
     .sort-wrap select {
       background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
-      padding: 8px 12px; color: var(--text); font-size: 13px; outline: none; cursor: pointer;
+      padding: 8px 28px 8px 12px; color: var(--text); font-size: 13px; outline: none; cursor: pointer;
       transition: border-color .2s; appearance: none; -webkit-appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238892a4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 10px center; padding-right: 28px;
+      background-repeat: no-repeat; background-position: right 10px center;
     }
     .sort-wrap select:focus { border-color: var(--accent); }
+
+    /* ── Reset Filter 按鈕 ── */
+    #reset-btn {
+      display: none; /* 預設隱藏，有篩選條件時才顯示 */
+      align-items: center; gap: 6px;
+      background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.35);
+      border-radius: 8px; padding: 8px 14px; font-size: 13px; color: var(--amber);
+      cursor: pointer; transition: all .2s; white-space: nowrap;
+    }
+    #reset-btn:hover { background: rgba(251,191,36,.22); border-color: var(--amber); }
 
     /* ── Index toggles ── */
     .controls-row2 { max-width: 1280px; margin: 0 auto; padding: 0 24px 8px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
@@ -81,7 +92,6 @@
     }
     .toggle-btn:hover { color: var(--text); background: var(--surface2); }
     .toggle-btn.active { background: var(--accent); color: #fff; }
-    .toggle-btn.active-ndx { background: var(--amber); color: #0f1117; }
     .toggle-btn .t-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
     .toggle-btn-sp  .t-dot { background: var(--green); }
     .toggle-btn-ndx .t-dot { background: var(--amber); }
@@ -115,6 +125,7 @@
     .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 8px; }
     .ticker-badge { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #fff; letter-spacing: .5px; flex-shrink: 0; }
     .weight-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; font-size: 12px; color: var(--text-muted); }
+    .weight-badge-watch { background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.3); color: var(--sky); }
     .company-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
     .badge-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
     .sector-tag { display: inline-block; background: var(--surface2); border-radius: 4px; padding: 2px 8px; font-size: 11px; }
@@ -127,10 +138,12 @@
       letter-spacing: .3px; white-space: nowrap;
     }
     .index-badge .idx-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-    .index-badge-sp  { background: rgba(34,197,94,.08); color: #22c55e; border: 1px solid rgba(34,197,94,.3); }
-    .index-badge-sp  .idx-dot { background: #22c55e; }
-    .index-badge-ndx { background: rgba(251,191,36,.08); color: #fbbf24; border: 1px solid rgba(251,191,36,.3); }
-    .index-badge-ndx .idx-dot { background: #fbbf24; }
+    .index-badge-sp    { background: rgba(34,197,94,.08);  color: #22c55e; border: 1px solid rgba(34,197,94,.3); }
+    .index-badge-sp    .idx-dot { background: #22c55e; }
+    .index-badge-ndx   { background: rgba(251,191,36,.08); color: #fbbf24; border: 1px solid rgba(251,191,36,.3); }
+    .index-badge-ndx   .idx-dot { background: #fbbf24; }
+    .index-badge-watch { background: rgba(56,189,248,.08); color: var(--sky); border: 1px solid rgba(56,189,248,.3); }
+    .index-badge-watch .idx-dot { background: var(--sky); }
 
     .description { font-size: 13px; color: var(--text-muted); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px; }
     .segments { display: flex; flex-direction: column; gap: 5px; }
@@ -190,19 +203,19 @@
 <main>
   <section class="hero">
     <h1>深度解析美股核心企業</h1>
-    <p>追蹤標普 500 (SPY ETF) 成分股，透過 AI 技術拆解每間公司的業務板塊與營收結構，讓您一眼看懂美國最重要的企業。</p>
+    <p>透過 AI 技術拆解美股重要企業的業務板塊與營收結構，涵蓋標普 500 (SPY ETF) 成分股及精選自選企業，讓您一眼看懂每間公司的核心業務。</p>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num" id="total-count">—</div><div class="stat-label">已收錄企業</div></div>
+      <div class="stat"><div class="stat-num" id="sp500-count">—</div><div class="stat-label">S&amp;P 500 成員</div></div>
       <div class="stat"><div class="stat-num" id="nasdaq-count">—</div><div class="stat-label">Nasdaq 100 成員</div></div>
-      <div class="stat"><div class="stat-num">SPY</div><div class="stat-label">追蹤指數</div></div>
     </div>
   </section>
 
-  <!-- Row 1：搜尋 + 排序 -->
+  <!-- Row 1：搜尋 + 排序 + Reset -->
   <div class="controls">
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
-      <input type="text" id="search" placeholder="搜尋 Ticker、公司名稱或別名（如 Google → GOOGL）…" autocomplete="off" />
+      <input type="text" id="search" placeholder="搜尋 Ticker、公司名稱或別名（如 Google → GOOGL、台積電 → TSM）…" autocomplete="off" />
     </div>
     <div class="sort-wrap">
       <label for="sort-select">排序：</label>
@@ -212,6 +225,7 @@
         <option value="name">名稱（A→Z）</option>
       </select>
     </div>
+    <button id="reset-btn">✕ 清除篩選</button>
   </div>
 
   <!-- Row 2：指數 Toggle -->

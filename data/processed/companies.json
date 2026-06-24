@@ -28,7 +28,8 @@
         "percentage": 2,
         "description": "自動駕駛平台 DRIVE"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "AAPL",
@@ -64,7 +65,8 @@
         "percentage": 11,
         "description": "Apple Watch、AirPods、HomePod"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "MSFT",
@@ -90,7 +92,8 @@
         "percentage": 23,
         "description": "Windows、Xbox、Surface、搜尋廣告"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "AMZN",
@@ -126,7 +129,8 @@
         "percentage": 8,
         "description": "物流、訂閱等其他服務"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "GOOGL",
@@ -162,7 +166,8 @@
         "percentage": 13,
         "description": "Waymo、Google One、硬體等"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "GOOG",
@@ -198,7 +203,8 @@
         "percentage": 13,
         "description": "Waymo、Google One、硬體等"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "AVGO",
@@ -219,7 +225,8 @@
         "percentage": 40,
         "description": "虛擬化、雲端管理軟體"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "TSLA",
@@ -250,7 +257,8 @@
         "percentage": 5,
         "description": "碳排放積分銷售"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "META",
@@ -271,7 +279,8 @@
         "percentage": 3,
         "description": "Quest 頭戴式裝置、Horizon 元宇宙"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "BRK-B",
@@ -312,7 +321,8 @@
         "percentage": 8,
         "description": "股息、利息及投資收益"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "LLY",
@@ -348,7 +358,8 @@
         "percentage": 27,
         "description": "其他藥物組合"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "WMT",
@@ -374,7 +385,8 @@
         "percentage": 11,
         "description": "倉儲式量販店"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "JPM",
@@ -405,7 +417,8 @@
         "percentage": 13,
         "description": "資產管理與私人銀行"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "AMD",
@@ -436,7 +449,8 @@
         "percentage": 8,
         "description": "工業與通訊嵌入式處理器"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "INTC",
@@ -477,7 +491,8 @@
         "percentage": 11,
         "description": "包含晶圓代工、先進製程服務、授權與其他企業支援業務，支持長期製程與產能戰略。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "V",
@@ -508,7 +523,8 @@
         "percentage": 2,
         "description": "授權費及其他"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "MU",
@@ -534,7 +550,8 @@
         "percentage": 5,
         "description": "包含NOR與其他嵌入式記憶體、封裝測試、授權與服務等非主要記憶體產品的營收，佔比相對較小。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "XOM",
@@ -565,7 +582,8 @@
         "percentage": 5,
         "description": "潤滑油等特殊產品"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "JNJ",
@@ -586,7 +604,8 @@
         "percentage": 35,
         "description": "手術機器人、骨科、心血管器材"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ORCL",
@@ -617,7 +636,8 @@
         "percentage": 6,
         "description": "諮詢與支援服務"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "LRCX",
@@ -638,7 +658,8 @@
         "percentage": 15,
         "description": "提供備件、維修、升級、耗材及現場工程支援等長期服務，支撐持續售後收入並提升客戶營運穩定性。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CSCO",
@@ -674,7 +695,8 @@
         "percentage": 30,
         "description": "技術支援、專業服務與訂閱式維運服務，提供經常性收入並提升客戶黏著度。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "AMAT",
@@ -700,7 +722,8 @@
         "percentage": 14,
         "description": "供應顯示面板（LCD/OLED）及其他相鄰應用的製程設備與解決方案，營收比重較小且受到顯示產業週期影響較明顯。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CAT",
@@ -731,7 +754,8 @@
         "percentage": 13,
         "description": "透過子公司提供設備融資、租賃與保險等金融服務，以促進設備銷售並支持經銷商與終端客戶。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "MA",
@@ -762,7 +786,8 @@
         "percentage": 12,
         "description": "諮詢、數據分析等增值服務"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "COST",
@@ -783,7 +808,8 @@
         "percentage": 3,
         "description": "年費會員費（高利潤核心）"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ABBV",
@@ -819,7 +845,8 @@
         "percentage": 7,
         "description": "包含其他專利藥、合作授權收入、區域性產品及小型產品線，提供營收多樣性與策略性補充。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "BAC",
@@ -850,7 +877,8 @@
         "percentage": 15,
         "description": "Merrill Lynch 財富管理"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "UNH",
@@ -881,7 +909,8 @@
         "percentage": 10,
         "description": "醫療數據分析與科技"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "GE",
@@ -912,7 +941,8 @@
         "percentage": 8,
         "description": "醫療影像設備（已部分分拆）"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "MS",
@@ -938,7 +968,8 @@
         "percentage": 19,
         "description": "提供主動與被動基金、替代投資與專戶管理服務，為機構與個人投資者提供外部委託投資、資產配置與顧問解決方案。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "PG",
@@ -974,7 +1005,8 @@
         "percentage": 9,
         "description": "Gillette、Braun"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "KO",
@@ -1000,7 +1032,8 @@
         "percentage": 10,
         "description": "自有裝瓶廠業務"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CVX",
@@ -1026,7 +1059,8 @@
         "percentage": 5,
         "description": "石化產品與其他業務"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "KLAC",
@@ -1047,7 +1081,8 @@
         "percentage": 18,
         "description": "專注特殊製程與工藝設備及相關零組件，支援先進封裝、薄膜與其他專用製程應用及售後服務。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "GS",
@@ -1068,7 +1103,8 @@
         "percentage": 35,
         "description": "資產管理、私人財富管理"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "HD",
@@ -1089,7 +1125,8 @@
         "percentage": 10,
         "description": "海外門市"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "NFLX",
@@ -1110,7 +1147,8 @@
         "percentage": 5,
         "description": "廣告支援訂閱方案"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "SNDK",
@@ -1136,7 +1174,8 @@
         "percentage": 15,
         "description": "企業與資料中心用SSD及高階快閃儲存系統，提供高可靠性、效能與專業技術支援，為小而高價值的業務部門。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "MRK",
@@ -1172,7 +1211,8 @@
         "percentage": 17,
         "description": "其他藥物"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "PLTR",
@@ -1193,7 +1233,8 @@
         "percentage": 48,
         "description": "向企業與民間機構銷售 Foundry 等資料平台與專業服務，協助供應鏈、製造、金融與醫療等產業進行資料融合、分析與業務流程自動化。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "TXN",
@@ -1214,7 +1255,8 @@
         "percentage": 28,
         "description": "嵌入式事業提供微控制器、處理器與相關系統解決方案，聚焦工業與車用控制、通訊與物聯網應用，支援即時運算與系統整合。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "GEV",
@@ -1240,7 +1282,8 @@
         "percentage": 15,
         "description": "提供電網與電力電子相關產品（輸配電、變電站設備、電力控制系統）及系統整合和數位化服務，支援電網穩定與能源轉型。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "PM",
@@ -1266,7 +1309,8 @@
         "percentage": 3,
         "description": "包含產品配件、品牌授權、少量醫療與其他業務及一次性項目，佔比小且波動，主要為補充性收入來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "DELL",
@@ -1287,7 +1331,8 @@
         "percentage": 44,
         "description": "提供伺服器、存儲、網路設備與雲端/軟體定義基礎架構，以及相關部署與維運服務，主要面向企業與資料中心的高價值訂單。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "WFC",
@@ -1318,7 +1363,8 @@
         "percentage": 8,
         "description": "公司與其他包含企業財務、風險管理、資產處置、中央營運及法遵等支援性或一次性項目，通常為不可歸類的費用與零星收入，佔比較小。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "C",
@@ -1344,7 +1390,8 @@
         "percentage": 5,
         "description": "公司層級的資本與流動性管理、重整與未分配項目及其他非報表核心營運的費用與收益。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "IBM",
@@ -1380,7 +1427,8 @@
         "percentage": 3,
         "description": "對客戶硬體與軟體採購提供融資與租賃方案，產生利息與金融相關收入，規模較小但支援銷售活動。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "MRVL",
@@ -1406,7 +1454,8 @@
         "percentage": 25,
         "description": "涵蓋5G無線接入、前傳/無線基站晶片、車用與工業連接解決方案，以及其他通訊介面產品，支援無線基礎建設與邊緣應用。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "RTX",
@@ -1437,7 +1486,8 @@
         "percentage": 14,
         "description": "專注於感知、指揮控制、網路與太空系統，提供情報、監偵與衛星解決方案，並以高階電子與軟體服務支援國防與航太客戶。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "LIN",
@@ -1458,7 +1508,8 @@
         "percentage": 8,
         "description": "提供大型氣體及化工廠的工程設計、採購與施工（EPC）服務，收入具專案性與波動性，為公司提供高附加值工程收入來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "WDC",
@@ -1479,7 +1530,8 @@
         "percentage": 28,
         "description": "涵蓋快閃記憶體、固態硬碟（SSD）與嵌入式儲存解決方案，源自SanDisk技術與產品線，為成長動能並補足HDD在高效能與行動裝置市場的布局。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "PANW",
@@ -1505,7 +1557,8 @@
         "percentage": 5,
         "description": "包含導入、培訓、顧問與其他雜項收入，雖佔比小但支援訂閱產品採用與客戶成功，並助於提高續約率。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "AXP",
@@ -1536,7 +1589,8 @@
         "percentage": 5,
         "description": "包含投資收益、持有資產的淨利息差及其他非核心或一次性項目，佔比較小且可能波動。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "QCOM",
@@ -1562,7 +1616,8 @@
         "percentage": 4,
         "description": "包含QSI投資收益、軟體與服務及其他業務收入，規模較小但提供收益多元化與策略投資支持。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ANET",
@@ -1588,7 +1643,8 @@
         "percentage": 4,
         "description": "部署、整合、諮詢與訓練等專業服務及專案實施收入，通常為一次性或專案型態收入。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ADI",
@@ -1624,7 +1680,8 @@
         "percentage": 13,
         "description": "企業與醫療：包括資料中心、醫療影像與專業醫療設備所需的高精度轉換器、放大器與訊號處理解決方案。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "APH",
@@ -1655,7 +1712,8 @@
         "percentage": 8,
         "description": "包含汽車電子、車用連接與其他專用市場產品，並含部分客製化小型事業單位營收。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "PEP",
@@ -1696,7 +1754,8 @@
         "percentage": 15,
         "description": "亞太、中東與北非市場，為新興市場成長來源，聚焦本地化產品、擴張通路與品牌建設。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "MCD",
@@ -1722,7 +1781,8 @@
         "percentage": 7,
         "description": "包含供應鏈與物料銷售差價、授權與品牌相關收入、房地產相關收益及其他營業外收入，為輔助性且分散的收益來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "TMUS",
@@ -1743,7 +1803,8 @@
         "percentage": 23,
         "description": "手機、平板與相關裝置銷售及分期付款收入，包含設備銷售利潤與相關配件收入。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "VZ",
@@ -1769,7 +1830,8 @@
         "percentage": 3,
         "description": "其他與公司層面項目，含物聯網、企業支援服務、非核心業務與資產處理及公司行政與調整項目。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "AMGN",
@@ -1800,7 +1862,8 @@
         "percentage": 15,
         "description": "其他生物製劑與骨科藥物"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "TJX",
@@ -1826,7 +1889,8 @@
         "percentage": 16,
         "description": "包含加拿大、歐洲與澳洲的折扣零售門店（如 Winners、HomeSense、TK Maxx 等）及當地營運，擴展海外市場與多渠道銷售。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "NEE",
@@ -1852,7 +1916,8 @@
         "percentage": 2,
         "description": "包含企業層面活動、能源交易與行銷、投資收益及其他非主要營運單位的收入與支出，為補充性與調節性項目。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "DIS",
@@ -1878,7 +1943,8 @@
         "percentage": 30,
         "description": "迪士尼樂園、郵輪、消費品"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "BA",
@@ -1909,7 +1975,8 @@
         "percentage": 2,
         "description": "提供客戶融資與租賃方案以促成飛機銷售，管理資產與信用風險，規模較小但有助提高交易完成率與支持商業業務。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "TMO",
@@ -1940,7 +2007,8 @@
         "percentage": 15,
         "description": "臨床診斷試劑與設備"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CRWD",
@@ -1961,7 +2029,8 @@
         "percentage": 8,
         "description": "包含專業服務、技術支援、整合與訓練等一次性或非經常性收入，協助客戶部署、最佳化及運用 CrowdStrike 解決方案，但占比相對較小。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "GLW",
@@ -1997,7 +2066,8 @@
         "percentage": 8,
         "description": "供應實驗室耗材與細胞培養相關玻璃與塑料器材，競爭優勢在產品可靠性與品牌信任度。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ETN",
@@ -2023,7 +2093,8 @@
         "percentage": 9,
         "description": "供應飛機電力與燃油系統、液壓與飛機機械元件，主要客戶為商用與軍用航空製造商，產品強調輕量化與高可靠度。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "BLK",
@@ -2054,7 +2125,8 @@
         "percentage": 13,
         "description": "其他收入包含 Aladdin 技術與風險管理服務費、證券借貸收入、顧問與交易相關服務等，反映公司在金融科技與資本市場服務的多元化營收來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "SCHW",
@@ -2085,7 +2157,8 @@
         "percentage": 8,
         "description": "包含投資及資產處分損益、信用卡與支付服務收入、諮詢與專案收入及其他非核心業務收入。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "DE",
@@ -2111,7 +2184,8 @@
         "percentage": 8,
         "description": "透過金融子公司提供貸款、租賃與保險等融資方案，支持經銷商與終端客戶購機與風險管理。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "APP",
@@ -2132,7 +2206,8 @@
         "percentage": 20,
         "description": "公司自有與代理的行動遊戲與應用，透過內購、訂閱及遊戲內廣告變現產生收入，佔比相對較小但具產品投入與使用者成長的波動性。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "GILD",
@@ -2163,7 +2238,8 @@
         "percentage": 14,
         "description": "包含 Veklury（remdesivir）銷售、授權金、合約製造與其他營收項目，具較高波動性與一次性收入成分。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ABT",
@@ -2194,7 +2270,8 @@
         "percentage": 14,
         "description": "在全球（尤其新興市場）銷售成熟處方藥與仿製藥，提供穩定現金流並補足其他事業線的區域性醫療需求。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "UNP",
@@ -2210,7 +2287,8 @@
         "percentage": 100,
         "description": "單一可報告營運部門，主要來自貨運運輸及相關服務，涵蓋海運箱運（Intermodal）、汽車、農產與食品、化學品、煤炭、工業產品及金屬與礦產等多元貨種。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "T",
@@ -2236,7 +2314,8 @@
         "percentage": 5,
         "description": "包含國際/拉丁美洲業務、廣告/行銷解決方案與企業控股及其他營運或一次性項目。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "WELL",
@@ -2267,7 +2346,8 @@
         "percentage": 5,
         "description": "管理費、顧問服務、短期租賃及非核心資產處分與投資收益等，佔比小但提供多元化收益來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "BX",
@@ -2303,7 +2383,8 @@
         "percentage": 7,
         "description": "包含資本市場與顧問服務、戰略投資、保險資本平台及企業層面收入，提供補充性的手續費、交易收益與其他營運收入。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "UBER",
@@ -2334,7 +2415,8 @@
         "percentage": 5,
         "description": "包括廣告、訂閱服務、金融與其他業務及業務外部投資回收等零散收入，規模相對較小但有補充性收益來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "HON",
@@ -2365,7 +2447,8 @@
         "percentage": 18,
         "description": "提供智慧建築與樓宇自動化系統、暖通空調控制與節能管理、消防與安全監控，面向商用與工業建築；以系統整合與遠端監控服務創造持續性收入。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ISRG",
@@ -2391,7 +2474,8 @@
         "percentage": 25,
         "description": "包含系統安裝、培訓、維修保養、軟體升級與支援合約，提升客戶黏著度並穩定經常性收入。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "PFE",
@@ -2427,7 +2511,8 @@
         "percentage": 15,
         "description": "其他治療領域"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "PLD",
@@ -2448,7 +2533,8 @@
         "percentage": 10,
         "description": "包含物業管理、開發與建設管理費、交易與顧問收入以及其他相關服務收入，作為租金以外的附加收益來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "COP",
@@ -2479,7 +2565,8 @@
         "percentage": 5,
         "description": "管線及其他業務"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "VRT",
@@ -2500,7 +2587,8 @@
         "percentage": 30,
         "description": "涵蓋安裝、維護、售後支援、遠端監控、備件供應與生命週期管理等專業服務，提供長期合約與即時維修以提升客戶系統可用性。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "BKNG",
@@ -2526,7 +2614,8 @@
         "percentage": 5,
         "description": "包含租車、機票分銷、旅行活動與其他附屬旅遊產品收入，佔比較小但為多元化及未來成長來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CVS",
@@ -2552,7 +2641,8 @@
         "percentage": 23,
         "description": "以 Aetna 提供健保保險、商業、Medicare 與 Medicaid 計劃為主，透過保費收入、風險承擔與醫療管理計畫獲利，聚焦照護協調、價值導向合約與成本控制。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CB",
@@ -2583,7 +2673,8 @@
         "percentage": 14,
         "description": "提供產險再保險解決方案，包括條約與個別分保，分散承保風險並支援集團資本與大額風險承擔能力。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "COF",
@@ -2614,7 +2705,8 @@
         "percentage": 2,
         "description": "包括交易損益、投資收益及管理費等非核心項目，佔比較小且波動性較高。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "DHR",
@@ -2640,7 +2732,8 @@
         "percentage": 22,
         "description": "涵蓋水質、空氣與工業過程監測儀器、分析儀與過濾系統，服務公用事業、工業與環境檢測市場，強調耐用性與現場應用整合能力。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CRM",
@@ -2661,7 +2754,8 @@
         "percentage": 10,
         "description": "包含專業服務、諮詢、培訓、實施與一次性費用，協助客戶部署、客製化與系統整合，為較小比例之非經常性收益來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "PGR",
@@ -2687,7 +2781,8 @@
         "percentage": 3,
         "description": "包含房屋等非車險產品、再保、金融服務及其他業務收入，佔比小但提供產品多樣化與交叉銷售機會。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "SPGI",
@@ -2718,7 +2813,8 @@
         "percentage": 14,
         "description": "提供能源、石油、金屬與大宗商品的價格評估、專業報價與市場分析，向交易商、企業與政府提供訂閱與諮詢服務。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "LOW",
@@ -2759,7 +2855,8 @@
         "percentage": 8,
         "description": "季節性商品、裝潢配件與其他雜項品類，包含節慶商品與即時促銷品，有助提升短期營收與客流。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "VRTX",
@@ -2780,7 +2877,8 @@
         "percentage": 10,
         "description": "來自與其他製藥公司之合作收入、里程碑付款及授權金，包括研發合作、合作夥伴的銷售分潤與特許權使用費。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "MO",
@@ -2811,7 +2909,8 @@
         "percentage": 3,
         "description": "電子煙/蒸汽產品、加熱不燃燒相關項目、以及策略性投資（如大麻相關持股）與其他營運收入或一次性項目。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "LMT",
@@ -2842,7 +2941,8 @@
         "percentage": 29,
         "description": "設計與生產衛星、運輸與發射系統、導彈預警與太空偵測系統，服務軍用與商用太空任務與持續運營。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "BMY",
@@ -2873,7 +2973,8 @@
         "percentage": 10,
         "description": "包含其他成熟產品、授權及權利金、疫苗與小型產品線，以及其他區域性或次要治療領域的營收"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "SYK",
@@ -2899,7 +3000,8 @@
         "percentage": 25,
         "description": "聚焦脊椎、腦神經外科植入物與神經調控系統，結合影像導航與微創技術，具較高技術門檻與利基市場地位。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "SBUX",
@@ -2925,7 +3027,8 @@
         "percentage": 16,
         "description": "包含罐裝、即飲、零售通路與餐飲供應鏈之包裝商品及授權食品服務，提供渠道多元化與品牌產品延伸收益。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CDNS",
@@ -2951,7 +3054,8 @@
         "percentage": 6,
         "description": "來自驗證與原型化硬體平台（如仿真/加速器）及系統整合相關銷售，佔比相對較小但對高階驗證場景重要。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "FTNT",
@@ -2972,7 +3076,8 @@
         "percentage": 62,
         "description": "包含訂閱式安全功能、威脅情報、軟體更新、技術支援與專業服務，為公司主要的經常性收入來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "NOW",
@@ -2993,7 +3098,8 @@
         "percentage": 8,
         "description": "專業服務與其他收入，包括實施顧問、培訓、系統整合與客製化開發等一次性或短期專案，以及少量其他營收來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "SNPS",
@@ -3014,7 +3120,8 @@
         "percentage": 33,
         "description": "可重用矽智財(IP)、硬體介面與系統解決方案，以及整合服務與安全軟體，透過授權、權利金與支援服務創造經常性與一次性收入。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ADP",
@@ -3035,7 +3142,8 @@
         "percentage": 12,
         "description": "包含退休金記錄與代管、經紀與投資相關服務、保險及其他輔助性專業服務，為次要但穩定的補充營收來源。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ADBE",
@@ -3056,7 +3164,8 @@
         "percentage": 25,
         "description": "提供 Experience Cloud 的企業級數位體驗、行銷自動化、內容管理與資料分析解決方案（含客戶資料平台、測試與個人化），主要服務大型企業與行銷團隊。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "ACN",
@@ -3092,7 +3201,8 @@
         "percentage": 11,
         "description": "包含能源、天然資源與化工領域，提供可持續發展、資產管理與運營效率提升的技術與顧問方案。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "CMCSA",
@@ -3118,7 +3228,8 @@
         "percentage": 17,
         "description": "歐洲市場的付費電視與寬頻服務，提供衛星/串流電視、寬頻與電話服務，並透過地區性內容與廣告獲利，擴大國際版圖。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "NXPI",
@@ -3149,7 +3260,8 @@
         "percentage": 14,
         "description": "提供通訊基礎設施所需的射頻、網路處理與高速傳輸解決方案，應用於基地台、基礎網路與邊緣運算設備。"
       }
-    ]
+    ],
+    "in_sp500": true
   },
   {
     "ticker": "INTU",
@@ -3174,6 +3286,93 @@
         "segment": "Strategic Partners & Other",
         "percentage": 14,
         "description": "由戰略合作夥伴平台、API 與白標方案、企業解決方案及其他一次性或小型業務組成，支援主要產品的分銷與擴展。"
+      }
+    ],
+    "in_sp500": true
+  },
+  {
+    "ticker": "TSM",
+    "name": "Taiwan Semiconductor Manufacturing Company",
+    "sector": "Technology",
+    "description": "全球最大的晶圓代工廠，為 Apple、NVIDIA、AMD 等科技巨頭生產最先進的半導體晶片，掌握全球尖端製程的絕大多數產能。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "in_sp500": false,
+    "revenue_segments": [
+      {
+        "segment": "Advanced Process (≤7nm)",
+        "percentage": 69,
+        "description": "3nm、5nm、7nm 等先進製程，主要客戶為 Apple 及 AI 晶片廠商"
+      },
+      {
+        "segment": "Specialty Technology",
+        "percentage": 20,
+        "description": "成熟製程，用於汽車、IoT、工業等應用"
+      },
+      {
+        "segment": "Other",
+        "percentage": 11,
+        "description": "封裝測試及其他服務"
+      }
+    ]
+  },
+  {
+    "ticker": "UMAC",
+    "name": "Unusual Machines",
+    "sector": "Industrials",
+    "description": "美國本土無人機（Drone）製造商，專注於生產符合美國國防部 Blue UAS 認證的商用與軍用無人機，致力於減少美國對中國無人機供應鏈的依賴。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "in_sp500": false,
+    "revenue_segments": [
+      {
+        "segment": "Drone Hardware",
+        "percentage": 72,
+        "description": "FPV 無人機機體及零組件銷售"
+      },
+      {
+        "segment": "Components & Parts",
+        "percentage": 20,
+        "description": "馬達、電調等無人機零件零售"
+      },
+      {
+        "segment": "Software & Services",
+        "percentage": 8,
+        "description": "飛控軟體及技術支援服務"
+      }
+    ]
+  },
+  {
+    "ticker": "FUTU",
+    "name": "Futu Holdings",
+    "sector": "Financials",
+    "description": "香港及東南亞領先的互聯網券商，旗下擁有富途牛牛（Futubull）及 moomoo 兩大交易平台，為散戶提供港美股、期權及加密貨幣交易服務。",
+    "weight": 0.0,
+    "last_updated": "2026-06-24",
+    "nasdaq100": false,
+    "in_sp500": false,
+    "revenue_segments": [
+      {
+        "segment": "Brokerage Commission",
+        "percentage": 52,
+        "description": "港美股及期權交易佣金收入"
+      },
+      {
+        "segment": "Interest Income",
+        "percentage": 36,
+        "description": "融資融券及現金管理利息收入"
+      },
+      {
+        "segment": "Wealth Management",
+        "percentage": 8,
+        "description": "基金銷售及理財產品分銷"
+      },
+      {
+        "segment": "Other",
+        "percentage": 4,
+        "description": "企業服務及其他收入"
       }
     ]
   }

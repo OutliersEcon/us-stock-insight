@@ -4,9 +4,11 @@
  * 功能：
  *  - 從 companies.json 動態載入企業資料
  *  - 行業篩選（英文 + 中文雙語）
- *  - 指數篩選 toggle（S&P 500 / Nasdaq 100）
+ *  - 指數篩選 toggle（全部 / S&P 500 / Nasdaq 100）
  *  - 排序（SPY 權重 / Ticker 代號 / 公司名稱）
+ *    - 非 S&P 500 企業（in_sp500=false）按權重排序時固定排在最後
  *  - 智慧搜尋（支援 Ticker、公司名稱、中文別名、行業）
+ *  - Reset Filter 按鈕（一鍵清除所有篩選條件）
  *  - 動態渲染公司卡片
  */
 
@@ -41,7 +43,7 @@ const SEARCH_ALIASES = {
   'BRK-B': ['berkshire', 'buffett', 'brk', 'brk.b', 'brk.a'],
   'JPM':   ['jpmorgan', 'chase'],
   'WMT':   ['walmart', "sam's club"],
-  'XOM':   ['exxon', 'mobil'],
+  'XOM':   ['exxon', 'mobil', 'exxonmobil'],
   'JNJ':   ['johnson'],
   'LLY':   ['lilly', 'eli lilly', 'mounjaro', 'zepbound'],
   'V':     ['visa'],
@@ -86,7 +88,6 @@ const SEARCH_ALIASES = {
   'BMY':   ['bristol myers', 'bristol-myers'],
   'CVS':   ['cvs health'],
   'COP':   ['conocophillips'],
-  'XOM':   ['exxon', 'exxonmobil'],
   'NEE':   ['nextera'],
   'BLK':   ['blackrock'],
   'BX':    ['blackstone'],
@@ -95,7 +96,6 @@ const SEARCH_ALIASES = {
   'COF':   ['capital one'],
   'PGR':   ['progressive'],
   'SPGI':  ['s&p global', 'sp global'],
-  'CME':   ['cme group', 'chicago mercantile'],
   'MS':    ['morgan stanley'],
   'C':     ['citigroup', 'citi'],
   'WFC':   ['wells fargo'],
@@ -108,9 +108,6 @@ const SEARCH_ALIASES = {
   'MO':    ['altria', 'marlboro'],
   'PM':    ['philip morris'],
   'PEP':   ['pepsi', 'pepsico', 'frito'],
-  'KO':    ['coca cola', 'coke'],
-  'WMT':   ['walmart'],
-  'COST':  ['costco'],
   'CRM':   ['salesforce'],
   'NOW':   ['servicenow'],
   'ADBE':  ['adobe'],
@@ -127,7 +124,6 @@ const SEARCH_ALIASES = {
   'T':     ['at&t', 'att'],
   'CMCSA': ['comcast', 'xfinity', 'nbc'],
   'DIS':   ['disney', 'marvel', 'pixar'],
-  'NFLX':  ['netflix'],
   'LIN':   ['linde'],
   'GLW':   ['corning'],
   'ACN':   ['accenture'],
@@ -147,13 +143,16 @@ const SEARCH_ALIASES = {
   'WELL':  ['welltower'],
   'CB':    ['chubb'],
   'APH':   ['amphenol'],
-  'PH':    ['parker hannifin'],
+  // 非 S&P 500 企業別名
+  'TSM':   ['台積電', 'tsmc', 'taiwan semiconductor', '台灣積體電路'],
+  'UMAC':  ['unusual machines', 'drone', '無人機'],
+  'FUTU':  ['富途', 'futu', 'moomoo', '富途牛牛', 'futubull'],
 };
 
 // ── 狀態
-let companies = [];
+let companies   = [];
 let activeSector = 'all';
-let activeIndex  = 'all';   // 'all' | 'sp500' | 'nasdaq100'
+let activeIndex  = 'all';    // 'all' | 'sp500' | 'nasdaq100'
 let sortBy       = 'weight'; // 'weight' | 'ticker' | 'name'
 let searchQuery  = '';
 
@@ -166,6 +165,21 @@ function sectorClass(sector) {
   return 'sector-' + sector.replace(/\s+/g, '-');
 }
 
+/** 判斷篩選條件是否全部為預設值 */
+function isDefaultState() {
+  return activeSector === 'all' &&
+         activeIndex  === 'all' &&
+         sortBy       === 'weight' &&
+         searchQuery  === '';
+}
+
+/** 更新 reset 按鈕的顯示狀態 */
+function updateResetBtn() {
+  const btn = document.getElementById('reset-btn');
+  if (!btn) return;
+  btn.style.display = isDefaultState() ? 'none' : 'inline-flex';
+}
+
 /**
  * 智慧搜尋：比對 ticker、公司名稱、別名、行業（英中）
  */
@@ -175,9 +189,8 @@ function matchSearch(c, query) {
   if (!q) return true;
 
   // 直接比對 ticker（支援 BRK.B → BRK-B）
-  const normalizedTicker = c.ticker.toLowerCase().replace(/-/g, '.');
   if (c.ticker.toLowerCase().includes(q)) return true;
-  if (normalizedTicker.includes(q)) return true;
+  if (c.ticker.toLowerCase().replace(/-/g, '.').includes(q)) return true;
 
   // 公司名稱
   if (c.name.toLowerCase().includes(q)) return true;
@@ -189,15 +202,35 @@ function matchSearch(c, query) {
 
   // 別名
   const aliases = SEARCH_ALIASES[c.ticker] || [];
-  if (aliases.some(a => a.includes(q) || q.includes(a))) return true;
+  if (aliases.some(a => a.toLowerCase().includes(q) || q.includes(a.toLowerCase()))) return true;
 
   return false;
 }
 
-// ── 排序函數
+/**
+ * 排序函數
+ * 規則：按權重排序時，非 S&P 500 企業（in_sp500=false）固定排在最後，
+ *       並在非 S&P 500 群組內按 ticker 字母順序排列。
+ *       按 ticker / name 排序時，非 S&P 500 企業同樣排在最後。
+ */
 function sortCompanies(arr) {
   return [...arr].sort((a, b) => {
-    if (sortBy === 'weight') return b.weight - a.weight;
+    const aInSP = a.in_sp500 !== false;
+    const bInSP = b.in_sp500 !== false;
+
+    // 非 S&P 500 企業永遠排在 S&P 500 企業之後
+    if (aInSP !== bInSP) return aInSP ? -1 : 1;
+
+    // 同組內的排序邏輯
+    if (sortBy === 'weight') {
+      if (aInSP) {
+        // S&P 500 組：按權重降冪
+        return b.weight - a.weight;
+      } else {
+        // 非 S&P 500 組：按 ticker 字母順序
+        return a.ticker.localeCompare(b.ticker);
+      }
+    }
     if (sortBy === 'ticker') return a.ticker.localeCompare(b.ticker);
     if (sortBy === 'name')   return a.name.localeCompare(b.name);
     return 0;
@@ -217,14 +250,24 @@ function renderCard(c) {
       <span class="seg-pct">${s.percentage}%</span>
     </div>`).join('');
 
+  // 指數 badges
+  const spBadge = c.in_sp500 !== false
+    ? `<span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>`
+    : '';
   const ndxBadge = c.nasdaq100
     ? `<span class="index-badge index-badge-ndx"><span class="idx-dot"></span>Nasdaq 100</span>`
     : '';
-  const indexStrip = `
-    <div class="index-strip">
-      <span class="index-badge index-badge-sp"><span class="idx-dot"></span>S&amp;P 500</span>
-      ${ndxBadge}
-    </div>`;
+  // 非 S&P 500 企業顯示「自選」badge
+  const watchBadge = c.in_sp500 === false
+    ? `<span class="index-badge index-badge-watch"><span class="idx-dot"></span>自選</span>`
+    : '';
+
+  const indexStrip = `<div class="index-strip">${spBadge}${ndxBadge}${watchBadge}</div>`;
+
+  // 權重顯示：非 S&P 500 企業不顯示 SPY 權重
+  const weightHtml = c.in_sp500 !== false
+    ? `<div class="weight-badge">SPY ${c.weight.toFixed(2)}%</div>`
+    : `<div class="weight-badge weight-badge-watch">自選追蹤</div>`;
 
   const lastUpdated = c.last_updated || 'N/A';
 
@@ -232,7 +275,7 @@ function renderCard(c) {
     <a class="card" href="stocks/${file}.html">
       <div class="card-header">
         <div class="ticker-badge">${c.ticker}</div>
-        <div class="weight-badge">SPY ${c.weight.toFixed(2)}%</div>
+        ${weightHtml}
       </div>
       <div class="company-name">${c.name}</div>
       <div class="badge-row">
@@ -256,8 +299,9 @@ function renderGrid() {
   // 指數篩選
   if (activeIndex === 'nasdaq100') {
     filtered = filtered.filter(c => c.nasdaq100);
+  } else if (activeIndex === 'sp500') {
+    filtered = filtered.filter(c => c.in_sp500 !== false);
   }
-  // S&P 500 = 全部（所有企業均為 S&P 500 成分股）
 
   // 行業篩選
   if (activeSector !== 'all') {
@@ -278,16 +322,41 @@ function renderGrid() {
     resultCount.textContent = `顯示 ${filtered.length} / ${companies.length} 間企業`;
   }
 
+  // 更新 reset 按鈕顯示
+  updateResetBtn();
+
   if (filtered.length === 0) {
     grid.innerHTML = `
       <div class="no-results">
         <div class="icon">🔍</div>
         <p>找不到符合條件的企業</p>
-        <p style="font-size:12px;margin-top:8px;opacity:.6">試試搜尋公司別名，例如「Google」可找到 GOOGL</p>
+        <p style="font-size:12px;margin-top:8px;opacity:.6">試試搜尋公司別名，例如「Google」可找到 GOOGL，「台積電」可找到 TSM</p>
       </div>`;
   } else {
     grid.innerHTML = filtered.map(renderCard).join('');
   }
+}
+
+// ── 重置所有篩選條件
+function resetFilters() {
+  activeSector = 'all';
+  activeIndex  = 'all';
+  sortBy       = 'weight';
+  searchQuery  = '';
+
+  // 重置 UI 狀態
+  document.getElementById('search').value = '';
+  document.getElementById('sort-select').value = 'weight';
+
+  document.querySelectorAll('#sector-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  const allSectorBtn = document.querySelector('#sector-filters .filter-btn[data-sector="all"]');
+  if (allSectorBtn) allSectorBtn.classList.add('active');
+
+  document.querySelectorAll('#index-toggles .toggle-btn').forEach(b => b.classList.remove('active'));
+  const allIndexBtn = document.querySelector('#index-toggles .toggle-btn[data-index="all"]');
+  if (allIndexBtn) allIndexBtn.classList.add('active');
+
+  renderGrid();
 }
 
 // ── 建立行業篩選按鈕
@@ -331,7 +400,7 @@ function initEvents() {
     renderGrid();
   });
 
-  // 指數 Toggle（S&P 500 / Nasdaq 100 / 全部）
+  // 指數 Toggle
   document.getElementById('index-toggles').addEventListener('click', e => {
     const btn = e.target.closest('.toggle-btn');
     if (!btn) return;
@@ -346,6 +415,12 @@ function initEvents() {
     sortBy = e.target.value;
     renderGrid();
   });
+
+  // Reset Filter 按鈕
+  const resetBtn = document.getElementById('reset-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', resetFilters);
+  }
 }
 
 // ── 主程式入口
@@ -358,14 +433,17 @@ document.addEventListener('DOMContentLoaded', () => {
       companies = data;
 
       // 更新統計數字
-      const nasdaqCount = data.filter(c => c.nasdaq100).length;
-      document.getElementById('total-count').textContent = data.length;
+      const sp500Count   = data.filter(c => c.in_sp500 !== false).length;
+      const nasdaqCount  = data.filter(c => c.nasdaq100).length;
+      document.getElementById('total-count').textContent  = data.length;
+      document.getElementById('sp500-count').textContent  = sp500Count;
       document.getElementById('nasdaq-count').textContent = nasdaqCount;
 
       // 建立行業篩選按鈕
       buildSectorFilters(data);
 
-      // 初始渲染
+      // 初始渲染（reset 按鈕預設隱藏）
+      updateResetBtn();
       renderGrid();
     })
     .catch(err => {

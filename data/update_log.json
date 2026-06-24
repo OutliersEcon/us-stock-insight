@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-24T09:18:37Z",
+  "generated_at": "2026-06-24T09:41:12Z",
   "stale_threshold_days": 30,
-  "total_companies": 113,
+  "total_companies": 116,
   "stale_count": 0,
-  "up_to_date_count": 113,
+  "up_to_date_count": 116,
   "companies": [
     {
       "ticker": "NVDA",
@@ -1020,6 +1020,33 @@
       "days_since_update": 0,
       "nasdaq100": true,
       "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Technology",
+      "needs_update": false
+    },
+    {
+      "ticker": "UMAC",
+      "name": "Unusual Machines",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Industrials",
+      "needs_update": false
+    },
+    {
+      "ticker": "FUTU",
+      "name": "Futu Holdings",
+      "last_updated": "2026-06-24",
+      "days_since_update": 0,
+      "nasdaq100": false,
+      "sector": "Financials",
       "needs_update": false
     }
   ]
